@@ -1,0 +1,4 @@
+# Case evidence files must stay byte-exact on every machine: their sha256 hashes, the manifest check
+# and every quoted line number depend on it. Git must never convert their line endings.
+data/evidence/CASE-1010F/** -text
+data/evidence/extra/** -text
