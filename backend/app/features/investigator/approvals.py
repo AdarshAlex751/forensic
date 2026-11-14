@@ -54,6 +54,13 @@ class Approvals:
                     return "approved"
         return None
 
+    def mark_ingested(self) -> None:
+        """The released evidence is now part of the case: approved requests become ingested."""
+        with self._lock:
+            for r in self.requests:
+                if r["id"] in self._approved:
+                    r["status"] = "ingested"
+
     def approved_ids(self) -> list[str]:
         with self._lock:
             return sorted(self._approved)

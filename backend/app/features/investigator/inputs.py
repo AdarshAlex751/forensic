@@ -236,6 +236,7 @@ class Inputs:
     edges: list[Edge]
     devices: list[Device]
     rooms: list[Room]
+    extra_event_ids: list[str] = field(default_factory=list)  # events that came from released extra evidence
 
 
 def load_inputs(include_extra: bool = False) -> Inputs:
@@ -243,12 +244,15 @@ def load_inputs(include_extra: bool = False) -> Inputs:
     (events_extra.json) and is true only after a human approved a request."""
     events = parse_list(_load("evidence", "events.json", []), Event, "events")
     seen = {e.id for e in events}
+    extra_ids: list[str] = []
     extra_files = ["events_baseline.json"] + (["events_extra.json"] if include_extra else [])
     for name in extra_files:
         for e in parse_list(_load("evidence", name, []), Event, name):
             if e.id not in seen:  # real mode merges these into events.json already
                 seen.add(e.id)
                 events.append(e)
+                if name == "events_extra.json":
+                    extra_ids.append(e.id)
     return Inputs(
         case=CaseInfo.from_dict(_load("evidence", "case.json", {})),
         evidence=parse_list(_load("evidence", "evidence.json", []), EvidenceFile, "evidence"),
@@ -258,6 +262,7 @@ def load_inputs(include_extra: bool = False) -> Inputs:
         edges=parse_list(_load("analysis", "edges.json", []), Edge, "edges"),
         devices=parse_list(_load("scene", "devices.json", []), Device, "devices"),
         rooms=parse_list(_load("scene", "rooms.json", []), Room, "rooms"),
+        extra_event_ids=extra_ids,
     )
 
 
