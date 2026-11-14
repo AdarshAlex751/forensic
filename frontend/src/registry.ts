@@ -3,7 +3,7 @@
 import type { ComponentType } from "react";
 import { RedFlagsPanel } from "./features/analysis/RedFlagsPanel";
 import { YarnPage } from "./features/analysis/YarnPage";
-import { Desk } from "./features/evidence/Desk";
+import { OpeningScreen } from "./features/opening/OpeningScreen";
 import { SummaryPage } from "./features/evidence/SummaryPage";
 import { InvestigatorMemo } from "./features/investigator/InvestigatorMemo";
 import { JudgeMode } from "./features/scene/JudgeMode";
@@ -16,7 +16,7 @@ export interface PageDef {
 }
 
 export const pages: PageDef[] = [
-  { path: "/", label: "Desk", component: Desk },
+  { path: "/", label: "Desk", component: OpeningScreen },
   { path: "/summary", label: "Summary", component: SummaryPage },
   { path: "/scene", label: "Scene", component: ScenePage },
   { path: "/yarn", label: "Yarn board", component: YarnPage },

@@ -8,3 +8,6 @@ dist/
 # evidence slice runtime state (uploaded cases, released extra evidence)
 data/evidence/work/
 data/evidence/released.json
+
+# extracted screen-recording frames
+frontend/frames/
