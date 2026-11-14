@@ -1,2 +1,6 @@
 deepagents
 langchain-groq
+pdfplumber
+# tests (tests/investigator)
+pytest
+httpx
