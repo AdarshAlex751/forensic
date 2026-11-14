@@ -1,0 +1,24 @@
+work_order,asset,start,end,technician,description
+WO-3080,rdr-224,2026-02-23T07:00:00-05:00,2026-02-23T07:30:00-05:00,Dana Whitlock (Facilities),Badge reader battery replacement
+WO-3082,lt-219,2026-02-23T13:15:00-05:00,2026-02-23T14:30:00-05:00,Frederik Mendelssohn,Monthly antivirus definition update (offline media)
+WO-3083,ap-2-01,2026-02-23T22:00:00-05:00,2026-02-23T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2
+WO-3086,hvac-2-ahu2,2026-02-24T08:00:00-05:00,2026-02-24T09:00:00-05:00,Ravi Castellanos (Facilities),HVAC filter change on air handler 2
+WO-3091,cam-02,2026-02-24T13:00:00-05:00,2026-02-24T13:30:00-05:00,Frederik Mendelssohn,Camera firmware update
+WO-3093,rdr-212,2026-02-25T06:30:00-05:00,2026-02-25T07:00:00-05:00,Dana Whitlock (Facilities),Door strike adjustment
+WO-3095,ap-2-02,2026-02-25T22:00:00-05:00,2026-02-25T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2
+WO-3098,cam-05,2026-02-26T07:00:00-05:00,2026-02-26T08:00:00-05:00,Frederik Mendelssohn,Lens cleaning and PoE switch swap
+WO-3100,av-lounge-2,2026-02-26T12:00:00-05:00,2026-02-26T13:00:00-05:00,Ravi Castellanos (Facilities),Lounge AV projector lamp replacement
+WO-3102,ap-2-03,2026-02-26T22:00:00-05:00,2026-02-26T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2
+WO-3104,hvac-2-ahu2,2026-02-27T07:00:00-05:00,2026-02-27T08:00:00-05:00,Ravi Castellanos (Facilities),HVAC thermostat calibration
+WO-3106,prn-2-02,2026-02-27T15:00:00-05:00,2026-02-27T15:45:00-05:00,Lena Marsh (Copier vendor),Printer service and drum replacement
+WO-3108,hvac-2-ahu1,2026-02-28T10:00:00-05:00,2026-02-28T12:00:00-05:00,Ravi Castellanos (Facilities),Weekend HVAC belt inspection
+WO-3110,rdr-227,2026-03-02T06:30:00-05:00,2026-03-02T07:00:00-05:00,Dana Whitlock (Facilities),Badge reader battery replacement
+WO-3111,ap-2-04,2026-03-02T22:00:00-05:00,2026-03-02T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2
+WO-3113,av-lounge-2,2026-03-03T09:00:00-05:00,2026-03-03T10:30:00-05:00,Ravi Castellanos (Facilities),Lounge AV setup for summit week
+WO-3115,prn-2-01,2026-03-04T07:00:00-05:00,2026-03-04T07:30:00-05:00,Lena Marsh (Copier vendor),Printer paper feed repair
+WO-3117,lt-219,2026-03-04T19:00:00-05:00,2026-03-04T21:30:00-05:00,Frederik Mendelssohn,Monthly security patching (offline media)
+WO-3120,ap-2-05,2026-03-05T22:00:00-05:00,2026-03-05T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2
+WO-3122,rdr-215,2026-03-06T06:30:00-05:00,2026-03-06T07:00:00-05:00,Dana Whitlock (Facilities),Door strike replacement
+WO-3124,av-lounge-2,2026-03-06T14:00:00-05:00,2026-03-06T14:30:00-05:00,Ravi Castellanos (Facilities),Lounge AV teardown after summit
+WO-3126,hvac-2-ahu1,2026-03-07T09:00:00-05:00,2026-03-07T11:00:00-05:00,Ravi Castellanos (Facilities),Weekend HVAC filter change on air handler 1
+WO-3128,ap-2-06,2026-03-08T22:00:00-05:00,2026-03-08T22:40:00-05:00,Frederik Mendelssohn,AP firmware upgrade to 8.10.2

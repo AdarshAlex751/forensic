@@ -1,0 +1,98 @@
+[
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "which version of the sensor calibration script is current? :laughing:",
+    "ts": "1772721917.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "The one from last week, I renamed the old one.",
+    "ts": "1772721990.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "thanks, that saved me some digging. haha",
+    "ts": "1772722247.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Anyone free to sanity check my requirements matrix numbers?",
+    "ts": "1772728474.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Give me ten minutes.",
+    "ts": "1772728799.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Ok, ping me.",
+    "ts": "1772728920.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Handover doc updated. Valve timing sweep section done.",
+    "ts": "1772740200.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks Hank, super clear.",
+    "ts": "1772740365.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Nozzle thermal model run finished overnight, results are in the team folder.",
+    "ts": "1772741965.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Nice. Residuals look ok?",
+    "ts": "1772742120.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Mostly. One case diverged, rerunning it with a smaller step.",
+    "ts": "1772742651.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "I saw the same thing last month, try halving the time step! :D",
+    "ts": "1772742796.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Main build is red, looks like the thermal vacuum checklist tests.",
+    "ts": "1772745656.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Looking.",
+    "ts": "1772746179.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Reverted, rerunning CI.",
+    "ts": "1772746256.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks for the quick fix.",
+    "ts": "1772746357.000100"
+  }
+]

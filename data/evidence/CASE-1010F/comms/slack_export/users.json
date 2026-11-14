@@ -1,0 +1,134 @@
+[
+  {
+    "id": "U620A465E8F",
+    "name": "alma.imhoff",
+    "real_name": "Alma Imhoff",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Alma Imhoff",
+      "display_name": "alma.imhoff",
+      "title": "Halvorsen head of security"
+    }
+  },
+  {
+    "id": "UFF8AD0B3F5",
+    "name": "hank.gibson",
+    "real_name": "Hank Gibson",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Hank Gibson",
+      "display_name": "hank.gibson",
+      "title": "Halvorsen senior engineer"
+    }
+  },
+  {
+    "id": "UE906F703F7",
+    "name": "maggie.price",
+    "real_name": "Maggie Price",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Maggie Price",
+      "display_name": "maggie.price",
+      "title": "Halvorsen engineer"
+    }
+  },
+  {
+    "id": "U48325F8AFC",
+    "name": "kim.sayers",
+    "real_name": "Kim Sayers",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Kim Sayers",
+      "display_name": "kim.sayers",
+      "title": "Northline Systems executive"
+    }
+  },
+  {
+    "id": "UDDD0C059BA",
+    "name": "theo.lindqvist",
+    "real_name": "Theo Lindqvist",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Theo Lindqvist",
+      "display_name": "theo.lindqvist",
+      "title": "Halvorsen engineer"
+    }
+  },
+  {
+    "id": "U22AC661C8A",
+    "name": "amara.okonkwo",
+    "real_name": "Amara Okonkwo",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Amara Okonkwo",
+      "display_name": "amara.okonkwo",
+      "title": "Halvorsen engineer"
+    }
+  },
+  {
+    "id": "U8AB490C4DB",
+    "name": "jonah.feld",
+    "real_name": "Jonah Feld",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Jonah Feld",
+      "display_name": "jonah.feld",
+      "title": "Halvorsen engineer"
+    }
+  },
+  {
+    "id": "UC3A7AE0277",
+    "name": "leila.haddad",
+    "real_name": "Leila Haddad",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Leila Haddad",
+      "display_name": "leila.haddad",
+      "title": "Halvorsen product manager"
+    }
+  },
+  {
+    "id": "U0B67E4FFB9",
+    "name": "marcus.bell",
+    "real_name": "Marcus Bell",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Marcus Bell",
+      "display_name": "marcus.bell",
+      "title": "Halvorsen engineer"
+    }
+  },
+  {
+    "id": "UC1204C46CC",
+    "name": "sofia.marchetti",
+    "real_name": "Sofia Marchetti",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Sofia Marchetti",
+      "display_name": "sofia.marchetti",
+      "title": "Halvorsen operations lead"
+    }
+  },
+  {
+    "id": "UF5CB250EC6",
+    "name": "rina.okafor",
+    "real_name": "Rina Okafor",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Rina Okafor",
+      "display_name": "rina.okafor",
+      "title": "Halvorsen lab technician"
+    }
+  }
+]

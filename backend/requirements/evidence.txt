@@ -2,3 +2,4 @@ pandas
 pdfplumber
 rapidfuzz
 langchain-groq
+reportlab

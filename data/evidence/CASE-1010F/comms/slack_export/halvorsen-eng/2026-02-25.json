@@ -1,0 +1,110 @@
+[
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Design review for the mass budget sheet moved to Friday at 13:00, same room.",
+    "ts": "1772031321.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Can we push it 30 minutes? I have a call",
+    "ts": "1772031474.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Sure, 14:30 it is. :white_check_mark:",
+    "ts": "1772031618.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": ":+1:",
+    "ts": "1772031807.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Quick question: are we still using the old units convention in the interface control doc?",
+    "ts": "1772034617.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "SI everywhere now, the old sheets are wrong. :smile:",
+    "ts": "1772035058.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "CFD mesh refinement run finished overnight, results are in the team folder.",
+    "ts": "1772037567.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "nice. residuals look ok?",
+    "ts": "1772037673.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Mostly. One case diverged, rerunning it with a smaller step.",
+    "ts": "1772037945.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "I saw the same thing last month, try halving the time step!",
+    "ts": "1772038043.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "sorry, just seeing this. Thanks",
+    "ts": "1772041014.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "ci is failing on main since this morning, anyone touching the mass budget sheet?",
+    "ts": "1772052037.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "that was me, fix incoming haha",
+    "ts": "1772052104.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Should be fixed now",
+    "ts": "1772052143.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "Confirmed green",
+    "ts": "1772052427.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "jonah, do you have 20 minutes to pair on the bracket fea this afternoon?",
+    "ts": "1772052859.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "sure, 16:45?",
+    "ts": "1772053321.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "16:45 works. :upside_down_face:",
+    "ts": "1772053816.000100"
+  }
+]

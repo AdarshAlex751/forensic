@@ -1,0 +1,110 @@
+[
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Eng weekly notes are due at 4, please add your bullets.",
+    "ts": "1772203901.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "done.",
+    "ts": "1772204008.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Mine are in. :heart:",
+    "ts": "1772204050.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "can someone review my pr for the flight software unit tests?",
+    "ts": "1772209038.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Looking now!",
+    "ts": "1772209225.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Left a couple of comments, nothing big!",
+    "ts": "1772209343.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Thanks, fixed",
+    "ts": "1772209647.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Anyone free to sanity check my feed line sizing numbers?",
+    "ts": "1772211296.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Tomorrow morning works.",
+    "ts": "1772211418.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Great, tomorrow then",
+    "ts": "1772211874.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Interface control doc run finished overnight, results are in the team folder!",
+    "ts": "1772220313.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "oops missed this - nice. residuals look ok?",
+    "ts": "1772225863.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Mostly. One case diverged, rerunning it with a smaller step.",
+    "ts": "1772226337.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "i saw the same thing last month, try halving the time step.",
+    "ts": "1772226418.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Second batch of fixtures came in from Mercer this morning. :sparkles:",
+    "ts": "1772231393.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Did they fix the chamfer this time?",
+    "ts": "1772231504.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Yes, chamfer is right. One part has a scratch, sending it back.",
+    "ts": "1772231744.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Nice, that ubnlocks the fit check.",
+    "ts": "1772231953.000100"
+  }
+]

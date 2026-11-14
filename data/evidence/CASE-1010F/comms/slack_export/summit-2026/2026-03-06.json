@@ -1,0 +1,50 @@
+[
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Going to the closing session at 15:00, anyone joining?",
+    "ts": "1772812030.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Can't, in a review. Take notes? :upside_down_face:",
+    "ts": "1772812160.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "I went to the earlier one, it was good",
+    "ts": "1772812522.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Notes coming. :smile:",
+    "ts": "1772812783.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "The poster session in the lobby is better than expected! :smile:",
+    "ts": "1772825051.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Thanks, adding it.",
+    "ts": "1772825294.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC1204C46CC",
+    "text": "Notes from data provenance in ML pipelines are in the summit doc.",
+    "ts": "1772830428.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks for sharing.",
+    "ts": "1772830540.000100"
+  }
+]

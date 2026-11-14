@@ -1,0 +1,122 @@
+[
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Main build is red, looks like the sensor calibration script tests",
+    "ts": "1772462127.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "sorry just saw this - that was me, fix incoming :eyes:",
+    "ts": "1772465450.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "should be fixed now",
+    "ts": "1772465522.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Confirmed green.",
+    "ts": "1772465926.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "bracket samples arrived from the machine shop lol",
+    "ts": "1772469737.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Measure the bore before we sign off please",
+    "ts": "1772469835.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "within tolerance on all 7",
+    "ts": "1772470086.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Great, I will update the vibration test plan.",
+    "ts": "1772470365.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Hank, can we set up handover sessions this week? Thinking the test stand scripts and the valve timing sweep.",
+    "ts": "1772478600.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Yes. Tuesday and Thursday afternoons work.",
+    "ts": "1772478829.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Booked Tuesday 14:00 and Thursday 14:00 in the meeting room.",
+    "ts": "1772479005.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "I can take the test stand scripts.",
+    "ts": "1772479223.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Ok. Notes will be in the handover doc.",
+    "ts": "1772479425.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Design review for the feed line sizing moved to Tuesday at 14:30, same room.",
+    "ts": "1772484161.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Ok, will have slides ready.",
+    "ts": "1772484313.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thanks.",
+    "ts": "1772484450.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "works lol",
+    "ts": "1772484613.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Anyone free to sanity check my mounting plate redesign numbers?",
+    "ts": "1772485655.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Give me ten minutes. :D",
+    "ts": "1772485712.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Ok, ping me.",
+    "ts": "1772485856.000100"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Sweep for the feed line sizing is done, 4 of 2 cases converged!",
+    "ts": "1772810055.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "which case diverged?",
+    "ts": "1772810253.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Case 4. Probably the boundary condition, checking! :D",
+    "ts": "1772810375.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "I saw the same thing last month, try halving the time step",
+    "ts": "1772810511.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Does anyone have the latest telemetry parser spreadsheet? :)",
+    "ts": "1772815656.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "It is pinned in the channel.",
+    "ts": "1772815919.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Found it, thanks.",
+    "ts": "1772816171.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "PR for the test report template is up, would love a second pair of eyes.",
+    "ts": "1772818345.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "I can take it after standup!",
+    "ts": "1772818848.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Looks good, one question about the units on line 40!! :sparkles:",
+    "ts": "1772818985.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Good catch, updated!",
+    "ts": "1772819501.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "ci is failing on main since this morning, anyone touching the vibration test plan?",
+    "ts": "1772827614.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "That was me, fix incoming! <3",
+    "ts": "1772827742.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Should be fixed now! :tada:",
+    "ts": "1772827813.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "confirmed green",
+    "ts": "1772828051.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Handover doc is final. Theo has the test stand scripts, Amara has the valve timing sweep.",
+    "ts": "1772832000.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks Hank. Good luck.",
+    "ts": "1772832163.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thank you for all the work this week, Hank.",
+    "ts": "1772832314.000100"
+  }
+]

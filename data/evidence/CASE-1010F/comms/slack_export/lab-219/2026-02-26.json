@@ -1,0 +1,68 @@
+[
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Ordering lab consumables this afternoon, anything to add?",
+    "ts": "1772116082.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Small hex keys, we keep losing them.",
+    "ts": "1772116333.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Added, should be here Tuesday.",
+    "ts": "1772116402.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Calibration on the thermocouple reader is done, offsets are in the binder.",
+    "ts": "1772122669.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks for keeping on top of this",
+    "ts": "1772122789.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "All within spec this time. :test_tube:",
+    "ts": "1772122900.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Humidity in 219 was a bit high this morning, keep the door closed during runs.",
+    "ts": "1772127571.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "sorry, only seeing this now! Thanks, good to know.",
+    "ts": "1772133522.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Could I get the test bench in 219 Tuesday from 14:00?",
+    "ts": "1772142929.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Done, it is on the schedule.",
+    "ts": "1772143085.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Perfect, thank you.",
+    "ts": "1772143184.000100"
+  }
+]

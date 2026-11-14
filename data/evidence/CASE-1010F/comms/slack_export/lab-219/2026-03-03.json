@@ -1,0 +1,14 @@
+[
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Test stand run finished, saw a small offset on channel 8.",
+    "ts": "1772564941.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "channel 8 was drifting last week too.",
+    "ts": "1772565140.000100"
+  }
+]

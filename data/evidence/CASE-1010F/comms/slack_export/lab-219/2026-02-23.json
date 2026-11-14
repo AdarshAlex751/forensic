@@ -1,0 +1,50 @@
+[
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Lab plan for the week is on the door. Thursday is busy, book early.",
+    "ts": "1771868721.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Can I have Monday afternoon next week?",
+    "ts": "1771868936.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Booked",
+    "ts": "1771869428.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": ":+1:",
+    "ts": "1771869642.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Vibration table run 9 done, data is on the lab share!",
+    "ts": "1771872113.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Nice, can you send me the raw files?",
+    "ts": "1771872534.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Raw files are on the lab share, same folder as last week. :+1:",
+    "ts": "1771873057.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks Rina.",
+    "ts": "1771873192.000100"
+  }
+]

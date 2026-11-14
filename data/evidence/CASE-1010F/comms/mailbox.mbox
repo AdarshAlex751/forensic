@@ -1,0 +1,6031 @@
+From frederik.mendelssohn@ostrander-it.example Mon Feb 23 08:40:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Planned IT work on the 2nd floor this week
+Date: Mon, 23 Feb 2026 08:40:00 -0500
+Message-ID: <20260223084000.888b@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Planned IT work this week:
+- Mon 13:15-14:30, WO-3082: antivirus definition update on the Halvorsen lab laptop lt-219 (offline media)
+- Mon 22:00-22:40, WO-3083: firmware upgrade on access point ap-2-01
+- Tue 13:00-13:30, WO-3091: firmware update on camera cam-02 (west corridor)
+- Wed 22:00-22:40, WO-3095: firmware upgrade on access point ap-2-02
+- Thu 07:00-08:00, WO-3098: lens cleaning and PoE switch swap for camera cam-05 (lounge)
+- Thu 22:00-22:40, WO-3102: firmware upgrade on access point ap-2-03
+- Fri 15:00-15:45, WO-3106: printer service and drum replacement (copier vendor)
+Wi-Fi may drop for a few minutes during the access point upgrades.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From sofia.marchetti@halvorsen.example Mon Feb 23 08:55:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Week of 23 February
+Date: Mon, 23 Feb 2026 08:55:00 -0500
+Message-ID: <20260223085500.d332@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+Priorities for this week:
+- design review for the mounting plate redesign on Thursday
+- lab calibration schedule, see Rina's post
+- summit registration by Friday
+
+Thanks,
+Sofia
+
+From rina.okafor@halvorsen.example Mon Feb 23 09:01:34 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Expense question
+Date: Mon, 23 Feb 2026 09:01:34 -0500
+Message-ID: <20260223090134.bb63@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Quick question: which cost code do I use for the machine shop order?
+
+Thanks,
+Rina
+
+From ravi.castellanos@jrr-facilities.example Mon Feb 23 09:15:00 2026
+From: "Ravi Castellanos" <ravi.castellanos@jrr-facilities.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: HVAC filter change on Tuesday morning
+Date: Mon, 23 Feb 2026 09:15:00 -0500
+Message-ID: <20260223091500.af43@jrr-facilities.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear tenants,
+
+We will change the filters on air handler 2 on Tuesday 24 February from 08:00 to 09:00 (WO-3086).
+You may hear some noise from the ceiling vents on the west side.
+
+Ravi Castellanos
+JRR Building Facilities
+
+From sofia.marchetti@halvorsen.example Mon Feb 23 09:21:35 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Re: Expense question
+Date: Mon, 23 Feb 2026 09:21:35 -0500
+Message-ID: <20260223092135.284f@halvorsen.example>
+In-Reply-To: <20260223090134.bb63@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Rina,
+
+Use the engineering materials code, it is in the finance sheet on the second tab.
+
+Best,
+Sofia
+
+From events@jrr-aisummit.example Mon Feb 23 10:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit 2026: registration is open
+Date: Mon, 23 Feb 2026 10:00:00 -0500
+Message-ID: <20260223100000.e479@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+Registration for the campus AI Summit (2 to 6 March) is now open on the summit site.
+Members of the JRR second floor can register free of charge with the floor member code JRR2-26.
+The welcome reception is on Wednesday 4 March at 18:15 in the ground-floor atrium.
+Talks take place in the auditorium and in the second-floor lounge.
+
+The JRR AI Summit team
+
+From orders@mercer-machining.example Mon Feb 23 10:18:41 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: jonah.feld@halvorsen.example
+Subject: Your order 6371: delivery update
+Date: Mon, 23 Feb 2026 10:18:41 -0500
+Message-ID: <20260223101841.bc4d@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Order 6371 is delayed by one day because of a tooling change.
+New delivery date: Friday.
+Sorry for the inconvenience.
+
+Kind regards,
+Mercer Machining Orders
+
+From amara.okonkwo@halvorsen.example Mon Feb 23 10:19:13 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Calibration before the CFD mesh refinement test
+Date: Mon, 23 Feb 2026 10:19:13 -0500
+Message-ID: <20260223101913.6d77@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Rina!
+
+Is there a slot this week for a calibration check on the pressure transducers?
+I would like to run the CFD mesh refinement test on Friday.
+
+Thanks!
+Amara
+
+From rina.okafor@halvorsen.example Mon Feb 23 10:39:38 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Calibration before the CFD mesh refinement test
+Date: Mon, 23 Feb 2026 10:39:38 -0500
+Message-ID: <20260223103938.2737@halvorsen.example>
+In-Reply-To: <20260223101913.6d77@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+I can do the transducer check on Tuesday morning.
+Leave them on the shelf with a tag and I will pick them up.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From hannah.kowalczyk@brightwater.example Mon Feb 23 11:02:00 2026
+From: "Hannah Kowalczyk" <hannah.kowalczyk@brightwater.example>
+To: frederik.mendelssohn@ostrander-it.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Planned IT work on the 2nd floor this week
+Date: Mon, 23 Feb 2026 11:02:00 -0500
+Message-ID: <20260223110200.958a@brightwater.example>
+In-Reply-To: <20260223084000.888b@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Frederik,
+
+Will the printer be out of use for the whole afternoon on Friday?
+
+Best regards,
+Hannah Kowalczyk
+Brightwater Analytics
+
+From jonah.feld@halvorsen.example Mon Feb 23 11:08:56 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: orders@mercer-machining.example
+Subject: Re: Your order 6371: delivery update
+Date: Mon, 23 Feb 2026 11:08:56 -0500
+Message-ID: <20260223110856.7353@halvorsen.example>
+In-Reply-To: <20260223101841.bc4d@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Thanks for letting us know. Friday is fine.
+
+thx
+Jonah
+
+From amara.okonkwo@halvorsen.example Mon Feb 23 11:30:04 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Comments on the requirements matrix?
+Date: Mon, 23 Feb 2026 11:30:04 -0500
+Message-ID: <20260223113004.250c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+I updated the requirements matrix after the last review. Do you have time to look at the changes before Thursday?
+Changes are highlighted in yellow.
+
+Thanks!
+Amara
+
+From orders@mercer-machining.example Mon Feb 23 11:34:56 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Your order 6371: delivery update
+Date: Mon, 23 Feb 2026 11:34:56 -0500
+Message-ID: <20260223113456.29d0@mercer-machining.example>
+In-Reply-To: <20260223110856.7353@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Noted, thank you.
+
+Kind regards,
+Mercer Machining Orders
+
+From frederik.mendelssohn@ostrander-it.example Mon Feb 23 11:40:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: hannah.kowalczyk@brightwater.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Planned IT work on the 2nd floor this week
+Date: Mon, 23 Feb 2026 11:40:00 -0500
+Message-ID: <20260223114000.1e89@ostrander-it.example>
+In-Reply-To: <20260223110200.958a@brightwater.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+No, only 15:00 to 15:45 while the vendor replaces the drum.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From rina.okafor@halvorsen.example Mon Feb 23 12:02:17 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Expense question
+Date: Mon, 23 Feb 2026 12:02:17 -0500
+Message-ID: <20260223120217.2d66@halvorsen.example>
+In-Reply-To: <20260223092135.284f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Perfect, thanks Sofia.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 12:05:49 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Comments on the requirements matrix?
+Date: Mon, 23 Feb 2026 12:05:49 -0500
+Message-ID: <20260223120549.cf19@halvorsen.example>
+In-Reply-To: <20260223113004.250c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Amara,
+
+Sure, I will go through the highlighted parts tomorrow.
+
+Theo
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 12:56:38 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Comments on the requirements matrix?
+Date: Mon, 23 Feb 2026 12:56:38 -0500
+Message-ID: <20260223125638.c0d7@halvorsen.example>
+In-Reply-To: <20260223120549.cf19@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Done, only small comments. Looks good to me.
+
+Theo
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 13:19:38 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re-check on the vibration test plan numbers
+Date: Mon, 23 Feb 2026 13:19:38 -0500
+Message-ID: <20260223131938.11f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+I went through the vibration test plan again and I think the margin on item 6 is too thin.
+Could you take a look when you have a moment?
+
+Theo
+
+From amara.okonkwo@halvorsen.example Mon Feb 23 13:46:50 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Comments on the requirements matrix?
+Date: Mon, 23 Feb 2026 13:46:50 -0500
+Message-ID: <20260223134650.0b04@halvorsen.example>
+In-Reply-To: <20260223125638.c0d7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+Great, thanks for the quick turnaround.
+
+Cheers,
+Amara
+
+From maggie.price@halvorsen.example Mon Feb 23 13:55:57 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Review request: sensor calibration script draft
+Date: Mon, 23 Feb 2026 13:55:57 -0500
+Message-ID: <20260223135557.05f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+Could you review the sensor calibration script draft by Wednesday? It is in the team folder, about 5 pages.
+Mostly interested in whether the assumptions section holds up.
+
+Cheers!
+Maggie
+
+From maggie.price@halvorsen.example Mon Feb 23 14:10:13 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Re-check on the vibration test plan numbers
+Date: Mon, 23 Feb 2026 14:10:13 -0500
+Message-ID: <20260223141013.d33a@halvorsen.example>
+In-Reply-To: <20260223131938.11f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Tuesday.
+
+xx
+Maggie
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 14:46:19 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Review request: sensor calibration script draft
+Date: Mon, 23 Feb 2026 14:46:19 -0500
+Message-ID: <20260223144619.29f6@halvorsen.example>
+In-Reply-To: <20260223135557.05f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Yes, I will send comments by Wednesday morning.
+
+Theo
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 15:07:02 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Review request: sensor calibration script draft
+Date: Mon, 23 Feb 2026 15:07:02 -0500
+Message-ID: <20260223150702.6112@halvorsen.example>
+In-Reply-To: <20260223144619.29f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Comments are in the doc. Main one: the load assumptions need a reference.
+
+Thanks,
+Theo
+
+From maggie.price@halvorsen.example Mon Feb 23 15:27:48 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Review request: sensor calibration script draft
+Date: Mon, 23 Feb 2026 15:27:48 -0500
+Message-ID: <20260223152748.f930@halvorsen.example>
+In-Reply-To: <20260223150702.6112@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo!
+
+Thanks, fixing the references now.
+
+Thanks so much!
+Maggie
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 16:00:45 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the vibration test plan numbers
+Date: Mon, 23 Feb 2026 16:00:45 -0500
+Message-ID: <20260223160045.e68f@halvorsen.example>
+In-Reply-To: <20260223141013.d33a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Tuesday works, I will send an invite.
+
+Thanks,
+Theo
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 16:15:50 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Test stand DAQ config: quick check
+Date: Mon, 23 Feb 2026 16:15:50 -0500
+Message-ID: <20260223161550.a418@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Amara,
+
+Do you still have the input files for the test stand DAQ config?
+I want to rerun case 4 with the new boundary conditions.
+
+Theo
+
+From amara.okonkwo@halvorsen.example Mon Feb 23 16:51:08 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Test stand DAQ config: quick check
+Date: Mon, 23 Feb 2026 16:51:08 -0500
+Message-ID: <20260223165108.cb0e@halvorsen.example>
+In-Reply-To: <20260223161550.a418@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+They are in the team folder under runs, next to the power budget files.
+Case 4 needs the updated material card too, it is in the same place.
+
+Cheers,
+Amara
+
+From theo.lindqvist@halvorsen.example Mon Feb 23 17:03:45 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Test stand DAQ config: quick check
+Date: Mon, 23 Feb 2026 17:03:45 -0500
+Message-ID: <20260223170345.dd62@halvorsen.example>
+In-Reply-To: <20260223165108.cb0e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Amara,
+
+Found them, thanks. Rerunning now.
+
+Theo
+
+From hank.gibson@halvorsen.example Tue Feb 24 10:17:42 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: nozzle thermal model sync
+Date: Tue, 24 Feb 2026 10:17:42 -0500
+Message-ID: <20260224101742.e49d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+All,
+
+Notes from today's nozzle thermal model sync:
+- agreed to freeze the interface on Friday
+- Amara to update the valve timing sweep by end of week
+- open question on test fixtures, parked for now
+
+H.
+
+From amara.okonkwo@halvorsen.example Tue Feb 24 10:40:12 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Feed line sizing sync notes and actions
+Date: Tue, 24 Feb 2026 10:40:12 -0500
+Message-ID: <20260224104012.d2dd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Short notes from the feed line sizing sync:
+- design is ok to move forward
+- 9 action items, owners in the tracker
+- next sync Wednesday at 9:00
+
+Thanks!
+Amara
+
+From marcus.bell@halvorsen.example Tue Feb 24 10:52:13 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Feed line sizing sync notes and actions
+Date: Tue, 24 Feb 2026 10:52:13 -0500
+Message-ID: <20260224105213.98b4@halvorsen.example>
+In-Reply-To: <20260224104012.d2dd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+One correction: the fixture question is mine, not parked.
+
+Marcus
+
+From hank.gibson@halvorsen.example Tue Feb 24 11:38:12 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Comments on the vibration test plan?
+Date: Tue, 24 Feb 2026 11:38:12 -0500
+Message-ID: <20260224113812.77c2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Jonah,
+
+I updated the vibration test plan after the last review. Do you have time to look at the changes before Wednesday?
+Changes are highlighted in yellow.
+
+Hank
+
+From marcus.bell@halvorsen.example Tue Feb 24 12:05:22 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Room 219 on Friday?
+Date: Tue, 24 Feb 2026 12:05:22 -0500
+Message-ID: <20260224120522.7471@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Rina,
+
+Could you put me down for the 219 bench on Friday from 13:00 to 14:30?
+It is for the test stand DAQ config, nothing hazardous.
+
+Marcus
+
+From rina.okafor@halvorsen.example Tue Feb 24 12:11:45 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Room 219 on Friday?
+Date: Tue, 24 Feb 2026 12:11:45 -0500
+Message-ID: <20260224121145.9f20@halvorsen.example>
+In-Reply-To: <20260224120522.7471@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Booked Friday 13:00 to 14:30.
+Bench is clean, logbook is on the shelf by the door.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From hank.gibson@halvorsen.example Tue Feb 24 13:14:35 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Flight software unit tests: quick check
+Date: Tue, 24 Feb 2026 13:14:35 -0500
+Message-ID: <20260224131435.2733@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Jonah,
+
+Do you still have the input files for the flight software unit tests?
+I want to rerun case 4 with the new boundary conditions.
+
+H.
+
+From jonah.feld@halvorsen.example Tue Feb 24 14:19:10 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Comments on the vibration test plan?
+Date: Tue, 24 Feb 2026 14:19:10 -0500
+Message-ID: <20260224141910.786b@halvorsen.example>
+In-Reply-To: <20260224113812.77c2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank,
+
+Sure, I will go through the highlighted parts tomorrow.
+
+Jonah
+
+From mateo.silva@lumenpolicy.example Tue Feb 24 14:20:00 2026
+From: "Mateo Silva" <mateo.silva@lumenpolicy.example>
+To: leila.haddad@halvorsen.example
+Subject: Panel invitation: AI policy for space hardware
+Date: Tue, 24 Feb 2026 14:20:00 -0500
+Message-ID: <20260224142000.87ac@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Leila,
+
+Lumen Policy Group is hosting the AI policy panel at the summit on Wednesday 4 March at 13:30.
+Would you or a colleague join as a panelist for 45 minutes? We would love an engineering view.
+
+Best regards,
+Mateo Silva
+Lumen Policy Group
+
+From jonah.feld@halvorsen.example Tue Feb 24 14:29:36 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Flight software unit tests: quick check
+Date: Tue, 24 Feb 2026 14:29:36 -0500
+Message-ID: <20260224142936.6fed@halvorsen.example>
+In-Reply-To: <20260224131435.2733@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+They are in the team folder under runs, next to the bracket FEA files.
+Case 4 needs the updated material card too, it is in the same place.
+
+thx
+Jonah
+
+From amara.okonkwo@halvorsen.example Tue Feb 24 14:31:09 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re-check on the mass budget sheet numbers
+Date: Tue, 24 Feb 2026 14:31:09 -0500
+Message-ID: <20260224143109.615d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+I went through the mass budget sheet again and I think the margin on item 8 is too thin.
+Could you take a look when you have a moment?
+
+Thanks!
+Amara
+
+From maggie.price@halvorsen.example Tue Feb 24 14:34:17 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Review request: flight software unit tests draft
+Date: Tue, 24 Feb 2026 14:34:17 -0500
+Message-ID: <20260224143417.f6d0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus!
+
+Could you review the flight software unit tests draft by Thursday? It is in the team folder, about 4 pages.
+Mostly interested in whether the assumptions section holds up.
+
+Cheers!
+Maggie
+
+From hank.gibson@halvorsen.example Tue Feb 24 14:36:15 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Flight software unit tests: quick check
+Date: Tue, 24 Feb 2026 14:36:15 -0500
+Message-ID: <20260224143615.cbd1@halvorsen.example>
+In-Reply-To: <20260224142936.6fed@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Jonah,
+
+Found them, thanks. Rerunning now.
+
+H.
+
+From marcus.bell@halvorsen.example Tue Feb 24 14:40:31 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Review request: flight software unit tests draft
+Date: Tue, 24 Feb 2026 14:40:31 -0500
+Message-ID: <20260224144031.5c47@halvorsen.example>
+In-Reply-To: <20260224143417.f6d0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Yes, I will send comments by Thursday morning.
+
+Marcus
+
+From jonah.feld@halvorsen.example Tue Feb 24 15:21:47 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Re-check on the mass budget sheet numbers
+Date: Tue, 24 Feb 2026 15:21:47 -0500
+Message-ID: <20260224152147.49d5@halvorsen.example>
+In-Reply-To: <20260224143109.615d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Thursday.
+
+thx
+Jonah
+
+From marcus.bell@halvorsen.example Tue Feb 24 15:42:36 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Room 219 on Wednesday?
+Date: Tue, 24 Feb 2026 15:42:36 -0500
+Message-ID: <20260224154236.4cbd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Rina,
+
+Could you put me down for the 219 bench on Wednesday from 11:45 to 12:45?
+It is for the test stand DAQ config, nothing hazardous.
+
+Marcus
+
+From sofia.marchetti@halvorsen.example Tue Feb 24 17:37:10 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Monitor in 217 flickering
+Date: Tue, 24 Feb 2026 17:37:10 -0500
+Message-ID: <20260224173710.1cdc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Frederik,
+
+The second monitor at my desk in 217 keeps flickering since this morning.
+I tried another cable, same thing.
+
+Thanks,
+Sofia
+
+From leila.haddad@halvorsen.example Tue Feb 24 20:10:00 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: mateo.silva@lumenpolicy.example
+Subject: Re: Panel invitation: AI policy for space hardware
+Date: Tue, 24 Feb 2026 20:10:00 -0500
+Message-ID: <20260224201000.0137@halvorsen.example>
+In-Reply-To: <20260224142000.87ac@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Mateo,
+
+Thank you for thinking of us. I would be happy to join the panel.
+Could you send the questions a few days before?
+
+Thanks,
+Leila
+
+From leila.haddad@halvorsen.example Wed Feb 25 09:09:21 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: CFD mesh refinement on Monday at 10:00
+Date: Wed, 25 Feb 2026 09:09:21 -0500
+Message-ID: <20260225090921.68b5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The CFD mesh refinement design review is on Monday at 10:00 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Best,
+Leila
+
+From frederik.mendelssohn@ostrander-it.example Wed Feb 25 09:12:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Monitor in 217 flickering
+Date: Wed, 25 Feb 2026 09:12:00 -0500
+Message-ID: <20260225091200.0a08@ostrander-it.example>
+In-Reply-To: <20260224173710.1cdc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Sorry for the slow reply.
+Logged as INC-2253. Probably the panel. I will swap the monitor on my next visit.
+Use the spare in the cupboard until then.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From leila.haddad@halvorsen.example Wed Feb 25 09:14:44 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: amara.okonkwo@halvorsen.example, halvorsen-eng@halvorsen.example
+Subject: Re: Feed line sizing sync notes and actions
+Date: Wed, 25 Feb 2026 09:14:44 -0500
+Message-ID: <20260225091444.008e@halvorsen.example>
+In-Reply-To: <20260224105213.98b4@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Sorry for the slow reply.
+Noted, I will move the review to after the freeze.
+
+Thanks,
+Leila
+
+From rina.okafor@halvorsen.example Wed Feb 25 09:18:06 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Room 219 on Wednesday?
+Date: Wed, 25 Feb 2026 09:18:06 -0500
+Message-ID: <20260225091806.f44e@halvorsen.example>
+In-Reply-To: <20260224154236.4cbd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Sorry for the slow reply.
+Booked Wednesday 11:45 to 12:45.
+Bench is clean, logbook is on the shelf by the door.
+
+Thanks,
+Rina
+
+From theo.lindqvist@halvorsen.example Wed Feb 25 09:22:04 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: feed line sizing sync
+Date: Wed, 25 Feb 2026 09:22:04 -0500
+Message-ID: <20260225092204.d553@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Notes from today's feed line sizing sync:
+- agreed to freeze the interface on Thursday
+- Maggie to update the telemetry parser by end of week
+- open question on test fixtures, parked for now
+
+Theo
+
+From mateo.silva@lumenpolicy.example Wed Feb 25 09:30:00 2026
+From: "Mateo Silva" <mateo.silva@lumenpolicy.example>
+To: leila.haddad@halvorsen.example
+Subject: Re: Panel invitation: AI policy for space hardware
+Date: Wed, 25 Feb 2026 09:30:00 -0500
+Message-ID: <20260225093000.1d99@lumenpolicy.example>
+In-Reply-To: <20260224201000.0137@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Leila,
+
+Wonderful. Questions will follow by Friday. Thank you!
+
+Best regards,
+Mateo Silva
+Lumen Policy Group
+
+From maggie.price@halvorsen.example Wed Feb 25 09:34:16 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: feed line sizing sync
+Date: Wed, 25 Feb 2026 09:34:16 -0500
+Message-ID: <20260225093416.de8c@halvorsen.example>
+In-Reply-To: <20260225092204.d553@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo!
+
+Thanks for writing this up.
+
+Thanks so much!
+Maggie
+
+From leila.haddad@halvorsen.example Wed Feb 25 09:41:15 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: maggie.price@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, theo.lindqvist@halvorsen.example
+Subject: Re: Notes: feed line sizing sync
+Date: Wed, 25 Feb 2026 09:41:15 -0500
+Message-ID: <20260225094115.8c9c@halvorsen.example>
+In-Reply-To: <20260225093416.de8c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Maggie,
+
+Thanks both. I added the actions to the board.
+
+Best,
+Leila
+
+From marcus.bell@halvorsen.example Wed Feb 25 10:33:49 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Re: Room 219 on Wednesday?
+Date: Wed, 25 Feb 2026 10:33:49 -0500
+Message-ID: <20260225103349.7526@halvorsen.example>
+In-Reply-To: <20260225091806.f44e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Rina,
+
+Thanks Rina!
+
+Cheers,
+Marcus
+
+From hank.gibson@halvorsen.example Wed Feb 25 11:00:16 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: CFD mesh refinement on Monday at 10:00
+Date: Wed, 25 Feb 2026 11:00:16 -0500
+Message-ID: <20260225110016.f4bb@halvorsen.example>
+In-Reply-To: <20260225090921.68b5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+I have a conflict at 10:00, could we start at 11:30?
+
+H.
+
+From leila.haddad@halvorsen.example Wed Feb 25 11:01:13 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: test report template on Monday at 13:15
+Date: Wed, 25 Feb 2026 11:01:13 -0500
+Message-ID: <20260225110113.885d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The test report template design review is on Monday at 13:15 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Best,
+Leila
+
+From sofia.marchetti@halvorsen.example Wed Feb 25 11:02:38 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Re: Monitor in 217 flickering
+Date: Wed, 25 Feb 2026 11:02:38 -0500
+Message-ID: <20260225110238.ce60@halvorsen.example>
+In-Reply-To: <20260225091200.0a08@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik,
+
+Thanks Frederik.
+
+Best,
+Sofia
+
+From leila.haddad@halvorsen.example Wed Feb 25 11:35:49 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: CFD mesh refinement on Monday at 10:00
+Date: Wed, 25 Feb 2026 11:35:49 -0500
+Message-ID: <20260225113549.820a@halvorsen.example>
+In-Reply-To: <20260225110016.f4bb@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Hank,
+
+Moved to 11:30, updated invite to follow.
+
+Thanks,
+Leila
+
+From amara.okonkwo@halvorsen.example Wed Feb 25 12:11:51 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Mass budget sheet sync notes and actions
+Date: Wed, 25 Feb 2026 12:11:51 -0500
+Message-ID: <20260225121151.ddcd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Short notes from the mass budget sheet sync:
+- design is ok to move forward
+- 4 action items, owners in the tracker
+- next sync Thursday at 15:00
+
+Thanks!
+Amara
+
+From theo.lindqvist@halvorsen.example Wed Feb 25 12:24:01 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Mass budget sheet sync notes and actions
+Date: Wed, 25 Feb 2026 12:24:01 -0500
+Message-ID: <20260225122401.6202@halvorsen.example>
+In-Reply-To: <20260225121151.ddcd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Thanks. I will have the nozzle thermal model update by Friday.
+
+Theo
+
+From theo.lindqvist@halvorsen.example Wed Feb 25 12:52:04 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: test report template on Monday at 13:15
+Date: Wed, 25 Feb 2026 12:52:04 -0500
+Message-ID: <20260225125204.fca6@halvorsen.example>
+In-Reply-To: <20260225110113.885d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+I have a conflict at 13:15, could we start at 14:15?
+
+Theo
+
+From leila.haddad@halvorsen.example Wed Feb 25 13:14:25 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: amara.okonkwo@halvorsen.example, halvorsen-eng@halvorsen.example
+Subject: Re: Mass budget sheet sync notes and actions
+Date: Wed, 25 Feb 2026 13:14:25 -0500
+Message-ID: <20260225131425.bc2c@halvorsen.example>
+In-Reply-To: <20260225122401.6202@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Theo,
+
+Noted, I will move the review to after the freeze.
+
+Best,
+Leila
+
+From leila.haddad@halvorsen.example Wed Feb 25 13:42:22 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: test report template on Monday at 13:15
+Date: Wed, 25 Feb 2026 13:42:22 -0500
+Message-ID: <20260225134222.ac0d@halvorsen.example>
+In-Reply-To: <20260225125204.fca6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Theo,
+
+Moved to 14:15, updated invite to follow.
+
+Best,
+Leila
+
+From jonah.feld@halvorsen.example Wed Feb 25 14:05:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: wifi in 217
+Date: Wed, 25 Feb 2026 14:05:00 -0500
+Message-ID: <20260225140500.2dbd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Frederik,
+
+wifi in 217 keeps dropping every few minutes since lunch, video calls are unusable
+
+thx
+Jonah
+
+From hank.gibson@halvorsen.example Wed Feb 25 14:32:52 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, theo.lindqvist@halvorsen.example
+Subject: Re: Design review: test report template on Monday at 13:15
+Date: Wed, 25 Feb 2026 14:32:52 -0500
+Message-ID: <20260225143252.8404@halvorsen.example>
+In-Reply-To: <20260225134222.ac0d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+Thanks, that works for me too.
+
+Hank
+
+From frederik.mendelssohn@ostrander-it.example Wed Feb 25 14:40:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: wifi in 217
+Date: Wed, 25 Feb 2026 14:40:00 -0500
+Message-ID: <20260225144000.793b@ostrander-it.example>
+In-Reply-To: <20260225140500.2dbd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Thanks Jonah. I can't see a fault on the access point from here.
+Logged as INC-2207. If it happens again, note the time and I will check the controller logs.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From hank.gibson@halvorsen.example Wed Feb 25 15:18:48 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re-check on the interface control doc numbers
+Date: Wed, 25 Feb 2026 15:18:48 -0500
+Message-ID: <20260225151848.2863@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+I went through the interface control doc again and I think the margin on item 3 is too thin.
+Could you take a look when you have a moment?
+
+Hank
+
+From orders@mercer-machining.example Wed Feb 25 15:26:52 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Your order 5771: delivery update
+Date: Wed, 25 Feb 2026 15:26:52 -0500
+Message-ID: <20260225152652.d2d2@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Order 5771 is delayed by one day because of a tooling change.
+New delivery date: Tuesday.
+Sorry for the inconvenience.
+
+Kind regards,
+Mercer Machining Orders
+
+From jonah.feld@halvorsen.example Wed Feb 25 15:30:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Re: wifi in 217
+Date: Wed, 25 Feb 2026 15:30:00 -0500
+Message-ID: <20260225153000.8950@halvorsen.example>
+In-Reply-To: <20260225144000.793b@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Frederik,
+
+seems ok again now, will note the time if it comes back
+
+Jonah
+
+From theo.lindqvist@halvorsen.example Wed Feb 25 16:02:10 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: orders@mercer-machining.example
+Subject: Re: Your order 5771: delivery update
+Date: Wed, 25 Feb 2026 16:02:10 -0500
+Message-ID: <20260225160210.01ea@halvorsen.example>
+In-Reply-To: <20260225152652.d2d2@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Thanks for letting us know. Tuesday is fine.
+
+Thanks,
+Theo
+
+From marcus.bell@halvorsen.example Wed Feb 25 17:16:53 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re-check on the flight software unit tests numbers
+Date: Wed, 25 Feb 2026 17:16:53 -0500
+Message-ID: <20260225171653.43f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+I went through the flight software unit tests again and I think the margin on item 8 is too thin.
+Could you take a look when you have a moment?
+
+Cheers,
+Marcus
+
+From orders@mercer-machining.example Wed Feb 25 17:55:10 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Your order 5771: delivery update
+Date: Wed, 25 Feb 2026 17:55:10 -0500
+Message-ID: <20260225175510.4a01@mercer-machining.example>
+In-Reply-To: <20260225160210.01ea@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Theo,
+
+Noted, thank you.
+
+Best regards,
+Mercer Machining Orders
+
+From maggie.price@halvorsen.example Wed Feb 25 17:59:03 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Re-check on the interface control doc numbers
+Date: Wed, 25 Feb 2026 17:59:03 -0500
+Message-ID: <20260225175903.8606@halvorsen.example>
+In-Reply-To: <20260225151848.2863@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank!
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Monday.
+
+xx
+Maggie
+
+From hank.gibson@halvorsen.example Thu Feb 26 09:11:12 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Re-check on the flight software unit tests numbers
+Date: Thu, 26 Feb 2026 09:11:12 -0500
+Message-ID: <20260226091112.aa04@halvorsen.example>
+In-Reply-To: <20260225171653.43f6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Marcus,
+
+Sorry for the slow reply.
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Monday.
+
+Hank
+
+From hannah.kowalczyk@brightwater.example Thu Feb 26 09:20:00 2026
+From: "Hannah Kowalczyk" <hannah.kowalczyk@brightwater.example>
+To: frederik.mendelssohn@ostrander-it.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Printer by the kitchen
+Date: Thu, 26 Feb 2026 09:20:00 -0500
+Message-ID: <20260226092000.3767@brightwater.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Frederik,
+
+The printer by the kitchen jams on almost every second page this morning.
+
+Kind regards,
+Hannah Kowalczyk
+
+From hank.gibson@halvorsen.example Thu Feb 26 09:23:16 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the interface control doc numbers
+Date: Thu, 26 Feb 2026 09:23:16 -0500
+Message-ID: <20260226092316.1367@halvorsen.example>
+In-Reply-To: <20260225175903.8606@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Sorry for the slow reply.
+Monday works, I will send an invite.
+
+Hank
+
+From orders@mercer-machining.example Thu Feb 26 09:29:29 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: marcus.bell@halvorsen.example
+Subject: Order 3271 shipped
+Date: Thu, 26 Feb 2026 09:29:29 -0500
+Message-ID: <20260226092929.19ba@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Marcus,
+
+Your order 3271 (3 machined brackets, 6061-T6) shipped today.
+Expected delivery: Tuesday.
+Inspection report is in the packing slip envelope.
+
+Kind regards,
+Mercer Machining Orders
+
+From ravi.castellanos@jrr-facilities.example Thu Feb 26 10:00:00 2026
+From: "Ravi Castellanos" <ravi.castellanos@jrr-facilities.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Thermostat calibration and weekend inspection
+Date: Thu, 26 Feb 2026 10:00:00 -0500
+Message-ID: <20260226100000.21b8@jrr-facilities.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear tenants,
+
+Thermostat calibration on air handler 2: Friday 27 February, 07:00 to 08:00 (WO-3104).
+Belt inspection on air handler 1: Saturday 28 February, 10:00 to 12:00 (WO-3108).
+Temperatures may vary a little during the work. Thank you for your patience with the cold rooms this week.
+
+Ravi Castellanos
+JRR Building Facilities
+
+From frederik.mendelssohn@ostrander-it.example Thu Feb 26 10:05:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: hannah.kowalczyk@brightwater.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Printer by the kitchen
+Date: Thu, 26 Feb 2026 10:05:00 -0500
+Message-ID: <20260226100500.ef81@ostrander-it.example>
+In-Reply-To: <20260226092000.3767@brightwater.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hannah,
+
+Thanks. The copier vendor is booked for Friday 15:00 under WO-3106 (service and drum replacement).
+Until then please use the printer in the lounge.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From mateo.silva@lumenpolicy.example Thu Feb 26 10:22:16 2026
+From: "Mateo Silva" <mateo.silva@lumenpolicy.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Meeting room request for Monday
+Date: Thu, 26 Feb 2026 10:22:16 -0500
+Message-ID: <20260226102216.8966@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Quick favour: could Lumen Policy Group use your meeting room on Monday around 9:00 for an hour?
+Ours is being used for interviews all day.
+
+Best regards,
+Mateo Silva
+Lumen Policy Group
+
+From sofia.marchetti@halvorsen.example Thu Feb 26 10:43:09 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: mateo.silva@lumenpolicy.example
+Subject: Re: Meeting room request for Monday
+Date: Thu, 26 Feb 2026 10:43:09 -0500
+Message-ID: <20260226104309.7219@halvorsen.example>
+In-Reply-To: <20260226102216.8966@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Mateo,
+
+Unfortunately Monday is busy for us, but Wednesday at 9:00 would work.
+Let me know if that helps, otherwise the lounge is usually quiet in the morning.
+
+Thanks,
+Sofia
+
+From events@jrr-aisummit.example Thu Feb 26 11:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit 2026: the full agenda is online
+Date: Thu, 26 Feb 2026 11:00:00 -0500
+Message-ID: <20260226110000.e0b9@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+The full agenda for next week is now online.
+Highlights include sessions on autonomy in orbit, safety cases for ML and an AI policy panel with Lumen Policy Group.
+Please register by Friday so we can plan catering.
+
+The JRR AI Summit team
+
+From mateo.silva@lumenpolicy.example Thu Feb 26 11:18:32 2026
+From: "Mateo Silva" <mateo.silva@lumenpolicy.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Meeting room request for Monday
+Date: Thu, 26 Feb 2026 11:18:32 -0500
+Message-ID: <20260226111832.92c9@lumenpolicy.example>
+In-Reply-To: <20260226104309.7219@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Sofia,
+
+Wednesday works for us, thank you for being flexible.
+
+Best regards,
+Mateo Silva
+Lumen Policy Group
+
+From leila.haddad@halvorsen.example Thu Feb 26 12:45:56 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: mounting plate redesign review (Friday)
+Date: Thu, 26 Feb 2026 12:45:56 -0500
+Message-ID: <20260226124556.174c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Booking the mounting plate redesign review for Friday at 13:30.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Best,
+Leila
+
+From chloe.adeyemi@lumenpolicy.example Thu Feb 26 13:40:25 2026
+From: "Chloe Adeyemi" <chloe.adeyemi@lumenpolicy.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Meeting room request for Friday
+Date: Thu, 26 Feb 2026 13:40:25 -0500
+Message-ID: <20260226134025.29e8@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Quick favour: could Lumen Policy Group use your meeting room on Friday around 11:30 for an hour?
+Ours is being used for interviews all day.
+
+Cheers,
+Chloe
+
+From maggie.price@halvorsen.example Thu Feb 26 14:01:47 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: mounting plate redesign review (Friday)
+Date: Thu, 26 Feb 2026 14:01:47 -0500
+Message-ID: <20260226140147.94fe@halvorsen.example>
+In-Reply-To: <20260226124556.174c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Leila!
+
+Accepted. Could we have 15 minutes for the test plan? It has grown.
+
+Thanks so much!
+Maggie
+
+From sofia.marchetti@halvorsen.example Thu Feb 26 14:55:53 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: chloe.adeyemi@lumenpolicy.example
+Subject: Re: Meeting room request for Friday
+Date: Thu, 26 Feb 2026 14:55:53 -0500
+Message-ID: <20260226145553.42d9@halvorsen.example>
+In-Reply-To: <20260226134025.29e8@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Chloe,
+
+Unfortunately Friday is busy for us, but Wednesday at 11:30 would work.
+Let me know if that helps, otherwise the lounge is usually quiet in the morning.
+
+Best,
+Sofia
+
+From chloe.adeyemi@lumenpolicy.example Thu Feb 26 15:02:52 2026
+From: "Chloe Adeyemi" <chloe.adeyemi@lumenpolicy.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Meeting room request for Friday
+Date: Thu, 26 Feb 2026 15:02:52 -0500
+Message-ID: <20260226150252.e6f3@lumenpolicy.example>
+In-Reply-To: <20260226145553.42d9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Wednesday works for us, thank you for being flexible.
+
+Cheers,
+Chloe
+
+From owen.achterberg@quillfeather.example Thu Feb 26 15:10:00 2026
+From: "Owen Achterberg" <owen.achterberg@quillfeather.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Shared kitchen fridge clean-out on Friday
+Date: Thu, 26 Feb 2026 15:10:00 -0500
+Message-ID: <20260226151000.fb38@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The shared kitchen fridge will be cleaned out on Friday at 15:00.
+Anything without a name and date goes, including the mystery jar on the top shelf.
+
+Kind regards,
+Owen Achterberg
+
+From leila.haddad@halvorsen.example Thu Feb 26 15:17:10 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: maggie.price@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: mounting plate redesign review (Friday)
+Date: Thu, 26 Feb 2026 15:17:10 -0500
+Message-ID: <20260226151710.d1a2@halvorsen.example>
+In-Reply-To: <20260226140147.94fe@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Maggie,
+
+Fine, 15 minutes for the test plan.
+
+Thanks,
+Leila
+
+From leila.haddad@halvorsen.example Thu Feb 26 15:21:58 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: nozzle thermal model review (Monday)
+Date: Thu, 26 Feb 2026 15:21:58 -0500
+Message-ID: <20260226152158.ab42@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Booking the nozzle thermal model review for Monday at 13:15.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Thanks,
+Leila
+
+From jonah.feld@halvorsen.example Thu Feb 26 15:48:36 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: thermal vacuum checklist sync
+Date: Thu, 26 Feb 2026 15:48:36 -0500
+Message-ID: <20260226154836.5f90@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Notes from today's thermal vacuum checklist sync:
+- agreed to freeze the interface on Monday
+- Marcus to update the telemetry parser by end of week
+- open question on test fixtures, parked for now
+
+thx
+Jonah
+
+From hank.gibson@halvorsen.example Thu Feb 26 15:59:11 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Sensor calibration script sync notes and actions
+Date: Thu, 26 Feb 2026 15:59:11 -0500
+Message-ID: <20260226155911.b430@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+All,
+
+Short notes from the sensor calibration script sync:
+- design is ok to move forward
+- 6 action items, owners in the tracker
+- next sync Tuesday at 13:30
+
+H.
+
+From maggie.price@halvorsen.example Thu Feb 26 16:11:48 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Sensor calibration script sync notes and actions
+Date: Thu, 26 Feb 2026 16:11:48 -0500
+Message-ID: <20260226161148.4937@halvorsen.example>
+In-Reply-To: <20260226155911.b430@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank!
+
+One correction: the fixture question is mine, not parked.
+
+xx
+Maggie
+
+From amara.okonkwo@halvorsen.example Thu Feb 26 16:41:35 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: rina.okafor@halvorsen.example
+Subject: Calibration before the valve timing sweep test
+Date: Thu, 26 Feb 2026 16:41:35 -0500
+Message-ID: <20260226164135.2fd7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Rina,
+
+Is there a slot this week for a calibration check on the pressure transducers?
+I would like to run the valve timing sweep test on Wednesday.
+
+Thanks!
+Amara
+
+From marcus.bell@halvorsen.example Thu Feb 26 20:00:00 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: owen.achterberg@quillfeather.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Shared kitchen fridge clean-out on Friday
+Date: Thu, 26 Feb 2026 20:00:00 -0500
+Message-ID: <20260226200000.888a@halvorsen.example>
+In-Reply-To: <20260226151000.fb38@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Owen,
+
+the mystery jar is mine, it is pickles and it is fine. labeling it now
+
+Cheers,
+Marcus
+
+From marcus.bell@halvorsen.example Fri Feb 27 09:15:20 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: thermal vacuum checklist sync
+Date: Fri, 27 Feb 2026 09:15:20 -0500
+Message-ID: <20260227091520.3d8b@halvorsen.example>
+In-Reply-To: <20260226154836.5f90@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Jonah,
+
+Sorry for the slow reply.
+One correction: the fixture question is mine, not parked.
+
+Marcus
+
+From rina.okafor@halvorsen.example Fri Feb 27 09:17:08 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Calibration before the valve timing sweep test
+Date: Fri, 27 Feb 2026 09:17:08 -0500
+Message-ID: <20260227091708.2b19@halvorsen.example>
+In-Reply-To: <20260226164135.2fd7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Sorry for the slow reply.
+I can do the transducer check on Friday morning.
+Leave them on the shelf with a tag and I will pick them up.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From marcus.bell@halvorsen.example Fri Feb 27 09:21:46 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Re-check on the flight software unit tests numbers
+Date: Fri, 27 Feb 2026 09:21:46 -0500
+Message-ID: <20260227092146.dca9@halvorsen.example>
+In-Reply-To: <20260226091112.aa04@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Sorry for the slow reply.
+Monday works, I will send an invite.
+
+Cheers,
+Marcus
+
+From marcus.bell@halvorsen.example Fri Feb 27 09:25:44 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: orders@mercer-machining.example
+Subject: Re: Order 3271 shipped
+Date: Fri, 27 Feb 2026 09:25:44 -0500
+Message-ID: <20260227092544.f6be@halvorsen.example>
+In-Reply-To: <20260226092929.19ba@mercer-machining.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Sorry for the slow reply.
+Thanks, please send the inspection report by email as well.
+
+Cheers,
+Marcus
+
+From marcus.bell@halvorsen.example Fri Feb 27 09:26:31 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: nozzle thermal model review (Monday)
+Date: Fri, 27 Feb 2026 09:26:31 -0500
+Message-ID: <20260227092631.b9d3@halvorsen.example>
+In-Reply-To: <20260226152158.ab42@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Leila,
+
+Sorry for the slow reply.
+Works for me, slides by tomorrow.
+
+Marcus
+
+From sofia.marchetti@halvorsen.example Fri Feb 27 09:30:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 09:30:00 -0500
+Message-ID: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Please reply with your weekly update by 16:00: done, next, blockers.
+Two or three bullets each is plenty.
+
+Thanks,
+Sofia
+
+From alma.imhoff@halvorsen.example Fri Feb 27 09:40:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Visitors during summit week
+Date: Fri, 27 Feb 2026 09:40:00 -0500
+Message-ID: <20260227094000.b40a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear colleagues,
+
+During the AI Summit (2 to 6 March) the floor will have many visitors.
+Please make sure that your visitors sign in at the front desk and are accompanied in the Halvorsen suite at all times.
+Please keep the door to 217 closed, and do not let people you do not know follow you into the suite.
+Secure rooms remain restricted to authorised staff.
+
+Regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From sofia.marchetti@halvorsen.example Fri Feb 27 10:05:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: alma.imhoff@halvorsen.example
+Subject: Re: Visitors during summit week
+Date: Fri, 27 Feb 2026 10:05:00 -0500
+Message-ID: <20260227100500.33db@halvorsen.example>
+In-Reply-To: <20260227094000.b40a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Alma,
+
+Thanks Alma, I will repeat this at standup on Monday.
+
+Best,
+Sofia
+
+From hank.gibson@halvorsen.example Fri Feb 27 10:07:16 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: events@jrr-aisummit.example
+Subject: Question about summit registration
+Date: Fri, 27 Feb 2026 10:07:16 -0500
+Message-ID: <20260227100716.dc09@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Can colleagues from our other office register with the floor member code?
+
+H.
+
+From theo.lindqvist@halvorsen.example Fri Feb 27 10:10:00 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 10:10:00 -0500
+Message-ID: <20260227101000.3186@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sofia,
+
+Done:
+- mass budget sheet: blocked on parts, expected Tuesday
+- nozzle thermal model: started
+Next:
+- thermal vacuum checklist
+Blockers: waiting on machine shop parts
+
+Theo
+
+From amara.okonkwo@halvorsen.example Fri Feb 27 10:29:00 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 10:29:00 -0500
+Message-ID: <20260227102900.ea3b@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia!
+
+Done:
+- test report template: done, in review
+- nozzle thermal model: slipped a few days, new date Wednesday
+Next:
+- test stand DAQ config
+Blockers: none
+
+Cheers,
+Amara
+
+From leila.haddad@halvorsen.example Fri Feb 27 10:41:52 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: nozzle thermal model review (Monday)
+Date: Fri, 27 Feb 2026 10:41:52 -0500
+Message-ID: <20260227104152.6b31@halvorsen.example>
+In-Reply-To: <20260227092631.b9d3@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Thanks Marcus.
+
+Thanks,
+Leila
+
+From events@jrr-aisummit.example Fri Feb 27 10:54:16 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Question about summit registration
+Date: Fri, 27 Feb 2026 10:54:16 -0500
+Message-ID: <20260227105416.86e5@jrr-aisummit.example>
+In-Reply-To: <20260227100716.dc09@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Thank you for your question. The member code covers people who work on the JRR second floor only.
+Others can register as guests on the summit site.
+
+Kind regards,
+JRR AI Summit
+
+From orders@mercer-machining.example Fri Feb 27 10:56:44 2026
+From: "Mercer Machining Orders" <orders@mercer-machining.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Order 3271 shipped
+Date: Fri, 27 Feb 2026 10:56:44 -0500
+Message-ID: <20260227105644.1dc6@mercer-machining.example>
+In-Reply-To: <20260227092544.f6be@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Marcus,
+
+Sent separately, thank you.
+
+Best regards,
+Mercer Machining Orders
+
+From jonah.feld@halvorsen.example Fri Feb 27 11:14:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 11:14:00 -0500
+Message-ID: <20260227111400.484f@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia,
+
+Done:
+- feed line sizing: ready for review
+- requirements matrix: merged
+Next:
+- power budget
+Blockers: none
+
+thx
+Jonah
+
+From owen.achterberg@quillfeather.example Fri Feb 27 11:21:28 2026
+From: "Owen Achterberg" <owen.achterberg@quillfeather.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Borrowing the 217 meeting room on Monday
+Date: Fri, 27 Feb 2026 11:21:28 -0500
+Message-ID: <20260227112128.3d4b@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Would it be possible for us to borrow the small meeting room in 217 on Monday from 14:30 to 16:00?
+Our own room is booked out with summit prep and we have a call with partners that afternoon.
+Happy to work around your schedule.
+
+Best regards,
+Owen Achterberg
+Quillfeather Bio
+
+From yara.mansour@quillfeather.example Fri Feb 27 11:21:59 2026
+From: "Yara Mansour" <yara.mansour@quillfeather.example>
+To: hank.gibson@halvorsen.example
+Subject: Shared whiteboard in the lounge
+Date: Fri, 27 Feb 2026 11:21:59 -0500
+Message-ID: <20260227112159.4d7d@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Hank,
+
+Hi from Quillfeather Bio next door.
+Is the diagram on the lounge whiteboard yours? We would like to use the board on Wednesday.
+Happy to take a photo of it for you first.
+
+Best regards,
+Yara Mansour
+Quillfeather Bio
+
+From marcus.bell@halvorsen.example Fri Feb 27 11:26:00 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 11:26:00 -0500
+Message-ID: <20260227112600.c173@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia,
+
+Done:
+- flight software unit tests: blocked on parts, expected Tuesday
+- bracket FEA: ready for review
+Next:
+- feed line sizing
+Blockers: waiting on machine shop parts
+
+Marcus
+
+From maggie.price@halvorsen.example Fri Feb 27 11:32:12 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, marcus.bell@halvorsen.example
+Subject: Re: Invitation: nozzle thermal model review (Monday)
+Date: Fri, 27 Feb 2026 11:32:12 -0500
+Message-ID: <20260227113212.dbc2@halvorsen.example>
+In-Reply-To: <20260227104152.6b31@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Leila!
+
+Thanks, that works for me too.
+
+Cheers!
+Maggie
+
+From sofia.marchetti@halvorsen.example Fri Feb 27 11:41:38 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: owen.achterberg@quillfeather.example
+Subject: Re: Borrowing the 217 meeting room on Monday
+Date: Fri, 27 Feb 2026 11:41:38 -0500
+Message-ID: <20260227114138.2155@halvorsen.example>
+In-Reply-To: <20260227112128.3d4b@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Owen,
+
+Of course, the room is free Monday from 14:30 to 16:00.
+I have put Quillfeather Bio on the booking sheet by the door.
+Please leave the whiteboard clean afterwards.
+
+Thanks,
+Sofia
+
+From maggie.price@halvorsen.example Fri Feb 27 12:14:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 12:14:00 -0500
+Message-ID: <20260227121400.045d@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia!
+
+Done:
+- feed line sizing: waiting for test data
+- flight software unit tests: on track
+Next:
+- test report template
+Blockers: waiting on machine shop parts
+
+xx
+Maggie
+
+From lena.vogel@brightwater.example Fri Feb 27 12:26:49 2026
+From: "Lena Vogel" <lena.vogel@brightwater.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Coffee during summit week?
+Date: Fri, 27 Feb 2026 12:26:49 -0500
+Message-ID: <20260227122649.d7ae@brightwater.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+We met briefly at the floor social in January.
+Brightwater Analytics is showing a small demo at the summit and I would love your opinion on the test setup.
+Would a coffee on Wednesday at 10:30 work?
+
+Best regards,
+Lena Vogel
+Brightwater Analytics
+
+From hank.gibson@halvorsen.example Fri Feb 27 12:29:00 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 12:29:00 -0500
+Message-ID: <20260227122900.14a1@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sofia,
+
+Done: vibration test plan, first draft shared.
+Next: test stand DAQ config.
+
+H.
+
+From owen.achterberg@quillfeather.example Fri Feb 27 12:57:31 2026
+From: "Owen Achterberg" <owen.achterberg@quillfeather.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Borrowing the 217 meeting room on Monday
+Date: Fri, 27 Feb 2026 12:57:31 -0500
+Message-ID: <20260227125731.f608@quillfeather.example>
+In-Reply-To: <20260227114138.2155@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Perfect, thank you very much.
+We will keep it tidy.
+
+Best regards,
+Owen Achterberg
+Quillfeather Bio
+
+From sofia.marchetti@halvorsen.example Fri Feb 27 13:04:29 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: events@jrr-aisummit.example
+Subject: Summit session capacity
+Date: Fri, 27 Feb 2026 13:04:29 -0500
+Message-ID: <20260227130429.585b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Is there a capacity limit for the autonomy in orbit session? Several of us would like to attend.
+
+Best,
+Sofia
+
+From rina.okafor@halvorsen.example Fri Feb 27 13:10:00 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 13:10:00 -0500
+Message-ID: <20260227131000.9ebf@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Done:
+- fixture drawings: blocked on parts, expected Tuesday
+- power budget: ready for review
+Next:
+- flight software unit tests
+Blockers: none
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From leila.haddad@halvorsen.example Fri Feb 27 13:28:00 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 27 February
+Date: Fri, 27 Feb 2026 13:28:00 -0500
+Message-ID: <20260227132800.aca1@halvorsen.example>
+In-Reply-To: <20260227093000.07e5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Done:
+- pressure transducer drift: started
+- test report template: done, in review
+Next:
+- mass budget sheet
+Blockers: none
+
+Thanks,
+Leila
+
+From hank.gibson@halvorsen.example Fri Feb 27 14:02:34 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: yara.mansour@quillfeather.example
+Subject: Re: Shared whiteboard in the lounge
+Date: Fri, 27 Feb 2026 14:02:34 -0500
+Message-ID: <20260227140234.fe73@halvorsen.example>
+In-Reply-To: <20260227112159.4d7d@quillfeather.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Yara,
+
+Yes, that is ours, sorry. I will wipe it this afternoon.
+
+H.
+
+From yara.mansour@quillfeather.example Fri Feb 27 14:09:25 2026
+From: "Yara Mansour" <yara.mansour@quillfeather.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Shared whiteboard in the lounge
+Date: Fri, 27 Feb 2026 14:09:25 -0500
+Message-ID: <20260227140925.a4c6@quillfeather.example>
+In-Reply-To: <20260227140234.fe73@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Hank,
+
+Thanks, much appreciated.
+
+Kind regards,
+Yara Mansour
+
+From theo.lindqvist@halvorsen.example Fri Feb 27 15:07:25 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: lena.vogel@brightwater.example
+Subject: Re: Coffee during summit week?
+Date: Fri, 27 Feb 2026 15:07:25 -0500
+Message-ID: <20260227150725.0203@halvorsen.example>
+In-Reply-To: <20260227122649.d7ae@brightwater.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Lena,
+
+Happy to. Wednesday at 10:30 in the lounge works.
+
+Theo
+
+From events@jrr-aisummit.example Fri Feb 27 15:11:29 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Summit session capacity
+Date: Fri, 27 Feb 2026 15:11:29 -0500
+Message-ID: <20260227151129.a198@jrr-aisummit.example>
+In-Reply-To: <20260227130429.585b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Sofia,
+
+Thank you for your interest. The autonomy in orbit session has 120 seats, first come first served.
+We recommend arriving ten minutes early.
+
+Best regards,
+JRR AI Summit
+
+From marcus.bell@halvorsen.example Fri Feb 27 15:12:45 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Thermal vacuum checklist: quick check
+Date: Fri, 27 Feb 2026 15:12:45 -0500
+Message-ID: <20260227151245.7299@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Do you still have the input files for the thermal vacuum checklist?
+I want to rerun case 8 with the new boundary conditions.
+
+Cheers,
+Marcus
+
+From aisha.bello@corvane.example Fri Feb 27 15:16:48 2026
+From: "Aisha Bello" <aisha.bello@corvane.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Borrowing the 217 meeting room on Tuesday
+Date: Fri, 27 Feb 2026 15:16:48 -0500
+Message-ID: <20260227151648.1c73@corvane.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Would it be possible for us to borrow the small meeting room in 217 on Tuesday from 14:30 to 16:00?
+Our own room is booked out with summit prep and we have a call with partners that afternoon.
+Happy to work around your schedule.
+
+Kind regards,
+Aisha Bello
+
+From amara.okonkwo@halvorsen.example Fri Feb 27 15:19:09 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Thermal vacuum checklist: quick check
+Date: Fri, 27 Feb 2026 15:19:09 -0500
+Message-ID: <20260227151909.99ce@halvorsen.example>
+In-Reply-To: <20260227151245.7299@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+They are in the team folder under runs, next to the test stand DAQ config files.
+Case 8 needs the updated material card too, it is in the same place.
+
+Cheers,
+Amara
+
+From lena.vogel@brightwater.example Fri Feb 27 15:20:01 2026
+From: "Lena Vogel" <lena.vogel@brightwater.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Coffee during summit week?
+Date: Fri, 27 Feb 2026 15:20:01 -0500
+Message-ID: <20260227152001.9fcc@brightwater.example>
+In-Reply-To: <20260227150725.0203@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Great, see you then.
+
+Kind regards,
+Lena Vogel
+
+From sofia.marchetti@halvorsen.example Fri Feb 27 15:23:39 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: aisha.bello@corvane.example
+Subject: Re: Borrowing the 217 meeting room on Tuesday
+Date: Fri, 27 Feb 2026 15:23:39 -0500
+Message-ID: <20260227152339.ae57@halvorsen.example>
+In-Reply-To: <20260227151648.1c73@corvane.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Aisha,
+
+Of course, the room is free Tuesday from 14:30 to 16:00.
+I have put Corvane Labs on the booking sheet by the door.
+Please leave the whiteboard clean afterwards.
+
+Best,
+Sofia
+
+From maggie.price@halvorsen.example Fri Feb 27 15:24:36 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re-check on the nozzle thermal model numbers
+Date: Fri, 27 Feb 2026 15:24:36 -0500
+Message-ID: <20260227152436.a11a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank!
+
+I went through the nozzle thermal model again and I think the margin on item 4 is too thin.
+Could you take a look when you have a moment?
+
+Cheers!
+Maggie
+
+From hank.gibson@halvorsen.example Fri Feb 27 15:59:41 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the nozzle thermal model numbers
+Date: Fri, 27 Feb 2026 15:59:41 -0500
+Message-ID: <20260227155941.0cd9@halvorsen.example>
+In-Reply-To: <20260227152436.a11a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Tuesday.
+
+H.
+
+From maggie.price@halvorsen.example Fri Feb 27 16:12:24 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Re-check on the nozzle thermal model numbers
+Date: Fri, 27 Feb 2026 16:12:24 -0500
+Message-ID: <20260227161224.ad4c@halvorsen.example>
+In-Reply-To: <20260227155941.0cd9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank!
+
+Tuesday works, I will send an invite.
+
+xx
+Maggie
+
+From aisha.bello@corvane.example Fri Feb 27 17:13:56 2026
+From: "Aisha Bello" <aisha.bello@corvane.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Borrowing the 217 meeting room on Tuesday
+Date: Fri, 27 Feb 2026 17:13:56 -0500
+Message-ID: <20260227171356.572f@corvane.example>
+In-Reply-To: <20260227152339.ae57@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Sofia,
+
+Perfect, thank you very much.
+We will keep it tidy.
+
+Kind regards,
+Aisha Bello
+
+From marcus.bell@halvorsen.example Sat Feb 28 11:58:54 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Thermal vacuum checklist: quick check
+Date: Sat, 28 Feb 2026 11:58:54 -0500
+Message-ID: <20260228115854.4867@halvorsen.example>
+In-Reply-To: <20260227151909.99ce@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Amara,
+
+Sorry for the slow reply.
+Found them, thanks. Rerunning now.
+
+Marcus
+
+From amara.okonkwo@halvorsen.example Sat Feb 28 12:48:11 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re-check on the pressure transducer drift numbers
+Date: Sat, 28 Feb 2026 12:48:11 -0500
+Message-ID: <20260228124811.d9f9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+I went through the pressure transducer drift again and I think the margin on item 3 is too thin.
+Could you take a look when you have a moment?
+
+Cheers,
+Amara
+
+From theo.lindqvist@halvorsen.example Sun Mar  1 11:01:12 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Re-check on the pressure transducer drift numbers
+Date: Sun, 01 Mar 2026 11:01:12 -0500
+Message-ID: <20260301110112.9648@halvorsen.example>
+In-Reply-To: <20260228124811.d9f9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Sorry for the slow reply.
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Wednesday.
+
+Theo
+
+From theo.lindqvist@halvorsen.example Sun Mar  1 12:58:30 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Nozzle thermal model: quick check
+Date: Sun, 01 Mar 2026 12:58:30 -0500
+Message-ID: <20260301125830.3b97@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Do you still have the input files for the nozzle thermal model?
+I want to rerun case 9 with the new boundary conditions.
+
+Theo
+
+From maggie.price@halvorsen.example Sun Mar  1 13:10:53 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Nozzle thermal model: quick check
+Date: Sun, 01 Mar 2026 13:10:53 -0500
+Message-ID: <20260301131053.a91d@halvorsen.example>
+In-Reply-To: <20260301125830.3b97@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+They are in the team folder under runs, next to the fixture drawings files.
+Case 9 needs the updated material card too, it is in the same place.
+
+Thanks so much!
+Maggie
+
+From events@jrr-aisummit.example Sun Mar  1 18:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: See you tomorrow: AI Summit week starts
+Date: Sun, 01 Mar 2026 18:00:00 -0500
+Message-ID: <20260301180000.db92@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+The AI Summit starts tomorrow at 09:30 with the opening keynote in the auditorium.
+Name tags can be collected at the registration desk on the ground floor from 08:30.
+
+The JRR AI Summit team
+
+From events@jrr-aisummit.example Mon Mar  2 07:30:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit day 1: today's programme
+Date: Mon, 02 Mar 2026 07:30:00 -0500
+Message-ID: <20260302073000.e020@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning,
+
+Today: opening keynote at 10:00, autonomy in orbit at 14:00, poster session from 16:00.
+Coffee and lunch are served in the lounge on the second floor.
+
+The JRR AI Summit team
+
+From frederik.mendelssohn@ostrander-it.example Mon Mar  2 08:35:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Planned IT work on the 2nd floor this week
+Date: Mon, 02 Mar 2026 08:35:00 -0500
+Message-ID: <20260302083500.f732@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Planned IT work this week:
+- Mon 22:00-22:40, WO-3111: firmware upgrade on access point ap-2-04
+- Wed 07:00-07:30, WO-3115: printer paper feed repair (copier vendor)
+- Wed 19:00-21:30, WO-3117: monthly security patching on the Halvorsen lab laptop lt-219 (offline media)
+- Thu 22:00-22:40, WO-3120: firmware upgrade on access point ap-2-05
+- Sun 22:00-22:40, WO-3128: firmware upgrade on access point ap-2-06
+Summit week means more guests on the guest network. Please use JRR2-SECURE for work devices.
+
+Frederik
+Ostrander IT
+
+From sofia.marchetti@halvorsen.example Mon Mar  2 08:55:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Week of 2 March
+Date: Mon, 02 Mar 2026 08:55:00 -0500
+Message-ID: <20260302085500.234f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Priorities for summit week:
+- keep the review schedule, sessions are optional
+- handover from Hank, Leila is coordinating
+- weekly updates on Friday as usual
+
+Best,
+Sofia
+
+From ravi.castellanos@jrr-facilities.example Mon Mar  2 09:00:00 2026
+From: "Ravi Castellanos" <ravi.castellanos@jrr-facilities.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Lounge AV setup for summit week
+Date: Mon, 02 Mar 2026 09:00:00 -0500
+Message-ID: <20260302090000.48b7@jrr-facilities.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear tenants,
+
+The second-floor lounge will be busy on Tuesday 3 March from 09:00 to 10:30 while we set up AV for the summit (WO-3113).
+
+Ravi Castellanos
+JRR Building Facilities
+
+From hank.gibson@halvorsen.example Mon Mar  2 09:12:00 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: sofia.marchetti@halvorsen.example, alma.imhoff@halvorsen.example
+Subject: Resignation
+Date: Mon, 02 Mar 2026 09:12:00 -0500
+Message-ID: <20260302091200.4f1a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sofia, Alma,
+
+Please accept this as formal notice of my resignation from Halvorsen Dynamics, effective today.
+My last working day will be Friday 6 March so that I can hand over my work.
+I will put the handover notes in the engineering folder.
+
+Hank
+
+From theo.lindqvist@halvorsen.example Mon Mar  2 09:22:48 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Nozzle thermal model: quick check
+Date: Mon, 02 Mar 2026 09:22:48 -0500
+Message-ID: <20260302092248.7e50@halvorsen.example>
+In-Reply-To: <20260301131053.a91d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Sorry for the slow reply.
+Found them, thanks. Rerunning now.
+
+Theo
+
+From sofia.marchetti@halvorsen.example Mon Mar  2 09:48:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: alma.imhoff@halvorsen.example
+Subject: Re: Resignation
+Date: Mon, 02 Mar 2026 09:48:00 -0500
+Message-ID: <20260302094800.f3e0@halvorsen.example>
+In-Reply-To: <20260302091200.4f1a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Thank you for telling me in person this morning, and for the note.
+I am sorry to see you go, but I understand. Let's use the week for a proper handover, with the test stand scripts first.
+I will tell the team later this morning.
+
+Best,
+Sofia
+
+From grace.tanaka@tessaract.example Mon Mar  2 09:50:00 2026
+From: "Grace Tanaka" <grace.tanaka@tessaract.example>
+To: frederik.mendelssohn@ostrander-it.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Planned IT work on the 2nd floor this week
+Date: Mon, 02 Mar 2026 09:50:00 -0500
+Message-ID: <20260302095000.61bd@tessaract.example>
+In-Reply-To: <20260302083500.f732@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik,
+
+Thanks Frederik. Could the guest network handle our demo robot on Tuesday? It streams video.
+
+Cheers,
+Grace
+
+From amara.okonkwo@halvorsen.example Mon Mar  2 09:51:37 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Re-check on the pressure transducer drift numbers
+Date: Mon, 02 Mar 2026 09:51:37 -0500
+Message-ID: <20260302095137.b425@halvorsen.example>
+In-Reply-To: <20260301110112.9648@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+Sorry for the slow reply.
+Wednesday works, I will send an invite.
+
+Thanks!
+Amara
+
+From amara.okonkwo@halvorsen.example Mon Mar  2 09:57:43 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Thermal vacuum checklist: quick check
+Date: Mon, 02 Mar 2026 09:57:43 -0500
+Message-ID: <20260302095743.d668@halvorsen.example>
+In-Reply-To: <20260228115854.4867@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Sorry for the slow reply.
+Shout if anything looks odd.
+
+Cheers,
+Amara
+
+From alma.imhoff@halvorsen.example Mon Mar  2 10:20:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: sofia.marchetti@halvorsen.example
+Subject: Re: Resignation
+Date: Mon, 02 Mar 2026 10:20:00 -0500
+Message-ID: <20260302102000.c291@halvorsen.example>
+In-Reply-To: <20260302094800.f3e0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Hank,
+
+Thank you for your notice.
+As part of standard offboarding, your access to room 219 will be removed at 17:00 today.
+Your access to the 217 suite and your accounts remain active until the end of Friday 6 March for the handover.
+Please return your laptop and any other Halvorsen equipment to me on Friday afternoon.
+
+Regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From amara.okonkwo@halvorsen.example Mon Mar  2 10:32:55 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Projector in the 217 meeting room
+Date: Mon, 02 Mar 2026 10:32:55 -0500
+Message-ID: <20260302103255.3ad6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik,
+
+The projector in the 217 meeting room shows no signal from the wall port.
+
+Thanks!
+Amara
+
+From frederik.mendelssohn@ostrander-it.example Mon Mar  2 10:35:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: grace.tanaka@tessaract.example
+Cc: jrr2-tenants@ostrander-it.example
+Subject: Re: Planned IT work on the 2nd floor this week
+Date: Mon, 02 Mar 2026 10:35:00 -0500
+Message-ID: <20260302103500.5144@ostrander-it.example>
+In-Reply-To: <20260302095000.61bd@tessaract.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+It should, but please plug the robot into the lounge ethernet port to be safe. Logged as INC-2241.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From hank.gibson@halvorsen.example Mon Mar  2 10:41:00 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: alma.imhoff@halvorsen.example
+Cc: sofia.marchetti@halvorsen.example
+Subject: Re: Resignation
+Date: Mon, 02 Mar 2026 10:41:00 -0500
+Message-ID: <20260302104100.f5b3@halvorsen.example>
+In-Reply-To: <20260302102000.c291@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Alma,
+
+Understood.
+
+H.
+
+From sofia.marchetti@halvorsen.example Mon Mar  2 11:30:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Team news
+Date: Mon, 02 Mar 2026 11:30:00 -0500
+Message-ID: <20260302113000.15fc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+I wanted to let you know that Hank has resigned. His last day with us will be this Friday, 6 March.
+Hank has been part of Halvorsen for over four years and much of our test infrastructure was built by him.
+Please make time for handover where Leila asks for it, and join me in wishing him well.
+
+Thanks,
+Sofia
+
+From rina.okafor@halvorsen.example Mon Mar  2 12:05:00 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Team news
+Date: Mon, 02 Mar 2026 12:05:00 -0500
+Message-ID: <20260302120500.afa4@halvorsen.example>
+In-Reply-To: <20260302113000.15fc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Thanks Sofia. Hank, good luck with the next step, and thanks for all the help with the test bench.
+
+Thanks,
+Rina
+
+From frederik.mendelssohn@ostrander-it.example Mon Mar  2 12:22:55 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Projector in the 217 meeting room
+Date: Mon, 02 Mar 2026 12:22:55 -0500
+Message-ID: <20260302122255.753f@ostrander-it.example>
+In-Reply-To: <20260302103255.3ad6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Logged as INC-2244. The wall port needs a reset, I will do it on my next visit.
+The HDMI cable in the drawer works as a workaround.
+
+Frederik
+Ostrander IT
+
+From zoe.papadakis@lumenpolicy.example Mon Mar  2 12:33:32 2026
+From: "Zoe Papadakis" <zoe.papadakis@lumenpolicy.example>
+To: rina.okafor@halvorsen.example
+Subject: Lounge whiteboard
+Date: Mon, 02 Mar 2026 12:33:32 -0500
+Message-ID: <20260302123332.037d@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Rina,
+
+Hi from Lumen Policy Group next door.
+Is the diagram on the lounge whiteboard yours? We would like to use the board on Wednesday.
+Happy to take a photo of it for you first.
+
+Best regards,
+Zoe Papadakis
+Lumen Policy Group
+
+From leila.haddad@halvorsen.example Mon Mar  2 12:43:47 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: fixture drawings on Thursday at 13:30
+Date: Mon, 02 Mar 2026 12:43:47 -0500
+Message-ID: <20260302124347.44d0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The fixture drawings design review is on Thursday at 13:30 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Best,
+Leila
+
+From amara.okonkwo@halvorsen.example Mon Mar  2 12:43:58 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: bracket FEA sync
+Date: Mon, 02 Mar 2026 12:43:58 -0500
+Message-ID: <20260302124358.8e4c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Notes from today's bracket FEA sync:
+- agreed to freeze the interface on Tuesday
+- Jonah to update the test stand DAQ config by end of week
+- open question on test fixtures, parked for now
+
+Cheers,
+Amara
+
+From hank.gibson@halvorsen.example Mon Mar  2 12:55:50 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: fixture drawings on Thursday at 13:30
+Date: Mon, 02 Mar 2026 12:55:50 -0500
+Message-ID: <20260302125550.90d8@halvorsen.example>
+In-Reply-To: <20260302124347.44d0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+I have a conflict at 13:30, could we start at 14:30?
+
+Hank
+
+From rina.okafor@halvorsen.example Mon Mar  2 13:08:54 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: zoe.papadakis@lumenpolicy.example
+Subject: Re: Lounge whiteboard
+Date: Mon, 02 Mar 2026 13:08:54 -0500
+Message-ID: <20260302130854.8ec6@halvorsen.example>
+In-Reply-To: <20260302123332.037d@lumenpolicy.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Zoe,
+
+Not ours, I think it belongs to the people in 224. Go ahead and take a photo.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From leila.haddad@halvorsen.example Mon Mar  2 13:16:20 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: fixture drawings on Thursday at 13:30
+Date: Mon, 02 Mar 2026 13:16:20 -0500
+Message-ID: <20260302131620.d140@halvorsen.example>
+In-Reply-To: <20260302125550.90d8@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Moved to 14:30, updated invite to follow.
+
+Best,
+Leila
+
+From jonah.feld@halvorsen.example Mon Mar  2 13:19:47 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: bracket FEA sync
+Date: Mon, 02 Mar 2026 13:19:47 -0500
+Message-ID: <20260302131947.9f85@halvorsen.example>
+In-Reply-To: <20260302124358.8e4c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Thanks for writing this up.
+
+thx
+Jonah
+
+From leila.haddad@halvorsen.example Mon Mar  2 13:40:00 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Handover plan for Hank's work
+Date: Mon, 02 Mar 2026 13:40:00 -0500
+Message-ID: <20260302134000.5629@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+Handover sessions with Hank this week: Tuesday 14:00 and Thursday 14:00 in the meeting room.
+Theo takes the test stand scripts, Amara the valve timing sweep.
+Please add questions to the handover doc before the sessions.
+
+Best,
+Leila
+
+From leila.haddad@halvorsen.example Mon Mar  2 14:10:06 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: amara.okonkwo@halvorsen.example, halvorsen-eng@halvorsen.example
+Subject: Re: Notes: bracket FEA sync
+Date: Mon, 02 Mar 2026 14:10:06 -0500
+Message-ID: <20260302141006.5821@halvorsen.example>
+In-Reply-To: <20260302131947.9f85@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Jonah,
+
+Noted, I will move the review to after the freeze.
+
+Best,
+Leila
+
+From amara.okonkwo@halvorsen.example Mon Mar  2 14:12:59 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Re: Projector in the 217 meeting room
+Date: Mon, 02 Mar 2026 14:12:59 -0500
+Message-ID: <20260302141259.e9ee@halvorsen.example>
+In-Reply-To: <20260302122255.753f@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik!
+
+Thanks, using the spare for now.
+
+Cheers,
+Amara
+
+From maggie.price@halvorsen.example Mon Mar  2 15:07:42 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Bracket FEA: quick check
+Date: Mon, 02 Mar 2026 15:07:42 -0500
+Message-ID: <20260302150742.3935@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo!
+
+Do you still have the input files for the bracket FEA?
+I want to rerun case 3 with the new boundary conditions.
+
+Cheers!
+Maggie
+
+From theo.lindqvist@halvorsen.example Mon Mar  2 15:28:32 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Bracket FEA: quick check
+Date: Mon, 02 Mar 2026 15:28:32 -0500
+Message-ID: <20260302152832.90ed@halvorsen.example>
+In-Reply-To: <20260302150742.3935@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+They are in the team folder under runs, next to the vibration test plan files.
+Case 3 needs the updated material card too, it is in the same place.
+
+Theo
+
+From maggie.price@halvorsen.example Mon Mar  2 16:07:08 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Question about the test stand DAQ config
+Date: Mon, 02 Mar 2026 16:07:08 -0500
+Message-ID: <20260302160708.a69e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah!
+
+Before I send the test stand DAQ config to Leila, can you confirm we are using the revised load case?
+The numbers in my sheet are about 4 percent off from last week.
+
+xx
+Maggie
+
+From jonah.feld@halvorsen.example Mon Mar  2 16:19:38 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Question about the test stand DAQ config
+Date: Mon, 02 Mar 2026 16:19:38 -0500
+Message-ID: <20260302161938.cd42@halvorsen.example>
+In-Reply-To: <20260302160708.a69e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Yes, revised load case. The 4 percent is the new safety factor, that is expected.
+I added a note in the sheet so it does not confuse anyone else.
+
+Jonah
+
+From jonah.feld@halvorsen.example Mon Mar  2 16:43:36 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Summit expenses
+Date: Mon, 02 Mar 2026 16:43:36 -0500
+Message-ID: <20260302164336.5a4a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia,
+
+Can summit lunches be expensed or are they covered by the registration?
+
+thx
+Jonah
+
+From jonah.feld@halvorsen.example Mon Mar  2 16:54:30 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Notes from autonomy in orbit
+Date: Mon, 02 Mar 2026 16:54:30 -0500
+Message-ID: <20260302165430.e1dc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Short notes from autonomy in orbit for those who missed it:
+- the speakers showed a test lab that reruns every failed case automatically overnight
+- two open-source tools worth a look for our pressure transducer drift
+- slides should be on the summit site by tonight
+
+Jonah
+
+From sofia.marchetti@halvorsen.example Mon Mar  2 16:56:01 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Summit expenses
+Date: Mon, 02 Mar 2026 16:56:01 -0500
+Message-ID: <20260302165601.4598@halvorsen.example>
+In-Reply-To: <20260302164336.5a4a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Jonah,
+
+Lunch is included in the registration, so no expenses for those please.
+Dinners with partners need a note.
+
+Thanks,
+Sofia
+
+From events@jrr-aisummit.example Tue Mar  3 07:30:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit day 2: today's programme
+Date: Tue, 03 Mar 2026 07:30:00 -0500
+Message-ID: <20260303073000.12ed@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning,
+
+Today: LLMs for test automation at 10:30, edge inference on small satellites at 14:00.
+Coffee and lunch are served in the lounge on the second floor.
+
+The JRR AI Summit team
+
+From leila.haddad@halvorsen.example Tue Mar  3 09:26:16 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Notes from autonomy in orbit
+Date: Tue, 03 Mar 2026 09:26:16 -0500
+Message-ID: <20260303092616.e30d@halvorsen.example>
+In-Reply-To: <20260302165430.e1dc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Sorry for the slow reply.
+Thanks, the overnight rerun idea would help with the pressure transducer drift.
+
+Best,
+Leila
+
+From maggie.price@halvorsen.example Tue Mar  3 10:03:04 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Question about the test stand DAQ config
+Date: Tue, 03 Mar 2026 10:03:04 -0500
+Message-ID: <20260303100304.7eeb@halvorsen.example>
+In-Reply-To: <20260302161938.cd42@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Jonah!
+
+Sorry for the slow reply.
+Great, that explains it. Thanks.
+
+Thanks so much!
+Maggie
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 10:05:08 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Mass budget sheet: quick check
+Date: Tue, 03 Mar 2026 10:05:08 -0500
+Message-ID: <20260303100508.7b0a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Do you still have the input files for the mass budget sheet?
+I want to rerun case 7 with the new boundary conditions.
+
+Theo
+
+From maggie.price@halvorsen.example Tue Mar  3 10:16:54 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Bracket FEA: quick check
+Date: Tue, 03 Mar 2026 10:16:54 -0500
+Message-ID: <20260303101654.2706@halvorsen.example>
+In-Reply-To: <20260302152832.90ed@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo!
+
+Sorry for the slow reply.
+Found them, thanks. Rerunning now.
+
+Thanks so much!
+Maggie
+
+From maggie.price@halvorsen.example Tue Mar  3 10:20:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Printer jamming again
+Date: Tue, 03 Mar 2026 10:20:00 -0500
+Message-ID: <20260303102000.c3ac@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik!
+
+The kitchen printer is jamming again! Tray 2 this time, it ate half my handout for the summit poster :(
+
+Thanks so much!
+Maggie
+
+From jonah.feld@halvorsen.example Tue Mar  3 10:26:47 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Summit expenses
+Date: Tue, 03 Mar 2026 10:26:47 -0500
+Message-ID: <20260303102647.3864@halvorsen.example>
+In-Reply-To: <20260302165601.4598@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia,
+
+Sorry for the slow reply.
+Got it, thanks.
+
+thx
+Jonah
+
+From frederik.mendelssohn@ostrander-it.example Tue Mar  3 11:00:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Printer jamming again
+Date: Tue, 03 Mar 2026 11:00:00 -0500
+Message-ID: <20260303110000.70de@ostrander-it.example>
+In-Reply-To: <20260303102000.c3ac@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Thanks Maggie. The paper feed repair is booked for tomorrow 07:00 under WO-3115.
+The lounge printer works in the meantime.
+
+Regards,
+Frederik Mendelssohn
+Ostrander IT, floor IT support
+
+From maggie.price@halvorsen.example Tue Mar  3 11:01:20 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Bracket FEA sync notes and actions
+Date: Tue, 03 Mar 2026 11:01:20 -0500
+Message-ID: <20260303110120.3db0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Short notes from the bracket FEA sync:
+- design is ok to move forward
+- 5 action items, owners in the tracker
+- next sync Wednesday at 9:00
+
+Thanks so much!
+Maggie
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 11:07:23 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Bracket FEA sync notes and actions
+Date: Tue, 03 Mar 2026 11:07:23 -0500
+Message-ID: <20260303110723.cce0@halvorsen.example>
+In-Reply-To: <20260303110120.3db0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Thanks. I will have the sensor calibration script update by Friday.
+
+Thanks,
+Theo
+
+From jonah.feld@halvorsen.example Tue Mar  3 11:18:45 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Sensor calibration script: quick check
+Date: Tue, 03 Mar 2026 11:18:45 -0500
+Message-ID: <20260303111845.8f27@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Do you still have the input files for the sensor calibration script?
+I want to rerun case 2 with the new boundary conditions.
+
+thx
+Jonah
+
+From maggie.price@halvorsen.example Tue Mar  3 11:20:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 11:20:00 -0500
+Message-ID: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey all!
+
+Let's give Hank a proper send-off! Farewell lunch on Friday 6 March at 12:30 at the dumpling spot near the station.
+Reply to me so I can book the right table size!
+Sofia is collecting for a card, it's on her desk.
+
+Cheers!
+Maggie
+
+From leila.haddad@halvorsen.example Tue Mar  3 11:27:50 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, maggie.price@halvorsen.example
+Subject: Re: Bracket FEA sync notes and actions
+Date: Tue, 03 Mar 2026 11:27:50 -0500
+Message-ID: <20260303112750.6eb7@halvorsen.example>
+In-Reply-To: <20260303110723.cce0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Theo,
+
+Noted, I will move the review to after the freeze.
+
+Best,
+Leila
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 11:45:00 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 11:45:00 -0500
+Message-ID: <20260303114500.3fb4@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Count me in.
+
+Theo
+
+From amara.okonkwo@halvorsen.example Tue Mar  3 11:54:00 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 11:54:00 -0500
+Message-ID: <20260303115400.8c24@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Yes please! I will bring the card over.
+
+Cheers,
+Amara
+
+From jonah.feld@halvorsen.example Tue Mar  3 12:03:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 12:03:00 -0500
+Message-ID: <20260303120300.594a@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+in, thanks for organizing
+
+Jonah
+
+From marcus.bell@halvorsen.example Tue Mar  3 12:21:00 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 12:21:00 -0500
+Message-ID: <20260303122100.b600@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+In. Do we need a speech? Asking for a friend.
+
+Cheers,
+Marcus
+
+From marcus.bell@halvorsen.example Tue Mar  3 12:22:39 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: flight software unit tests sync
+Date: Tue, 03 Mar 2026 12:22:39 -0500
+Message-ID: <20260303122239.c154@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Notes from today's flight software unit tests sync:
+- agreed to freeze the interface on Friday
+- Amara to update the vibration test plan by end of week
+- open question on test fixtures, parked for now
+
+Marcus
+
+From amara.okonkwo@halvorsen.example Tue Mar  3 12:29:17 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: flight software unit tests sync
+Date: Tue, 03 Mar 2026 12:29:17 -0500
+Message-ID: <20260303122917.6875@halvorsen.example>
+In-Reply-To: <20260303122239.c154@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus!
+
+Thanks. I will have the vibration test plan update by Friday.
+
+Cheers,
+Amara
+
+From hank.gibson@halvorsen.example Tue Mar  3 12:36:43 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Notes from LLMs for test automation
+Date: Tue, 03 Mar 2026 12:36:43 -0500
+Message-ID: <20260303123643.7d89@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+All,
+
+Short notes from LLMs for test automation for those who missed it:
+- the speakers showed a test lab that reruns every failed case automatically overnight
+- two open-source tools worth a look for our flight software unit tests
+- slides should be on the summit site by tonight
+
+Hank
+
+From marcus.bell@halvorsen.example Tue Mar  3 12:46:01 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Mass budget sheet: quick check
+Date: Tue, 03 Mar 2026 12:46:01 -0500
+Message-ID: <20260303124601.0318@halvorsen.example>
+In-Reply-To: <20260303100508.7b0a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo,
+
+They are in the team folder under runs, next to the sensor calibration script files.
+Case 7 needs the updated material card too, it is in the same place.
+
+Marcus
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 12:58:39 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Mass budget sheet: quick check
+Date: Tue, 03 Mar 2026 12:58:39 -0500
+Message-ID: <20260303125839.111e@halvorsen.example>
+In-Reply-To: <20260303124601.0318@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Found them, thanks. Rerunning now.
+
+Theo
+
+From jonah.feld@halvorsen.example Tue Mar  3 13:11:04 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Review request: vibration test plan draft
+Date: Tue, 03 Mar 2026 13:11:04 -0500
+Message-ID: <20260303131104.11c6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Could you review the vibration test plan draft by Friday? It is in the team folder, about 2 pages.
+Mostly interested in whether the assumptions section holds up.
+
+thx
+Jonah
+
+From grace.tanaka@tessaract.example Tue Mar  3 13:15:00 2026
+From: "Grace Tanaka" <grace.tanaka@tessaract.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Summit demo feedback
+Date: Tue, 03 Mar 2026 13:15:00 -0500
+Message-ID: <20260303131500.9539@tessaract.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Thanks for stopping by our booth this morning. The tip about the cable strain relief was spot on.
+If you have time on Thursday, we would like to show you the revised setup.
+
+Thanks!
+Grace
+
+From leila.haddad@halvorsen.example Tue Mar  3 13:23:32 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: CFD mesh refinement review (Friday)
+Date: Tue, 03 Mar 2026 13:23:32 -0500
+Message-ID: <20260303132332.e0e7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Booking the CFD mesh refinement review for Friday at 9:30.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Best,
+Leila
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 13:35:37 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: CFD mesh refinement review (Friday)
+Date: Tue, 03 Mar 2026 13:35:37 -0500
+Message-ID: <20260303133537.c57a@halvorsen.example>
+In-Reply-To: <20260303132332.e0e7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+I have a conflict at 9:30, could we start at 10:30?
+
+Theo
+
+From maggie.price@halvorsen.example Tue Mar  3 13:59:31 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Sensor calibration script: quick check
+Date: Tue, 03 Mar 2026 13:59:31 -0500
+Message-ID: <20260303135931.d21e@halvorsen.example>
+In-Reply-To: <20260303111845.8f27@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah!
+
+They are in the team folder under runs, next to the nozzle thermal model files.
+Case 2 needs the updated material card too, it is in the same place.
+
+Thanks so much!
+Maggie
+
+From jonah.feld@halvorsen.example Tue Mar  3 14:20:02 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Sensor calibration script: quick check
+Date: Tue, 03 Mar 2026 14:20:02 -0500
+Message-ID: <20260303142002.e0ab@halvorsen.example>
+In-Reply-To: <20260303135931.d21e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Found them, thanks. Rerunning now.
+
+thx
+Jonah
+
+From jonah.feld@halvorsen.example Tue Mar  3 14:27:11 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Notes from LLMs for test automation
+Date: Tue, 03 Mar 2026 14:27:11 -0500
+Message-ID: <20260303142711.2d44@halvorsen.example>
+In-Reply-To: <20260303123643.7d89@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Thanks, the overnight rerun idea would help with the flight software unit tests.
+
+Jonah
+
+From maggie.price@halvorsen.example Tue Mar  3 14:30:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 14:30:00 -0500
+Message-ID: <20260303143000.d3ee@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey all!
+
+Table booked for nine on Friday at 12:30!! Meet at the elevators at 12:20.
+
+Cheers!
+Maggie
+
+From leila.haddad@halvorsen.example Tue Mar  3 14:50:50 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: CFD mesh refinement review (Friday)
+Date: Tue, 03 Mar 2026 14:50:50 -0500
+Message-ID: <20260303145050.2aa6@halvorsen.example>
+In-Reply-To: <20260303133537.c57a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Theo,
+
+Moved to 10:30, updated invite to follow.
+
+Best,
+Leila
+
+From events@jrr-aisummit.example Tue Mar  3 15:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: Reminder: welcome reception on Wednesday
+Date: Tue, 03 Mar 2026 15:00:00 -0500
+Message-ID: <20260303150000.f524@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+A reminder that the summit welcome reception takes place on Wednesday evening in the ground-floor atrium.
+Please bring your summit name tag.
+
+The JRR AI Summit team
+
+From hank.gibson@halvorsen.example Tue Mar  3 15:11:37 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, theo.lindqvist@halvorsen.example
+Subject: Re: Invitation: CFD mesh refinement review (Friday)
+Date: Tue, 03 Mar 2026 15:11:37 -0500
+Message-ID: <20260303151137.6367@halvorsen.example>
+In-Reply-To: <20260303145050.2aa6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+Thanks, that works for me too.
+
+H.
+
+From theo.lindqvist@halvorsen.example Tue Mar  3 15:51:18 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Review request: vibration test plan draft
+Date: Tue, 03 Mar 2026 15:51:18 -0500
+Message-ID: <20260303155118.f92c@halvorsen.example>
+In-Reply-To: <20260303131104.11c6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Jonah,
+
+Yes, I will send comments by Friday morning.
+
+Thanks,
+Theo
+
+From leila.haddad@halvorsen.example Tue Mar  3 16:53:32 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: fixture drawings review (Friday)
+Date: Tue, 03 Mar 2026 16:53:32 -0500
+Message-ID: <20260303165332.e5a9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Booking the fixture drawings review for Friday at 9:00.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Thanks,
+Leila
+
+From rina.okafor@halvorsen.example Tue Mar  3 20:12:00 2026
+From: "Rina Okafor" <rina.okafor@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Farewell lunch for Hank, Friday 12:30
+Date: Tue, 03 Mar 2026 20:12:00 -0500
+Message-ID: <20260303201200.6df6@halvorsen.example>
+In-Reply-To: <20260303112000.3913@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+I will be there.
+
+Rina Okafor
+Lab technician, Halvorsen Dynamics
+
+From events@jrr-aisummit.example Wed Mar  4 07:30:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit day 3: today's programme
+Date: Wed, 04 Mar 2026 07:30:00 -0500
+Message-ID: <20260304073000.a74d@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning,
+
+Today: safety cases for ML at 10:00, the AI policy panel at 13:30, welcome reception this evening.
+Coffee and lunch are served in the lounge on the second floor.
+
+The JRR AI Summit team
+
+From theo.lindqvist@halvorsen.example Wed Mar  4 08:54:03 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: fixture drawings review (Friday)
+Date: Wed, 04 Mar 2026 08:54:03 -0500
+Message-ID: <20260304085403.ca68@halvorsen.example>
+In-Reply-To: <20260303165332.e5a9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Leila,
+
+Sorry for the slow reply.
+I have a conflict at 9:00, could we start at 10:30?
+
+Thanks,
+Theo
+
+From amara.okonkwo@halvorsen.example Wed Mar  4 10:13:20 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re-check on the sensor calibration script numbers
+Date: Wed, 04 Mar 2026 10:13:20 -0500
+Message-ID: <20260304101320.1963@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie!
+
+I went through the sensor calibration script again and I think the margin on item 5 is too thin.
+Could you take a look when you have a moment?
+
+Thanks!
+Amara
+
+From leila.haddad@halvorsen.example Wed Mar  4 10:44:16 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: fixture drawings review (Friday)
+Date: Wed, 04 Mar 2026 10:44:16 -0500
+Message-ID: <20260304104416.cb3b@halvorsen.example>
+In-Reply-To: <20260304085403.ca68@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Moved to 10:30, updated invite to follow.
+
+Thanks,
+Leila
+
+From maggie.price@halvorsen.example Wed Mar  4 11:03:53 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Re-check on the sensor calibration script numbers
+Date: Wed, 04 Mar 2026 11:03:53 -0500
+Message-ID: <20260304110353.b7b9@halvorsen.example>
+In-Reply-To: <20260304101320.1963@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Amara!
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Friday.
+
+Cheers!
+Maggie
+
+From maggie.price@halvorsen.example Wed Mar  4 11:31:23 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re-check on the feed line sizing numbers
+Date: Wed, 04 Mar 2026 11:31:23 -0500
+Message-ID: <20260304113123.8b60@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah!
+
+I went through the feed line sizing again and I think the margin on item 3 is too thin.
+Could you take a look when you have a moment?
+
+xx
+Maggie
+
+From amara.okonkwo@halvorsen.example Wed Mar  4 11:53:55 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the sensor calibration script numbers
+Date: Wed, 04 Mar 2026 11:53:55 -0500
+Message-ID: <20260304115355.7536@halvorsen.example>
+In-Reply-To: <20260304110353.b7b9@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie!
+
+Friday works, I will send an invite.
+
+Thanks!
+Amara
+
+From events@jrr-aisummit.example Wed Mar  4 12:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: Tonight: AI Summit welcome reception
+Date: Wed, 04 Mar 2026 12:00:00 -0500
+Message-ID: <20260304120000.a17c@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+The welcome reception starts at 18:15 tonight in the ground-floor atrium.
+Drinks and light food will be served until 20:30.
+Members of all second-floor organisations are welcome.
+
+The JRR AI Summit team
+
+From jonah.feld@halvorsen.example Wed Mar  4 12:16:57 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Notes from safety cases for ML
+Date: Wed, 04 Mar 2026 12:16:57 -0500
+Message-ID: <20260304121657.258b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey all,
+
+Short notes from safety cases for ML for those who missed it:
+- the speakers showed a test lab that reruns every failed case automatically overnight
+- two open-source tools worth a look for our CFD mesh refinement
+- slides should be on the summit site by tonight
+
+thx
+Jonah
+
+From hank.gibson@halvorsen.example Wed Mar  4 12:22:09 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Review request: pressure transducer drift draft
+Date: Wed, 04 Mar 2026 12:22:09 -0500
+Message-ID: <20260304122209.925d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Marcus,
+
+Could you review the pressure transducer drift draft by Friday? It is in the team folder, about 4 pages.
+Mostly interested in whether the assumptions section holds up.
+
+Hank
+
+From jonah.feld@halvorsen.example Wed Mar  4 12:25:32 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Review request: interface control doc draft
+Date: Wed, 04 Mar 2026 12:25:32 -0500
+Message-ID: <20260304122532.ff8f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Marcus,
+
+Could you review the interface control doc draft by Thursday? It is in the team folder, about 9 pages.
+Mostly interested in whether the assumptions section holds up.
+
+Jonah
+
+From marcus.bell@halvorsen.example Wed Mar  4 12:34:55 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, theo.lindqvist@halvorsen.example
+Subject: Re: Invitation: fixture drawings review (Friday)
+Date: Wed, 04 Mar 2026 12:34:55 -0500
+Message-ID: <20260304123455.d96f@halvorsen.example>
+In-Reply-To: <20260304104416.cb3b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Leila,
+
+See you there.
+
+Marcus
+
+From amara.okonkwo@halvorsen.example Wed Mar  4 12:38:01 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Pressure transducer drift sync notes and actions
+Date: Wed, 04 Mar 2026 12:38:01 -0500
+Message-ID: <20260304123801.1559@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Short notes from the pressure transducer drift sync:
+- design is ok to move forward
+- 7 action items, owners in the tracker
+- next sync Thursday at 14:00
+
+Thanks!
+Amara
+
+From leila.haddad@halvorsen.example Wed Mar  4 12:51:57 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Notes from safety cases for ML
+Date: Wed, 04 Mar 2026 12:51:57 -0500
+Message-ID: <20260304125157.7280@halvorsen.example>
+In-Reply-To: <20260304121657.258b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Jonah,
+
+Thanks, the overnight rerun idea would help with the CFD mesh refinement.
+
+Thanks,
+Leila
+
+From marcus.bell@halvorsen.example Wed Mar  4 13:13:03 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Review request: pressure transducer drift draft
+Date: Wed, 04 Mar 2026 13:13:03 -0500
+Message-ID: <20260304131303.cae5@halvorsen.example>
+In-Reply-To: <20260304122209.925d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Yes, I will send comments by Friday morning.
+
+Marcus
+
+From marcus.bell@halvorsen.example Wed Mar  4 13:19:04 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Review request: pressure transducer drift draft
+Date: Wed, 04 Mar 2026 13:19:04 -0500
+Message-ID: <20260304131904.bb15@halvorsen.example>
+In-Reply-To: <20260304131303.cae5@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Hank,
+
+Comments are in the doc. Main one: the load assumptions need a reference.
+
+Marcus
+
+From hank.gibson@halvorsen.example Wed Mar  4 13:53:55 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Pressure transducer drift sync notes and actions
+Date: Wed, 04 Mar 2026 13:53:55 -0500
+Message-ID: <20260304135355.4f0a@halvorsen.example>
+In-Reply-To: <20260304123801.1559@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Amara,
+
+Thanks for writing this up.
+
+Hank
+
+From jonah.feld@halvorsen.example Wed Mar  4 14:12:10 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the feed line sizing numbers
+Date: Wed, 04 Mar 2026 14:12:10 -0500
+Message-ID: <20260304141210.5c31@halvorsen.example>
+In-Reply-To: <20260304113123.8b60@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Monday.
+
+thx
+Jonah
+
+From leila.haddad@halvorsen.example Wed Mar  4 14:29:10 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: amara.okonkwo@halvorsen.example, halvorsen-eng@halvorsen.example
+Subject: Re: Pressure transducer drift sync notes and actions
+Date: Wed, 04 Mar 2026 14:29:10 -0500
+Message-ID: <20260304142910.f529@halvorsen.example>
+In-Reply-To: <20260304135355.4f0a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Hank,
+
+Noted, I will move the review to after the freeze.
+
+Best,
+Leila
+
+From leila.haddad@halvorsen.example Wed Mar  4 14:43:11 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: thermal vacuum checklist review (Friday)
+Date: Wed, 04 Mar 2026 14:43:11 -0500
+Message-ID: <20260304144311.4b28@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+Booking the thermal vacuum checklist review for Friday at 13:15.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Best,
+Leila
+
+From leila.haddad@halvorsen.example Wed Mar  4 14:58:16 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: mounting plate redesign review (Monday)
+Date: Wed, 04 Mar 2026 14:58:16 -0500
+Message-ID: <20260304145816.b42c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+Booking the mounting plate redesign review for Monday at 14:45.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Best,
+Leila
+
+From jonah.feld@halvorsen.example Wed Mar  4 15:03:50 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: thermal vacuum checklist review (Friday)
+Date: Wed, 04 Mar 2026 15:03:50 -0500
+Message-ID: <20260304150350.15fe@halvorsen.example>
+In-Reply-To: <20260304144311.4b28@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Leila,
+
+I have a conflict at 13:15, could we start at 14:45?
+
+thx
+Jonah
+
+From marcus.bell@halvorsen.example Wed Mar  4 15:06:14 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Review request: interface control doc draft
+Date: Wed, 04 Mar 2026 15:06:14 -0500
+Message-ID: <20260304150614.80fc@halvorsen.example>
+In-Reply-To: <20260304122532.ff8f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Jonah,
+
+Yes, I will send comments by Thursday morning.
+
+Cheers,
+Marcus
+
+From hank.gibson@halvorsen.example Wed Mar  4 15:09:42 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Review request: pressure transducer drift draft
+Date: Wed, 04 Mar 2026 15:09:42 -0500
+Message-ID: <20260304150942.c57b@halvorsen.example>
+In-Reply-To: <20260304131904.bb15@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Marcus,
+
+Thanks, fixing the references now.
+
+Hank
+
+From marcus.bell@halvorsen.example Wed Mar  4 15:12:49 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Review request: interface control doc draft
+Date: Wed, 04 Mar 2026 15:12:49 -0500
+Message-ID: <20260304151249.07ea@halvorsen.example>
+In-Reply-To: <20260304150614.80fc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Comments are in the doc. Main one: the load assumptions need a reference.
+
+Cheers,
+Marcus
+
+From maggie.price@halvorsen.example Wed Mar  4 15:28:01 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Re-check on the feed line sizing numbers
+Date: Wed, 04 Mar 2026 15:28:01 -0500
+Message-ID: <20260304152801.4b69@halvorsen.example>
+In-Reply-To: <20260304141210.5c31@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah!
+
+Monday works, I will send an invite.
+
+Cheers!
+Maggie
+
+From jonah.feld@halvorsen.example Wed Mar  4 15:34:55 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the feed line sizing numbers
+Date: Wed, 04 Mar 2026 15:34:55 -0500
+Message-ID: <20260304153455.0ab5@halvorsen.example>
+In-Reply-To: <20260304152801.4b69@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Sounds good.
+
+Jonah
+
+From jonah.feld@halvorsen.example Wed Mar  4 16:36:01 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: interface control doc sync
+Date: Wed, 04 Mar 2026 16:36:01 -0500
+Message-ID: <20260304163601.63ff@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey all,
+
+Notes from today's interface control doc sync:
+- agreed to freeze the interface on Monday
+- Marcus to update the mass budget sheet by end of week
+- open question on test fixtures, parked for now
+
+thx
+Jonah
+
+From events@jrr-aisummit.example Thu Mar  5 07:30:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit day 4: today's programme
+Date: Thu, 05 Mar 2026 07:30:00 -0500
+Message-ID: <20260305073000.f555@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning,
+
+Today: digital twins for test labs at 10:00, robot learning on a budget at 14:30.
+Coffee and lunch are served in the lounge on the second floor.
+
+The JRR AI Summit team
+
+From maggie.price@halvorsen.example Thu Mar  5 08:46:40 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: test stand DAQ config sync
+Date: Thu, 05 Mar 2026 08:46:40 -0500
+Message-ID: <20260305084640.49ec@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Notes from today's test stand DAQ config sync:
+- agreed to freeze the interface on Monday
+- Marcus to update the thermal vacuum checklist by end of week
+- open question on test fixtures, parked for now
+
+Cheers!
+Maggie
+
+From marcus.bell@halvorsen.example Thu Mar  5 09:06:56 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: test stand DAQ config sync
+Date: Thu, 05 Mar 2026 09:06:56 -0500
+Message-ID: <20260305090656.d21b@halvorsen.example>
+In-Reply-To: <20260305084640.49ec@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+One correction: the fixture question is mine, not parked.
+
+Marcus
+
+From marcus.bell@halvorsen.example Thu Mar  5 09:13:35 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: interface control doc sync
+Date: Thu, 05 Mar 2026 09:13:35 -0500
+Message-ID: <20260305091335.2ad1@halvorsen.example>
+In-Reply-To: <20260304163601.63ff@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Jonah,
+
+Sorry for the slow reply.
+One correction: the fixture question is mine, not parked.
+
+Cheers,
+Marcus
+
+From leila.haddad@halvorsen.example Thu Mar  5 09:25:38 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, jonah.feld@halvorsen.example
+Subject: Re: Notes: interface control doc sync
+Date: Thu, 05 Mar 2026 09:25:38 -0500
+Message-ID: <20260305092538.a6b5@halvorsen.example>
+In-Reply-To: <20260305091335.2ad1@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Noted, I will move the review to after the freeze.
+
+Thanks,
+Leila
+
+From ravi.castellanos@jrr-facilities.example Thu Mar  5 10:00:00 2026
+From: "Ravi Castellanos" <ravi.castellanos@jrr-facilities.example>
+To: jrr2-tenants@ostrander-it.example
+Subject: Lounge AV teardown and weekend filter change
+Date: Thu, 05 Mar 2026 10:00:00 -0500
+Message-ID: <20260305100000.a386@jrr-facilities.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear tenants,
+
+Lounge AV teardown after the summit: Friday 6 March, 14:00 to 14:30 (WO-3124).
+Filter change on air handler 1: Saturday 7 March, 09:00 to 11:00 (WO-3126).
+
+Ravi Castellanos
+JRR Building Facilities
+
+From theo.lindqvist@halvorsen.example Thu Mar  5 10:12:50 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: mounting plate redesign review (Monday)
+Date: Thu, 05 Mar 2026 10:12:50 -0500
+Message-ID: <20260305101250.6e59@halvorsen.example>
+In-Reply-To: <20260304145816.b42c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+Sorry for the slow reply.
+Accepted. Could we have 15 minutes for the test plan? It has grown.
+
+Thanks,
+Theo
+
+From leila.haddad@halvorsen.example Thu Mar  5 11:15:44 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: test report template on Friday at 10:00
+Date: Thu, 05 Mar 2026 11:15:44 -0500
+Message-ID: <20260305111544.97e0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The test report template design review is on Friday at 10:00 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Best,
+Leila
+
+From amara.okonkwo@halvorsen.example Thu Mar  5 13:02:41 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Thermal vacuum checklist sync notes and actions
+Date: Thu, 05 Mar 2026 13:02:41 -0500
+Message-ID: <20260305130241.c6dd@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Short notes from the thermal vacuum checklist sync:
+- design is ok to move forward
+- 7 action items, owners in the tracker
+- next sync Friday at 13:45
+
+Thanks!
+Amara
+
+From hank.gibson@halvorsen.example Thu Mar  5 13:06:30 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: test report template on Friday at 10:00
+Date: Thu, 05 Mar 2026 13:06:30 -0500
+Message-ID: <20260305130630.15a7@halvorsen.example>
+In-Reply-To: <20260305111544.97e0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Leila,
+
+I have a conflict at 10:00, could we start at 12:00?
+
+Hank
+
+From hank.gibson@halvorsen.example Thu Mar  5 13:30:57 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re-check on the valve timing sweep numbers
+Date: Thu, 05 Mar 2026 13:30:57 -0500
+Message-ID: <20260305133057.276f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+I went through the valve timing sweep again and I think the margin on item 2 is too thin.
+Could you take a look when you have a moment?
+
+H.
+
+From theo.lindqvist@halvorsen.example Thu Mar  5 13:41:29 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Notes from digital twins for test labs
+Date: Thu, 05 Mar 2026 13:41:29 -0500
+Message-ID: <20260305134129.60bb@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Short notes from digital twins for test labs for those who missed it:
+- the speakers showed a test lab that reruns every failed case automatically overnight
+- two open-source tools worth a look for our sensor calibration script
+- slides should be on the summit site by tonight
+
+Theo
+
+From amara.okonkwo@halvorsen.example Thu Mar  5 13:56:57 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Comments on the bracket FEA?
+Date: Thu, 05 Mar 2026 13:56:57 -0500
+Message-ID: <20260305135657.3865@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+I updated the bracket FEA after the last review. Do you have time to look at the changes before Friday?
+Changes are highlighted in yellow.
+
+Cheers,
+Amara
+
+From maggie.price@halvorsen.example Thu Mar  5 14:06:21 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Re-check on the valve timing sweep numbers
+Date: Thu, 05 Mar 2026 14:06:21 -0500
+Message-ID: <20260305140621.b267@halvorsen.example>
+In-Reply-To: <20260305133057.276f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank!
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Friday.
+
+Cheers!
+Maggie
+
+From hank.gibson@halvorsen.example Thu Mar  5 14:13:17 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Re-check on the valve timing sweep numbers
+Date: Thu, 05 Mar 2026 14:13:17 -0500
+Message-ID: <20260305141317.8b3c@halvorsen.example>
+In-Reply-To: <20260305140621.b267@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Friday works, I will send an invite.
+
+Hank
+
+From maggie.price@halvorsen.example Thu Mar  5 14:23:16 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Docking station not charging
+Date: Thu, 05 Mar 2026 14:23:16 -0500
+Message-ID: <20260305142316.ef3d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Frederik!
+
+My docking station stopped charging the laptop. Lights are on, but no power.
+
+xx
+Maggie
+
+From amara.okonkwo@halvorsen.example Thu Mar  5 14:31:49 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Notes from digital twins for test labs
+Date: Thu, 05 Mar 2026 14:31:49 -0500
+Message-ID: <20260305143149.f480@halvorsen.example>
+In-Reply-To: <20260305134129.60bb@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Thanks, the overnight rerun idea would help with the sensor calibration script.
+
+Thanks!
+Amara
+
+From marcus.bell@halvorsen.example Thu Mar  5 15:00:12 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re-check on the telemetry parser numbers
+Date: Thu, 05 Mar 2026 15:00:12 -0500
+Message-ID: <20260305150012.37a3@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo,
+
+I went through the telemetry parser again and I think the margin on item 2 is too thin.
+Could you take a look when you have a moment?
+
+Cheers,
+Marcus
+
+From frederik.mendelssohn@ostrander-it.example Thu Mar  5 15:14:14 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Docking station not charging
+Date: Thu, 05 Mar 2026 15:14:14 -0500
+Message-ID: <20260305151414.9065@ostrander-it.example>
+In-Reply-To: <20260305142316.ef3d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Logged as INC-2226. Please try the dock at the desk next to yours meanwhile.
+I will bring a replacement on my next visit.
+
+Frederik
+Ostrander IT
+
+From leila.haddad@halvorsen.example Thu Mar  5 15:17:23 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: harness drawing rev C on Monday at 14:00
+Date: Thu, 05 Mar 2026 15:17:23 -0500
+Message-ID: <20260305151723.d1f7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+The harness drawing rev C design review is on Monday at 14:00 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Thanks,
+Leila
+
+From theo.lindqvist@halvorsen.example Thu Mar  5 16:50:36 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Re-check on the telemetry parser numbers
+Date: Thu, 05 Mar 2026 16:50:36 -0500
+Message-ID: <20260305165036.2af3@halvorsen.example>
+In-Reply-To: <20260305150012.37a3@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Agreed, it is thin. I would bump the wall thickness and rerun.
+Happy to look at it together on Tuesday.
+
+Theo
+
+From marcus.bell@halvorsen.example Thu Mar  5 17:40:51 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Re-check on the telemetry parser numbers
+Date: Thu, 05 Mar 2026 17:40:51 -0500
+Message-ID: <20260305174051.d20b@halvorsen.example>
+In-Reply-To: <20260305165036.2af3@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Tuesday works, I will send an invite.
+
+Marcus
+
+From maggie.price@halvorsen.example Thu Mar  5 17:41:06 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Comments on the harness drawing rev C?
+Date: Thu, 05 Mar 2026 17:41:06 -0500
+Message-ID: <20260305174106.afe6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Marcus!
+
+I updated the harness drawing rev C after the last review. Do you have time to look at the changes before Tuesday?
+Changes are highlighted in yellow.
+
+Thanks so much!
+Maggie
+
+From maggie.price@halvorsen.example Thu Mar  5 17:54:47 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Re: Docking station not charging
+Date: Thu, 05 Mar 2026 17:54:47 -0500
+Message-ID: <20260305175447.8674@halvorsen.example>
+In-Reply-To: <20260305151414.9065@ostrander-it.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Frederik!
+
+Thanks Frederik.
+
+xx
+Maggie
+
+From events@jrr-aisummit.example Fri Mar  6 07:30:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: AI Summit day 5: today's programme
+Date: Fri, 06 Mar 2026 07:30:00 -0500
+Message-ID: <20260306073000.e202@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning,
+
+Today: data provenance in ML pipelines at 10:00, closing session at 15:00.
+Coffee and lunch are served in the lounge on the second floor.
+
+The JRR AI Summit team
+
+From jonah.feld@halvorsen.example Fri Mar  6 09:12:21 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Comments on the bracket FEA?
+Date: Fri, 06 Mar 2026 09:12:21 -0500
+Message-ID: <20260306091221.a91e@halvorsen.example>
+In-Reply-To: <20260305135657.3865@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Amara,
+
+Sorry for the slow reply.
+Sure, I will go through the highlighted parts tomorrow.
+
+Jonah
+
+From jonah.feld@halvorsen.example Fri Mar  6 09:15:25 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Review request: interface control doc draft
+Date: Fri, 06 Mar 2026 09:15:25 -0500
+Message-ID: <20260306091525.4486@halvorsen.example>
+In-Reply-To: <20260304151249.07ea@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Marcus,
+
+Sorry for the slow reply.
+Thanks, fixing the references now.
+
+Jonah
+
+From jonah.feld@halvorsen.example Fri Mar  6 09:19:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Comments on the bracket FEA?
+Date: Fri, 06 Mar 2026 09:19:00 -0500
+Message-ID: <20260306091900.717a@halvorsen.example>
+In-Reply-To: <20260306091221.a91e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Amara,
+
+Done, only small comments. Looks good to me.
+
+thx
+Jonah
+
+From jonah.feld@halvorsen.example Fri Mar  6 09:21:20 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: harness drawing rev C on Monday at 14:00
+Date: Fri, 06 Mar 2026 09:21:20 -0500
+Message-ID: <20260306092120.eebb@halvorsen.example>
+In-Reply-To: <20260305151723.d1f7@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Leila,
+
+Sorry for the slow reply.
+I have a conflict at 14:00, could we start at 15:30?
+
+thx
+Jonah
+
+From jonah.feld@halvorsen.example Fri Mar  6 09:22:50 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Question about the valve timing sweep
+Date: Fri, 06 Mar 2026 09:22:50 -0500
+Message-ID: <20260306092250.3c6d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo,
+
+Before I send the valve timing sweep to Leila, can you confirm we are using the revised load case?
+The numbers in my sheet are about 9 percent off from last week.
+
+Jonah
+
+From leila.haddad@halvorsen.example Fri Mar  6 09:27:23 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: harness drawing rev C on Monday at 14:00
+Date: Fri, 06 Mar 2026 09:27:23 -0500
+Message-ID: <20260306092723.9717@halvorsen.example>
+In-Reply-To: <20260306092120.eebb@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Moved to 15:30, updated invite to follow.
+
+Best,
+Leila
+
+From sofia.marchetti@halvorsen.example Fri Mar  6 09:30:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 09:30:00 -0500
+Message-ID: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Please reply with your weekly update by 16:00: done, next, blockers.
+Two or three bullets each is plenty.
+
+Thanks,
+Sofia
+
+From theo.lindqvist@halvorsen.example Fri Mar  6 09:34:58 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Re: Question about the valve timing sweep
+Date: Fri, 06 Mar 2026 09:34:58 -0500
+Message-ID: <20260306093458.14ab@halvorsen.example>
+In-Reply-To: <20260306092250.3c6d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Jonah,
+
+Yes, revised load case. The 9 percent is the new safety factor, that is expected.
+I added a note in the sheet so it does not confuse anyone else.
+
+Thanks,
+Theo
+
+From amara.okonkwo@halvorsen.example Fri Mar  6 09:52:17 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: CFD mesh refinement sync notes and actions
+Date: Fri, 06 Mar 2026 09:52:17 -0500
+Message-ID: <20260306095217.3d6c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Short notes from the CFD mesh refinement sync:
+- design is ok to move forward
+- 7 action items, owners in the tracker
+- next sync Wednesday at 13:00
+
+Thanks!
+Amara
+
+From marcus.bell@halvorsen.example Fri Mar  6 09:57:27 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Comments on the harness drawing rev C?
+Date: Fri, 06 Mar 2026 09:57:27 -0500
+Message-ID: <20260306095727.4334@halvorsen.example>
+In-Reply-To: <20260305174106.afe6@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Sorry for the slow reply.
+Sure, I will go through the highlighted parts tomorrow.
+
+Cheers,
+Marcus
+
+From marcus.bell@halvorsen.example Fri Mar  6 10:12:58 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: CFD mesh refinement sync notes and actions
+Date: Fri, 06 Mar 2026 10:12:58 -0500
+Message-ID: <20260306101258.442b@halvorsen.example>
+In-Reply-To: <20260306095217.3d6c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Amara,
+
+One correction: the fixture question is mine, not parked.
+
+Marcus
+
+From theo.lindqvist@halvorsen.example Fri Mar  6 10:16:00 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 10:16:00 -0500
+Message-ID: <20260306101600.6415@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sofia,
+
+Done:
+- vibration test plan: blocked on parts, expected Tuesday
+- fixture drawings: blocked on parts, expected Wednesday
+Next:
+- sensor calibration script
+Blockers: none
+
+Thanks,
+Theo
+
+From amara.okonkwo@halvorsen.example Fri Mar  6 10:23:00 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 10:23:00 -0500
+Message-ID: <20260306102300.3919@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Sofia!
+
+Done:
+- pressure transducer drift: waiting for test data
+- power budget: done, in review
+Next:
+- flight software unit tests
+Blockers: waiting on machine shop parts
+
+Cheers,
+Amara
+
+From marcus.bell@halvorsen.example Fri Mar  6 11:11:23 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Comments on the sensor calibration script?
+Date: Fri, 06 Mar 2026 11:11:23 -0500
+Message-ID: <20260306111123.2a9a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+I updated the sensor calibration script after the last review. Do you have time to look at the changes before Tuesday?
+Changes are highlighted in yellow.
+
+Cheers,
+Marcus
+
+From jonah.feld@halvorsen.example Fri Mar  6 11:14:00 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 11:14:00 -0500
+Message-ID: <20260306111400.74ae@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia,
+
+Done:
+- telemetry parser: waiting for test data
+- pressure transducer drift: slipped a few days, new date Wednesday
+Next:
+- feed line sizing
+Blockers: none
+
+thx
+Jonah
+
+From leila.haddad@halvorsen.example Fri Mar  6 11:28:28 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: amara.okonkwo@halvorsen.example, halvorsen-eng@halvorsen.example
+Subject: Re: CFD mesh refinement sync notes and actions
+Date: Fri, 06 Mar 2026 11:28:28 -0500
+Message-ID: <20260306112828.f7d0@halvorsen.example>
+In-Reply-To: <20260306101258.442b@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Marcus,
+
+Noted, I will move the review to after the freeze.
+
+Thanks,
+Leila
+
+From marcus.bell@halvorsen.example Fri Mar  6 11:31:00 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 11:31:00 -0500
+Message-ID: <20260306113100.aebf@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia,
+
+Done:
+- test stand DAQ config: ready for review
+- CFD mesh refinement: waiting for test data
+Next:
+- test report template
+Blockers: none
+
+Cheers,
+Marcus
+
+From maggie.price@halvorsen.example Fri Mar  6 11:50:19 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Subject: Comments on the test report template?
+Date: Fri, 06 Mar 2026 11:50:19 -0500
+Message-ID: <20260306115019.b8ae@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Jonah!
+
+I updated the test report template after the last review. Do you have time to look at the changes before Tuesday?
+Changes are highlighted in yellow.
+
+Cheers!
+Maggie
+
+From maggie.price@halvorsen.example Fri Mar  6 12:16:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 12:16:00 -0500
+Message-ID: <20260306121600.55e8@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Sofia!
+
+Done:
+- test report template: started
+- requirements matrix: waiting for test data
+Next:
+- fixture drawings
+Blockers: waiting on machine shop parts
+
+Cheers!
+Maggie
+
+From hank.gibson@halvorsen.example Fri Mar  6 12:23:00 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 12:23:00 -0500
+Message-ID: <20260306122300.d419@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Sofia,
+
+Done: handover doc final, test stand scripts and valve timing sweep handed over.
+Next: nothing.
+
+H.
+
+From jonah.feld@halvorsen.example Fri Mar  6 12:26:03 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Comments on the test report template?
+Date: Fri, 06 Mar 2026 12:26:03 -0500
+Message-ID: <20260306122603.71b4@halvorsen.example>
+In-Reply-To: <20260306115019.b8ae@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Maggie,
+
+Sure, I will go through the highlighted parts tomorrow.
+
+Jonah
+
+From marcus.bell@halvorsen.example Fri Mar  6 12:37:55 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Comments on the harness drawing rev C?
+Date: Fri, 06 Mar 2026 12:37:55 -0500
+Message-ID: <20260306123755.c27d@halvorsen.example>
+In-Reply-To: <20260306095727.4334@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Done, only small comments. Looks good to me.
+
+Marcus
+
+From maggie.price@halvorsen.example Fri Mar  6 12:49:55 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Comments on the harness drawing rev C?
+Date: Fri, 06 Mar 2026 12:49:55 -0500
+Message-ID: <20260306124955.fd1b@halvorsen.example>
+In-Reply-To: <20260306123755.c27d@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus!
+
+Great, thanks for the quick turnaround.
+
+xx
+Maggie
+
+From jonah.feld@halvorsen.example Fri Mar  6 13:01:57 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Comments on the test report template?
+Date: Fri, 06 Mar 2026 13:01:57 -0500
+Message-ID: <20260306130157.09bf@halvorsen.example>
+In-Reply-To: <20260306122603.71b4@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Done, only small comments. Looks good to me.
+
+thx
+Jonah
+
+From jonah.feld@halvorsen.example Fri Mar  6 13:02:39 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Notes: requirements matrix sync
+Date: Fri, 06 Mar 2026 13:02:39 -0500
+Message-ID: <20260306130239.aeee@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey all,
+
+Notes from today's requirements matrix sync:
+- agreed to freeze the interface on Wednesday
+- Marcus to update the mounting plate redesign by end of week
+- open question on test fixtures, parked for now
+
+Jonah
+
+From leila.haddad@halvorsen.example Fri Mar  6 13:25:00 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Re: Weekly updates, Friday 6 March
+Date: Fri, 06 Mar 2026 13:25:00 -0500
+Message-ID: <20260306132500.06b6@halvorsen.example>
+In-Reply-To: <20260306093000.6f88@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Sofia,
+
+Done:
+- mounting plate redesign: on track
+- interface control doc: first draft shared
+Next:
+- pressure transducer drift
+Blockers: none
+
+Best,
+Leila
+
+From leila.haddad@halvorsen.example Fri Mar  6 13:31:31 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Invitation: bracket FEA review (Tuesday)
+Date: Fri, 06 Mar 2026 13:31:31 -0500
+Message-ID: <20260306133131.608c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello all,
+
+Booking the bracket FEA review for Tuesday at 10:00.
+Goal is a go or no-go on the current concept.
+If you cannot make it, send comments in advance.
+
+Best,
+Leila
+
+From jonah.feld@halvorsen.example Fri Mar  6 13:37:49 2026
+From: "Jonah Feld" <jonah.feld@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: bracket FEA review (Tuesday)
+Date: Fri, 06 Mar 2026 13:37:49 -0500
+Message-ID: <20260306133749.35f0@halvorsen.example>
+In-Reply-To: <20260306133131.608c@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Leila,
+
+Accepted. Could we have 15 minutes for the test plan? It has grown.
+
+thx
+Jonah
+
+From maggie.price@halvorsen.example Fri Mar  6 13:52:21 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Comments on the sensor calibration script?
+Date: Fri, 06 Mar 2026 13:52:21 -0500
+Message-ID: <20260306135221.78aa@halvorsen.example>
+In-Reply-To: <20260306111123.2a9a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus!
+
+Sure, I will go through the highlighted parts tomorrow.
+
+Thanks so much!
+Maggie
+
+From marcus.bell@halvorsen.example Fri Mar  6 13:53:11 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Notes: requirements matrix sync
+Date: Fri, 06 Mar 2026 13:53:11 -0500
+Message-ID: <20260306135311.162f@halvorsen.example>
+In-Reply-To: <20260306130239.aeee@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Jonah,
+
+Thanks. I will have the mounting plate redesign update by Friday.
+
+Marcus
+
+From leila.haddad@halvorsen.example Fri Mar  6 13:58:32 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: jonah.feld@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Invitation: bracket FEA review (Tuesday)
+Date: Fri, 06 Mar 2026 13:58:32 -0500
+Message-ID: <20260306135832.e064@halvorsen.example>
+In-Reply-To: <20260306133749.35f0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Jonah,
+
+Fine, 15 minutes for the test plan.
+
+Best,
+Leila
+
+From maggie.price@halvorsen.example Fri Mar  6 13:59:37 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Summit recap: data provenance in ML pipelines
+Date: Fri, 06 Mar 2026 13:59:37 -0500
+Message-ID: <20260306135937.1ac2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all!
+
+Three takeaways from data provenance in ML pipelines:
+- start with the data you already log
+- write the safety argument before the model, not after
+- small teams get most value from automating test reports
+
+Thanks so much!
+Maggie
+
+From theo.lindqvist@halvorsen.example Fri Mar  6 14:18:31 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Question about the feed line sizing
+Date: Fri, 06 Mar 2026 14:18:31 -0500
+Message-ID: <20260306141831.f39f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Amara,
+
+Before I send the feed line sizing to Leila, can you confirm we are using the revised load case?
+The numbers in my sheet are about 9 percent off from last week.
+
+Thanks,
+Theo
+
+From maggie.price@halvorsen.example Fri Mar  6 14:27:28 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Re: Comments on the sensor calibration script?
+Date: Fri, 06 Mar 2026 14:27:28 -0500
+Message-ID: <20260306142728.1b1a@halvorsen.example>
+In-Reply-To: <20260306135221.78aa@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus!
+
+Done, only small comments. Looks good to me.
+
+xx
+Maggie
+
+From amara.okonkwo@halvorsen.example Fri Mar  6 14:38:56 2026
+From: "Amara Okonkwo" <amara.okonkwo@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Re: Question about the feed line sizing
+Date: Fri, 06 Mar 2026 14:38:56 -0500
+Message-ID: <20260306143856.9648@halvorsen.example>
+In-Reply-To: <20260306141831.f39f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Theo!
+
+Yes, revised load case. The 9 percent is the new safety factor, that is expected.
+I added a note in the sheet so it does not confuse anyone else.
+
+Thanks!
+Amara
+
+From leila.haddad@halvorsen.example Fri Mar  6 15:07:41 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: halvorsen-eng@halvorsen.example
+Subject: Design review: interface control doc on Tuesday at 10:00
+Date: Fri, 06 Mar 2026 15:07:41 -0500
+Message-ID: <20260306150741.bcfc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+The interface control doc design review is on Tuesday at 10:00 in the 217 meeting room.
+Please send slides by the day before, ten minutes each.
+Agenda:
+1. status and open risks
+2. test plan
+3. decisions needed
+
+Best,
+Leila
+
+From hank.gibson@halvorsen.example Fri Mar  6 15:15:14 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: maggie.price@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Summit recap: data provenance in ML pipelines
+Date: Fri, 06 Mar 2026 15:15:14 -0500
+Message-ID: <20260306151514.ce86@halvorsen.example>
+In-Reply-To: <20260306135937.1ac2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Maggie,
+
+Thanks for writing this up, very useful.
+
+H.
+
+From theo.lindqvist@halvorsen.example Fri Mar  6 15:29:38 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: amara.okonkwo@halvorsen.example
+Subject: Re: Question about the feed line sizing
+Date: Fri, 06 Mar 2026 15:29:38 -0500
+Message-ID: <20260306152938.027c@halvorsen.example>
+In-Reply-To: <20260306143856.9648@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Amara,
+
+Great, that explains it. Thanks.
+
+Thanks,
+Theo
+
+From leila.haddad@halvorsen.example Fri Mar  6 15:43:14 2026
+From: "Leila Haddad" <leila.haddad@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example, jonah.feld@halvorsen.example
+Subject: Re: Notes: requirements matrix sync
+Date: Fri, 06 Mar 2026 15:43:14 -0500
+Message-ID: <20260306154314.fef9@halvorsen.example>
+In-Reply-To: <20260306135311.162f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Thanks both. I added the actions to the board.
+
+Best,
+Leila
+
+From events@jrr-aisummit.example Fri Mar  6 16:10:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: Thank you for joining the AI Summit
+Date: Fri, 06 Mar 2026 16:10:00 -0500
+Message-ID: <20260306161000.51ee@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello JRR second floor members,
+
+Thank you for a wonderful summit week.
+Slides from most sessions are on the summit site. A short feedback survey is linked there as well.
+
+The JRR AI Summit team
+
+From marcus.bell@halvorsen.example Fri Mar  6 16:17:53 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Re: Comments on the sensor calibration script?
+Date: Fri, 06 Mar 2026 16:17:53 -0500
+Message-ID: <20260306161753.3903@halvorsen.example>
+In-Reply-To: <20260306142728.1b1a@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Maggie,
+
+Great, thanks for the quick turnaround.
+
+Cheers,
+Marcus
+
+From maggie.price@halvorsen.example Fri Mar  6 16:58:12 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: leila.haddad@halvorsen.example
+Cc: halvorsen-eng@halvorsen.example
+Subject: Re: Design review: interface control doc on Tuesday at 10:00
+Date: Fri, 06 Mar 2026 16:58:12 -0500
+Message-ID: <20260306165812.1d49@halvorsen.example>
+In-Reply-To: <20260306150741.bcfc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Leila!
+
+Accepted. Could we have 15 minutes for the test plan? It has grown.
+
+Thanks so much!
+Maggie
+
+From maggie.price@halvorsen.example Fri Mar  6 17:55:58 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Cc: halvorsen-all@halvorsen.example
+Subject: Re: Summit recap: data provenance in ML pipelines
+Date: Fri, 06 Mar 2026 17:55:58 -0500
+Message-ID: <20260306175558.5435@halvorsen.example>
+In-Reply-To: <20260306151514.ce86@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Hank!
+
+Glad it helps.
+
+xx
+Maggie
+
+From marcus.bell@halvorsen.example Sat Mar  7 11:58:10 2026
+From: "Marcus Bell" <marcus.bell@halvorsen.example>
+To: theo.lindqvist@halvorsen.example
+Subject: Question about the nozzle thermal model
+Date: Sat, 07 Mar 2026 11:58:10 -0500
+Message-ID: <20260307115810.4ae0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Theo,
+
+Before I send the nozzle thermal model to Leila, can you confirm we are using the revised load case?
+The numbers in my sheet are about 5 percent off from last week.
+
+Marcus
+
+From events@jrr-aisummit.example Sun Mar  8 10:00:00 2026
+From: "JRR AI Summit" <events@jrr-aisummit.example>
+To: jrr2-members@jrr-aisummit.example
+Subject: Last chance: AI Summit feedback survey
+Date: Sun, 08 Mar 2026 10:00:00 -0500
+Message-ID: <20260308100000.4e01@jrr-aisummit.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+The feedback survey closes on Monday evening. It takes about five minutes.
+
+The JRR AI Summit team
+
+From theo.lindqvist@halvorsen.example Sun Mar  8 18:53:08 2026
+From: "Theo Lindqvist" <theo.lindqvist@halvorsen.example>
+To: marcus.bell@halvorsen.example
+Subject: Question about the harness drawing rev C
+Date: Sun, 08 Mar 2026 18:53:08 -0500
+Message-ID: <20260308185308.f36e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi Marcus,
+
+Before I send the harness drawing rev C to Leila, can you confirm we are using the revised load case?
+The numbers in my sheet are about 7 percent off from last week.
+
+Thanks,
+Theo
+
+From alma.imhoff@halvorsen.example Mon Mar  9 08:45:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: sofia.marchetti@halvorsen.example
+Subject: Security review: room 219
+Date: Mon, 09 Mar 2026 08:45:00 -0500
+Message-ID: <20260309084500.dca0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Sofia,
+
+As discussed this morning, I have opened a security review concerning access to room 219 on the evening of Wednesday 4 March.
+I am collecting the relevant records today and will speak with a small number of people this afternoon.
+Please keep this confidential for now.
+
+Regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From sofia.marchetti@halvorsen.example Mon Mar  9 08:55:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: halvorsen-all@halvorsen.example
+Subject: Week of 9 March
+Date: Mon, 09 Mar 2026 08:55:00 -0500
+Message-ID: <20260309085500.8baf@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi all,
+
+Priorities for this week:
+- redistribute Hank's open items, Leila will share a list
+- vibration test results by Thursday
+- summit follow-ups with the other tenants
+
+Best,
+Sofia
+
+From sofia.marchetti@halvorsen.example Mon Mar  9 09:04:00 2026
+From: "Sofia Marchetti" <sofia.marchetti@halvorsen.example>
+To: alma.imhoff@halvorsen.example
+Subject: Re: Security review: room 219
+Date: Mon, 09 Mar 2026 09:04:00 -0500
+Message-ID: <20260309090400.d069@halvorsen.example>
+In-Reply-To: <20260309084500.dca0@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello Alma,
+
+Thanks Alma. Understood. Let me know if you need anything from me or from the team.
+
+Best,
+Sofia
+
+From alma.imhoff@halvorsen.example Mon Mar  9 09:31:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Room 219 access on March 4
+Date: Mon, 09 Mar 2026 09:31:00 -0500
+Message-ID: <20260309093100.203f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Hank,
+
+I am reviewing access to room 219 and to the lab laptop lt-219 on the evening of Wednesday 4 March.
+Could you please confirm in writing whether you accessed room 219, or any files stored on lt-219, that day?
+I would also like to speak with you in person this afternoon at 14:00 in the 217 meeting room.
+
+Kind regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From hank.gibson@halvorsen.example Mon Mar  9 10:14:00 2026
+From: "Hank Gibson" <hank.gibson@halvorsen.example>
+To: alma.imhoff@halvorsen.example
+Subject: Re: Room 219 access on March 4
+Date: Mon, 09 Mar 2026 10:14:00 -0500
+Message-ID: <20260309101400.9c2e@halvorsen.example>
+In-Reply-To: <20260309093100.203f@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Alma,
+
+My access to 219 was removed on the Monday. You know that.
+I never touched the Titan folder.
+14:00 is fine.
+
+Hank
+
+From alma.imhoff@halvorsen.example Mon Mar  9 10:32:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: hank.gibson@halvorsen.example
+Subject: Re: Room 219 access on March 4
+Date: Mon, 09 Mar 2026 10:32:00 -0500
+Message-ID: <20260309103200.53df@halvorsen.example>
+In-Reply-To: <20260309101400.9c2e@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Hank,
+
+Thank you for your reply. I will see you at 14:00 in the 217 meeting room.
+
+Kind regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From alma.imhoff@halvorsen.example Mon Mar  9 11:10:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: maggie.price@halvorsen.example
+Subject: Short interview this afternoon
+Date: Mon, 09 Mar 2026 11:10:00 -0500
+Message-ID: <20260309111000.6cbc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Good morning Maggie,
+
+As part of a security review I would like to speak with you this afternoon at 15:30 in the 217 meeting room.
+It should take about 20 minutes.
+
+Kind regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From alma.imhoff@halvorsen.example Mon Mar  9 11:15:00 2026
+From: "Alma Imhoff" <alma.imhoff@halvorsen.example>
+To: frederik.mendelssohn@ostrander-it.example
+Subject: Interview this afternoon: lt-219 maintenance
+Date: Mon, 09 Mar 2026 11:15:00 -0500
+Message-ID: <20260309111500.1cf2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Frederik,
+
+I would like to go through last week's maintenance work on lt-219 with you this afternoon at 16:30 in the 217 meeting room.
+
+Kind regards,
+Alma Imhoff
+Head of Security, Halvorsen Dynamics
+
+From maggie.price@halvorsen.example Mon Mar  9 11:26:00 2026
+From: "Maggie Price" <maggie.price@halvorsen.example>
+To: alma.imhoff@halvorsen.example
+Subject: Re: Short interview this afternoon
+Date: Mon, 09 Mar 2026 11:26:00 -0500
+Message-ID: <20260309112600.9d97@halvorsen.example>
+In-Reply-To: <20260309111000.6cbc@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hey Alma!
+
+Sure, 15:30 works! See you then.
+
+xx
+Maggie
+
+From frederik.mendelssohn@ostrander-it.example Mon Mar  9 11:42:00 2026
+From: "Frederik Mendelssohn" <frederik.mendelssohn@ostrander-it.example>
+To: alma.imhoff@halvorsen.example
+Subject: Re: Interview this afternoon: lt-219 maintenance
+Date: Mon, 09 Mar 2026 11:42:00 -0500
+Message-ID: <20260309114200.d203@ostrander-it.example>
+In-Reply-To: <20260309111500.1cf2@halvorsen.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hello,
+
+Confirmed for 16:30. I will bring the work order and the maintenance log.
+
+Frederik
+Ostrander IT
