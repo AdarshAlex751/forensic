@@ -1,0 +1,78 @@
+import json
+
+import pytest
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
+
+from app.features.investigator import router as router_mod
+from app.features.investigator.approvals import Approvals
+from app.features.investigator.trace import Trace
+
+FILE_REQUESTS = [{"id": "r1", "ask": "Pull the parking exit log.", "why": "why", "status": "pending"}]
+
+
+@pytest.fixture()
+def client(monkeypatch):
+    app = FastAPI()
+    app.include_router(router_mod.router)
+    monkeypatch.setattr(router_mod, "approvals", Approvals())
+    monkeypatch.setattr(router_mod, "trace", Trace())
+    monkeypatch.setattr(router_mod, "_load_requests", lambda: FILE_REQUESTS)
+    calls = {"release": [], "rerun": []}
+    monkeypatch.setattr(router_mod, "release_extra", lambda rid: calls["release"].append(rid) or {"released": ["x"]})
+    monkeypatch.setattr(router_mod, "_start_rerun", lambda: calls["rerun"].append("extract") or True)
+    c = TestClient(app)
+    c.calls = calls
+    return c
+
+
+def test_health_still_works(client):
+    assert client.get("/api/investigator/health").status_code == 200
+
+
+def test_get_requests_returns_file_records_with_live_status(client):
+    assert client.get("/api/investigator/requests").json()[0]["status"] == "pending"
+    client.post("/api/investigator/requests/r1/approve")
+    assert client.get("/api/investigator/requests").json()[0]["status"] == "approved"
+
+
+def test_approve_releases_the_evidence_then_starts_the_rerun(client):
+    r = client.post("/api/investigator/requests/r1/approve")
+    assert r.status_code == 200
+    assert r.json() == {"request_id": "r1", "status": "approved", "rerun": "started"}
+    assert client.calls == {"release": ["r1"], "rerun": ["extract"]}
+
+
+def test_approve_unknown_request_is_404_and_does_nothing(client):
+    r = client.post("/api/investigator/requests/r404/approve")
+    assert r.status_code == 404 and "r404" in r.json()["detail"]
+    assert client.calls == {"release": [], "rerun": []}
+
+
+def test_approve_reports_when_a_run_is_already_in_progress(client, monkeypatch):
+    monkeypatch.setattr(router_mod, "_start_rerun", lambda: False)
+    assert client.post("/api/investigator/requests/r1/approve").json()["rerun"] == "already running"
+
+
+def test_a_failing_release_function_does_not_crash_the_approval(client, monkeypatch):
+    def boom(rid):
+        raise RuntimeError("disk full")
+
+    monkeypatch.setattr(router_mod, "release_extra", boom)
+    r = client.post("/api/investigator/requests/r1/approve")
+    assert r.status_code == 200 and r.json()["rerun"] == "started"
+
+
+def test_release_stub_is_used_until_person_1_provides_the_function():
+    out = router_mod.release_extra.__wrapped__("r1") if hasattr(router_mod.release_extra, "__wrapped__") else router_mod.release_extra("r1")
+    assert out["released"] == [] and out["stub"] is True
+
+
+def test_stream_replays_a_finished_trace_as_sse_and_ends(client):
+    router_mod.trace.emit("lead", "plan", "Planning")
+    router_mod.trace.emit("lead", "done", "Finished")
+    r = client.get("/api/investigator/stream")
+    assert r.headers["content-type"].startswith("text/event-stream")
+    events = [json.loads(line[6:]) for line in r.text.splitlines() if line.startswith("data: ")]
+    assert [e["stage"] for e in events] == ["plan", "done"]
+    assert {"seq", "agent", "stage", "msg", "todos"} <= set(events[0])
