@@ -21,7 +21,7 @@ Character IDs (`p_hank`, `p_maggie`, …) identify people in the story. They are
 | Lat / lon | `<from the scan / CoStar record>` |
 | Badge-controlled rooms | Rooms **210 to 230**. Each has a badge reader (`rdr-210` … `rdr-230`) that logs IN and OUT. Fake badge traffic is generated for all of them. |
 | Crime scene | **Room 219 only.** A secure, badge-only room holding an isolated (air-gapped, no network) laptop `lt-219`. |
-| Halvorsen suite | Room 214 (Hank's and Maggie's usual room) |
+| Halvorsen suite | Room 217 (Hank's and Maggie's usual room) |
 | Parking | A campus parking exit log (no named lot, not scanned; data only) |
 | Event (fictional) | A campus AI summit, summit week 2026-03-02 to 2026-03-06 |
 | Victim company (fictional) | Halvorsen Dynamics, small aerospace startup working from a sponsored project suite on the floor |
@@ -56,7 +56,7 @@ Plus about 40 background people on the floor with normal activity (noise). All e
 
 ## 4. The story (what actually happened)
 
-Hank resigns on Monday to join Northline, and his badge stops opening room 219. On Wednesday evening the summit's welcome reception starts at 18:15 and the floor empties toward it. Hank badges out of room 214 at 18:02 so he looks gone, but he stays on the floor and his laptop stays on the floor Wi-Fi. Weeks earlier he copied the badge of `p_bg_17`, a lab technician who is still authorized for 219. At 18:16:40 he opens room 219 with that copy. Thirty seconds earlier, the real `p_bg_17` badged into room 230 at the far end of the floor. The isolated laptop `lt-219` was never removed from Hank's local account, because it is offline and never syncs with deprovisioning. Hank logs on, mounts a USB drive and copies Titan. He leaves 219 at 18:31, his laptop drops off the Wi-Fi at 18:41, and his car passes the campus parking exit at 18:44. Two days later a Northline "signing bonus" lands in his account.
+Hank resigns on Monday to join Northline, and his badge stops opening room 219. On Wednesday evening the summit's welcome reception starts at 18:15 and the floor empties toward it. Hank badges out of room 217 at 18:02 so he looks gone, but he stays on the floor and his laptop stays on the floor Wi-Fi. Weeks earlier he copied the badge of `p_bg_17`, a lab technician who is still authorized for 219. At 18:16:40 he opens room 219 with that copy. Thirty seconds earlier, the real `p_bg_17` badged into room 230 at the far end of the floor. The isolated laptop `lt-219` was never removed from Hank's local account, because it is offline and never syncs with deprovisioning. Hank logs on, mounts a USB drive and copies Titan. He leaves 219 at 18:31, his laptop drops off the Wi-Fi at 18:41, and his car passes the campus parking exit at 18:44. Two days later a Northline "signing bonus" lands in his account.
 
 The badge copy is background story only. No evidence states it, and the system must never conclude it. The system can only report that one badge number was read in two places too far apart.
 
@@ -64,8 +64,8 @@ The badge copy is background story only. No evidence states it, and the system m
 
 | Time | Actor | Event | Evidence source |
 |---|---|---|---|
-| 17:45:00 | Maggie | Badges OUT of room 214, alone | `access/badge_access.csv` |
-| 18:02:00 | Hank | Badges OUT of room 214 | `access/badge_access.csv` |
+| 17:45:00 | Maggie | Badges OUT of room 217, alone | `access/badge_access.csv` |
+| 18:02:00 | Hank | Badges OUT of room 217 | `access/badge_access.csv` |
 | 18:05:00 | (system) | Camera `cam-03` (corridor outside room 219) goes offline | `cctv/index.csv` |
 | 18:15:00 | (summit) | Welcome reception starts | `comms/` summit emails (noise) |
 | 18:16:10 | `p_bg_17` | Badges IN at room 230 (the real card holder) | `access/badge_access.csv` |
@@ -100,7 +100,7 @@ The system must never read this section or the answer key file. The machine copy
 
 | ID | Evidence joined | Contradiction | Expected detector |
 |---|---|---|---|
-| C1 | Badge vs Wi-Fi | Hank's badge OUT at 214 at 18:02, his laptop on the floor Wi-Fi until 18:41, no later read of his badge | Rule engine |
+| C1 | Badge vs Wi-Fi | Hank's badge OUT at 217 at 18:02, his laptop on the floor Wi-Fi until 18:41, no later read of his badge | Rule engine |
 | C2 | Badge + walk time | Badge of `p_bg_17` read at room 230 at 18:16:10 and at room 219 at 18:16:40; the walk takes ~74 s, so at least one read was not the card holder | Physics check (floor plan graph) |
 | C3 | Hank's statement vs parking exit log | "Went straight home at six," but his car passes the parking exit at 18:44 | NLI + rules (after evidence request) |
 | C4 | Maggie's statement vs her badge | "Left together around 6:30," but she badged out alone at 17:45 | NLI + rules |
