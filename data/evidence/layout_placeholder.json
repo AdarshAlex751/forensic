@@ -1,0 +1,34 @@
+{
+  "_note": "PLACEHOLDER floor layout for JRR 2nd floor until Person 2 maps the Matterport scan. Replace with real geometry; keep the IDs.",
+  "corridors": {
+    "corr-w": ["210", "211", "212", "213", "214", "215", "216"],
+    "corr-c": ["217", "218", "219", "220", "221", "222", "223"],
+    "corr-e": ["224", "225", "226", "227", "228", "229", "230"]
+  },
+  "shared_spaces": ["lobby-2", "lounge-2", "stair-e"],
+  "ap_coverage": {
+    "ap-2-01": ["210", "211", "212", "corr-w"],
+    "ap-2-02": ["213", "214", "215", "corr-w", "lobby-2"],
+    "ap-2-03": ["216", "217", "218", "corr-c"],
+    "ap-2-04": ["219", "220", "221", "corr-c"],
+    "ap-2-05": ["222", "223", "224", "corr-c", "lounge-2"],
+    "ap-2-06": ["225", "226", "227", "corr-e"],
+    "ap-2-07": ["228", "229", "230", "corr-e", "stair-e"]
+  },
+  "camera_views": {
+    "cam-01": ["lobby-2"],
+    "cam-02": ["corr-w"],
+    "cam-03": ["corr-c"],
+    "cam-04": ["corr-e"],
+    "cam-05": ["lounge-2"],
+    "cam-06": ["stair-e"]
+  },
+  "walk_s": {
+    "_rule": "Placeholder walking times in seconds at 1.4 m/s. Same corridor: 6 s per room step. Corridor to corridor adds 20 s.",
+    "217-219": 12,
+    "230-219": 74,
+    "217-230": 86,
+    "lobby-2-217": 25
+  },
+  "ssid": "JRR2-SECURE"
+}

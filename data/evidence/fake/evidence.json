@@ -1,44 +1,154 @@
 [
   {
     "file": "access/badge_access.csv",
-    "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a",
+    "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d",
+    "manifest_sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d",
     "manifest_match": true,
-    "parser": "pandas",
-    "records": 3012
+    "parser": "csv",
+    "records": 2898
   },
   {
-    "file": "endpoint/usbstor.txt",
-    "sha256": "ef481e027c364a58e2e98483f73b50909c91e91204b61ffa248dc66eaa3dee99",
+    "file": "brief.pdf",
+    "sha256": "c7913b9afc91e4399bec8960384f4249aa30db5d3eb6f128b558c49d8eed634f",
+    "manifest_sha256": "c7913b9afc91e4399bec8960384f4249aa30db5d3eb6f128b558c49d8eed634f",
     "manifest_match": true,
-    "parser": "text",
-    "records": 41
+    "parser": "pdf",
+    "records": 0
   },
   {
-    "file": "access/wifi_log.csv",
-    "sha256": "2c2113a8d03f4aa4935d1ed0116fd552767ca9a31fd0e933bfa1df102ca86fe8",
+    "file": "cctv/index.csv",
+    "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c",
+    "manifest_sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c",
     "manifest_match": true,
-    "parser": "pandas",
-    "records": 5120
-  },
-  {
-    "file": "security_log.csv",
-    "sha256": "f7d8186a6bdecb845d5117bd9275663ca383286069258de56bfa39bd6df9b8f6",
-    "manifest_match": false,
-    "parser": "pandas",
-    "records": 887
-  },
-  {
-    "file": "statements/dana_reyes.txt",
-    "sha256": "ab7e3b43a9598fad122e5645eab2c100d2a34822b858e27e13ee56603a5ff937",
-    "manifest_match": true,
-    "parser": "llm-extractor",
+    "parser": "csv",
     "records": 6
   },
   {
-    "file": "endpoint/it_calendar.txt",
-    "sha256": "f0f584e5f792908237ce992eb318fae7cb2c4f26fa14ea73b26b6891c15d0a77",
+    "file": "comms/mailbox.mbox",
+    "sha256": "32877ed10978a8d4484080a1235987f719348741412f897e840d9586eab576c9",
+    "manifest_sha256": "32877ed10978a8d4484080a1235987f719348741412f897e840d9586eab576c9",
     "manifest_match": true,
-    "parser": "llm-extractor",
-    "records": 4
+    "parser": "mbox",
+    "records": 3
+  },
+  {
+    "file": "comms/slack_export/D0HANKKIM/2026-03-02.json",
+    "sha256": "74e9f16b554486212f7d71701156797bd5d6cc10d6f2f03c0bc26d3290218b03",
+    "manifest_sha256": "74e9f16b554486212f7d71701156797bd5d6cc10d6f2f03c0bc26d3290218b03",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 1
+  },
+  {
+    "file": "comms/slack_export/D0HANKKIM/2026-03-03.json",
+    "sha256": "7d388681ca26c5ab8f4f50cf9807afdd5ead22499480d20e2757ffd361a05406",
+    "manifest_sha256": "7d388681ca26c5ab8f4f50cf9807afdd5ead22499480d20e2757ffd361a05406",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D0HANKKIM/2026-03-04.json",
+    "sha256": "803e2fcf78198e56e5b8ca99e996b29af256cf7d38027261133900826729145d",
+    "manifest_sha256": "803e2fcf78198e56e5b8ca99e996b29af256cf7d38027261133900826729145d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D0HANKKIM/2026-03-05.json",
+    "sha256": "3ed2f7ca1f5d02fff803484a243d6d50fbfac3519e3db0b23e0745599ed6e356",
+    "manifest_sha256": "3ed2f7ca1f5d02fff803484a243d6d50fbfac3519e3db0b23e0745599ed6e356",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "endpoint/file_audit.csv",
+    "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92",
+    "manifest_sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 87
+  },
+  {
+    "file": "endpoint/security_log.csv",
+    "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91",
+    "manifest_sha256": "697c585f7013e5a318485451e9611018d2ff6006afb01b5f0190bca0d41470c6",
+    "manifest_match": false,
+    "parser": "csv",
+    "records": 51
+  },
+  {
+    "file": "endpoint/usbstor.txt",
+    "sha256": "04ae9b8fa70adb3cc1e22fcb5da427e8bd52535aee8336407040a33fb55c9c76",
+    "manifest_sha256": "04ae9b8fa70adb3cc1e22fcb5da427e8bd52535aee8336407040a33fb55c9c76",
+    "manifest_match": true,
+    "parser": "text",
+    "records": 3
+  },
+  {
+    "file": "facilities/devices.csv",
+    "sha256": "ff4ea2f82084ada4f58ad7054e04b0fe70f43dfb51c122587d5ceb623a24970e",
+    "manifest_sha256": "ff4ea2f82084ada4f58ad7054e04b0fe70f43dfb51c122587d5ceb623a24970e",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 0
+  },
+  {
+    "file": "financial/transactions.csv",
+    "sha256": "03ba3d0660d35fd93221d8fe6fdc6c427f26fb723075122f16d55da0d30c2ba7",
+    "manifest_sha256": "03ba3d0660d35fd93221d8fe6fdc6c427f26fb723075122f16d55da0d30c2ba7",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 2
+  },
+  {
+    "file": "it/maintenance_calendar.csv",
+    "sha256": "72f3df917ffb1a88df21a5ff5ae1df3c3e7b5a47daed8ee74081c4342bc1cfef",
+    "manifest_sha256": "72f3df917ffb1a88df21a5ff5ae1df3c3e7b5a47daed8ee74081c4342bc1cfef",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 3
+  },
+  {
+    "file": "manifest.csv",
+    "sha256": "bf6574e207ab55658336d7e43f61401bcb916e331970f91e2b0c4841ad8297e7",
+    "manifest_sha256": "bf6574e207ab55658336d7e43f61401bcb916e331970f91e2b0c4841ad8297e7",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 0
+  },
+  {
+    "file": "network/wifi_ap_logs.csv",
+    "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298",
+    "manifest_sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 6851
+  },
+  {
+    "file": "statements/frederik_mendelssohn.pdf",
+    "sha256": "57ea674cd7e34268cd78a8c40531031f9d934ac41ec0ca3dfa841b230ca6574d",
+    "manifest_sha256": "57ea674cd7e34268cd78a8c40531031f9d934ac41ec0ca3dfa841b230ca6574d",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 1
+  },
+  {
+    "file": "statements/hank_gibson.pdf",
+    "sha256": "7285bed5f015ecc9bed015b40fd1a9f304b2f365b7b2d10bd03c7dc960cbfd57",
+    "manifest_sha256": "7285bed5f015ecc9bed015b40fd1a9f304b2f365b7b2d10bd03c7dc960cbfd57",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 2
+  },
+  {
+    "file": "statements/maggie_price.pdf",
+    "sha256": "6bb9e8ee40bda4d0bb3a27b52aaa1019d72e17f306a7c311d993daf467632ef3",
+    "manifest_sha256": "6bb9e8ee40bda4d0bb3a27b52aaa1019d72e17f306a7c311d993daf467632ef3",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 1
   }
 ]

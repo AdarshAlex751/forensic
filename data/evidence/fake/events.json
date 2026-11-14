@@ -1,100 +1,1707 @@
 [
   {
-    "id": "e1",
-    "t": "2026-03-04T18:16:10-06:00",
-    "type": "badge_in",
-    "person": "p1",
-    "device": "rdr-lobby",
-    "room": "lobby",
+    "id": "e1374",
+    "t": "2026-02-24T13:00:00-05:00",
+    "type": "maintenance_window",
+    "person": null,
+    "device": "cam-02",
+    "room": "corr-w",
+    "actor": {
+      "kind": "name",
+      "value": "Frederik Mendelssohn"
+    },
+    "attrs": {
+      "start": "2026-02-24T13:00:00-05:00",
+      "end": "2026-02-24T13:30:00-05:00",
+      "asset": "cam-02",
+      "work_order": "WO-3091",
+      "technician": "Frederik Mendelssohn"
+    },
     "source": {
-      "file": "access/badge_access.csv",
-      "line": 412,
-      "quote": "2026-03-04T18:16:10-06:00,40417,RDR-LOBBY,IN",
-      "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a"
+      "file": "it/maintenance_calendar.csv",
+      "line": 2,
+      "quote": "WO-3091,cam-02,2026-02-24T13:00:00-05:00,2026-02-24T13:30:00-05:00,Frederik Mendelssohn,Camera firmware update",
+      "sha256": "72f3df917ffb1a88df21a5ff5ae1df3c3e7b5a47daed8ee74081c4342bc1cfef"
     }
   },
   {
-    "id": "e2",
-    "t": "2026-03-04T18:16:40-06:00",
+    "id": "e1381",
+    "t": "2026-02-24T13:05:00-05:00",
+    "type": "camera_offline",
+    "person": null,
+    "device": "cam-02",
+    "room": "corr-w",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-02",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 2,
+      "quote": "cam-02,2026-02-24T13:05:00-05:00,2026-02-24T13:22:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e1405",
+    "t": "2026-02-24T13:22:00-05:00",
+    "type": "camera_online",
+    "person": null,
+    "device": "cam-02",
+    "room": "corr-w",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-02",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 2,
+      "quote": "cam-02,2026-02-24T13:05:00-05:00,2026-02-24T13:22:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e2026",
+    "t": "2026-02-25T09:58:12-05:00",
+    "type": "badge_in",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 595,
+      "quote": "2026-02-25T09:58:12-05:00,40417,rdr-219,IN,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e2034",
+    "t": "2026-02-25T10:01:03-05:00",
+    "type": "logon",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "rokafor"
+    },
+    "attrs": {
+      "event_id": 4624,
+      "logon_type": 2,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 10,
+      "quote": "2026-02-25T10:01:03-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e2040",
+    "t": "2026-02-25T10:03:41-05:00",
     "type": "usb_mount",
-    "person": "p1",
-    "device": "fs-212",
-    "room": "212",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": null,
+    "attrs": {
+      "serial": "07A1B2C3D4E5F601&0",
+      "vendor": "Kingston",
+      "product": "DataTraveler_3.0",
+      "first_seen": "2025-06-12T14:22:09-05:00",
+      "host": "lt-219"
+    },
     "source": {
       "file": "endpoint/usbstor.txt",
-      "line": 88,
-      "quote": "2026-03-04 18:16:40 USBSTOR mount DANA-LAPTOP vol E:",
-      "sha256": "ef481e027c364a58e2e98483f73b50909c91e91204b61ffa248dc66eaa3dee99"
+      "line": 7,
+      "quote": "  S/N: 07A1B2C3D4E5F601&0 [2026-02-25T10:03:41-05:00]",
+      "sha256": "04ae9b8fa70adb3cc1e22fcb5da427e8bd52535aee8336407040a33fb55c9c76"
     }
   },
   {
-    "id": "e3",
-    "t": "2026-03-04T18:22:00-06:00",
+    "id": "e2093",
+    "t": "2026-02-25T10:40:27-05:00",
+    "type": "logoff",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "rokafor"
+    },
+    "attrs": {
+      "event_id": 4634,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 11,
+      "quote": "2026-02-25T10:40:27-05:00,4634,LT-219,rokafor,2,,,",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e2097",
+    "t": "2026-02-25T10:42:05-05:00",
     "type": "badge_out",
-    "person": "p1",
-    "device": "rdr-lobby",
-    "room": "lobby",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
     "source": {
       "file": "access/badge_access.csv",
-      "line": 415,
-      "quote": "2026-03-04T18:22:00-06:00,40417,RDR-LOBBY,OUT",
-      "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a"
+      "line": 611,
+      "quote": "2026-02-25T10:42:05-05:00,40417,rdr-219,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
     }
   },
   {
-    "id": "e4",
-    "t": "2026-03-04T18:30:05-06:00",
-    "type": "wifi_assoc",
-    "person": "p1",
-    "device": "ap-2-east",
-    "room": "210",
+    "id": "e2831",
+    "t": "2026-02-26T07:00:00-05:00",
+    "type": "maintenance_window",
+    "person": null,
+    "device": "cam-05",
+    "room": "lounge-2",
+    "actor": {
+      "kind": "name",
+      "value": "Frederik Mendelssohn"
+    },
+    "attrs": {
+      "start": "2026-02-26T07:00:00-05:00",
+      "end": "2026-02-26T08:00:00-05:00",
+      "asset": "cam-05",
+      "work_order": "WO-3098",
+      "technician": "Frederik Mendelssohn"
+    },
     "source": {
-      "file": "access/wifi_log.csv",
-      "line": 1203,
-      "quote": "2026-03-04T18:30:05-06:00,3C:22:FB:00:00:01,AP-2-East,ASSOC",
-      "sha256": "2c2113a8d03f4aa4935d1ed0116fd552767ca9a31fd0e933bfa1df102ca86fe8"
+      "file": "it/maintenance_calendar.csv",
+      "line": 3,
+      "quote": "WO-3098,cam-05,2026-02-26T07:00:00-05:00,2026-02-26T08:00:00-05:00,Frederik Mendelssohn,Lens cleaning and PoE switch swap",
+      "sha256": "72f3df917ffb1a88df21a5ff5ae1df3c3e7b5a47daed8ee74081c4342bc1cfef"
     }
   },
   {
-    "id": "e5",
-    "t": "2026-03-04T18:35:00-06:00",
-    "type": "statement",
-    "person": "p1",
+    "id": "e2832",
+    "t": "2026-02-26T07:10:00-05:00",
+    "type": "camera_offline",
+    "person": null,
+    "device": "cam-05",
+    "room": "lounge-2",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-05",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 3,
+      "quote": "cam-05,2026-02-26T07:10:00-05:00,2026-02-26T07:48:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e2833",
+    "t": "2026-02-26T07:48:00-05:00",
+    "type": "camera_online",
+    "person": null,
+    "device": "cam-05",
+    "room": "lounge-2",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-05",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 3,
+      "quote": "cam-05,2026-02-26T07:10:00-05:00,2026-02-26T07:48:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e4374",
+    "t": "2026-02-27T14:08:33-05:00",
+    "type": "badge_in",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40405"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 1282,
+      "quote": "2026-02-27T14:08:33-05:00,40405,rdr-219,IN,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e4379",
+    "t": "2026-02-27T14:10:52-05:00",
+    "type": "logon",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "mbell"
+    },
+    "attrs": {
+      "event_id": 4624,
+      "logon_type": 2,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 24,
+      "quote": "2026-02-27T14:10:52-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e4384",
+    "t": "2026-02-27T14:12:19-05:00",
+    "type": "usb_mount",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": null,
+    "attrs": {
+      "serial": "07A1B2C3D4E5F602&0",
+      "vendor": "Kingston",
+      "product": "DataTraveler_3.0",
+      "first_seen": "2025-09-03T11:05:44-05:00",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/usbstor.txt",
+      "line": 13,
+      "quote": "  S/N: 07A1B2C3D4E5F602&0 [2026-02-27T14:12:19-05:00]",
+      "sha256": "04ae9b8fa70adb3cc1e22fcb5da427e8bd52535aee8336407040a33fb55c9c76"
+    }
+  },
+  {
+    "id": "e4450",
+    "t": "2026-02-27T15:02:16-05:00",
+    "type": "logoff",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "mbell"
+    },
+    "attrs": {
+      "event_id": 4634,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 25,
+      "quote": "2026-02-27T15:02:16-05:00,4634,LT-219,mbell,2,,,",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e4453",
+    "t": "2026-02-27T15:04:01-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40405"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 1300,
+      "quote": "2026-02-27T15:04:01-05:00,40405,rdr-219,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e4879",
+    "t": "2026-03-02T09:12:00-05:00",
+    "type": "email",
+    "person": null,
     "device": null,
     "room": null,
+    "actor": {
+      "kind": "email",
+      "value": "hank.gibson@halvorsen.example"
+    },
+    "attrs": {
+      "from": "hank.gibson@halvorsen.example",
+      "to": [
+        "sofia.marchetti@halvorsen.example",
+        "alma.imhoff@halvorsen.example"
+      ],
+      "subject": "Resignation",
+      "message_id": "<20260302091200.4f1a@halvorsen.example>"
+    },
     "source": {
-      "file": "statements/dana_reyes.txt",
-      "line": 3,
-      "quote": "I went straight home after work.",
-      "sha256": "ab7e3b43a9598fad122e5645eab2c100d2a34822b858e27e13ee56603a5ff937"
+      "file": "comms/mailbox.mbox",
+      "line": 2147,
+      "quote": "Please accept this as formal notice of my resignation from Halvorsen Dynamics, effective today.",
+      "sha256": "32877ed10978a8d4484080a1235987f719348741412f897e840d9586eab576c9"
     }
   },
   {
-    "id": "e6",
-    "t": "2026-03-04T19:00:00-06:00",
-    "type": "scheduled_patch",
-    "person": "p3",
-    "device": "fs-212",
-    "room": "212",
-    "source": {
-      "file": "endpoint/it_calendar.txt",
-      "line": 2,
-      "quote": "19:00-20:00 Patch window fs-212 (T. Weller)",
-      "sha256": "f0f584e5f792908237ce992eb318fae7cb2c4f26fa14ea73b26b6891c15d0a77"
-    }
-  },
-  {
-    "id": "e7",
-    "t": "2026-03-04T18:10:00-06:00",
-    "type": "camera_gap",
+    "id": "e5842",
+    "t": "2026-03-02T21:14:00-05:00",
+    "type": "chat",
     "person": null,
-    "device": "cam-3",
-    "room": "corridor-2",
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "kim.sayers"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772504040.000100"
+    },
     "source": {
-      "file": "security_log.csv",
-      "line": 233,
-      "quote": "2026-03-04T18:10:00-06:00,CAM-3,FEED_LOST",
-      "sha256": "f7d8186a6bdecb845d5117bd9275663ca383286069258de56bfa39bd6df9b8f6"
+      "file": "comms/slack_export/D0HANKKIM/2026-03-02.json",
+      "line": 5,
+      "quote": "Congrats on making it official. The propulsion team can't wait to have you.",
+      "sha256": "74e9f16b554486212f7d71701156797bd5d6cc10d6f2f03c0bc26d3290218b03"
+    }
+  },
+  {
+    "id": "e6789",
+    "t": "2026-03-03T19:40:00-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "hank.gibson"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772584800.000100"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-03.json",
+      "line": 5,
+      "quote": "Thanks. Still wrapping up a few things here before I'm out.",
+      "sha256": "7d388681ca26c5ab8f4f50cf9807afdd5ead22499480d20e2757ffd361a05406"
+    }
+  },
+  {
+    "id": "e6790",
+    "t": "2026-03-03T19:42:30-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "kim.sayers"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772584950.000200"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-03.json",
+      "line": 11,
+      "quote": "No rush. Anything on the thruster side would get you up to speed fast. Bring what you can.",
+      "sha256": "7d388681ca26c5ab8f4f50cf9807afdd5ead22499480d20e2757ffd361a05406"
+    }
+  },
+  {
+    "id": "e7176",
+    "t": "2026-03-04T12:00:00-05:00",
+    "type": "email",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "email",
+      "value": "events@jrr-aisummit.example"
+    },
+    "attrs": {
+      "from": "events@jrr-aisummit.example",
+      "to": [
+        "jrr2-members@jrr-aisummit.example"
+      ],
+      "subject": "Tonight: AI Summit welcome reception",
+      "message_id": "<20260304120000.a17c@jrr-aisummit.example>"
+    },
+    "source": {
+      "file": "comms/mailbox.mbox",
+      "line": 6631,
+      "quote": "The welcome reception starts at 18:15 tonight in the ground-floor atrium.",
+      "sha256": "32877ed10978a8d4484080a1235987f719348741412f897e840d9586eab576c9"
+    }
+  },
+  {
+    "id": "e7725",
+    "t": "2026-03-04T16:55:00-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "hank.gibson"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772661300.000100"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-04.json",
+      "line": 5,
+      "quote": "Reception is tonight, right? I'll be on the floor a while first.",
+      "sha256": "803e2fcf78198e56e5b8ca99e996b29af256cf7d38027261133900826729145d"
+    }
+  },
+  {
+    "id": "e7732",
+    "t": "2026-03-04T16:57:10-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "kim.sayers"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772661430.000200"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-04.json",
+      "line": 11,
+      "quote": "Perfect. See you when you're done.",
+      "sha256": "803e2fcf78198e56e5b8ca99e996b29af256cf7d38027261133900826729145d"
+    }
+  },
+  {
+    "id": "e7769",
+    "t": "2026-03-04T17:22:05-05:00",
+    "type": "wifi_disassoc",
+    "person": null,
+    "device": "ap-2-03",
+    "room": "217",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:01"
+    },
+    "attrs": {
+      "ap": "ap-2-03",
+      "rssi": -58,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5384,
+      "quote": "2026-03-04T17:22:05-05:00,ap-2-03,02:1F:9A:10:00:01,DISASSOC,-58,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7771",
+    "t": "2026-03-04T17:22:40-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-217",
+    "room": "217",
+    "actor": {
+      "kind": "badge",
+      "value": "40381"
+    },
+    "attrs": {
+      "reader": "rdr-217",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2276,
+      "quote": "2026-03-04T17:22:40-05:00,40381,rdr-217,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7808",
+    "t": "2026-03-04T17:45:00-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-217",
+    "room": "217",
+    "actor": {
+      "kind": "badge",
+      "value": "40392"
+    },
+    "attrs": {
+      "reader": "rdr-217",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2287,
+      "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7809",
+    "t": "2026-03-04T17:46:22-05:00",
+    "type": "wifi_disassoc",
+    "person": null,
+    "device": "ap-2-03",
+    "room": "217",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:03"
+    },
+    "attrs": {
+      "ap": "ap-2-03",
+      "rssi": -66,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5412,
+      "quote": "2026-03-04T17:46:22-05:00,ap-2-03,02:1F:9A:10:00:03,DISASSOC,-66,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7830",
+    "t": "2026-03-04T18:02:00-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-217",
+    "room": "217",
+    "actor": {
+      "kind": "badge",
+      "value": "40388"
+    },
+    "attrs": {
+      "reader": "rdr-217",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2295,
+      "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7835",
+    "t": "2026-03-04T18:05:00-05:00",
+    "type": "camera_offline",
+    "person": null,
+    "device": "cam-03",
+    "room": "corr-c",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-03",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 4,
+      "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e7843",
+    "t": "2026-03-04T18:12:18-05:00",
+    "type": "wifi_roam",
+    "person": null,
+    "device": "ap-2-04",
+    "room": "220",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:02"
+    },
+    "attrs": {
+      "ap": "ap-2-04",
+      "rssi": -63,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5433,
+      "quote": "2026-03-04T18:12:18-05:00,ap-2-04,02:1F:9A:10:00:02,ROAM,-63,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7848",
+    "t": "2026-03-04T18:14:30-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-217",
+    "room": "217",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-217",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2302,
+      "quote": "2026-03-04T18:14:30-05:00,40417,rdr-217,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7850",
+    "t": "2026-03-04T18:15:52-05:00",
+    "type": "wifi_roam",
+    "person": null,
+    "device": "ap-2-07",
+    "room": "229",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:00:00:11"
+    },
+    "attrs": {
+      "ap": "ap-2-07",
+      "rssi": -52,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5437,
+      "quote": "2026-03-04T18:15:52-05:00,ap-2-07,02:1F:9A:00:00:11,ROAM,-52,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7852",
+    "t": "2026-03-04T18:16:10-05:00",
+    "type": "badge_in",
+    "person": null,
+    "device": "rdr-230",
+    "room": "230",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-230",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2304,
+      "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7853",
+    "t": "2026-03-04T18:16:40-05:00",
+    "type": "badge_in",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2305,
+      "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7854",
+    "t": "2026-03-04T18:17:05-05:00",
+    "type": "logon",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4624,
+      "logon_type": 2,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 38,
+      "quote": "2026-03-04T18:17:05-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7855",
+    "t": "2026-03-04T18:17:30-05:00",
+    "type": "usb_mount",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": null,
+    "attrs": {
+      "serial": "4C530001230918112443&0",
+      "vendor": "SanDisk",
+      "product": "Ultra",
+      "first_seen": "2026-03-04T18:17:30-05:00",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/usbstor.txt",
+      "line": 19,
+      "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]",
+      "sha256": "04ae9b8fa70adb3cc1e22fcb5da427e8bd52535aee8336407040a33fb55c9c76"
+    }
+  },
+  {
+    "id": "e7857",
+    "t": "2026-03-04T18:17:58-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\thruster_v4.step",
+      "bytes": 48211968,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 63,
+      "quote": "2026-03-04T18:17:58-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4.step,48211968,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7858",
+    "t": "2026-03-04T18:18:02-05:00",
+    "type": "file_copy",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\thruster_v4.step",
+      "bytes": 48211968,
+      "target_volume": "E:",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 64,
+      "quote": "2026-03-04T18:18:02-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4.step,48211968,E:",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7859",
+    "t": "2026-03-04T18:18:02-05:00",
+    "type": "file_access",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4663,
+      "path": "C:\\Projects\\Titan\\thruster_v4.step",
+      "access_mask": "0x1",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 39,
+      "quote": "2026-03-04T18:18:02-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7865",
+    "t": "2026-03-04T18:20:41-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\thruster_v4_assembly.sldasm",
+      "bytes": 21734400,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 65,
+      "quote": "2026-03-04T18:20:41-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7866",
+    "t": "2026-03-04T18:20:45-05:00",
+    "type": "file_copy",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\thruster_v4_assembly.sldasm",
+      "bytes": 21734400,
+      "target_volume": "E:",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 66,
+      "quote": "2026-03-04T18:20:45-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,E:",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7867",
+    "t": "2026-03-04T18:20:45-05:00",
+    "type": "file_access",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4663,
+      "path": "C:\\Projects\\Titan\\thruster_v4_assembly.sldasm",
+      "access_mask": "0x1",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 40,
+      "quote": "2026-03-04T18:20:45-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,0x1,C:\\Windows\\explorer.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7868",
+    "t": "2026-03-04T18:23:10-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\nozzle_throat_detail.sldprt",
+      "bytes": 9437184,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 67,
+      "quote": "2026-03-04T18:23:10-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7869",
+    "t": "2026-03-04T18:23:14-05:00",
+    "type": "file_copy",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\nozzle_throat_detail.sldprt",
+      "bytes": 9437184,
+      "target_volume": "E:",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 68,
+      "quote": "2026-03-04T18:23:14-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,E:",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7870",
+    "t": "2026-03-04T18:23:14-05:00",
+    "type": "file_access",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4663,
+      "path": "C:\\Projects\\Titan\\nozzle_throat_detail.sldprt",
+      "access_mask": "0x1",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 41,
+      "quote": "2026-03-04T18:23:14-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,0x1,C:\\Windows\\explorer.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7873",
+    "t": "2026-03-04T18:26:02-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\injector_plate_rev7.step",
+      "bytes": 31457280,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 69,
+      "quote": "2026-03-04T18:26:02-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7874",
+    "t": "2026-03-04T18:26:07-05:00",
+    "type": "file_copy",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\injector_plate_rev7.step",
+      "bytes": 31457280,
+      "target_volume": "E:",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 70,
+      "quote": "2026-03-04T18:26:07-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,E:",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7875",
+    "t": "2026-03-04T18:26:07-05:00",
+    "type": "file_access",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4663,
+      "path": "C:\\Projects\\Titan\\injector_plate_rev7.step",
+      "access_mask": "0x1",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 42,
+      "quote": "2026-03-04T18:26:07-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\injector_plate_rev7.step,0x1,C:\\Windows\\explorer.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7878",
+    "t": "2026-03-04T18:29:30-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx",
+      "bytes": 2883584,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 71,
+      "quote": "2026-03-04T18:29:30-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7879",
+    "t": "2026-03-04T18:29:33-05:00",
+    "type": "file_copy",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "path": "C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx",
+      "bytes": 2883584,
+      "target_volume": "E:",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 72,
+      "quote": "2026-03-04T18:29:33-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,E:",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7880",
+    "t": "2026-03-04T18:29:33-05:00",
+    "type": "file_access",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4663,
+      "path": "C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx",
+      "access_mask": "0x1",
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 43,
+      "quote": "2026-03-04T18:29:33-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,0x1,C:\\Windows\\explorer.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7882",
+    "t": "2026-03-04T18:30:00-05:00",
+    "type": "camera_online",
+    "person": null,
+    "device": "cam-03",
+    "room": "corr-c",
+    "actor": null,
+    "attrs": {
+      "camera": "cam-03",
+      "clip_ref": null
+    },
+    "source": {
+      "file": "cctv/index.csv",
+      "line": 4,
+      "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+      "sha256": "e93f6b08314ea5ce7a65069a91a668567d76652dfb1a8fcdcee8540f7a73862c"
+    }
+  },
+  {
+    "id": "e7884",
+    "t": "2026-03-04T18:31:20-05:00",
+    "type": "logoff",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "hgibson"
+    },
+    "attrs": {
+      "event_id": 4634,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 44,
+      "quote": "2026-03-04T18:31:20-05:00,4634,LT-219,hgibson,2,,,",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7885",
+    "t": "2026-03-04T18:31:40-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2312,
+      "quote": "2026-03-04T18:31:40-05:00,40417,rdr-219,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7887",
+    "t": "2026-03-04T18:33:05-05:00",
+    "type": "wifi_roam",
+    "person": null,
+    "device": "ap-2-03",
+    "room": "217",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:02"
+    },
+    "attrs": {
+      "ap": "ap-2-03",
+      "rssi": -58,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5445,
+      "quote": "2026-03-04T18:33:05-05:00,ap-2-03,02:1F:9A:10:00:02,ROAM,-58,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7891",
+    "t": "2026-03-04T18:41:00-05:00",
+    "type": "wifi_disassoc",
+    "person": null,
+    "device": "ap-2-03",
+    "room": "217",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:02"
+    },
+    "attrs": {
+      "ap": "ap-2-03",
+      "rssi": -61,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5447,
+      "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7896",
+    "t": "2026-03-04T18:52:14-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-230",
+    "room": "230",
+    "actor": {
+      "kind": "badge",
+      "value": "40417"
+    },
+    "attrs": {
+      "reader": "rdr-230",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2317,
+      "quote": "2026-03-04T18:52:14-05:00,40417,rdr-230,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7897",
+    "t": "2026-03-04T18:53:30-05:00",
+    "type": "wifi_disassoc",
+    "person": null,
+    "device": "ap-2-07",
+    "room": "229",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:00:00:11"
+    },
+    "attrs": {
+      "ap": "ap-2-07",
+      "rssi": -55,
+      "ssid": "JRR2-SECURE"
+    },
+    "source": {
+      "file": "network/wifi_ap_logs.csv",
+      "line": 5450,
+      "quote": "2026-03-04T18:53:30-05:00,ap-2-07,02:1F:9A:00:00:11,DISASSOC,-55,JRR2-SECURE",
+      "sha256": "1a6a5b191b6b69645dd8b0ac745330925729efd5492bc377f19fe2d9b3307298"
+    }
+  },
+  {
+    "id": "e7898",
+    "t": "2026-03-04T18:58:40-05:00",
+    "type": "badge_in",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40455"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2318,
+      "quote": "2026-03-04T18:58:40-05:00,40455,rdr-219,IN,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7899",
+    "t": "2026-03-04T19:00:00-05:00",
+    "type": "maintenance_window",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "name",
+      "value": "Frederik Mendelssohn"
+    },
+    "attrs": {
+      "start": "2026-03-04T19:00:00-05:00",
+      "end": "2026-03-04T21:30:00-05:00",
+      "asset": "lt-219",
+      "work_order": "WO-3117",
+      "technician": "Frederik Mendelssohn"
+    },
+    "source": {
+      "file": "it/maintenance_calendar.csv",
+      "line": 4,
+      "quote": "WO-3117,lt-219,2026-03-04T19:00:00-05:00,2026-03-04T21:30:00-05:00,Frederik Mendelssohn,Monthly security patching (offline media)",
+      "sha256": "72f3df917ffb1a88df21a5ff5ae1df3c3e7b5a47daed8ee74081c4342bc1cfef"
+    }
+  },
+  {
+    "id": "e7900",
+    "t": "2026-03-04T19:01:15-05:00",
+    "type": "logon",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "attrs": {
+      "event_id": 4624,
+      "logon_type": 2,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 45,
+      "quote": "2026-03-04T19:01:15-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7901",
+    "t": "2026-03-04T19:04:22-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "attrs": {
+      "path": "C:\\Patches\\2026-03\\windows11.0-kb5053598-x64.msu",
+      "bytes": 412090368,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 73,
+      "quote": "2026-03-04T19:04:22-05:00,LT-219,fmendelssohn,READ,C:\\Patches\\2026-03\\windows11.0-kb5053598-x64.msu,412090368,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7902",
+    "t": "2026-03-04T19:38:51-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "attrs": {
+      "path": "C:\\Windows\\Logs\\CBS\\CBS.log",
+      "bytes": 18874368,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 74,
+      "quote": "2026-03-04T19:38:51-05:00,LT-219,fmendelssohn,READ,C:\\Windows\\Logs\\CBS\\CBS.log,18874368,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7903",
+    "t": "2026-03-04T20:47:09-05:00",
+    "type": "file_read",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "attrs": {
+      "path": "C:\\Windows\\WinSxS\\pending.xml",
+      "bytes": 524288,
+      "target_volume": null,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/file_audit.csv",
+      "line": 75,
+      "quote": "2026-03-04T20:47:09-05:00,LT-219,fmendelssohn,READ,C:\\Windows\\WinSxS\\pending.xml,524288,",
+      "sha256": "f0ed7a54e464dd68ca8459dbc2493ab3a959ae0fcc9bc5c873b5264d7c38ba92"
+    }
+  },
+  {
+    "id": "e7904",
+    "t": "2026-03-04T21:27:48-05:00",
+    "type": "logoff",
+    "person": null,
+    "device": "lt-219",
+    "room": "219",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "attrs": {
+      "event_id": 4634,
+      "host": "lt-219"
+    },
+    "source": {
+      "file": "endpoint/security_log.csv",
+      "line": 46,
+      "quote": "2026-03-04T21:27:48-05:00,4634,LT-219,fmendelssohn,2,,,",
+      "sha256": "bbac7d6b9aff93b488d7d4379a3bc4f2af6ea753299da1b2691fc61033f6dd91"
+    }
+  },
+  {
+    "id": "e7905",
+    "t": "2026-03-04T21:30:12-05:00",
+    "type": "badge_out",
+    "person": null,
+    "device": "rdr-219",
+    "room": "219",
+    "actor": {
+      "kind": "badge",
+      "value": "40455"
+    },
+    "attrs": {
+      "reader": "rdr-219",
+      "result": "GRANTED"
+    },
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 2319,
+      "quote": "2026-03-04T21:30:12-05:00,40455,rdr-219,OUT,GRANTED",
+      "sha256": "29ab1cf75edf224980f0c4700dca4e3a46b060b846c8aeb3a59f74a0d20c254d"
+    }
+  },
+  {
+    "id": "e7929",
+    "t": "2026-03-05T08:31:00-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "kim.sayers"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772717460.000100"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-05.json",
+      "line": 5,
+      "quote": "Missed you at the reception. Finance is processing your signing bonus this week.",
+      "sha256": "3ed2f7ca1f5d02fff803484a243d6d50fbfac3519e3db0b23e0745599ed6e356"
+    }
+  },
+  {
+    "id": "e7940",
+    "t": "2026-03-05T08:40:15-05:00",
+    "type": "chat",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "slack",
+      "value": "hank.gibson"
+    },
+    "attrs": {
+      "channel": "D0HANKKIM",
+      "ts": "1772718015.000200"
+    },
+    "source": {
+      "file": "comms/slack_export/D0HANKKIM/2026-03-05.json",
+      "line": 11,
+      "quote": "Something came up. Thanks, talk Friday.",
+      "sha256": "3ed2f7ca1f5d02fff803484a243d6d50fbfac3519e3db0b23e0745599ed6e356"
+    }
+  },
+  {
+    "id": "e9081",
+    "t": "2026-03-06T10:42:00-05:00",
+    "type": "transaction",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Hank Gibson"
+    },
+    "attrs": {
+      "account": "CHK-7731",
+      "amount": 25000.0,
+      "counterparty": "Northline Systems Inc",
+      "description": "SIGNING BONUS"
+    },
+    "source": {
+      "file": "financial/transactions.csv",
+      "line": 2,
+      "quote": "2026-03-06T10:42:00-05:00,CHK-7731,SIGNING BONUS,Northline Systems Inc,25000.00,31842.17",
+      "sha256": "03ba3d0660d35fd93221d8fe6fdc6c427f26fb723075122f16d55da0d30c2ba7"
+    }
+  },
+  {
+    "id": "e9820",
+    "t": "2026-03-07T09:15:00-05:00",
+    "type": "transaction",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Hank Gibson"
+    },
+    "attrs": {
+      "account": "CHK-7731",
+      "amount": -18000.0,
+      "counterparty": "Coinvault Exchange LLC",
+      "description": "TRANSFER TO COINVAULT EXCHANGE"
+    },
+    "source": {
+      "file": "financial/transactions.csv",
+      "line": 3,
+      "quote": "2026-03-07T09:15:00-05:00,CHK-7731,TRANSFER TO COINVAULT EXCHANGE,Coinvault Exchange LLC,-18000.00,13842.17",
+      "sha256": "03ba3d0660d35fd93221d8fe6fdc6c427f26fb723075122f16d55da0d30c2ba7"
+    }
+  },
+  {
+    "id": "e9911",
+    "t": "2026-03-09T10:14:00-05:00",
+    "type": "email",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "email",
+      "value": "hank.gibson@halvorsen.example"
+    },
+    "attrs": {
+      "from": "hank.gibson@halvorsen.example",
+      "to": [
+        "alma.imhoff@halvorsen.example"
+      ],
+      "subject": "Re: Room 219 access on March 4",
+      "message_id": "<20260309101400.9c2e@halvorsen.example>"
+    },
+    "source": {
+      "file": "comms/mailbox.mbox",
+      "line": 18904,
+      "quote": "I never touched the Titan folder.",
+      "sha256": "32877ed10978a8d4484080a1235987f719348741412f897e840d9586eab576c9"
+    }
+  },
+  {
+    "id": "e9912",
+    "t": "2026-03-09T14:00:00-05:00",
+    "type": "statement",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Hank Gibson"
+    },
+    "attrs": {
+      "speaker": "Hank Gibson",
+      "page": 1
+    },
+    "source": {
+      "file": "statements/hank_gibson.pdf",
+      "line": 6,
+      "quote": "I went straight home at six.",
+      "sha256": "7285bed5f015ecc9bed015b40fd1a9f304b2f365b7b2d10bd03c7dc960cbfd57"
+    }
+  },
+  {
+    "id": "e9913",
+    "t": "2026-03-09T14:00:00-05:00",
+    "type": "statement",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Hank Gibson"
+    },
+    "attrs": {
+      "speaker": "Hank Gibson",
+      "page": 1
+    },
+    "source": {
+      "file": "statements/hank_gibson.pdf",
+      "line": 11,
+      "quote": "IT gave me that drive last year.",
+      "sha256": "7285bed5f015ecc9bed015b40fd1a9f304b2f365b7b2d10bd03c7dc960cbfd57"
+    }
+  },
+  {
+    "id": "e9914",
+    "t": "2026-03-09T15:30:00-05:00",
+    "type": "statement",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Maggie Price"
+    },
+    "attrs": {
+      "speaker": "Maggie Price",
+      "page": 1
+    },
+    "source": {
+      "file": "statements/maggie_price.pdf",
+      "line": 7,
+      "quote": "Hank and I left together around 6:30.",
+      "sha256": "6bb9e8ee40bda4d0bb3a27b52aaa1019d72e17f306a7c311d993daf467632ef3"
+    }
+  },
+  {
+    "id": "e9915",
+    "t": "2026-03-09T16:30:00-05:00",
+    "type": "statement",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "name",
+      "value": "Frederik Mendelssohn"
+    },
+    "attrs": {
+      "speaker": "Frederik Mendelssohn",
+      "page": 1
+    },
+    "source": {
+      "file": "statements/frederik_mendelssohn.pdf",
+      "line": 6,
+      "quote": "I ran the scheduled monthly patch window on lt-219 from 19:00 to 21:30 under work order WO-3117.",
+      "sha256": "57ea674cd7e34268cd78a8c40531031f9d934ac41ec0ca3dfa841b230ca6574d"
     }
   }
 ]

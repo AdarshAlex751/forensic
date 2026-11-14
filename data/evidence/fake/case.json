@@ -1,8 +1,8 @@
 {
   "id": "1010F",
-  "title": "Case 1010F: removable-media copy from a file server room (fake data)",
-  "address": "The ION, 4201 Main St, Houston, TX 77002",
-  "summary": "Placeholder summary. Records show a badge read at the lobby, a USB mount in the file server room 30 seconds later, and a Wi-Fi association after the badge-out. One log file fails its manifest hash.",
+  "title": "The Titan Files",
+  "address": "Julis Romo Rabinowitz Building, Princeton University, Princeton, NJ",
+  "summary": "On 2026-03-09 Halvorsen Dynamics opened an investigation into whether the Titan thruster design files left the isolated laptop in room 219. Senior engineer Hank Gibson resigned on 2026-03-02 to join Northline Systems. The case holds floor access, Wi-Fi, laptop, CCTV, IT, communications and financial records from 2026-02-23 to 2026-03-08, plus interview statements taken on 2026-03-09.",
   "costar_property_id": "",
-  "matterport_model_id": "CHUheq99ibg"
+  "matterport_model_id": ""
 }

@@ -1,0 +1,310 @@
+[
+  {
+    "id": "e9916",
+    "t": "2026-03-04T08:21:47-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2081"
+    },
+    "attrs": {
+      "plate": "N37-SUV",
+      "lane": "ENTRY-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 2,
+      "quote": "2026-03-04T08:21:47-05:00,ENTRY-1,P-2081,N37-SUV,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9917",
+    "t": "2026-03-04T08:30:05-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2217"
+    },
+    "attrs": {
+      "plate": "L29-BVS",
+      "lane": "ENTRY-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 3,
+      "quote": "2026-03-04T08:30:05-05:00,ENTRY-1,P-2217,L29-BVS,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9918",
+    "t": "2026-03-04T08:36:52-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2088"
+    },
+    "attrs": {
+      "plate": "W26-VCU",
+      "lane": "ENTRY-2"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 4,
+      "quote": "2026-03-04T08:36:52-05:00,ENTRY-2,P-2088,W26-VCU,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9919",
+    "t": "2026-03-04T08:42:19-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2092"
+    },
+    "attrs": {
+      "plate": "A84-AAA",
+      "lane": "ENTRY-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 5,
+      "quote": "2026-03-04T08:42:19-05:00,ENTRY-1,P-2092,A84-AAA,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9920",
+    "t": "2026-03-04T09:06:33-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2205"
+    },
+    "attrs": {
+      "plate": "Y35-KBX",
+      "lane": "ENTRY-2"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 6,
+      "quote": "2026-03-04T09:06:33-05:00,ENTRY-2,P-2205,Y35-KBX,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9921",
+    "t": "2026-03-04T17:30:05-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2205"
+    },
+    "attrs": {
+      "plate": "Y35-KBX",
+      "lane": "EXIT-2"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 7,
+      "quote": "2026-03-04T17:30:05-05:00,EXIT-2,P-2205,Y35-KBX,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9922",
+    "t": "2026-03-04T17:31:08-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2081"
+    },
+    "attrs": {
+      "plate": "N37-SUV",
+      "lane": "EXIT-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 8,
+      "quote": "2026-03-04T17:31:08-05:00,EXIT-1,P-2081,N37-SUV,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9923",
+    "t": "2026-03-04T17:52:26-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2092"
+    },
+    "attrs": {
+      "plate": "A84-AAA",
+      "lane": "EXIT-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 9,
+      "quote": "2026-03-04T17:52:26-05:00,EXIT-1,P-2092,A84-AAA,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9924",
+    "t": "2026-03-04T18:20:34-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2204"
+    },
+    "attrs": {
+      "plate": "X88-CPH",
+      "lane": "EXIT-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 10,
+      "quote": "2026-03-04T18:20:34-05:00,EXIT-1,P-2204,X88-CPH,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9925",
+    "t": "2026-03-04T18:44:00-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2088"
+    },
+    "attrs": {
+      "plate": "W26-VCU",
+      "lane": "EXIT-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 11,
+      "quote": "2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9926",
+    "t": "2026-03-04T18:49:41-05:00",
+    "type": "parking_entry",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2155"
+    },
+    "attrs": {
+      "plate": "U75-EDR",
+      "lane": "ENTRY-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 12,
+      "quote": "2026-03-04T18:49:41-05:00,ENTRY-1,P-2155,U75-EDR,IN",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9927",
+    "t": "2026-03-04T18:50:38-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2222"
+    },
+    "attrs": {
+      "plate": "S34-PEM",
+      "lane": "EXIT-2"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 13,
+      "quote": "2026-03-04T18:50:38-05:00,EXIT-2,P-2222,S34-PEM,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9928",
+    "t": "2026-03-04T18:58:16-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2217"
+    },
+    "attrs": {
+      "plate": "L29-BVS",
+      "lane": "EXIT-2"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 14,
+      "quote": "2026-03-04T18:58:16-05:00,EXIT-2,P-2217,L29-BVS,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  },
+  {
+    "id": "e9929",
+    "t": "2026-03-04T21:41:03-05:00",
+    "type": "parking_exit",
+    "person": null,
+    "device": null,
+    "room": null,
+    "actor": {
+      "kind": "permit",
+      "value": "P-2155"
+    },
+    "attrs": {
+      "plate": "U75-EDR",
+      "lane": "EXIT-1"
+    },
+    "source": {
+      "file": "access/parking_exit.csv",
+      "line": 15,
+      "quote": "2026-03-04T21:41:03-05:00,EXIT-1,P-2155,U75-EDR,OUT",
+      "sha256": "1b8669f254de59dbfd8b156d07024ed0c093ff0b7afd7c9daecf3b03361a308f"
+    }
+  }
+]

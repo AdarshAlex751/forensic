@@ -25,7 +25,12 @@ Status: **draft for team review.** Items marked *proposed* need a yes from the t
 | `answer_key.json` | — (real from day one) | `answer_key.json` | Person 2's evaluator only. Never the system, never Person 4 |
 
 In the real run, `events.json` holds every event: story, background and (after approval) extra. The fake splits
-them into three files only so each is small enough to read; every event in all three has the same shape.
+them into three files only so each is small enough to read; every event in all three has the same shape. Event IDs
+are unique across the three fake files and each file is sorted by `t`, but IDs only increase with time inside the
+combined story + baseline set (extra events are numbered after them, as after an approval).
+
+The fakes are rebuilt with `python backend/app/features/evidence/fakes/make_baseline.py` then
+`python backend/app/features/evidence/fakes/finalize.py`, and checked with `python -m pytest tests/evidence`.
 
 ## 2. Rules for every file
 
@@ -51,10 +56,10 @@ Array of event objects.
 | `t` | string | existing | When it happened (rule above). For statements and emails: when the statement was given or the email sent |
 | `type` | string | existing | One value from the list in section 3.1. Nothing else ever appears |
 | `person` | string or null | existing | **Always `null` in evidence output.** *Proposed:* the merge step fills it from Person 3's `persons.json` aliases matched against `actor` (same pattern as `verified`) |
-| `device` | string or null | existing | A `device_id` from `devices.csv`, or `null` |
+| `device` | string or null | existing | A `device_id` from `devices.csv`: the badge reader, the Wi-Fi AP, the camera, or `lt-219` for laptop events. `null` for email, chat, statements, transactions and parking |
 | `room` | string or null | existing | A room ID from `devices.csv` (`"219"`, a string), or `null` |
 | `source` | object | existing | See section 3.2 |
-| `actor` | object or null | **new** | The raw identifier the record contains: `{"kind": …, "value": …}`. `kind` is one of `badge`, `mac`, `account`, `email`, `slack`, `permit`, `name`. `null` only for system events (camera status) |
+| `actor` | object or null | **new** | The raw identifier the record contains: `{"kind": …, "value": …}`. `kind` is one of `badge`, `mac`, `account`, `email`, `slack`, `permit`, `name`. `null` only for events with no person identifier in the record (`camera_*`, `usb_mount`) |
 | `attrs` | object | **new** | Type-specific fields, section 3.1 |
 | `verified` | — | existing | **Never written by the evidence slice.** The merge step sets it from `verification.json` |
 
