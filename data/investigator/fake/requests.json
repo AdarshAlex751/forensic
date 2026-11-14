@@ -1,8 +1,8 @@
 [
   {
     "id": "r1",
-    "ask": "Pull camera 3 badge-area footage and the parking garage exit log, 18:10 to 18:45.",
-    "why": "Disproves h1 if the car left before 18:16.",
+    "ask": "Pull the campus parking exit log for 2026-03-04, 18:10 to 18:45.",
+    "why": "Tests h2: an exit for Hank Gibson's permit after 18:16 conflicts with 'I went straight home at six'; no exit would weaken it.",
     "status": "pending"
   }
 ]

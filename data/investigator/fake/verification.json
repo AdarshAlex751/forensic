@@ -1,35 +1,122 @@
 {
-  "claims": 212,
-  "verified": 207,
+  "claims": 83,
+  "verified": 70,
   "rejected": [
     {
-      "claim": "Dana Reyes badged out at 18:20",
-      "reason": "quote not found"
+      "claim": "e2034: logon at 2026-02-25T10:01:03-05:00, \"2026-02-25T10:01:03-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\...\"",
+      "reason": "custody: hash mismatch"
     },
     {
-      "claim": "USB device serial 0451",
-      "reason": "field mismatch in cited row"
+      "claim": "e2093: logoff at 2026-02-25T10:40:27-05:00, \"2026-02-25T10:40:27-05:00,4634,LT-219,rokafor,2,,,\"",
+      "reason": "custody: hash mismatch"
     },
     {
-      "claim": "Kelly left at 17:55",
-      "reason": "quote not found"
+      "claim": "e4379: logon at 2026-02-27T14:10:52-05:00, \"2026-02-27T14:10:52-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\wi...\"",
+      "reason": "custody: hash mismatch"
     },
     {
-      "claim": "Camera 3 restarted at 18:21",
-      "reason": "quote not found"
+      "claim": "e4450: logoff at 2026-02-27T15:02:16-05:00, \"2026-02-27T15:02:16-05:00,4634,LT-219,mbell,2,,,\"",
+      "reason": "custody: hash mismatch"
     },
     {
-      "claim": "Payment of $4,200 on 03-03",
-      "reason": "cited file has no such row"
+      "claim": "e7854: logon at 2026-03-04T18:17:05-05:00, \"2026-03-04T18:17:05-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\...\"",
+      "reason": "custody: hash mismatch"
+    },
+    {
+      "claim": "e7859: file_access at 2026-03-04T18:18:02-05:00, \"2026-03-04T18:18:02-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thrus...\"",
+      "reason": "custody: hash mismatch (same fact verified from endpoint/file_audit.csv: e7858)"
+    },
+    {
+      "claim": "e7867: file_access at 2026-03-04T18:20:45-05:00, \"2026-03-04T18:20:45-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thrus...\"",
+      "reason": "custody: hash mismatch (same fact verified from endpoint/file_audit.csv: e7866)"
+    },
+    {
+      "claim": "e7870: file_access at 2026-03-04T18:23:14-05:00, \"2026-03-04T18:23:14-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\nozzl...\"",
+      "reason": "custody: hash mismatch (same fact verified from endpoint/file_audit.csv: e7869)"
+    },
+    {
+      "claim": "e7875: file_access at 2026-03-04T18:26:07-05:00, \"2026-03-04T18:26:07-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\injec...\"",
+      "reason": "custody: hash mismatch (same fact verified from endpoint/file_audit.csv: e7874)"
+    },
+    {
+      "claim": "e7880: file_access at 2026-03-04T18:29:33-05:00, \"2026-03-04T18:29:33-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan...\"",
+      "reason": "custody: hash mismatch (same fact verified from endpoint/file_audit.csv: e7879)"
+    },
+    {
+      "claim": "e7884: logoff at 2026-03-04T18:31:20-05:00, \"2026-03-04T18:31:20-05:00,4634,LT-219,hgibson,2,,,\"",
+      "reason": "custody: hash mismatch"
+    },
+    {
+      "claim": "e7900: logon at 2026-03-04T19:01:15-05:00, \"2026-03-04T19:01:15-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\Syst...\"",
+      "reason": "custody: hash mismatch"
+    },
+    {
+      "claim": "e7904: logoff at 2026-03-04T21:27:48-05:00, \"2026-03-04T21:27:48-05:00,4634,LT-219,fmendelssohn,2,,,\"",
+      "reason": "custody: hash mismatch"
     }
   ],
   "verified_event_ids": [
-    "e1",
-    "e2",
-    "e3",
-    "e4",
-    "e5",
-    "e6",
-    "e7"
+    "e1374",
+    "e1381",
+    "e1405",
+    "e2026",
+    "e2040",
+    "e2097",
+    "e2831",
+    "e2832",
+    "e2833",
+    "e4374",
+    "e4384",
+    "e4453",
+    "e4879",
+    "e5842",
+    "e6789",
+    "e6790",
+    "e7176",
+    "e7725",
+    "e7732",
+    "e7769",
+    "e7771",
+    "e7808",
+    "e7809",
+    "e7830",
+    "e7835",
+    "e7843",
+    "e7848",
+    "e7850",
+    "e7852",
+    "e7853",
+    "e7855",
+    "e7857",
+    "e7858",
+    "e7865",
+    "e7866",
+    "e7868",
+    "e7869",
+    "e7873",
+    "e7874",
+    "e7878",
+    "e7879",
+    "e7882",
+    "e7885",
+    "e7887",
+    "e7891",
+    "e7896",
+    "e7897",
+    "e7898",
+    "e7899",
+    "e7901",
+    "e7902",
+    "e7903",
+    "e7905",
+    "e7929",
+    "e7940",
+    "e9081",
+    "e9820",
+    "e9911",
+    "e9912",
+    "e9913",
+    "e9914",
+    "e9915"
   ]
 }

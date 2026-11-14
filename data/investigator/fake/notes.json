@@ -1,18 +1,22 @@
 [
   {
-    "text": "Check who else badged into the lobby between 18:10 and 18:20.",
-    "kind": "check_next"
-  },
-  {
-    "text": "Confirm the camera-3 maintenance window with building facilities.",
-    "kind": "check_next"
-  },
-  {
-    "text": "Tom Weller: high anomaly score, cleared by the scheduled patch window on the IT calendar (e6).",
+    "text": "Frederik Mendelssohn: highest after-hours anomaly score, cleared by work order WO-3117 for the 19:00 to 21:30 patch window on lt-219 (e7899).",
     "kind": "cleared"
   },
   {
-    "text": "Humans label roles in this case; the system reports facts and contradictions only.",
+    "text": "The badge number used at room 219 at 18:16:40 was read in room 230 at 18:16:10. One of the two reads was not the card holder. The records do not say who used it.",
+    "kind": "cleared"
+  },
+  {
+    "text": "Pull the parking exit log for 18:10 to 18:45 to test the statement 'I went straight home at six'.",
+    "kind": "check_next"
+  },
+  {
+    "text": "Ask facilities why cam-03 went offline at 18:05 and whether a work order exists.",
+    "kind": "check_next"
+  },
+  {
+    "text": "The system reports facts and contradictions only. A human decides what they mean for any person.",
     "kind": "todo"
   }
 ]

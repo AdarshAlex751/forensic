@@ -1,22 +1,41 @@
 [
   {
     "id": "h1",
-    "text": "The records for badge 40417 and its laptop place one account at the lobby, in room 212 and in suite 210 in an order the walking model cannot produce.",
-    "confidence": 0.71,
+    "text": "On 2026-03-04 the local account hgibson on lt-219 opened the Titan files and copied them to removable media between 18:17 and 18:31. The room 219 door was opened at 18:16:40 with a badge number that was read in room 230 thirty seconds earlier, 74 s away.",
+    "confidence": 0.78,
     "supports": [
-      "c1",
       "c2",
-      "c3"
+      "c5",
+      "c7"
     ],
-    "disproved_by": "A garage exit log showing the car left before 18:16 would show the lobby read was not this badge holder."
+    "disproved_by": "A record showing someone other than the account holder used the hgibson account on lt-219, or a documented, authorized reason for the file copy."
   },
   {
     "id": "h2",
-    "text": "The camera-3 gap and the manifest hash mismatch make the 18:10 to 18:20 window unverifiable from this file.",
-    "confidence": 0.52,
+    "text": "Hank Gibson's badge shows him leaving room 217 at 18:02, but his laptop stays on the floor Wi-Fi until 18:41 and no later badge read follows. His statement that he went straight home at six does not match these records.",
+    "confidence": 0.64,
     "supports": [
-      "c4"
+      "c1",
+      "c3"
     ],
-    "disproved_by": "A maintenance ticket for camera 3 in that window."
+    "disproved_by": "Wi-Fi records showing the laptop was left behind or used by someone else, or a parking record showing his car left before 18:16."
+  },
+  {
+    "id": "h3",
+    "text": "Camera cam-03, which covers the corridor outside room 219, was offline from 18:05 to 18:30 and the IT calendar has no work order for it.",
+    "confidence": 0.55,
+    "supports": [
+      "c6"
+    ],
+    "disproved_by": "A maintenance work order or IT ticket for cam-03 covering 18:05 to 18:30."
+  },
+  {
+    "id": "h4",
+    "text": "endpoint/security_log.csv does not match its manifest hash, so facts from it are not relied on. The same file access is recorded in endpoint/file_audit.csv.",
+    "confidence": 0.93,
+    "supports": [
+      "c8"
+    ],
+    "disproved_by": "A manifest entry that matches the stored file, or a documented re-export of the log."
   }
 ]
