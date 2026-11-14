@@ -1,6 +1,8 @@
 {
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
-    "frontend-design@anthropic-plugin-directory": true
+    "frontend-design@anthropic-plugin-directory": true,
+    "python-development@claude-code-workflows": true,
+    "javascript-typescript@claude-code-workflows": true
   }
 }
