@@ -1,0 +1,8 @@
+{
+  "id": "1010F",
+  "title": "Case 1010F: removable-media copy from a file server room (fake data)",
+  "address": "The ION, 4201 Main St, Houston, TX 77002",
+  "summary": "Placeholder summary. Records show a badge read at the lobby, a USB mount in the file server room 30 seconds later, and a Wi-Fi association after the badge-out. One log file fails its manifest hash.",
+  "costar_property_id": "",
+  "matterport_model_id": "CHUheq99ibg"
+}

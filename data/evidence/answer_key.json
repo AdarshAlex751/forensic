@@ -1,0 +1,35 @@
+{
+  "planted": [
+    {
+      "id": "k1",
+      "kind": "physical",
+      "events": [
+        "e1",
+        "e2"
+      ]
+    },
+    {
+      "id": "k2",
+      "kind": "temporal",
+      "events": [
+        "e3",
+        "e4"
+      ]
+    },
+    {
+      "id": "k3",
+      "kind": "statement",
+      "events": [
+        "e5",
+        "e4"
+      ]
+    },
+    {
+      "id": "k4",
+      "kind": "custody",
+      "events": [
+        "e7"
+      ]
+    }
+  ]
+}

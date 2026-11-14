@@ -1,0 +1,48 @@
+[
+  {
+    "id": "c1",
+    "kind": "physical",
+    "events": [
+      "e1",
+      "e2"
+    ],
+    "score": 0.98,
+    "explanation": "Lobby reader at 18:16:10 and USB mount in room 212 at 18:16:40 are 30 s apart; the shortest walk is 74 s.",
+    "path": [
+      "lobby",
+      "elev-B",
+      "212"
+    ],
+    "walk_s": 74,
+    "gap_s": 30
+  },
+  {
+    "id": "c2",
+    "kind": "temporal",
+    "events": [
+      "e3",
+      "e4"
+    ],
+    "score": 0.9,
+    "explanation": "Wi-Fi association at 18:30:05 for the laptop of badge 40417, 8 min after the lobby badge-out."
+  },
+  {
+    "id": "c3",
+    "kind": "statement",
+    "events": [
+      "e5",
+      "e4"
+    ],
+    "score": 0.94,
+    "explanation": "Statement 'I went straight home after work' vs a Wi-Fi association in suite 210 at 18:30:05 (NLI contradiction 0.94)."
+  },
+  {
+    "id": "c4",
+    "kind": "custody",
+    "events": [
+      "e7"
+    ],
+    "score": 1.0,
+    "explanation": "security_log.csv does not match its manifest hash; the camera-3 gap at 18:10 comes from this file."
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "claims": 212,
+  "verified": 207,
+  "rejected": [
+    {
+      "claim": "Dana Reyes badged out at 18:20",
+      "reason": "quote not found"
+    },
+    {
+      "claim": "USB device serial 0451",
+      "reason": "field mismatch in cited row"
+    },
+    {
+      "claim": "Kelly left at 17:55",
+      "reason": "quote not found"
+    },
+    {
+      "claim": "Camera 3 restarted at 18:21",
+      "reason": "quote not found"
+    },
+    {
+      "claim": "Payment of $4,200 on 03-03",
+      "reason": "cited file has no such row"
+    }
+  ],
+  "verified_event_ids": [
+    "e1",
+    "e2",
+    "e3",
+    "e4",
+    "e5",
+    "e6",
+    "e7"
+  ]
+}

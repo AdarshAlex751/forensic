@@ -1,0 +1,35 @@
+[
+  {
+    "from": "p1",
+    "to": "fs-212",
+    "type": "accessed",
+    "events": [
+      "e2"
+    ]
+  },
+  {
+    "from": "p1",
+    "to": "rdr-lobby",
+    "type": "used",
+    "events": [
+      "e1",
+      "e3"
+    ]
+  },
+  {
+    "from": "p1",
+    "to": "ap-2-east",
+    "type": "used",
+    "events": [
+      "e4"
+    ]
+  },
+  {
+    "from": "p3",
+    "to": "fs-212",
+    "type": "accessed",
+    "events": [
+      "e6"
+    ]
+  }
+]

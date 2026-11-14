@@ -1,0 +1,27 @@
+[
+  {
+    "id": "lobby",
+    "label": "Lobby",
+    "floor": 1
+  },
+  {
+    "id": "elev-B",
+    "label": "Elevator B",
+    "floor": 1
+  },
+  {
+    "id": "corridor-2",
+    "label": "Floor 2 corridor",
+    "floor": 2
+  },
+  {
+    "id": "210",
+    "label": "Suite 210 (Halvorsen Dynamics)",
+    "floor": 2
+  },
+  {
+    "id": "212",
+    "label": "File server room",
+    "floor": 2
+  }
+]

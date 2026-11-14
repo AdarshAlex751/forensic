@@ -1,0 +1,4 @@
+pandas
+pdfplumber
+rapidfuzz
+langchain-groq

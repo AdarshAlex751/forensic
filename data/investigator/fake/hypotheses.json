@@ -1,0 +1,22 @@
+[
+  {
+    "id": "h1",
+    "text": "The records for badge 40417 and its laptop place one account at the lobby, in room 212 and in suite 210 in an order the walking model cannot produce.",
+    "confidence": 0.71,
+    "supports": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "disproved_by": "A garage exit log showing the car left before 18:16 would show the lobby read was not this badge holder."
+  },
+  {
+    "id": "h2",
+    "text": "The camera-3 gap and the manifest hash mismatch make the 18:10 to 18:20 window unverifiable from this file.",
+    "confidence": 0.52,
+    "supports": [
+      "c4"
+    ],
+    "disproved_by": "A maintenance ticket for camera 3 in that window."
+  }
+]

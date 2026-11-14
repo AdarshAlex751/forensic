@@ -1,0 +1,6 @@
+device_id,type,room,sweep
+rdr-lobby,badge_reader,lobby,sweep-001
+rdr-212,badge_reader,212,sweep-014
+ap-2-east,wifi_ap,210,sweep-009
+cam-3,camera,corridor-2,sweep-011
+fs-212,server,212,sweep-014

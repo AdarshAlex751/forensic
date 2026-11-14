@@ -1,0 +1,59 @@
+[
+  {
+    "id": "p1",
+    "name": "Dana Reyes",
+    "role": "Analyst, Halvorsen Dynamics",
+    "suite": "210",
+    "aliases": [
+      "dreyes@halvorsen.com",
+      "badge:40417",
+      "mac:3C:22:FB:00:00:01"
+    ],
+    "anomaly": 0.91,
+    "features": {
+      "after_hours_badge_min": 74,
+      "files_touched": 312,
+      "files_touched_baseline": 40,
+      "usb_mounts": 1
+    },
+    "community": 2
+  },
+  {
+    "id": "p2",
+    "name": "Kelly Ortiz",
+    "role": "Office manager, Halvorsen Dynamics",
+    "suite": "210",
+    "aliases": [
+      "kortiz@halvorsen.com",
+      "badge:40418",
+      "mac:3C:22:FB:00:00:02"
+    ],
+    "anomaly": 0.22,
+    "features": {
+      "after_hours_badge_min": 5,
+      "files_touched": 18,
+      "files_touched_baseline": 20,
+      "usb_mounts": 0
+    },
+    "community": 1
+  },
+  {
+    "id": "p3",
+    "name": "Tom Weller",
+    "role": "IT administrator, Halvorsen Dynamics",
+    "suite": "212",
+    "aliases": [
+      "tweller@halvorsen.com",
+      "badge:40399",
+      "mac:3C:22:FB:00:00:03"
+    ],
+    "anomaly": 0.83,
+    "features": {
+      "after_hours_badge_min": 95,
+      "files_touched": 140,
+      "files_touched_baseline": 120,
+      "usb_mounts": 0
+    },
+    "community": 3
+  }
+]

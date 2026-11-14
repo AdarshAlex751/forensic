@@ -1,0 +1,7 @@
+# secrets
+.env
+# dependencies and build output
+node_modules/
+.venv/
+__pycache__/
+dist/

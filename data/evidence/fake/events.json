@@ -1,0 +1,100 @@
+[
+  {
+    "id": "e1",
+    "t": "2026-03-04T18:16:10-06:00",
+    "type": "badge_in",
+    "person": "p1",
+    "device": "rdr-lobby",
+    "room": "lobby",
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 412,
+      "quote": "2026-03-04T18:16:10-06:00,40417,RDR-LOBBY,IN",
+      "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a"
+    }
+  },
+  {
+    "id": "e2",
+    "t": "2026-03-04T18:16:40-06:00",
+    "type": "usb_mount",
+    "person": "p1",
+    "device": "fs-212",
+    "room": "212",
+    "source": {
+      "file": "endpoint/usbstor.txt",
+      "line": 88,
+      "quote": "2026-03-04 18:16:40 USBSTOR mount DANA-LAPTOP vol E:",
+      "sha256": "ef481e027c364a58e2e98483f73b50909c91e91204b61ffa248dc66eaa3dee99"
+    }
+  },
+  {
+    "id": "e3",
+    "t": "2026-03-04T18:22:00-06:00",
+    "type": "badge_out",
+    "person": "p1",
+    "device": "rdr-lobby",
+    "room": "lobby",
+    "source": {
+      "file": "access/badge_access.csv",
+      "line": 415,
+      "quote": "2026-03-04T18:22:00-06:00,40417,RDR-LOBBY,OUT",
+      "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a"
+    }
+  },
+  {
+    "id": "e4",
+    "t": "2026-03-04T18:30:05-06:00",
+    "type": "wifi_assoc",
+    "person": "p1",
+    "device": "ap-2-east",
+    "room": "210",
+    "source": {
+      "file": "access/wifi_log.csv",
+      "line": 1203,
+      "quote": "2026-03-04T18:30:05-06:00,3C:22:FB:00:00:01,AP-2-East,ASSOC",
+      "sha256": "2c2113a8d03f4aa4935d1ed0116fd552767ca9a31fd0e933bfa1df102ca86fe8"
+    }
+  },
+  {
+    "id": "e5",
+    "t": "2026-03-04T18:35:00-06:00",
+    "type": "statement",
+    "person": "p1",
+    "device": null,
+    "room": null,
+    "source": {
+      "file": "statements/dana_reyes.txt",
+      "line": 3,
+      "quote": "I went straight home after work.",
+      "sha256": "ab7e3b43a9598fad122e5645eab2c100d2a34822b858e27e13ee56603a5ff937"
+    }
+  },
+  {
+    "id": "e6",
+    "t": "2026-03-04T19:00:00-06:00",
+    "type": "scheduled_patch",
+    "person": "p3",
+    "device": "fs-212",
+    "room": "212",
+    "source": {
+      "file": "endpoint/it_calendar.txt",
+      "line": 2,
+      "quote": "19:00-20:00 Patch window fs-212 (T. Weller)",
+      "sha256": "f0f584e5f792908237ce992eb318fae7cb2c4f26fa14ea73b26b6891c15d0a77"
+    }
+  },
+  {
+    "id": "e7",
+    "t": "2026-03-04T18:10:00-06:00",
+    "type": "camera_gap",
+    "person": null,
+    "device": "cam-3",
+    "room": "corridor-2",
+    "source": {
+      "file": "security_log.csv",
+      "line": 233,
+      "quote": "2026-03-04T18:10:00-06:00,CAM-3,FEED_LOST",
+      "sha256": "f7d8186a6bdecb845d5117bd9275663ca383286069258de56bfa39bd6df9b8f6"
+    }
+  }
+]

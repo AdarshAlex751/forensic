@@ -1,0 +1,44 @@
+[
+  {
+    "file": "access/badge_access.csv",
+    "sha256": "00b748c2bc4ddba2af40990fdb4273b1392bcf258eda7cb9cfa885db6264e99a",
+    "manifest_match": true,
+    "parser": "pandas",
+    "records": 3012
+  },
+  {
+    "file": "endpoint/usbstor.txt",
+    "sha256": "ef481e027c364a58e2e98483f73b50909c91e91204b61ffa248dc66eaa3dee99",
+    "manifest_match": true,
+    "parser": "text",
+    "records": 41
+  },
+  {
+    "file": "access/wifi_log.csv",
+    "sha256": "2c2113a8d03f4aa4935d1ed0116fd552767ca9a31fd0e933bfa1df102ca86fe8",
+    "manifest_match": true,
+    "parser": "pandas",
+    "records": 5120
+  },
+  {
+    "file": "security_log.csv",
+    "sha256": "f7d8186a6bdecb845d5117bd9275663ca383286069258de56bfa39bd6df9b8f6",
+    "manifest_match": false,
+    "parser": "pandas",
+    "records": 887
+  },
+  {
+    "file": "statements/dana_reyes.txt",
+    "sha256": "ab7e3b43a9598fad122e5645eab2c100d2a34822b858e27e13ee56603a5ff937",
+    "manifest_match": true,
+    "parser": "llm-extractor",
+    "records": 6
+  },
+  {
+    "file": "endpoint/it_calendar.txt",
+    "sha256": "f0f584e5f792908237ce992eb318fae7cb2c4f26fa14ea73b26b6891c15d0a77",
+    "manifest_match": true,
+    "parser": "llm-extractor",
+    "records": 4
+  }
+]

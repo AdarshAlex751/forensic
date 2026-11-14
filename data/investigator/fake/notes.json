@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Check who else badged into the lobby between 18:10 and 18:20.",
+    "kind": "check_next"
+  },
+  {
+    "text": "Confirm the camera-3 maintenance window with building facilities.",
+    "kind": "check_next"
+  },
+  {
+    "text": "Tom Weller: high anomaly score, cleared by the scheduled patch window on the IT calendar (e6).",
+    "kind": "cleared"
+  },
+  {
+    "text": "Humans label roles in this case; the system reports facts and contradictions only.",
+    "kind": "todo"
+  }
+]
