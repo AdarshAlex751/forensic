@@ -66,7 +66,7 @@ FILES: dict[str, bytes] = {
         '[\n  {\n    "type": "message",\n    "user": "U1",\n'
         '    "text": "bring what you can",\n    "ts": "1772638200.000100"\n  }\n]\n'
     ).encode(),
-    "statements/hank_gibson.pdf": make_pdf(["Statement of Hank Gibson", "Date: 2026-03-09", "", "I went straight home at six."]),
+    "statements/hank_gibson.pdf": make_pdf(["Statement of Hank Gibson", "Date: 2026-03-09", "I went straight home at six."]),
 }
 
 
