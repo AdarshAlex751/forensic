@@ -1,0 +1,7 @@
+# One command installs every slice: pip install -r backend/requirements/all.txt
+# (analysis.txt pulls in sentence-transformers, which brings PyTorch: expect a large download.)
+-r base.txt
+-r evidence.txt
+-r scene.txt
+-r analysis.txt
+-r investigator.txt
