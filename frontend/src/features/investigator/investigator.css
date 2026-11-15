@@ -777,3 +777,7 @@
 .inv-report ol.inv-footnotes {
   padding-left: 2rem;
 }
+
+.inv-stamp.inv-stamp-secret{color:#a51f24;border-color:#a51f24;transform:rotate(-9deg)}
+.inv-stamp-secret .inv-stamp-big{font-size:30px;letter-spacing:.12em}
+.inv-stamp-secret .inv-stamp-small{font-size:19px;font-weight:800;letter-spacing:.13em}
