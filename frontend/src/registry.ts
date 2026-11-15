@@ -6,6 +6,7 @@ import { OpeningScreen } from "./features/opening/OpeningScreen";
 import { SummaryPage } from "./features/evidence/SummaryPage";
 import { ContradictionsPage } from "./features/casepages/ContradictionsPage";
 import { MemoPage } from "./features/casepages/MemoPage";
+import { FeedbackPage } from "./features/feedback/FeedbackPage";
 import { RedFlagsPage } from "./features/casepages/RedFlagsPage";
 import { JudgeMode } from "./features/scene/JudgeMode";
 import { ScenePaperShell } from "./features/opening/ScenePaperShell";
@@ -24,6 +25,7 @@ export const pages: PageDef[] = [
   { path: "/red-flags", label: "Red flags", component: RedFlagsPage },
   { path: "/contradictions", label: "Contradictions", component: ContradictionsPage },
   { path: "/memo", label: "Investigator memo", component: MemoPage },
+  { path: "/feedback", label: "Feedback", component: FeedbackPage },
 ];
 
 // Slots: screens that combine two people's work. Pages render <Slot name="..." />.

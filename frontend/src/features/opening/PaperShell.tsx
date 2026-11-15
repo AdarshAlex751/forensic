@@ -12,6 +12,7 @@ const NAV = [
   { to: "/red-flags", label: "Red flags" },
   { to: "/contradictions", label: "Contradictions" },
   { to: "/memo", label: "Investigator memo" },
+  { to: "/feedback", label: "Feedback" },
 ];
 
 /**
