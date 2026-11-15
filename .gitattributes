@@ -3,3 +3,4 @@
 data/evidence/CASE-1010F/** -text
 data/evidence/extra/** -text
 data/evidence/truth/** -text
+data/evidence/answer_key.json -text
