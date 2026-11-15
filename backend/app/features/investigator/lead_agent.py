@@ -13,6 +13,7 @@ hypotheses straight from the verified contradictions (code does the math) and sa
 """
 from __future__ import annotations
 
+import ast
 import json
 import logging
 import os
@@ -145,6 +146,37 @@ def _sanitize_notes(raw: Any) -> list[dict[str, str]]:
             kind = str(n.get("kind", "check_next"))
             out.append({"text": str(n["text"]).strip(), "kind": kind if kind in _NOTE_KINDS else "check_next"})
     return out[:8]
+
+
+def _recover_failed_generation(exc: BaseException) -> str | None:
+    """Groq answers 400 tool_use_failed when the model wraps its final answer in a call to a tool called "json". The whole
+    answer is inside the error (`failed_generation`): dig it out so a valid answer is not thrown away. None if there is
+    nothing usable."""
+    raw: Any = None
+    body = getattr(exc, "body", None)
+    for src in (body, body.get("error") if isinstance(body, dict) else None):
+        if isinstance(src, dict) and isinstance(src.get("failed_generation"), str):
+            raw = src["failed_generation"]
+            break
+    if raw is None:
+        text = str(exc)
+        if " - " in text:
+            try:
+                parsed = ast.literal_eval(text.split(" - ", 1)[1])
+                err = parsed.get("error", parsed) if isinstance(parsed, dict) else {}
+                raw = err.get("failed_generation") if isinstance(err, dict) else None
+            except (ValueError, SyntaxError):
+                raw = None
+    if not isinstance(raw, str):
+        return None
+    try:
+        payload = json.loads(raw)
+        if isinstance(payload, dict) and "arguments" in payload:  # {"name": "json", "arguments": {...}}
+            args = payload["arguments"]
+            payload = json.loads(args) if isinstance(args, str) else args
+    except ValueError:
+        return None
+    return json.dumps(payload) if isinstance(payload, dict) and "hypotheses" in payload else None
 
 
 def _extract_json(text: str) -> Any:
@@ -325,7 +357,13 @@ def investigate(ctx: ToolContext, runner: Runner | None = None, trace: Trace | N
     else:
         brief = build_brief(ctx)
         try:
-            raw = _call_with_deadline(lambda: with_backoff(lambda: runner(brief)), _llm_budget_s())
+            try:
+                raw = _call_with_deadline(lambda: with_backoff(lambda: runner(brief)), _llm_budget_s())
+            except Exception as call_error:  # noqa: BLE001
+                raw = _recover_failed_generation(call_error)
+                if raw is None:
+                    raise
+                log.warning("recovered the model's answer from a rejected tool call (%s)", type(call_error).__name__)
             data = _extract_json(raw)
             neutral = {c.id: f"The records conflict: {c.explanation}".strip() for c in ctx.contradictions}
             defaults = {c.id: _DISPROOF.get(c.kind, _DEFAULT_DISPROOF) for c in ctx.contradictions}

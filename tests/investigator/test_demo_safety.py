@@ -107,3 +107,62 @@ def test_a_hung_model_call_is_cut_off_and_falls_back_to_rules(monkeypatch):
 
 def test_the_model_clients_get_a_60_second_request_timeout():
     assert lead_agent.LLM_REQUEST_TIMEOUT_S == 60
+
+
+# ---- Groq rejects an answer the model wrapped in a call to a tool named "json" (400 tool_use_failed), but the whole
+# ---- answer is inside the error (failed_generation). It is recovered instead of thrown away.
+ANSWER = {"hypotheses": [{"text": "The statement is not supported by the badge record.", "confidence": 0.8,
+                          "supports": ["c5"], "disproved_by": "A later badge read."}], "notes": []}
+
+
+class BadRequestError(Exception):
+    def __init__(self, failed_generation: str, as_body: bool = True):
+        self.body = {"message": "Tool call validation failed", "type": "invalid_request_error", "code": "tool_use_failed",
+                     "failed_generation": failed_generation} if as_body else None
+        super().__init__("Error code: 400 - " + repr({"error": {"message": "Tool call validation failed", "code": "tool_use_failed",
+                                                              "failed_generation": failed_generation}}))
+
+
+def test_an_answer_wrapped_in_a_json_tool_call_is_recovered_from_the_error_body():
+    wrapped = json.dumps({"name": "json", "arguments": ANSWER})
+
+    def runner(prompt):
+        raise BadRequestError(wrapped)
+
+    res = investigate(ctx(), runner=runner, trace=Trace())
+    assert res.engine == "llm" and [h["supports"] for h in res.hypotheses] == [["c5"]]
+
+
+def test_the_answer_is_recovered_from_the_error_text_when_there_is_no_body():
+    wrapped = json.dumps({"name": "json", "arguments": ANSWER})
+
+    def runner(prompt):
+        raise BadRequestError(wrapped, as_body=False)
+
+    assert investigate(ctx(), runner=runner, trace=Trace()).engine == "llm"
+
+
+def test_arguments_given_as_a_json_string_are_recovered_too():
+    wrapped = json.dumps({"name": "json", "arguments": json.dumps(ANSWER)})
+
+    def runner(prompt):
+        raise BadRequestError(wrapped)
+
+    assert investigate(ctx(), runner=runner, trace=Trace()).engine == "llm"
+
+
+def test_a_recovered_answer_still_goes_through_the_wording_filter():
+    bad = dict(ANSWER, hypotheses=[dict(ANSWER["hypotheses"][0], text="She deliberately hid the badge to conceal the copying.")])
+
+    def runner(prompt):
+        raise BadRequestError(json.dumps({"name": "json", "arguments": bad}))
+
+    res = investigate(ctx(), runner=runner, trace=Trace())
+    assert res.engine == "llm" and "deliberately" not in json.dumps(res.hypotheses)
+
+
+def test_an_unrecoverable_400_still_falls_back_to_rules():
+    def runner(prompt):
+        raise BadRequestError("not json at all")
+
+    assert_demo_still_works(investigate(ctx(), runner=runner, trace=Trace()))
