@@ -1,0 +1,86 @@
+[
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Small PR for the telemetry parser, should take ten minutes.",
+    "ts": "1772637701.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "on it",
+    "ts": "1772638180.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "approved. minor nit about naming",
+    "ts": "1772638282.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "thanks, merging",
+    "ts": "1772638352.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Design review for the flight software unit tests moved to Monday at 14:45, same room :pray:",
+    "ts": "1772638865.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Works for me!",
+    "ts": "1772639111.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Pushed to 15:45.",
+    "ts": "1772639324.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Do we have a template for the test report template?",
+    "ts": "1772643055.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Yes, it is in the templates folder",
+    "ts": "1772643160.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Perfect!!",
+    "ts": "1772643289.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Main build is red, looks like the fixture drawings tests.",
+    "ts": "1772644853.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "ahh sorry, just saw this! Looking!!",
+    "ts": "1772650409.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Reverted, rerunning CI!!",
+    "ts": "1772650524.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks for the quick fix :sparkles:",
+    "ts": "1772650735.000100"
+  }
+]

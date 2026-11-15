@@ -1,0 +1,110 @@
+[
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "CI is failing on main since this morning, anyone touching the interface control doc?",
+    "ts": "1771952010.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "My bad, reverting!!",
+    "ts": "1771952143.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Green again!",
+    "ts": "1771952231.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Thanks, Maggie.",
+    "ts": "1771952293.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Which version of the pressure transducer drift is current?",
+    "ts": "1771954451.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "the one from last week, i renamed the old one lol",
+    "ts": "1771954519.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks, that saved me some digging!!",
+    "ts": "1771954670.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "PR for the test report template is up, would love a seocnd pair of eyes.",
+    "ts": "1771961927.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "i can take it after standup",
+    "ts": "1771962197.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "looks good, one question about the units on line 40",
+    "ts": "1771962228.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Bracket samples arrived from the machine shop",
+    "ts": "1771965075.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Measure the bore before we sign off please!!",
+    "ts": "1771965407.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Within tolerance on all 2",
+    "ts": "1771965520.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "great, i will update the power budget",
+    "ts": "1771965559.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "ah missed this, sorry - good catch, updated",
+    "ts": "1771966573.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "quick question: are we still using the old units convention in the fixture drawings?",
+    "ts": "1771968347.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "SI everywhere now, the old sheets are wrong!",
+    "ts": "1771968585.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "thanks",
+    "ts": "1771968687.000100"
+  }
+]

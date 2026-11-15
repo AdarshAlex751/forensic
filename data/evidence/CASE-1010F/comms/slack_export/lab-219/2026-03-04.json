@@ -1,0 +1,50 @@
+[
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Putting myself down for 219 8:45-10:15, DAQ channel check",
+    "ts": "1772631513.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Done with the bench, logbook updated.",
+    "ts": "1772637054.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "219 booked 10:30 to 12:15: accelerometer mounting check",
+    "ts": "1772637323.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "accelerometer mounting check under way, so far so good",
+    "ts": "1772639146.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "accelerometer monuting check complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772643831.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Can someone check the torque on the test report template fixture bolts next time they are in the lab? :D",
+    "ts": "1772654001.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "will do when i am next on the bench, amara. haha",
+    "ts": "1772654144.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Great, thanks!! :sparkles:",
+    "ts": "1772654288.000100"
+  }
+]

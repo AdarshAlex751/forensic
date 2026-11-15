@@ -1,0 +1,116 @@
+[
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Heads up: mounting plate redesign review is Thursday 11:30. Slides by the day before please.",
+    "ts": "1772477600.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Ok, will have slides ready :joy:",
+    "ts": "1772477752.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thanks, Marcus. :white_check_mark:",
+    "ts": "1772478091.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "works",
+    "ts": "1772478340.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Hank, can we set up handover sessions this week? Thinking the test stand scripts and the valve timing sweep.",
+    "ts": "1772478600.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Yes. Tuesday and Thursday afternoons work.",
+    "ts": "1772478829.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Booked Tuesday 15:00 and Thursday 15:30 in the meeting room.",
+    "ts": "1772479005.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "I can take the test stand scripts.",
+    "ts": "1772479223.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Ok. Notes will be in the handover doc.",
+    "ts": "1772479425.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Theo, do you have 20 minutes to pair on the requirements matrix this afternoon?",
+    "ts": "1772483834.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Tomorrow morning works :+1:",
+    "ts": "1772483948.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Great, tomorrow then.",
+    "ts": "1772484309.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Sweep for the mounting plate redesign is done, 4 of 1 cases converged",
+    "ts": "1772485365.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Which case diverged?",
+    "ts": "1772485483.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Case 4. Probably the boundary condition, checking.",
+    "ts": "1772485543.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "i saw the same thing last month, try halving the time step",
+    "ts": "1772486084.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "is anyone else seeing slow file sync on the team folder?",
+    "ts": "1772487251.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "A bit slow, yes. It catches up after a few minutes",
+    "ts": "1772487334.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "ok, good to know",
+    "ts": "1772487441.000100"
+  }
+]

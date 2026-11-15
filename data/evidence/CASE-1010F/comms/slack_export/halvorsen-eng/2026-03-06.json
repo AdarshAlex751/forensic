@@ -1,0 +1,86 @@
+[
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Heads up: requirements matrix review is Monday 10:00. Slides by the day before please.",
+    "ts": "1772813683.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Ok, will have slides ready",
+    "ts": "1772813808.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thanks",
+    "ts": "1772813984.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Works, Leila.",
+    "ts": "1772814513.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Hey all, eng weekly notes are due at 4, please add your bullets. :calendar:",
+    "ts": "1772821981.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "Will do after this meeting",
+    "ts": "1772822142.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Adding now.",
+    "ts": "1772822264.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "ci is failing on main since this morning, anyone touching the vibration test plan?",
+    "ts": "1772827614.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "That was me, fix incoming! <3",
+    "ts": "1772827742.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Should be fixed now! :tada:",
+    "ts": "1772827813.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "confirmed green",
+    "ts": "1772828051.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Handover doc is final. Theo has the test stand scripts, Amara has the valve timing sweep.",
+    "ts": "1772832000.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks Hank. Good luck.",
+    "ts": "1772832163.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thank you for all the work this week, Hank.",
+    "ts": "1772832314.000100"
+  }
+]

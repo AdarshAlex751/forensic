@@ -2,3 +2,5 @@
 # and every quoted line number depend on it. Git must never convert their line endings.
 data/evidence/CASE-1010F/** -text
 data/evidence/extra/** -text
+data/evidence/truth/** -text
+data/evidence/answer_key.json -text

@@ -1550,8 +1550,8 @@
     "device": null,
     "room": null,
     "actor": {
-      "kind": "name",
-      "value": "Hank Gibson"
+      "kind": "account",
+      "value": "CHK-7731"
     },
     "attrs": {
       "account": "CHK-7731",
@@ -1574,8 +1574,8 @@
     "device": null,
     "room": null,
     "actor": {
-      "kind": "name",
-      "value": "Hank Gibson"
+      "kind": "account",
+      "value": "CHK-7731"
     },
     "attrs": {
       "account": "CHK-7731",

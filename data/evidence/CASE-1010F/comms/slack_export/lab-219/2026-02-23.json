@@ -1,0 +1,44 @@
+[
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Could whoever is on the bench next look at channel 3 of the DAQ? It read high in my last data set.",
+    "ts": "1771860880.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Yes, leave a note on the logbook page and I will do it",
+    "ts": "1771860969.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Appreciated, thank you.",
+    "ts": "1771861088.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Bench in 219 is booked 12:00-12:30 today, DAQ channel check.",
+    "ts": "1771862235.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "DAQ channel check finished, results in the binder. Bench is free :+1:",
+    "ts": "1771867662.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Lab plan for the week is on the door. Thursday is busy, so ask early if you need something run.",
+    "ts": "1771879472.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks for posting this",
+    "ts": "1771879893.000100"
+  }
+]

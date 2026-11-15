@@ -1,0 +1,92 @@
+[
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Can someone review my PR for the mounting plate redesign?",
+    "ts": "1771860891.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Looking now.",
+    "ts": "1771861075.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Left a couple of comments, nothing big.",
+    "ts": "1771861124.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks, fixed.",
+    "ts": "1771861189.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Where do we keep the bracket FEA notes now?",
+    "ts": "1771864170.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "team folder, under bracket fea",
+    "ts": "1771864830.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Got it.",
+    "ts": "1771865191.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "CI is failing on main since this morning, anyone touching the test stand DAQ config?",
+    "ts": "1771866834.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "my bad, reverting.",
+    "ts": "1771867312.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "green again",
+    "ts": "1771867350.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Thanks, Marcus!! :tada:",
+    "ts": "1771867502.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Design review for the test report template moved to Wednesday at 11:30, same room.",
+    "ts": "1771867894.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Ok, will have slides ready.",
+    "ts": "1771867966.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thanks.",
+    "ts": "1771868185.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Works!",
+    "ts": "1771868831.000100"
+  }
+]

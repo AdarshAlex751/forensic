@@ -7,7 +7,7 @@ This script fills them in deterministically:
   - placeholder sha256 per file (the fake case files do not exist yet); security_log.csv gets a hash that
     differs from its manifest hash, which is the planted custody mismatch (C8)
   - evidence.json (one row per case file)
-  - answer_key.json line numbers, by matching each source quote to an event
+  - fake/answer_key.json line numbers, by matching each source quote to an event
 
 Run from the repo root:  python backend/app/features/evidence/fakes/finalize.py
 """
@@ -119,7 +119,7 @@ def main() -> None:
     save(FAKE / "evidence.json", evidence)
 
     # answer_key.json: resolve source lines by quote
-    key_path = EVIDENCE / "answer_key.json"
+    key_path = FAKE / "answer_key.json"
     if key_path.exists():
         key = json.loads(key_path.read_text(encoding="utf-8"))
         line_of = {(e["source"]["file"], e["source"]["quote"]): e["source"]["line"] for e in everything}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "C0FEAE16D55",
+    "name": "general",
+    "created": 1771863143,
+    "is_general": true,
+    "members": [
+      "U0B67E4FFB9",
+      "U22AC661C8A",
+      "U620A465E8F",
+      "U8AB490C4DB",
+      "UC1204C46CC",
+      "UC3A7AE0277",
+      "UDDD0C059BA",
+      "UE906F703F7",
+      "UF5CB250EC6",
+      "UFF8AD0B3F5"
+    ]
+  },
+  {
+    "id": "CB7A3B89B5F",
+    "name": "halvorsen-eng",
+    "created": 1771860891,
+    "is_general": false,
+    "members": [
+      "U0B67E4FFB9",
+      "U22AC661C8A",
+      "U8AB490C4DB",
+      "UC3A7AE0277",
+      "UDDD0C059BA",
+      "UE906F703F7",
+      "UFF8AD0B3F5"
+    ]
+  },
+  {
+    "id": "C67F410403A",
+    "name": "lab-219",
+    "created": 1771860880,
+    "is_general": false,
+    "members": [
+      "U0B67E4FFB9",
+      "U22AC661C8A",
+      "UDDD0C059BA",
+      "UF5CB250EC6",
+      "UFF8AD0B3F5"
+    ]
+  },
+  {
+    "id": "CA441B15FE9",
+    "name": "random",
+    "created": 1771863940,
+    "is_general": false,
+    "members": [
+      "U0B67E4FFB9",
+      "U22AC661C8A",
+      "U8AB490C4DB",
+      "UC1204C46CC",
+      "UC3A7AE0277",
+      "UDDD0C059BA",
+      "UE906F703F7",
+      "UF5CB250EC6",
+      "UFF8AD0B3F5"
+    ]
+  },
+  {
+    "id": "C558759281F",
+    "name": "summit-2026",
+    "created": 1771870993,
+    "is_general": false,
+    "members": [
+      "U0B67E4FFB9",
+      "U22AC661C8A",
+      "U8AB490C4DB",
+      "UC1204C46CC",
+      "UC3A7AE0277",
+      "UDDD0C059BA",
+      "UE906F703F7",
+      "UF5CB250EC6",
+      "UFF8AD0B3F5"
+    ]
+  }
+]

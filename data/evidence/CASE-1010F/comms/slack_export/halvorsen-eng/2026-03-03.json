@@ -1,0 +1,98 @@
+[
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Anyone free to sanity check my CFD mesh refinement numbers?",
+    "ts": "1772556228.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "Sure, 13:00? :upside_down_face:",
+    "ts": "1772556330.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "13:00 works.",
+    "ts": "1772556405.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Do we have a template for the test stand DAQ config?",
+    "ts": "1772559150.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "yes, it is in the tepmlates folder",
+    "ts": "1772559223.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Perfect",
+    "ts": "1772559439.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "main build is red, looks like the telemetry parser tests",
+    "ts": "1772565628.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Looking.",
+    "ts": "1772565930.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Reverted, rerunning CI",
+    "ts": "1772566042.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Handover doc is up. Test stand section done, the rest by Thursday.",
+    "ts": "1772570400.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks Hank, reading it tonight.",
+    "ts": "1772570493.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "sorry just saw this - thanks for the quick fix",
+    "ts": "1772571995.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Sensor calibration script run finished overnight, results are in the team folder.",
+    "ts": "1772576537.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "nice. residuals look ok? :laughing:",
+    "ts": "1772576869.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Mostly.",
+    "ts": "1772577018.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Ping me if you want help with the mesh :)",
+    "ts": "1772577116.000100"
+  }
+]

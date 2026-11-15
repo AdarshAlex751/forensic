@@ -1,0 +1,86 @@
+[
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Heads up: flight software unit tests review is Tuesday 14:30. Slides by the day before please.",
+    "ts": "1772738073.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Works for me! :)",
+    "ts": "1772738265.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Pushed to 16:30.",
+    "ts": "1772738672.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Fine by me.",
+    "ts": "1772739082.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Handover doc updated. Valve timing sweep section done.",
+    "ts": "1772740140.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Thanks Hank, super clear.",
+    "ts": "1772740305.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Nozzle thermal model run finished overnight, results are in the team folder.",
+    "ts": "1772741965.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Nice. Residuals look ok?",
+    "ts": "1772742120.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Mostly. One case diverged, rerunning it with a smaller step, Amara.",
+    "ts": "1772742651.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "I saw the same thing last month, try halving the time step! :D",
+    "ts": "1772742796.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Main build is red, looks like the thermal vacuum checklist tests.",
+    "ts": "1772745656.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Looking, Theo.",
+    "ts": "1772746179.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Reverted, rerunning CI.",
+    "ts": "1772746207.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Thanks for the quick fix",
+    "ts": "1772746237.000100"
+  }
+]

@@ -45,3 +45,12 @@ Disk&Ven_SanDisk&Prod_Ultra&Rev_1.00 [2026-03-04T18:17:30-05:00]
 
 Slack `ts` is the Unix epoch of the message time as a string with six decimals (`"1772638200.000100"`); the
 event's `t` is the same moment in EST.
+
+## Notes
+
+- `endpoint/security_log.csv` uses one `TargetUserName` column for every event ID. (A real 4663 export names the
+  user `SubjectUserName`; the case keeps one column so every row has the same shape.)
+- `cctv/index.csv` is the camera status index only. Video older than 72 hours was overwritten under the building's
+  retention policy before collection on 2026-03-09, so `clip_ref` names a clip that no longer exists.
+- Withheld evidence lives under `data/evidence/extra/` with the same relative path it gets in the case:
+  `extra/access/parking_exit.csv` → `source.file = "access/parking_exit.csv"`.

@@ -4,7 +4,7 @@ Runs on two locations:
   * fake  -> data/evidence/fake/  (events.json, events_extra.json, events_baseline.json, evidence.json, case.json)
   * real  -> data/evidence/       (events.json, evidence.json, case.json)
 Missing files are skipped, so the same test runs on the fakes now and on the real output later.
-devices.csv, inventory.csv and answer_key.json are checked directly in data/evidence/.
+devices.csv and inventory.csv are checked directly in data/evidence/, the fake answer key in data/evidence/fake/.
 
 Every test collects all problems and reports the first few, so one failure shows many bad items.
 """
@@ -32,7 +32,7 @@ CASE_DIR = EVIDENCE_DIR / "CASE-1010F"
 
 DEVICES_CSV = EVIDENCE_DIR / "devices.csv"
 INVENTORY_CSV = EVIDENCE_DIR / "inventory.csv"
-ANSWER_KEY_JSON = EVIDENCE_DIR / "answer_key.json"
+ANSWER_KEY_JSON = EVIDENCE_DIR / "fake" / "answer_key.json"  # the fake key; the real key (data/evidence/answer_key.json) is checked by casegen/validate.py
 
 # name -> (folder, event files in that folder, event files that count toward evidence.json records)
 LOCATIONS: dict[str, dict[str, Any]] = {
@@ -87,7 +87,7 @@ EVENT_TYPES: dict[str, tuple[str, str | None, set[str]]] = {
     "statement": ("statements/", "name", {"speaker", "page"}),
     "transaction": (
         "financial/transactions.csv",
-        "name",
+        "account",
         {"account", "amount", "counterparty", "description"},
     ),
     "parking_entry": ("access/parking_exit.csv", "permit", {"plate", "lane"}),
@@ -104,7 +104,7 @@ DEVICE_TYPES = {"badge_reader", "wifi_ap", "camera", "laptop"}
 
 INVENTORY_HEADER = (
     "person_id,name,role,home_room,email,badge,laptop_mac,parking_permit,plate,"
-    "local_account,slack_handle,authorized_rooms,revoked"
+    "local_account,bank_account,slack_handle,authorized_rooms,revoked"
 ).split(",")
 
 CONTRADICTION_KINDS = {"physical", "temporal", "statement", "custody"}

@@ -1,0 +1,136 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 8 0 R /MediaBox [ 0 0 612 792 ] /Parent 7 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+>>
+endobj
+6 0 obj
+<<
+/Author (Alma Imhoff) /CreationDate (D:20260309171000-05'00') /Creator (Microsoft Word for Microsoft 365) /Keywords () /ModDate (D:20260309171000-05'00') /Producer (Microsoft Word for Microsoft 365) 
+  /Subject (Case 1010F - statement of Frederik Mendelssohn) /Title (Witness statement) /Trapped /False
+>>
+endobj
+7 0 obj
+<<
+/Count 1 /Kids [ 4 0 R ] /Type /Pages
+>>
+endobj
+8 0 obj
+<<
+/Length 3508
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 14 Tf 16.8 TL ET
+BT 1 0 0 1 57.6 716.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
+BT /F2 12 Tf 14.4 TL ET
+BT 1 0 0 1 57.6 698.4 Tm (Witness statement) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 680.4 Tm (Case number: 1010F) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 666.4 Tm (Statement of: Frederik Mendelssohn \(IT admin for the floor \(contractor\)\)) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 652.4 Tm (Date / time: Monday, 9 March 2026, 16:30 EST) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 638.4 Tm (Location: Halvorsen Dynamics meeting room, suite 217, JRR Building, 2nd floor) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 624.4 Tm (Interviewer: Alma Imhoff) Tj T* ET
+.6 w
+n 57.6 618.4 m 554.4 618.4 l S
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 595.4 Tm (This statement was taken by Alma Imhoff, Head of Security, Halvorsen Dynamics, as part of a) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 580.4 Tm (security review of room 219. Mr. Mendelssohn was told that the interview is voluntary and that it may) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 565.4 Tm (be stopped at any time. The questions and answers below are recorded in the order they were given.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 542.4 Tm (Q: Please describe your role on the floor.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 519.4 Tm (I am an IT contractor with Ostrander IT.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 496.4 Tm (I look after the shared IT on the JRR second floor.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 473.4 Tm (That includes the access points, the printers and the lab laptop lt-219.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 450.4 Tm (Q: What did you do on the evening of Wednesday 4 March?) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 427.4 Tm (I ran the scheduled monthly patch window on lt-219 from 19:00 to 21:30 under work order WO-3117.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 404.4 Tm (I went into room 219 with my own badge just before 19:00.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 381.4 Tm (I logged on with my own admin account.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 358.4 Tm (I installed the updates from the offline patch media and restarted the laptop.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 335.4 Tm (I logged off shortly before 21:30 and left the room.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 312.4 Tm (The work was in the weekly IT notice on Monday 2 March and on the maintenance calendar.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 289.4 Tm (Q: Did you see anyone else in room 219?) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 266.4 Tm (No, I did not see anyone else in room 219.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 243.4 Tm (Q: Did you notice anything unusual on lt-219?) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 220.4 Tm (Nothing stood out to me. The patching went normally.) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 176.4 Tm (I confirm that this statement is true to the best of my knowledge and belief.) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 138.4 Tm (Signature: ______________________________          Date: ________________) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 57.6 124.4 Tm (Statement taken by: Alma Imhoff) Tj T* ET
+BT /F1 8 Tf 9.6 TL ET
+BT 1 0 0 1 57.6 40 Tm (Halvorsen Dynamics - Security Office - Case 1010F - CONFIDENTIAL - Page 1) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000514 00000 n 
+0000000582 00000 n 
+0000000906 00000 n 
+0000000965 00000 n 
+trailer
+<<
+/ID 
+[<1fc8f3342b0a5a4ed053baddf6e2d4cf><1fc8f3342b0a5a4ed053baddf6e2d4cf>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 6 0 R
+/Root 5 0 R
+/Size 9
+>>
+startxref
+4524
+%%EOF

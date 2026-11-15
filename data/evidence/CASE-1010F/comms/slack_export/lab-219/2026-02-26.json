@@ -1,0 +1,50 @@
+[
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Bench in 219 is booked 10:30-12:00 today, valve tmiing sweep.",
+    "ts": "1772115404.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Hey all, valve timing sweep done, bench is free.",
+    "ts": "1772124457.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "219 booked 16:00 to 16:30: test stand script check.",
+    "ts": "1772133172.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Bench in 219 is booked 16:30-17:15 today, torque wrench verification",
+    "ts": "1772137760.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Test stand script check is running, bench busy until about 16:30.",
+    "ts": "1772140086.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Test stand script check complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772141376.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Torque wrench verification started, first readings look normal.",
+    "ts": "1772142437.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Torque wrench verification complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772143721.000100"
+  }
+]

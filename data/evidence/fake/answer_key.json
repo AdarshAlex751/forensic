@@ -1,0 +1,170 @@
+{
+  "case_id": "1010F",
+  "planted": [
+    {
+      "id": "C1",
+      "kind": "temporal",
+      "detector": "rule",
+      "sources": [
+        {
+          "file": "access/badge_access.csv",
+          "line": 2295,
+          "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED"
+        },
+        {
+          "file": "network/wifi_ap_logs.csv",
+          "line": 5447,
+          "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
+        }
+      ],
+      "persons": [
+        "p_hank"
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "physical",
+      "detector": "physics",
+      "sources": [
+        {
+          "file": "access/badge_access.csv",
+          "line": 2304,
+          "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED"
+        },
+        {
+          "file": "access/badge_access.csv",
+          "line": 2305,
+          "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED"
+        }
+      ],
+      "persons": [
+        "p_bg_17"
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "statement",
+      "detector": "nli+rule",
+      "sources": [
+        {
+          "file": "statements/hank_gibson.pdf",
+          "line": 6,
+          "quote": "I went straight home at six."
+        },
+        {
+          "file": "access/parking_exit.csv",
+          "line": 11,
+          "quote": "2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT"
+        }
+      ],
+      "persons": [
+        "p_hank"
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "statement",
+      "detector": "nli+rule",
+      "sources": [
+        {
+          "file": "statements/maggie_price.pdf",
+          "line": 7,
+          "quote": "Hank and I left together around 6:30."
+        },
+        {
+          "file": "access/badge_access.csv",
+          "line": 2287,
+          "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED"
+        }
+      ],
+      "persons": [
+        "p_maggie"
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "statement",
+      "detector": "nli",
+      "sources": [
+        {
+          "file": "comms/mailbox.mbox",
+          "line": 18904,
+          "quote": "I never touched the Titan folder."
+        },
+        {
+          "file": "endpoint/file_audit.csv",
+          "line": 64,
+          "quote": "2026-03-04T18:18:02-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4.step,48211968,E:"
+        },
+        {
+          "file": "endpoint/security_log.csv",
+          "line": 39,
+          "quote": "2026-03-04T18:18:02-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe"
+        }
+      ],
+      "persons": [
+        "p_hank"
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "temporal",
+      "detector": "rule",
+      "sources": [
+        {
+          "file": "cctv/index.csv",
+          "line": 4,
+          "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,"
+        }
+      ],
+      "persons": []
+    },
+    {
+      "id": "C7",
+      "kind": "statement",
+      "detector": "nli+rule",
+      "sources": [
+        {
+          "file": "statements/hank_gibson.pdf",
+          "line": 11,
+          "quote": "IT gave me that drive last year."
+        },
+        {
+          "file": "endpoint/usbstor.txt",
+          "line": 19,
+          "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]"
+        }
+      ],
+      "persons": [
+        "p_hank"
+      ]
+    },
+    {
+      "id": "C8",
+      "kind": "custody",
+      "detector": "custody",
+      "sources": [
+        {
+          "file": "endpoint/security_log.csv",
+          "line": null,
+          "quote": null
+        }
+      ],
+      "persons": []
+    }
+  ],
+  "false_alarm_persons": [
+    "p_frederik",
+    "p_bg_17"
+  ],
+  "tamper": {
+    "file": "endpoint/security_log.csv",
+    "seed": 1010,
+    "altered_lines": [
+      17,
+      36,
+      41,
+      45
+    ]
+  }
+}
