@@ -471,24 +471,6 @@
   }
 }
 
-/* ---------- Pipeline progress ---------- */
-
-.inv-progress {
-  margin-top: 0.75rem;
-  font-size: 0.8125rem;
-}
-.inv-progress-track {
-  height: 0.4rem;
-  margin-top: 0.25rem;
-  border: 1px solid var(--inv-ink);
-  background: rgba(255, 250, 230, 0.5);
-}
-.inv-progress-fill {
-  height: 100%;
-  background: var(--inv-ink);
-  transition: width 300ms ease;
-}
-
 /* ---------- Agent trace (carbon-copy teletype log) ---------- */
 
 .inv-trace-agents {
@@ -781,17 +763,3 @@
 .inv-stamp.inv-stamp-secret{color:#a51f24;border-color:#a51f24;transform:rotate(-9deg)}
 .inv-stamp-secret .inv-stamp-big{font-size:30px;letter-spacing:.12em}
 .inv-stamp-secret .inv-stamp-small{font-size:19px;font-weight:800;letter-spacing:.13em}
-
-/* ---------- Hourglass under a request card while the pipeline reruns on the uploaded file ---------- */
-.inv-hourglass-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-  font-size: 0.8125rem;
-  color: var(--inv-ink-soft);
-}
-.inv-hourglass {
-  flex: none;
-  color: var(--inv-ink);
-}

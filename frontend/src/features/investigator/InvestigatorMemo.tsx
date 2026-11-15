@@ -8,8 +8,6 @@ import { EvidenceRequestCard } from "./EvidenceRequestCard";
 import { HypothesisBar } from "./HypothesisBar";
 import { VerifiedCounter } from "./VerifiedCounter";
 import { useAgentTrace } from "./useAgentTrace";
-import { uploadRequestFile, useLiveFindings, useRequestStatus } from "./useLiveFindings";
-import { usePipelineProgress } from "./usePipelineProgress";
 import "./investigator.css";
 
 const NOTE_GROUPS: { kind: Note["kind"]; title: string; className: string }[] = [
@@ -47,65 +45,38 @@ function ReportDialog({ findings, onClose }: { findings: Findings; onClose: () =
   );
 }
 
+/** One status rank per request state, so the furthest-along copy of a duplicated request is the one kept. */
+const STATUS_RANK: Record<EvidenceRequest["status"], number> = { pending: 0, approved: 1, ingested: 2 };
+const normalize = (text: string) => text.toLowerCase().replace(/\s+/g, " ").trim();
+
 /**
- * The investigator's typed memo, clipped over the yarn board. Reads findings,
- * current request statuses, the pipeline progress stream and the agent stream.
+ * One card per request. The same id, the same wording, or two requests that both ask for the parking log are one
+ * request, shown once (the furthest-along copy wins). The cards are all rendered filed, so only this matters here.
+ */
+function distinctRequests(list: EvidenceRequest[]): EvidenceRequest[] {
+  const seen = new Set<string>();
+  return [...list]
+    .sort((a, b) => STATUS_RANK[b.status] - STATUS_RANK[a.status])
+    .filter((r) => {
+      const keys = [`id:${r.id}`, `ask:${normalize(r.ask)}`, ...(/parking/i.test(r.ask) ? ["source:parking"] : [])];
+      if (keys.some((k) => seen.has(k))) return false;
+      keys.forEach((k) => seen.add(k));
+      return true;
+    });
+}
+
+/**
+ * The investigator's typed memo. Reads the findings and the agent activity stream. It is static as far as evidence
+ * goes: the requests are shown filed, and this page never uploads, approves, releases or reruns anything.
  */
 export function InvestigatorMemo() {
   const initial = useFindings();
-  const live = useLiveFindings();
-  const reqs = useRequestStatus();
   const trace = useAgentTrace();
 
   const [showReport, setShowReport] = useState(false);
-  const [busyId, setBusyId] = useState<string | null>(null);
-  const [approveErrors, setApproveErrors] = useState<Record<string, string>>({});
-  const [localStatus, setLocalStatus] = useState<Record<string, EvidenceRequest["status"]>>({});
-  const [prevConf, setPrevConf] = useState<Record<string, number>>({});
 
-  const findings: Findings | null = live.data ?? initial.data;
-  const findingsRef = useRef(findings);
-  findingsRef.current = findings;
-
-  const onRunFinished = useCallback(() => {
-    const current = findingsRef.current;
-    if (current) setPrevConf(Object.fromEntries(current.hypotheses.map((h) => [h.id, h.confidence])));
-    void live.refresh();
-    void reqs.refresh().then(() => setLocalStatus({}));
-  }, [live.refresh, reqs.refresh]);
-
-  const pipeline = usePipelineProgress(onRunFinished);
-
-  const [rerunId, setRerunId] = useState<string | null>(null);
-
-  const onUpload = useCallback(
-    async (id: string, file: File) => {
-      setBusyId(id);
-      setApproveErrors(({ [id]: _drop, ...rest }) => rest);
-      try {
-        await uploadRequestFile(id, file);
-        setRerunId(id);
-        setLocalStatus((s) => ({ ...s, [id]: "approved" }));
-        trace.reconnect();
-        pipeline.watch();
-      } catch (e) {
-        setApproveErrors((m) => ({ ...m, [id]: e instanceof Error ? e.message : String(e) }));
-      } finally {
-        setBusyId(null);
-      }
-    },
-    [trace.reconnect, pipeline.watch],
-  );
-
-  const requests = useMemo<EvidenceRequest[]>(() => {
-    const base = reqs.requests ?? findings?.requests ?? [];
-    return base.map((r) => {
-      const local = localStatus[r.id];
-      // Never move a request backwards (e.g. a stale "pending" after we saw "approved").
-      if (local && r.status === "pending") return { ...r, status: local };
-      return r;
-    });
-  }, [reqs.requests, findings?.requests, localStatus]);
+  const findings: Findings | null = initial.data;
+  const requests = useMemo(() => (findings ? distinctRequests(findings.requests) : []), [findings]);
 
   const hypotheses = useMemo(
     () => (findings ? [...findings.hypotheses].sort((a, b) => b.confidence - a.confidence) : []),
@@ -135,7 +106,6 @@ export function InvestigatorMemo() {
 
   const v = findings.verification;
   const notesByKind = (kind: Note["kind"]) => findings.notes.filter((n) => n.kind === kind);
-  const running = pipeline.state === "watching";
 
   return (
     <aside className="inv-memo" aria-label="Investigator memo">
@@ -158,12 +128,6 @@ export function InvestigatorMemo() {
 
       <section className="inv-section" aria-label="Verification">
         <VerifiedCounter claims={v.claims} verified={v.verified} />
-        {live.error && (
-          <p className="inv-state inv-state-error" role="alert" style={{ marginTop: "0.75rem" }}>
-            <strong>Couldn't reload the findings after the re-run.</strong>
-            Showing the previous version. Check that the backend on :8000 is running. ({live.error})
-          </p>
-        )}
       </section>
 
       <section className="inv-section" aria-labelledby="inv-h-hyp">
@@ -180,7 +144,6 @@ export function InvestigatorMemo() {
                 rank={i + 1}
                 hypothesis={h}
                 contradictions={findings.contradictions}
-                previousConfidence={prevConf[h.id]}
               />
             ))}
           </ol>
@@ -217,45 +180,13 @@ export function InvestigatorMemo() {
         <h3 id="inv-h-req" className="inv-section-title">
           Evidence requests
         </h3>
-        {!reqs.available && requests.length > 0 && (
-          <p className="inv-muted inv-plain" style={{ marginBottom: "0.6rem", fontSize: "0.8125rem" }}>
-            Live request status is unavailable, so these statuses come from the last saved findings.
-          </p>
-        )}
         {requests.length === 0 ? (
           <p className="inv-state">The investigator has not asked for more evidence.</p>
         ) : (
           <div className="inv-cards">
             {requests.map((r) => (
-              <EvidenceRequestCard
-                key={r.id}
-                request={r}
-                onUpload={(id, file) => void onUpload(id, file)}
-                busy={busyId === r.id}
-                rerunning={running && rerunId === r.id}
-                error={approveErrors[r.id] ?? null}
-              />
+              <EvidenceRequestCard key={r.id} request={r} />
             ))}
-          </div>
-        )}
-        {pipeline.state !== "idle" && (
-          <div className="inv-progress" role="status">
-            {running ? (
-              <>
-                Re-running the pipeline
-                {pipeline.progress?.stage ? `: ${pipeline.progress.stage}` : ""}
-                {pipeline.progress?.msg ? `. ${pipeline.progress.msg}` : "."}
-                <div className="inv-progress-track" aria-hidden="true">
-                  <div className="inv-progress-fill" style={{ width: `${pipeline.progress?.pct ?? 0}%` }} />
-                </div>
-              </>
-            ) : live.refreshing ? (
-              "Pipeline finished. Reloading the findings…"
-            ) : pipeline.state === "lost" ? (
-              "Couldn't follow the pipeline progress, so the findings were reloaded once. Reload the page if they look out of date."
-            ) : (
-              "Pipeline finished. The findings above are up to date."
-            )}
           </div>
         )}
       </section>
