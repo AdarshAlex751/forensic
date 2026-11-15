@@ -17,6 +17,7 @@ import json
 import logging
 import os
 import re
+import threading
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
@@ -200,6 +201,39 @@ LEAD_FALLBACKS = ("openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.8-27b
 SUBAGENT_FALLBACKS = ("openai/gpt-oss-20b", "openai/gpt-oss-120b", "qwen/qwen3.8-27b")
 
 
+# A model that stalls must never hang the pipeline (and with it the demo).
+LLM_REQUEST_TIMEOUT_S = 60  # each request to Groq
+
+
+def _llm_budget_s() -> float:
+    """Wall-clock cap on the whole investigation, retries included. Env INVESTIGATOR_LLM_BUDGET_S overrides (default 150)."""
+    try:
+        return float(os.getenv("INVESTIGATOR_LLM_BUDGET_S", "150"))
+    except ValueError:
+        return 150.0
+
+
+def _call_with_deadline(fn: Callable[[], str], seconds: float) -> str:
+    """Run fn on a daemon thread and give up after `seconds`: a call that never returns cannot be interrupted, but it can
+    be abandoned (daemon, so it never blocks shutdown). Exceptions from fn are re-raised here."""
+    box: dict[str, Any] = {}
+
+    def target() -> None:
+        try:
+            box["value"] = fn()
+        except BaseException as exc:  # noqa: BLE001 - handed to the caller below
+            box["error"] = exc
+
+    worker = threading.Thread(target=target, daemon=True, name="investigator-llm")
+    worker.start()
+    worker.join(seconds)
+    if worker.is_alive():
+        raise TimeoutError(f"the language model did not answer within {seconds:g} s (timed out)")
+    if "error" in box:
+        raise box["error"]
+    return box["value"]
+
+
 def pick_model(candidates: list[str], available: set[str] | None) -> str | None:
     """First candidate the account has; the first candidate if the account's list is unknown; None if none exist."""
     if available is None:
@@ -245,10 +279,10 @@ def build_llm_runner(ctx: ToolContext, tools: AgentTools, trace: Trace) -> Runne
             return None
         log.info("investigator models: lead=%s subagents=%s", lead, sub)
         agent = create_deep_agent(
-            model=get_llm(lead, temperature=0),
+            model=get_llm(lead, temperature=0, timeout=LLM_REQUEST_TIMEOUT_S),
             tools=tools.as_functions(("request_evidence", "graph_neighbors")),
             system_prompt=LEAD_PROMPT,
-            subagents=build_subagents(tools, model=get_llm(sub, temperature=0)),
+            subagents=build_subagents(tools, model=get_llm(sub, temperature=0, timeout=LLM_REQUEST_TIMEOUT_S)),
         )
     except Exception as exc:  # noqa: BLE001 - any build failure means "use the fallback", not "crash the pipeline"
         log.warning("deepagents unavailable (%s); using the rules engine", exc)
@@ -291,7 +325,7 @@ def investigate(ctx: ToolContext, runner: Runner | None = None, trace: Trace | N
     else:
         brief = build_brief(ctx)
         try:
-            raw = with_backoff(lambda: runner(brief))
+            raw = _call_with_deadline(lambda: with_backoff(lambda: runner(brief)), _llm_budget_s())
             data = _extract_json(raw)
             neutral = {c.id: f"The records conflict: {c.explanation}".strip() for c in ctx.contradictions}
             hyps, warns = sanitize_hypotheses(data.get("hypotheses"), known, neutral)
