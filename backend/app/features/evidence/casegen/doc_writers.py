@@ -8,7 +8,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from email.utils import format_datetime
 from pathlib import Path
 
@@ -287,16 +287,25 @@ def _para_lines(para: str, quotes: list[str], where: str) -> list[str]:
 
 
 class _Doc:
-    def __init__(self, path: Path, title: str, author: str, subject: str, footer: str):
+    def __init__(self, path: Path, title: str, author: str, subject: str, footer: str,
+                 created: datetime | None = None):
         from reportlab.pdfgen import canvas
 
         path.parent.mkdir(parents=True, exist_ok=True)
         self.c = canvas.Canvas(str(path), pagesize=(PAGE_W, PAGE_H), invariant=1, pageCompression=0)
+        if created is not None:
+            # invariant mode stamps 2000-01-01; give the document its real (still fixed) EST creation time
+            stamp = self.c._doc._timeStamp
+            local = created.astimezone(EST)
+            stamp.t = local.timestamp()
+            stamp.lt = local.timetuple()
+            stamp.YMDhms = tuple(stamp.lt)[:6]
+            stamp.dhh, stamp.dmm, stamp.tzname = -5, 0, "EST"
         self.c.setTitle(title)
         self.c.setAuthor(author)
         self.c.setSubject(subject)
-        self.c.setCreator("Halvorsen Dynamics Security Office")
-        self.c.setProducer("ReportLab PDF Library")
+        self.c.setCreator("Microsoft Word for Microsoft 365")
+        self.c.setProducer("Microsoft Word for Microsoft 365")
         self.c.setKeywords("")
         self.footer = footer
         self.page = 1
@@ -365,7 +374,9 @@ def _render_pdf(r: Record, out_dir: Path) -> list[Written]:
     path = out_dir / r.source
     author = f["author"] if is_brief else f["interviewer"]
     subject = f"Case {f['case_id']}" + ("" if is_brief else f" - statement of {f['speaker']}")
-    doc = _Doc(path, f["title"], author, subject, f"{ORG} - Case {f['case_id']} - CONFIDENTIAL")
+    # saved about 40 minutes after the interview starts (brief: after its own timestamp)
+    doc = _Doc(path, f["title"], author, subject, f"{ORG} - Case {f['case_id']} - CONFIDENTIAL",
+               created=f["date"] + timedelta(minutes=40))
 
     doc.line(ORG, FONT_B, 14, 18)
     doc.line(f["title"], FONT_B, 12, 18)

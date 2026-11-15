@@ -50,7 +50,7 @@ Background noise data covers 2026-02-23 to 2026-03-08.
 | `p_maggie` | Maggie Price | Halvorsen engineer, Hank's friend | Gives Hank a false alibi. |
 | `p_frederik` | Frederik Mendelssohn | IT admin for the floor (contractor) | Red herring. Flagged by anomaly scoring, then cleared. |
 | `p_kim` | Dr. Kim Sayers | Northline Systems executive | In town for the summit. Hank's contact. Appears only in messages and payments. |
-| `p_bg_17` | (background) | Halvorsen lab technician, authorized for room 219 | Their badge number is used at room 219 while they are at room 230. Innocent. |
+| `p_bg_17` | Rina Okafor (background) | Halvorsen lab technician, authorized for rooms 217, 219 and 230 (shared calibration bench with Lumen in 230) | Their badge number is used at room 219 while they are at room 230 (dropping off a fixture Noah Lindberg asked for). Innocent. |
 
 Plus about 40 background people on the floor with normal activity (noise). All email domains are fictional (`halvorsen.example`, `northline.example`); never use real university addresses.
 
@@ -71,16 +71,18 @@ The badge copy is background story only. No evidence states it, and the system m
 | 18:16:10 | `p_bg_17` | Badges IN at room 230 (the real card holder) | `access/badge_access.csv` |
 | 18:16:40 | badge of `p_bg_17` | Badge IN at room 219 | `access/badge_access.csv` |
 | 18:17:05 | account `hgibson` | Local logon on `lt-219` (event 4624) | `endpoint/security_log.csv` |
-| 18:17:30 | (device) | USB mass storage mounts on `lt-219`; serial never seen before | `endpoint/usbstor.txt`, `endpoint/security_log.csv` |
+| 18:17:30 | (device) | USB mass storage (SanDisk Ultra, S/N 4C530001230918112443) mounts on `lt-219`; serial never seen before | `endpoint/usbstor.txt` |
 | 18:17 to 18:31 | account `hgibson` | Reads Titan files and copies them to USB | `endpoint/file_audit.csv` (untampered), `endpoint/security_log.csv` (event 4663) |
 | 18:30:00 | (system) | `cam-03` back online | `cctv/index.csv` |
 | 18:31:20 | account `hgibson` | Logoff on `lt-219` (event 4634) | `endpoint/security_log.csv` |
 | 18:31:40 | badge of `p_bg_17` | Badge OUT at room 219 | `access/badge_access.csv` |
 | 18:41:00 | Hank | Laptop disconnects from floor Wi-Fi | `network/wifi_ap_logs.csv` |
 | 18:44:00 | Hank | Car passes the campus parking exit (permit / plate read) | `access/parking_exit.csv` (released only when the agent requests it) |
-| 19:00 to 21:30 | Frederik | Scheduled patch window on `lt-219`; badges into 219 with his own badge | `it/maintenance_calendar.csv`, `access/badge_access.csv`, `endpoint/security_log.csv` |
+| 19:00 to 21:30 | Frederik | Scheduled patch window WO-3117 on `lt-219`; badges into 219 with his own badge, laptop on Wi-Fi, installs from an IT Kingston drive (offline patch media, ~19:03) and restarts the laptop (~20:12) | `it/maintenance_calendar.csv`, `access/badge_access.csv`, `network/wifi_ap_logs.csv`, `endpoint/usbstor.txt`, `endpoint/security_log.csv` |
 
 Walk time from room 230 to room 219 must be about 74 s on the real JRR floor plan. When the real rooms are mapped, keep the 18:16:10 → 18:16:40 gap (30 s) well under that walk time. If 230 is too close to 219, use the badge room farthest from 219 instead and update this table.
+
+CCTV video is kept for 72 hours and is overwritten after that, so when evidence was collected on 2026-03-09 no footage from the incident night survived: only the camera status index (`cctv/index.csv`) could be recovered. The investigation has to work from the logs.
 
 `lt-219` is isolated: it has no Wi-Fi or network logs. Its evidence (`usbstor.txt`, `security_log.csv`, `file_audit.csv`) comes from a forensic image of the laptop taken on 2026-03-09.
 
@@ -96,7 +98,7 @@ Walk time from room 230 to room 219 must be about 74 s on the real JRR floor pla
 
 ## 7. Planted contradictions (answer key)
 
-The system must never read this section or the answer key file. The machine copy is `data/evidence/answer_key.json`, outside the `CASE-1010F/` folder. Only the evaluator (Person 2) reads it. Match findings by source (file + line), not by event ID.
+The system must never read this section or the answer key file. The machine copy is `data/evidence/answer_key.json` (written by the generator, identical to `data/evidence/truth/answer_key.json`), outside the `CASE-1010F/` folder. The fakes' own key is `data/evidence/fake/answer_key.json`. Only the evaluator (Person 2) reads it. Match findings by source (file + line), not by event ID.
 
 | ID | Evidence joined | Contradiction | Expected detector |
 |---|---|---|---|
@@ -112,7 +114,7 @@ The system must never read this section or the answer key file. The machine copy
 C2 is exculpatory for `p_bg_17`: it shows their badge number was used somewhere they could not be. Accusing `p_bg_17` counts as a false alarm.
 
 ### Tampering (C8)
-After collection, the generator alters a random number of rows in `endpoint/security_log.csv` (changed timestamps, usernames, or deleted rows), chosen with a fixed random seed so every run produces the same file. `manifest.csv` holds the hash of the original, untampered file. The seed and the list of altered rows go in `data/evidence/answer_key.json`. Every fact that C5 needs also exists in `file_audit.csv`, so the case still holds when the system treats the tampered file as untrusted.
+After collection, the generator alters 4 rows of `endpoint/security_log.csv` by shifting their timestamps (never deleting rows, so line numbers stay put, and never Hank's 03-04 logon), chosen with a fixed random seed so every run produces the same file. `manifest.csv` holds the hash of the original, untampered file. The seed, the altered lines and each row's original and altered text go in `data/evidence/answer_key.json`. Every fact that C5 needs also exists in `file_audit.csv`, so the case still holds when the system treats the tampered file as untrusted.
 
 ## 8. Red herrings
 
@@ -145,10 +147,10 @@ data/evidence/
     statements/*.pdf            hank_gibson, maggie_price, frederik_mendelssohn
     financial/transactions.csv
     cctv/index.csv              camera, window, status, clip ref
-    cctv/stills/*.jpg           crops from real Matterport panoramas at camera positions
+    cctv/stills/*.jpg           (not generated yet) crops from real Matterport panoramas at camera positions
     it/maintenance_calendar.csv
   extra/
-    parking_exit.csv            WITHHELD at start; added to the case as access/parking_exit.csv when the request is approved
+    access/parking_exit.csv     WITHHELD at start; added to the case as access/parking_exit.csv when the request is approved
   fake/                         hand-written JSON fakes for the other slices
 ```
 

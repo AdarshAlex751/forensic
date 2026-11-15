@@ -2,13 +2,13 @@
   {
     "type": "message",
     "user": "UC1204C46CC",
-    "text": "My cat discovered the radiator and has not moved since :cat:",
+    "text": "My cat has claimed the radiator at home and will not move :cat:",
     "ts": "1772317223.000100"
   },
   {
     "type": "message",
     "user": "U0B67E4FFB9",
-    "text": "She looks very pleased with herself. Need a photo of this immediately",
+    "text": "Need a photo of this immediately",
     "ts": "1772317325.000100"
   },
   {
@@ -16,23 +16,5 @@
     "user": "UC1204C46CC",
     "text": "Photo incoming. She is the boss now!",
     "ts": "1772317400.000100"
-  },
-  {
-    "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Need a focus playlist, recommendations?",
-    "ts": "1772328052.000100"
-  },
-  {
-    "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Film scores.",
-    "ts": "1772328160.000100"
-  },
-  {
-    "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Trying it now",
-    "ts": "1772328337.000100"
   }
 ]

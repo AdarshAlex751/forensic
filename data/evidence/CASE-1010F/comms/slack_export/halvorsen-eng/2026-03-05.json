@@ -1,51 +1,39 @@
 [
   {
     "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "which version of the sensor calibration script is current? :laughing:",
-    "ts": "1772721917.000100"
+    "user": "UC3A7AE0277",
+    "text": "Heads up: flight software unit tests review is Tuesday 14:30. Slides by the day before please.",
+    "ts": "1772738073.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Works for me! :)",
+    "ts": "1772738265.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Pushed to 16:30.",
+    "ts": "1772738672.000100"
   },
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
-    "text": "The one from last week, I renamed the old one.",
-    "ts": "1772721990.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "thanks, that saved me some digging. haha",
-    "ts": "1772722247.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Anyone free to sanity check my requirements matrix numbers?",
-    "ts": "1772728474.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Give me ten minutes.",
-    "ts": "1772728799.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Ok, ping me.",
-    "ts": "1772728920.000100"
+    "text": "Fine by me.",
+    "ts": "1772739082.000100"
   },
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
     "text": "Handover doc updated. Valve timing sweep section done.",
-    "ts": "1772740200.000100"
+    "ts": "1772740140.000100"
   },
   {
     "type": "message",
     "user": "U22AC661C8A",
     "text": "Thanks Hank, super clear.",
-    "ts": "1772740365.000100"
+    "ts": "1772740305.000100"
   },
   {
     "type": "message",
@@ -62,7 +50,7 @@
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
-    "text": "Mostly. One case diverged, rerunning it with a smaller step.",
+    "text": "Mostly. One case diverged, rerunning it with a smaller step, Amara.",
     "ts": "1772742651.000100"
   },
   {
@@ -80,19 +68,19 @@
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
-    "text": "Looking.",
+    "text": "Looking, Theo.",
     "ts": "1772746179.000100"
   },
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
     "text": "Reverted, rerunning CI.",
-    "ts": "1772746256.000100"
+    "ts": "1772746207.000100"
   },
   {
     "type": "message",
     "user": "UDDD0C059BA",
-    "text": "Thanks for the quick fix.",
-    "ts": "1772746357.000100"
+    "text": "Thanks for the quick fix",
+    "ts": "1772746237.000100"
   }
 ]

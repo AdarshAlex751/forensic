@@ -101,7 +101,7 @@ def test_transactions_running_balance():
         assert f["amount"].lstrip("-").count(".") == 1 and len(f["amount"].split(".")[1]) == 2
         assert len(f["balance"].split(".")[1]) == 2
         assert "Northline" not in f["counterparty"] and "coin" not in f["counterparty"].lower()
-        assert ev.actor == {"kind": "name", "value": "Hank Gibson"} and ev.device is None and ev.room is None
+        assert ev.actor == {"kind": "account", "value": "CHK-7731"} and ev.device is None and ev.room is None
         assert ev.attrs == {"account": "CHK-7731", "amount": float(f["amount"]), "counterparty": f["counterparty"],
                             "description": f["description"]}
         assert world.START <= r.t.date() <= world.END

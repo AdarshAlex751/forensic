@@ -22,7 +22,8 @@ Status: **draft for team review.** Items marked *proposed* need a yes from the t
 | `events_extra.json` | `fake/events_extra.json` | appended to `events.json` after approval | Person 4 (approval and rerun) |
 | `devices.csv` | — (real from day one) | `devices.csv` | everyone |
 | `inventory.csv` | — (real from day one) | `inventory.csv` | Person 3 |
-| `answer_key.json` | — (real from day one) | `answer_key.json` | Person 2's evaluator only. Never the system, never Person 4 |
+| `answer_key.json` | `fake/answer_key.json` (matches the fake lines) | `answer_key.json` (written by the case generator; identical to `truth/answer_key.json`) | Person 2's evaluator only. Never the system, never Person 4 |
+| `truth/events_expected.json` | — | `truth/events_expected.json` | Person 1's parser tests: every event a correct parser extracts from `CASE-1010F/` and `extra/` |
 
 In the real run, `events.json` holds every event: story, background and (after approval) extra. The fake splits
 them into three files only so each is small enough to read; every event in all three has the same shape. Event IDs
@@ -84,7 +85,7 @@ Array of event objects.
 | `email` | `comms/mailbox.mbox` | `email` | `from`, `to` (list), `subject`, `message_id` |
 | `chat` | `comms/slack_export/…` | `slack` | `channel`, `ts` (Slack epoch string, as in the export) |
 | `statement` | `statements/*.pdf` | `name` | `speaker`, `page` (int) |
-| `transaction` | `financial/transactions.csv` | `name` | `account`, `amount` (number, credits positive), `counterparty`, `description` |
+| `transaction` | `financial/transactions.csv` | `account` (the bank account, e.g. `CHK-7731`; `inventory.csv` `bank_account` resolves it) | `account`, `amount` (number, credits positive), `counterparty`, `description` |
 | `parking_entry` | `access/parking_exit.csv` | `permit` | `plate`, `lane` |
 | `parking_exit` | `access/parking_exit.csv` | `permit` | `plate`, `lane` |
 
@@ -96,7 +97,14 @@ Array of event objects.
 |---|---|---|
 | `file` | string | Path inside the case folder, forward slashes: `access/badge_access.csv` |
 | `line` | int | 1-based physical line in the file; a CSV header is line 1. PDFs: line in the text pdfplumber extracts, all pages joined with `\n`. Slack: the line of the message's `"text"` entry |
-| `quote` | string | Exact text, never cleaned up. CSV and log lines: the whole raw line without the newline. Email, chat, statements: the exact sentence or line as it appears in the file (a substring of line `line`) |
+| `quote` | string | Exact text, never cleaned up (never `strip()`: the usbstor `S/N:` line keeps its two leading spaces). CSV and log lines: the whole raw line without the newline. Email, chat, statements: see "One event per line" below |
+
+**One event per line (emails and statements).** A parser emits:
+- **email:** one `email` event for **every non-empty body line** of every message (all with that message's `t` and `attrs`); `quote` = the whole body line, `line` = its line in `mailbox.mbox`.
+- **chat:** one `chat` event per Slack message; `quote` = the message text, `line` = the line of its `"text"` entry.
+- **statement:** one `statement` event for **every answer line** of the statement, i.e. every pdfplumber line between the first `Q:` line and the closing line `I confirm that this statement ...`, except lines starting with `Q:` and interviewer notes in square brackets `[...]`; `quote` = the whole line.
+- **usbstor:** one `usb_mount` event per device block; `quote` = its `S/N:` line.
+- Paths of withheld evidence are relative to `extra/` (`extra/access/parking_exit.csv` → `source.file = "access/parking_exit.csv"`).
 | `sha256` | string | Lowercase hex sha256 of the file's bytes as stored in the case folder |
 
 ### 3.3 Example
@@ -160,7 +168,9 @@ Header: `device_id,type,room,floor,sweep`
 
 ## 7. `inventory.csv`
 
-Header: `person_id,name,role,home_room,email,badge,laptop_mac,parking_permit,plate,local_account,slack_handle,authorized_rooms,revoked`
+Header: `person_id,name,role,home_room,email,badge,laptop_mac,parking_permit,plate,local_account,bank_account,slack_handle,authorized_rooms,revoked`
+
+`bank_account` is the account number that appears in `financial/transactions.csv` (Hank: `CHK-7731`), empty for others.
 
 | Column | Rule |
 |---|---|
@@ -187,7 +197,8 @@ Header: `person_id,name,role,home_room,email,badge,laptop_mac,parking_permit,pla
     }
   ],
   "false_alarm_persons": ["p_frederik", "p_bg_17"],
-  "tamper": { "file": "endpoint/security_log.csv", "seed": 1010, "altered_lines": [118, 402] }
+  "tamper": { "file": "endpoint/security_log.csv", "seed": 1010, "altered_lines": [118, 402],
+              "changes": [ { "line": 118, "original": "<row as collected>", "altered": "<row as received>" } ] }
 }
 ```
 

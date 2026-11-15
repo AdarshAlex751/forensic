@@ -1,56 +1,50 @@
 [
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Torque wrench goes back in its case after use please",
-    "ts": "1771946130.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "My fault, fixed :smile:",
-    "ts": "1771946323.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Np, thanks.",
-    "ts": "1771946648.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Could I get the test bench in 219 Friday from 15:00?",
-    "ts": "1771958463.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Done, it is on the schedule.",
-    "ts": "1771958744.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Perfect, thank you.",
-    "ts": "1771959215.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Calibration on the thermocouple reader is done, offsets are in the binder. :test_tube:",
-    "ts": "1771961159.000100"
+    "user": "UFF8AD0B3F5",
+    "text": "219 booked 9:30 to 10:30: valve timing sweep.",
+    "ts": "1771942504.000100"
   },
   {
     "type": "message",
     "user": "U0B67E4FFB9",
-    "text": "Thanks for keeping on top of this",
-    "ts": "1771961501.000100"
+    "text": "Ok, thanks.",
+    "ts": "1771942811.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Valve timing sweep done, bench is free.",
+    "ts": "1771946489.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "All within spec this time.",
-    "ts": "1771961570.000100"
+    "text": "Putting myself down for 219 11:00-11:45, torque wrench verification.",
+    "ts": "1771948148.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Could you check channel 7 while you are in there?",
+    "ts": "1771948314.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Wrapping up in 219, torque wrench verification all within spec.",
+    "ts": "1771951385.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "I will be in 219 14:30-16:15 for the test stand script check.",
+    "ts": "1771957049.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Done in 219, bench is free.",
+    "ts": "1771967236.000100"
   }
 ]

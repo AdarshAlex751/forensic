@@ -55,20 +55,26 @@
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Brought cookies, they are on the counter.",
-    "ts": "1772474280.000100"
+    "user": "UE906F703F7",
+    "text": "The ramen place at 12:30, who is in?",
+    "ts": "1772470646.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "count me in",
+    "ts": "1772470890.000100"
   },
   {
     "type": "message",
     "user": "UC3A7AE0277",
-    "text": "On my way. :calendar:",
-    "ts": "1772474542.000100"
+    "text": "Brought my own today, enjoy. :white_check_mark:",
+    "ts": "1772470953.000100"
   },
   {
     "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "sorry, missed this. Saving one for later.",
-    "ts": "1772481882.000100"
+    "user": "UE906F703F7",
+    "text": "Elevators at 12:30!!",
+    "ts": "1772471062.000100"
   }
 ]

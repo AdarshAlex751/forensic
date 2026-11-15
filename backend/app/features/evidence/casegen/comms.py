@@ -4,15 +4,27 @@ Everything is templates (personas.py) plus seeded random.Random, one sub-seed pe
 on every run. No LLM calls.
 
   email_records()      comms/mailbox.mbox, ~300 messages 2026-02-23 .. 2026-03-09
-  slack_records()      comms/slack_export/<channel>/<YYYY-MM-DD>.json, ~600 messages 2026-02-23 .. 2026-03-08
+  slack_records()      comms/slack_export/<channel>/<YYYY-MM-DD>.json, ~500 messages 2026-02-23 .. 2026-03-08
   statement_records()  statements/hank_gibson.pdf, maggie_price.pdf, frederik_mendelssohn.pdf (2026-03-09)
   brief_record()       brief.pdf, Alma's incident brief (suspicion only)
   all_records()
 
-The story documents (story.required_docs()) are built around the exact EventSpec objects story.py hands out; their
-quote lines are used verbatim. Every noise email / Slack message carries one 'email' / 'chat' EventSpec. Noise text
-is checked against personas.FORBIDDEN so no background message hints at the answer, and nothing is posted between
-16:45 and midnight on the incident day except the story itself.
+Events (one per line):
+  - email: every non-empty body line is its own 'email' EventSpec whose quote_text is that whole line. The story
+    email events from story.required_docs() are the exact objects story.py hands out, attached to their line.
+  - Slack: one 'chat' EventSpec per message.
+  - statements: every answer paragraph is one PDF line and one 'statement' EventSpec (attrs speaker, page). Questions,
+    bracketed interviewer notes, the intro and the closing declaration produce no events.
+  - brief: no events.
+
+Consistency with the rest of the case:
+  - presence.records() badge reads give each person's room at any moment. A message that says the writer is on the
+    floor (personas.FLOOR_HINTS) is only sent while the writer is inside a badge room.
+  - lab-219 booking / running / done messages are derived from the real lt-219 sessions (security log 4624 -> 4634).
+    Only people authorised for room 219 talk about being in it; others only ask.
+  - lunch threads are derived from real lunch absences in the badge data.
+  - noise text is checked against personas.FORBIDDEN, and nothing is posted between 16:45 and midnight on the
+    incident day except the story itself. No two Slack messages and no two email bodies are identical.
 """
 from __future__ import annotations
 
@@ -23,13 +35,11 @@ from datetime import date, datetime, timedelta
 from functools import cache
 
 from . import personas as P
-from . import story
-from .presence import floor_days
+from . import presence, story
 from .records import EventSpec, Record
-from .world import (EST, F_BRIEF, F_MBOX, F_SLACK_DIR, F_STATEMENTS_DIR, INCIDENT_DAY, SEED_COMMS, at, people,
-                    person)
+from .world import (F_BRIEF, F_MBOX, F_SEC, F_SLACK_DIR, F_STATEMENTS_DIR, INCIDENT_DAY, SEED_COMMS, at, people,
+                    person, parse_ts)
 
-DM = "D0HANKKIM"
 CHANNELS = ["general", "halvorsen-eng", "lab-219", "random", "summit-2026"]
 SLACK_START, SLACK_END = date(2026, 2, 23), date(2026, 3, 8)
 MAIL_START, MAIL_END = date(2026, 2, 23), date(2026, 3, 9)
@@ -38,15 +48,18 @@ RESIGN_DAY, LAST_DAY = date(2026, 3, 2), date(2026, 3, 6)
 CASE_DAY = date(2026, 3, 9)
 BLACKOUT = (at(INCIDENT_DAY, 16, 45), at(INCIDENT_DAY, 23, 59, 59))
 STORY_PEOPLE = {"p_alma", "p_hank", "p_maggie", "p_frederik", "p_bg_17"}
+HOME_ROOM = "217"
+LAB_ROOM = "219"
 CASE_ID = "1010F"
 INTERVIEWER = "Alma Imhoff"
 INTERVIEW_ROOM = "Halvorsen Dynamics meeting room, suite 217, JRR Building, 2nd floor"
 
 FORBIDDEN_RE = re.compile("|".join(P.FORBIDDEN), re.I)
+FLOOR_RE = re.compile("|".join(P.FLOOR_HINTS), re.I)
 WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 # Slack messages per channel per day (weekday, weekend); summit-2026 is busier during summit week.
-SLACK_TARGET = {"general": (11, 0), "halvorsen-eng": (16, 0), "lab-219": (9, 0), "random": (9, 6),
+SLACK_TARGET = {"general": (11, 0), "halvorsen-eng": (15, 0), "lab-219": (7, 0), "random": (8, 4),
                 "summit-2026": (2, 0)}
 SUMMIT_WEEK_TARGET = 9
 MAIL_TARGET = (23, 1)   # generic email messages per weekday / weekend day
@@ -62,6 +75,28 @@ def _days(a: date, b: date):
     while d <= b:
         yield d
         d += timedelta(days=1)
+
+
+def _hm(t: datetime) -> str:
+    return f"{t.hour}:{t.minute:02d}"
+
+
+def _floor_to(t: datetime, minutes: int) -> datetime:
+    return t.replace(minute=t.minute - t.minute % minutes, second=0, microsecond=0)
+
+
+def _ceil_to(t: datetime, minutes: int) -> datetime:
+    f = _floor_to(t, minutes)
+    return f if f == t else f + timedelta(minutes=minutes)
+
+
+@cache
+def dm_channel() -> str:
+    """The Hank / Kim DM channel id, taken from the story chat events (never hard-coded here)."""
+    chans = {d["event"].attrs["channel"] for d in story.required_docs() if d["event"].type == "chat"}
+    if len(chans) != 1:
+        raise ValueError(f"expected one DM channel in the story chat events, got {sorted(chans)}")
+    return next(iter(chans))
 
 
 # ============================================================================================ people
@@ -106,21 +141,92 @@ def _w(pid: str) -> Who:
     return _people()[pid]
 
 
-def _by_handle(handle: str) -> Who:
-    return next(w for w in _people().values() if w.handle == handle)
+@cache
+def _first_names() -> frozenset[str]:
+    return frozenset(w.first for w in _people().values())
+
+
+def auth219(pid: str, t: datetime) -> bool:
+    """True if inventory.csv authorises this person for room 219 at time t (revocations respected)."""
+    p = person(pid)
+    if LAB_ROOM not in (p.get("authorized_rooms") or "").split(";"):
+        return False
+    for rv in filter(None, (p.get("revoked") or "").split(";")):
+        room, _, when = rv.partition("@")
+        if room == LAB_ROOM and t >= parse_ts(when):
+            return False
+    return True
 
 
 # ============================================================================================ presence
 
 @cache
 def _floor() -> dict[tuple[str, date], tuple[datetime, datetime]]:
-    d = {(f.person_id, f.day): (f.arrive, f.depart) for f in floor_days()}
+    d = {(f.person_id, f.day): (f.arrive, f.depart) for f in presence.floor_days()}
     # presence.py stops the story people's incident day at the 17:00 cut (story.py owns the evening). For writing
     # purposes they are at their desks until the blackout starts.
     for pid in STORY_PEOPLE:
         if (pid, INCIDENT_DAY) in d:
             d[(pid, INCIDENT_DAY)] = (d[(pid, INCIDENT_DAY)][0], BLACKOUT[0])
     return d
+
+
+@cache
+def _intervals() -> dict[tuple[str, date], tuple[tuple[str, datetime, datetime], ...]]:
+    """(person, day) -> ((room, in, out), ...) from the badge reads (background plus story reads before 16:45)."""
+    owner = {p["badge"]: p["person_id"] for p in people() if p.get("badge")}
+    reads = [r.events[0] for r in presence.records() if r.events and r.events[0].type in ("badge_in", "badge_out")]
+    reads += [e for r in story.csv_records() for e in r.events
+              if e.type in ("badge_in", "badge_out") and not (e.t.date() == INCIDENT_DAY and e.t >= BLACKOUT[0])]
+    by: dict[tuple[str, date], list[EventSpec]] = {}
+    for e in sorted(reads, key=lambda e: e.t):
+        pid = owner.get(e.actor["value"])
+        if pid:
+            by.setdefault((pid, e.t.date()), []).append(e)
+    out = {}
+    for (pid, day), evs in by.items():
+        open_: dict[str, datetime] = {}
+        iv = []
+        for e in evs:
+            if e.type == "badge_in":
+                for room in list(open_):              # walked into another room without an OUT read
+                    iv.append((room, open_.pop(room), e.t))
+                open_[e.room] = e.t
+            elif e.room in open_:
+                iv.append((e.room, open_.pop(e.room), e.t))
+        for room, t0 in open_.items():
+            end = BLACKOUT[0] if (day == INCIDENT_DAY and pid in STORY_PEOPLE) else max(t0, at(day, 18, 0))
+            iv.append((room, t0, end))
+        out[(pid, day)] = tuple(sorted(iv, key=lambda x: x[1]))
+    return out
+
+
+def _room_at(pid: str, t: datetime) -> str | None:
+    room = None
+    for r, a, b in _intervals().get((pid, t.date()), ()):
+        if a <= t <= b:
+            room = r
+    return room
+
+
+def _present(pid: str, t: datetime) -> bool:
+    return _room_at(pid, t) is not None
+
+
+def _iv_at(pid: str, room: str, t: datetime, slack: int = 120) -> tuple[str, datetime, datetime] | None:
+    for iv in _intervals().get((pid, t.date()), ()):
+        if iv[0] == room and iv[1] - timedelta(seconds=slack) <= t <= iv[2]:
+            return iv
+    return None
+
+
+def _floor_ok(w: Who | None, t: datetime, texts) -> bool:
+    """A text that says the writer is on the floor needs the writer inside a badge room at t."""
+    if w is None or w.pid in ("p_frederik", "p_kim") or t.date() >= CASE_DAY:
+        return True
+    if not any(FLOOR_RE.search(x) for x in texts):
+        return True
+    return _present(w.pid, t)
 
 
 def _blocked(t: datetime) -> bool:
@@ -145,6 +251,8 @@ def _can_write(w: Who, t: datetime, home: bool) -> bool:
         return False
     if w.pid in STORY_PEOPLE and t.date() == INCIDENT_DAY and t >= BLACKOUT[0]:
         return False
+    if _room_at(w.pid, t) == LAB_ROOM:
+        return False                    # busy on the bench in 219 (only the lab session messages come from there)
     if "tenant" in w.tags or w.pid == "p_frederik":
         return t.weekday() < 5 and 8.5 <= t.hour + t.minute / 60 < 17.5
     if _on_floor(w.pid, t):
@@ -164,6 +272,47 @@ def _window(pid: str, day: date) -> tuple[datetime, datetime] | None:
 
 def _rand_time(rng: random.Random, a: datetime, b: datetime) -> datetime:
     return a + timedelta(seconds=rng.randint(0, max(0, int((b - a).total_seconds()))))
+
+
+def _next_present(pid: str, t: datetime, limit_min: int, step: int = 1) -> datetime | None:
+    for k in range(0, limit_min + 1, step):
+        c = t + timedelta(minutes=k)
+        if _present(pid, c) and not _blocked(c):
+            return c
+    return None
+
+
+# ============================================================================================ lab sessions
+
+@cache
+def _lab_sessions() -> tuple[tuple[str, datetime, datetime, str], ...]:
+    """Real lt-219 sessions by the lab users: (person_id, logon, logoff, task). Incident evening excluded."""
+    acc = {p["local_account"]: p["person_id"] for p in people()
+           if p.get("local_account") and p["person_id"] in P.LAB_TASKS}
+    evs = []
+    for r in list(presence.records()) + story.csv_records():
+        if r.source != F_SEC:
+            continue
+        for e in r.events:
+            if e.type in ("logon", "logoff") and e.actor and e.actor.get("value") in acc and not _blocked(e.t):
+                evs.append(e)
+    out, open_ = [], {}
+    for e in sorted(evs, key=lambda e: e.t):
+        a = e.actor["value"]
+        if e.type == "logon":
+            open_[a] = e.t
+        elif a in open_:
+            on = open_.pop(a)
+            pid = acc[a]
+            if auth219(pid, on):
+                task = _rng("lab-task", pid, on.isoformat()).choice(P.LAB_TASKS[pid])
+                out.append((pid, on, e.t, task))
+    return tuple(sorted(out, key=lambda s: s[1]))
+
+
+def _had_219(pid: str, t: datetime) -> bool:
+    """Was in room 219 earlier the same day (interval ended before t)."""
+    return any(r == LAB_ROOM and b < t for r, a, b in _intervals().get((pid, t.date()), ()))
 
 
 # ============================================================================================ text helpers
@@ -199,6 +348,25 @@ def _stylize(text: str, per: P.Persona, rng: random.Random) -> str:
     return text
 
 
+def _lc_first(text: str) -> str:
+    """Lower-case the first letter unless the text starts with a name, 'I', an acronym or a symbol."""
+    word = re.split(r"[ ,.!?:']", text, maxsplit=1)[0]
+    if len(word) > 1 and word.isalpha() and word[0].isupper() and word[1:].islower() and word not in _first_names():
+        return text[0].lower() + text[1:]
+    return text
+
+
+def _alts(base: str, name: str | None) -> list[str]:
+    """Natural rewordings used when the plain text is already taken somewhere in the export."""
+    out = []
+    if name:
+        out.append(f"{base[:-1]}, {name}{base[-1]}" if base[-1:] in ".!?" else f"{base}, {name}")
+        out.append(f"{name}, {_lc_first(base)}")
+    else:
+        out += [f"Hey all, {_lc_first(base)}", f"Quick one: {_lc_first(base)}"]
+    return out
+
+
 def _params(rng: random.Random, day: date, t0: datetime | None = None, future: bool = False) -> dict:
     """Thread-level fillers. Days named are workdays one to three days ahead. Times lie after the thread start, or
     (future=True, the thread names another day) inside office hours."""
@@ -218,7 +386,8 @@ def _params(rng: random.Random, day: date, t0: datetime | None = None, future: b
     slot2 = f"{end // 60}:{end % 60:02d}"
     t1, t2 = rng.sample(P.TOPICS, 2)
     out = dict(day=ahead[rng.randint(0, 2)], day2=ahead[3], slot=slot, slot2=slot2, topic=t1, topic2=t2,
-               n=rng.randint(2, 9), m=rng.randint(1, 9), talk=rng.choice(P.TALKS), food=rng.choice(P.FOOD))
+               n=rng.randint(2, 9), m=rng.randint(1, 9), talk=rng.choice(P.TALKS), food=rng.choice(P.FOOD),
+               slot_min=base)
     prog = P.PROGRAM.get(day.isoformat(), [])
     now = f"{t0.hour:02d}:{t0.minute:02d}"
     nxt = [(n, s) for n, s in prog if s.zfill(5) > now]
@@ -261,6 +430,33 @@ class _Msg:
     event: EventSpec | None = None      # story event (kept as is) or None for noise
     ts_str: str | None = None
     late: bool = False                  # a late 'sorry, just saw this' reply
+    base: str = ""                      # template text before styling (anecdotes are told once)
+
+
+class _Slack:
+    def __init__(self):
+        self.msgs: list[_Msg] = []
+        self.taken: set[str] = set()
+        self.once_bases: set[str] = set()   # anecdote lines already told by someone
+
+    def add(self, m: _Msg) -> _Msg:
+        if m.text in self.taken:
+            raise ValueError(f"duplicate Slack text {m.text!r}")
+        self.msgs.append(m)
+        self.taken.add(m.text)
+        return m
+
+    def say(self, w: Who, base: str, rng: random.Random, t: datetime, addressee: str | None = None,
+            once: bool = False, late: bool = False) -> str | None:
+        """w's version of base, unique in the export, allowed by the text and floor guards; None if impossible."""
+        for c in [base] + ([] if once else _alts(base, addressee)):
+            text = _stylize(c, w.persona, rng)
+            if late:
+                lp = rng.choice(w.persona.late)
+                text = f"{lp} {text}" if lp[-1] in ".!?" else f"{lp} - {text}"
+            if _slack_ok(text) and text not in self.taken and _floor_ok(w, t, [c, text]):
+                return text
+        return None
 
 
 def _channel_members(ch: str, day: date) -> list[Who]:
@@ -274,13 +470,18 @@ def _channel_members(ch: str, day: date) -> list[Who]:
     return hal
 
 
-def _pool(tag: str, members: list[Who]) -> list[Who]:
+def _pool(tag: str, members: list[Who], day: date) -> list[Who]:
+    noon = at(day, 12, 0)
     if tag == "hal":
         return members
     if tag == "rina":
         return [w for w in members if w.pid == "p_bg_17"]
     if tag == "lab_user":
         return [w for w in members if "lab" in w.tags and w.pid != "p_bg_17"]
+    if tag == "auth219":
+        return [w for w in members if auth219(w.pid, noon)]
+    if tag == "lab_ask":
+        return [w for w in members if "lab" in w.tags and not auth219(w.pid, noon)]
     return [w for w in members if tag in w.tags]
 
 
@@ -294,56 +495,62 @@ def _day_ok(spec: str | None, day: date) -> bool:
     }[spec]
 
 
-def _sim_thread(rng: random.Random, ch: str, turns: list[tuple[str, list[str]]], roles: dict[str, Who],
-                params: dict, t0: datetime, home: bool, taken: set[str], evening_late: bool = True) -> list[_Msg]:
+def _sim_thread(sl: _Slack, rng: random.Random, ch: str, tpl: dict, roles: dict[str, Who], params: dict,
+                t0: datetime, home: bool) -> list[_Msg]:
     """Play a thread from t0: replies within minutes when the person is around, a late 'sorry, just saw this'
-    when they come back later the same day, or the thread just stops."""
+    when they come back later the same day, or the thread just stops. Nothing is added to sl here."""
     out: list[_Msg] = []
+    taken_here: set[str] = set()
     t, last = t0, None
     idx, prev_len = 0, 0
-    for i, (role, variants) in enumerate(turns):
+    once = bool(tpl.get("once"))
+    for i, (role, variants) in enumerate(tpl["turns"]):
         w = roles[role]
         # a turn with as many variants as the previous one continues the same branch (replies fit the question)
         idx = idx if len(variants) == prev_len else rng.randrange(len(variants))
         prev_len = len(variants)
-        text = _fill(variants[idx], params, roles)
+        base = _fill(variants[idx], params, roles)
         late = False
         if i:
             gap = rng.uniform(0.2, 1.5) if role == last else rng.choice([0.6, 1, 1.5, 2, 3, 4, 6, 9]) * rng.uniform(0.8, 1.3)
             t = t + timedelta(minutes=gap, seconds=rng.randint(0, 50))
             if not _can_write(w, t, home):
                 win = _window(w.pid, t.date())
-                if win and win[0] > t:
+                if not home and win and win[0] > t:
                     t, late = win[0] + timedelta(minutes=rng.randint(3, 35), seconds=rng.randint(0, 59)), True
-                elif evening_late and rng.random() < w.persona.evening * 2 and t.date().weekday() < 5:
+                elif home and rng.random() < w.persona.evening * 2 and t.date().weekday() < 5:
                     t, late = max(t, at(t.date(), 19, 35)) + timedelta(minutes=rng.randint(0, 80)), True
                 else:
                     break
-                if not _can_write(w, t, True):
+                if not _can_write(w, t, home):
                     break
             elif role != last and not home and rng.random() < 0.07:
                 later = t + timedelta(minutes=rng.randint(40, 150), seconds=rng.randint(0, 59))
                 if _can_write(w, later, False):      # busy for a while, then answers
                     t, late = later, True
-        text = _stylize(text, w.persona, rng)
-        if late:
-            lp = rng.choice(w.persona.late)
-            text = f"{lp} {text}" if lp[-1] in ".!?" else f"{lp} - {text}"
-        if not _slack_ok(text) or text in taken:
+        if home and _present(w.pid, t):
+            break                                    # a from-home thread is never written from a desk
+        if once and base in sl.once_bases:
             break
-        taken.add(text)
-        out.append(_Msg(ch, t, w.handle, text, late=late))
+        addressee = roles[last].first if last and roles[last] is not w else None
+        sl.taken |= taken_here
+        text = sl.say(w, base, rng, t, addressee=addressee, once=once, late=late)
+        sl.taken -= taken_here
+        if text is None or text in taken_here:
+            break
+        taken_here.add(text)
+        out.append(_Msg(ch, t, w.handle, text, late=late, base=base))
         last = role
     return out
 
 
-def _assign(rng: random.Random, roles_spec: dict[str, str], members: list[Who]) -> dict[str, Who] | None:
+def _assign(rng: random.Random, roles_spec: dict[str, str], members: list[Who], day: date) -> dict[str, Who] | None:
     roles: dict[str, Who] = {}
     for r, tag in roles_spec.items():
         if tag.startswith("pid:"):
             cand = [_w(tag[4:])]
         else:
-            cand = [w for w in _pool(tag, members) if w not in roles.values()]
+            cand = [w for w in _pool(tag, members, day) if w not in roles.values()]
         if not cand:
             return None
         roles[r] = rng.choice(cand)
@@ -351,19 +558,62 @@ def _assign(rng: random.Random, roles_spec: dict[str, str], members: list[Who]) 
 
 
 def _start_time(rng: random.Random, w: Who, day: date, home: bool) -> datetime | None:
+    if home:
+        for _ in range(12):
+            t = _rand_time(rng, at(day, 10, 0), at(day, 21, 0)) if day.weekday() >= 5 else \
+                _rand_time(rng, at(day, 19, 40), at(day, 21, 40))
+            if not _present(w.pid, t):
+                return t
+        return None
     win = _window(w.pid, day)
     if win:
         return _rand_time(rng, win[0], win[1])
-    if home:
-        if day.weekday() >= 5:
-            return _rand_time(rng, at(day, 10, 0), at(day, 21, 0))
-        return _rand_time(rng, at(day, 19, 40), at(day, 21, 40))
     return None
+
+
+def _place(pid: str, day: date, hm: tuple[int, int], home: bool = False) -> datetime:
+    """Requested time if the person can write then (inside a badge room when they are on the floor that day), else
+    the nearest such time inside their window that day."""
+    w = _w(pid)
+    t = at(day, *hm)
+    win = _window(pid, day)
+    if not win:
+        if _can_write(w, t, home) or day >= CASE_DAY or "hal" not in w.tags:
+            return t                                        # no presence data for 03-09; externals keep office hours
+        return at(day, 20, 0) + timedelta(minutes=hm[1] % 40)  # not on the floor that day: answers from home
+    t = min(max(t, win[0] + timedelta(minutes=2)), win[1] - timedelta(minutes=10))
+    for k in range(0, 240):
+        for c in (t + timedelta(minutes=k), t - timedelta(minutes=k)):
+            if win[0] <= c <= win[1] and _present(pid, c) and _can_write(w, c, False):
+                return c
+    return t
+
+
+@cache
+def _handover_slots() -> dict[date, tuple[int, int]]:
+    """Handover session times (Tuesday 3 / Thursday 5 March) when Hank, Leila, Theo and Amara are all in."""
+    out = {}
+    for day in (date(2026, 3, 3), date(2026, 3, 5)):
+        best = None
+        for hm in [(14, 0), (14, 30), (15, 0), (15, 30), (16, 0), (13, 30), (13, 0), (11, 0), (10, 30)]:
+            t = at(day, *hm)
+            score = sum(_present(pid, t + timedelta(minutes=k))
+                        for pid in ("p_hank", "p_bg_04", "p_bg_01", "p_bg_02") for k in (0, 20, 40, 55))
+            if best is None or score > best[0]:
+                best = (score, hm)
+        out[day] = best[1]
+    return out
+
+
+def _slot_txt(hm: tuple[int, int]) -> str:
+    return f"{hm[0]}:{hm[1]:02d}"
 
 
 def _scripted_slack() -> list[tuple[str, date, tuple[int, int], list[tuple[str, str]]]]:
     """Fixed beats of the week: (channel, day, (h, m), [(person_id, text), ...])."""
     d = date
+    hs = _handover_slots()
+    tue, thu = _slot_txt(hs[d(2026, 3, 3)]), _slot_txt(hs[d(2026, 3, 5)])
     return [
         ("general", d(2026, 2, 24), (10, 5), [
             ("p_alma", "A reminder that the fire exit next to the lounge must be kept clear at all times. Thank you."),
@@ -394,19 +644,19 @@ def _scripted_slack() -> list[tuple[str, date, tuple[int, int], list[tuple[str, 
         ("halvorsen-eng", d(2026, 3, 2), (14, 10), [
             ("p_bg_04", "Hank, can we set up handover sessions this week? Thinking the test stand scripts and the valve timing sweep."),
             ("p_hank", "Yes. Tuesday and Thursday afternoons work."),
-            ("p_bg_04", "Booked Tuesday 14:00 and Thursday 14:00 in the meeting room."),
+            ("p_bg_04", f"Booked Tuesday {tue} and Thursday {thu} in the meeting room."),
             ("p_bg_01", "I can take the test stand scripts."),
             ("p_hank", "Ok. Notes will be in the handover doc."),
         ]),
         ("general", d(2026, 3, 3), (11, 5), [
-            ("p_maggie", "Farewell lunch for Hank on Friday at 12:30! Thinking the dumpling spot, who is in??"),
+            ("p_maggie", "Farewell lunch for Hank on Friday at 12:30, catered, in the 217 meeting room! Who is in??"),
             ("p_bg_01", "In."),
             ("p_bg_02", "Yes!!"),
             ("p_bg_03", "in"),
             ("p_bg_05", "in, as long as someone else does the speech"),
             ("p_bg_06", "In. Lunch is on Halvorsen :)"),
             ("p_bg_04", "Count me in!"),
-            ("p_maggie", "Yay! Booking a table for nine :tada:"),
+            ("p_maggie", "Yay! Ordering food for everyone :tada:"),
             ("p_hank", "Thanks Maggie."),
         ]),
         ("halvorsen-eng", d(2026, 3, 3), (15, 40), [
@@ -419,7 +669,7 @@ def _scripted_slack() -> list[tuple[str, date, tuple[int, int], list[tuple[str, 
             ("p_bg_02", "Ooh, thanks Sofia!"),
         ]),
         ("general", d(2026, 3, 5), (10, 15), [
-            ("p_maggie", "Reminder: Hank's farewell lunch is tomorrow, meet at the elevators at 12:20!"),
+            ("p_maggie", "Reminder: Hank's farewell lunch is tomorrow at 12:30 in the 217 meeting room, the food is ordered!"),
             ("p_bg_02", "Can't wait!"),
             ("p_bg_06", "The card is on my desk if anyone has not signed it yet."),
         ]),
@@ -427,8 +677,8 @@ def _scripted_slack() -> list[tuple[str, date, tuple[int, int], list[tuple[str, 
             ("p_hank", "Handover doc updated. Valve timing sweep section done."),
             ("p_bg_02", "Thanks Hank, super clear."),
         ]),
-        ("general", d(2026, 3, 6), (12, 15), [
-            ("p_maggie", "Elevators in 5 minutes for lunch everyone!"),
+        ("general", d(2026, 3, 6), (12, 25), [
+            ("p_maggie", "Food is here! 217 meeting room, come grab a plate :tada:"),
             ("p_bg_03", "omw"),
         ]),
         ("general", d(2026, 3, 6), (14, 5), [
@@ -445,6 +695,183 @@ def _scripted_slack() -> list[tuple[str, date, tuple[int, int], list[tuple[str, 
     ]
 
 
+def _add_scripted_slack(sl: _Slack) -> None:
+    rng = _rng("slack", "scripted")
+    for ch, day, hm, lines in _scripted_slack():
+        t = _place(lines[0][0], day, hm)
+        last = None
+        for i, (pid, text) in enumerate(lines):
+            w = _w(pid)
+            if i:
+                t += timedelta(minutes=(rng.uniform(0.2, 1.2) if pid == last else rng.uniform(0.5, 4)),
+                               seconds=rng.randint(0, 40))
+                if not _can_write(w, t, False):
+                    win = _window(pid, day)
+                    if not (win and win[0] > t):
+                        continue
+                    t = win[0] + timedelta(minutes=rng.randint(4, 30))
+                    lp = w.persona.late[0]
+                    text = f"{lp} {text}" if lp[-1] in ".!?" else f"{lp} - {text}"
+            if not _floor_ok(w, t, [text]):
+                nt = _next_present(pid, t, 20)
+                if nt is None:
+                    continue
+                t = nt
+            if not _slack_ok(text):
+                raise ValueError(f"scripted Slack text not allowed: {text!r}")
+            sl.add(_Msg(ch, t, w.handle, text))
+            last = pid
+
+
+def _add_lab_slack(sl: _Slack) -> None:
+    """lab-219 messages from the real lt-219 sessions: booking earlier that day (from the desk in 217) or a 'starting'
+    note from 219, an optional 'running' note, and 'done' after logoff while the person is still in 219."""
+    for pid, on, off, task in _lab_sessions():
+        day = on.date()
+        if not SLACK_START <= day <= SLACK_END:
+            continue
+        rng = _rng("lab-msg", pid, on.isoformat())
+        w = _w(pid)
+        iv = _iv_at(pid, LAB_ROOM, on)
+        t_in = iv[1] if iv else on - timedelta(minutes=2)
+        t_out = iv[2] if iv else None
+        vals = dict(a=_hm(_floor_to(t_in, 15)), b=_hm(_ceil_to(off, 15)), task=task, Task=task[:1].upper() + task[1:])
+        booked = None
+        fl = _floor().get((pid, day))
+        if fl:
+            hi = t_in - timedelta(minutes=15)
+            lo = max(fl[0] + timedelta(minutes=3), hi - timedelta(minutes=150), at(day, 7, 30))
+            for _ in range(30):
+                if hi <= lo:
+                    break
+                c = _rand_time(rng, lo, hi)
+                if _room_at(pid, c) == HOME_ROOM and not _blocked(c):
+                    booked = c
+                    break
+        if booked:
+            text = sl.say(w, rng.choice(P.LAB_BOOK).format(**vals), rng, booked)
+            if text:
+                sl.add(_Msg("lab-219", booked, w.handle, text))
+            if rng.random() < 0.35:
+                others = [o for o in _channel_members("lab-219", day) if o.pid != pid]
+                if others:
+                    o = rng.choice(others)
+                    tr = booked + timedelta(minutes=rng.randint(1, 8), seconds=rng.randint(0, 59))
+                    if tr < t_in and _can_write(o, tr, False):
+                        rt = sl.say(o, rng.choice(P.LAB_REPLY).format(n=rng.randint(1, 8)), rng, tr, addressee=w.first)
+                        if rt:
+                            sl.add(_Msg("lab-219", tr, o.handle, rt))
+            if rng.random() < 0.4:
+                trun = on + timedelta(seconds=rng.randint(60, 240))
+                if trun < off - timedelta(minutes=2) and _room_at(pid, trun) == LAB_ROOM:
+                    text = sl.say(w, rng.choice(P.LAB_RUNNING).format(**vals), rng, trun)
+                    if text:
+                        sl.add(_Msg("lab-219", trun, w.handle, text))
+        else:
+            ts = t_in + timedelta(seconds=rng.randint(60, 200))
+            if ts < off and _room_at(pid, ts) == LAB_ROOM and not _blocked(ts):
+                text = sl.say(w, rng.choice(P.LAB_START).format(**vals), rng, ts)
+                if text:
+                    sl.add(_Msg("lab-219", ts, w.handle, text))
+        if t_out is not None and (t_out - off).total_seconds() >= 20:
+            td = off + timedelta(seconds=rng.randint(10, int((t_out - off).total_seconds()) - 5))
+        else:
+            td = off + timedelta(seconds=rng.randint(30, 90))
+        if _room_at(pid, td) in (LAB_ROOM, None) and not _blocked(td):
+            text = sl.say(w, rng.choice(P.LAB_DONE).format(**vals), rng, td)
+            if text:
+                sl.add(_Msg("lab-219", td, w.handle, text))
+
+
+def _add_lunch_slack(sl: _Slack) -> None:
+    """general: lunch plans for groups who really are out of their rooms together around lunch."""
+    for day in _days(SLACK_START, SLACK_END):
+        if day.weekday() >= 5 or day == LAST_DAY:        # Friday 6 March is the catered lunch in 217
+            continue
+        rng = _rng("lunch", day.isoformat())
+        members = _channel_members("general", day)
+        gaps = []
+        for w in members:
+            ivs = _intervals().get((w.pid, day), ())
+            for x, y in zip(ivs, ivs[1:]):
+                s, e = x[2], y[1]
+                if e - s >= timedelta(minutes=25) and at(day, 11, 20) <= s <= at(day, 13, 50):
+                    gaps.append((w, s, e))
+        gaps.sort(key=lambda g: g[1])
+        used: set[str] = set()
+        groups = []
+        for g in gaps:
+            if g[0].pid in used:
+                continue
+            mates, seen = [], {g[0].pid}
+            for h in gaps:
+                if h[0].pid in used or h[0].pid in seen:
+                    continue
+                if abs((h[1] - g[1]).total_seconds()) <= 480 and min(g[2], h[2]) - max(g[1], h[1]) >= timedelta(minutes=20):
+                    mates.append(h)
+                    seen.add(h[0].pid)
+            if mates:
+                grp = [g] + mates[:3]
+                groups.append(grp)
+                used |= {x[0].pid for x in grp}
+        for grp in groups[:2]:
+            rng.shuffle(grp)
+            a_w = grp[0][0]
+            slot = _floor_to(min(x[1] for x in grp), 5)
+            t0 = None
+            for _ in range(10):
+                c = slot - timedelta(minutes=rng.randint(15, 60), seconds=rng.randint(0, 59))
+                if c >= at(day, 10, 15) and _present(a_w.pid, c) and not _blocked(c):
+                    t0 = c
+                    break
+            if t0 is None:
+                continue
+            food = rng.choice(P.FOOD)
+            vals = dict(slot=_hm(slot), food=food, Food=food[:1].upper() + food[1:])
+            thread = []
+            ask = sl.say(a_w, rng.choice(P.LUNCH_ASK).format(**vals), rng, t0)
+            if not ask:
+                continue
+            thread.append(_Msg("general", t0, a_w.handle, ask))
+            sl.taken.add(ask)
+            t = t0
+            for mate, _, _ in grp[1:]:
+                t = t + timedelta(minutes=rng.uniform(0.5, 6), seconds=rng.randint(0, 30))
+                if t >= slot - timedelta(minutes=1) or not _present(mate.pid, t):
+                    continue
+                yes = sl.say(mate, rng.choice(P.LUNCH_YES), rng, t, addressee=a_w.first)
+                if yes:
+                    thread.append(_Msg("general", t, mate.handle, yes))
+                    sl.taken.add(yes)
+            if len(thread) < 2:
+                for m in thread:
+                    sl.taken.discard(m.text)
+                continue
+            if rng.random() < 0.4:
+                stay = [w for w in members if w.pid not in {x[0].pid for x in grp}
+                        and _present(w.pid, t + timedelta(minutes=1)) and _present(w.pid, slot + timedelta(minutes=10))]
+                if stay:
+                    c = rng.choice(stay)
+                    tc = t + timedelta(minutes=rng.uniform(0.5, 3))
+                    no = sl.say(c, rng.choice(P.LUNCH_NO), rng, tc, addressee=a_w.first)
+                    if no and tc < slot:
+                        thread.append(_Msg("general", tc, c.handle, no))
+                        sl.taken.add(no)
+                        t = tc
+            tok = t + timedelta(minutes=rng.uniform(0.5, 3))
+            if tok < slot and _present(a_w.pid, tok):
+                ok = sl.say(a_w, rng.choice(P.LUNCH_OK).format(**vals), rng, tok)
+                if ok:
+                    thread.append(_Msg("general", tok, a_w.handle, ok))
+            for m in thread:
+                sl.taken.discard(m.text)
+            lo, hi = thread[0].t - timedelta(minutes=3), thread[-1].t + timedelta(minutes=3)
+            if any(lo <= g[-1].t and g[0].t <= hi for g in _groups(sl.msgs, "general", day)):
+                continue                                 # never interleave with another conversation
+            for m in thread:
+                sl.add(m)
+
+
 def _groups(msgs: list[_Msg], ch: str, day: date) -> list[list[_Msg]]:
     """Messages already in a channel-day, split into conversations (gaps over 20 minutes)."""
     ms = sorted((m for m in msgs if m.channel == ch and m.t.date() == day and not m.late), key=lambda m: m.t)
@@ -457,60 +884,31 @@ def _groups(msgs: list[_Msg], ch: str, day: date) -> list[list[_Msg]]:
     return out
 
 
-def _place(pid: str, day: date, hm: tuple[int, int], home: bool = False) -> datetime:
-    """Requested time if the person can write then, else the nearest time inside their window that day."""
-    w = _w(pid)
-    t = at(day, *hm)
-    if _can_write(w, t, home):
-        return t
-    win = _window(pid, day)
-    if not win:
-        if day >= CASE_DAY or "hal" not in w.tags:
-            return t                                        # no presence data for 03-09; externals keep office hours
-        return at(day, 20, 0) + timedelta(minutes=hm[1] % 40)  # not on the floor that day: answers from home
-    return min(max(t, win[0] + timedelta(minutes=2)), win[1] - timedelta(minutes=10))
+def _slot_ok(tpl: dict, roles: dict[str, Who], params: dict, day: date, t0: datetime) -> bool:
+    """slot_check: the person who books the room at {slot} today is in a badge room for the whole half hour."""
+    role = tpl.get("slot_check")
+    if not role:
+        return True
+    s = at(day, params["slot_min"] // 60, params["slot_min"] % 60)
+    return s > t0 and all(_present(roles[role].pid, s + timedelta(minutes=k)) for k in (0, 10, 20, 30))
 
 
 @cache
 def _slack_messages() -> tuple[_Msg, ...]:
-    msgs: list[_Msg] = []
-    taken: dict[tuple[str, date], set[str]] = {}
-
-    def tk(ch, d):
-        return taken.setdefault((ch, d), set())
-
+    sl = _Slack()
+    dm = dm_channel()
     # 1. story DM messages, untouched
     for d in story.required_docs():
         ev = d["event"]
         if ev.type == "chat":
-            msgs.append(_Msg(ev.attrs["channel"], ev.t, ev.actor["value"], ev.quote_text, ev, ev.attrs["ts"]))
-            tk(ev.attrs["channel"], ev.t.date()).add(ev.quote_text)
+            sl.add(_Msg(ev.attrs["channel"], ev.t, ev.actor["value"], ev.quote_text, ev, ev.attrs["ts"]))
     # 2. DM noise around them (Slack Connect with Kim)
     for ds, h, m, s, handle, text in P.KIM_DM_NOISE:
-        t = at(date.fromisoformat(ds), h, m, s)
-        msgs.append(_Msg(DM, t, handle, text))
-        tk(DM, t.date()).add(text)
-    # 3. scripted beats of the week
-    rng = _rng("slack", "scripted")
-    for ch, day, hm, lines in _scripted_slack():
-        t = _place(lines[0][0], day, hm)
-        last = None
-        for i, (pid, text) in enumerate(lines):
-            if i:
-                t += timedelta(minutes=(rng.uniform(0.2, 1.2) if pid == last else rng.uniform(0.5, 4)),
-                               seconds=rng.randint(0, 40))
-                if not _can_write(_w(pid), t, False):
-                    win = _window(pid, day)
-                    if not (win and win[0] > t):
-                        continue
-                    t = win[0] + timedelta(minutes=rng.randint(4, 30))
-                    lp = _w(pid).persona.late[0]
-                    text = f"{lp} {text}" if lp[-1] in ".!?" else f"{lp} - {text}"
-            if not _slack_ok(text):
-                raise ValueError(f"scripted Slack text not allowed: {text!r}")
-            msgs.append(_Msg(ch, t, _w(pid).handle, text))
-            tk(ch, t.date()).add(text)
-            last = pid
+        sl.add(_Msg(dm, at(date.fromisoformat(ds), h, m, s), handle, text))
+    # 3. scripted beats of the week, lab sessions, lunches
+    _add_scripted_slack(sl)
+    _add_lab_slack(sl)
+    _add_lunch_slack(sl)
     # 4. generic threads until each channel-day reaches its target
     for day in _days(SLACK_START, SLACK_END):
         weekend = day.weekday() >= 5
@@ -520,47 +918,53 @@ def _slack_messages() -> tuple[_Msg, ...]:
             if ch == "summit-2026" and SUMMIT_START <= day <= SUMMIT_END:
                 target = SUMMIT_WEEK_TARGET
             target += rng.randint(-1, 2) if target > 2 else 0
-            have = sum(1 for m in msgs if m.channel == ch and m.t.date() == day)
+            have = sum(1 for m in sl.msgs if m.channel == ch and m.t.date() == day)
             tpls = [t for t in P.SLACK_THREADS if t["ch"] == ch and _day_ok(t.get("days"), day)
-                    and (not weekend or t.get("evening"))]
+                    and (not weekend or t.get("home"))]
             if ch == "general":
                 tpls = [t for t in tpls if t["id"] != "printer" or _day_ok("printer", day)]
             used: set[str] = set()
             tries = 0
             members = _channel_members(ch, day)
-            busy = [(min(m.t for m in g), max(m.t for m in g)) for g in _groups(msgs, ch, day)]
+            busy = [(min(m.t for m in g), max(m.t for m in g)) for g in _groups(sl.msgs, ch, day)]
             while have < target and tries < 60 and tpls:
                 tries += 1
                 cand = [t for t in tpls if t["id"] not in used]
                 if not cand:
                     break
                 tpl = rng.choices(cand, weights=[t.get("weight", 1) for t in cand])[0]
-                roles = _assign(rng, tpl["roles"], members)
+                roles = _assign(rng, tpl["roles"], members, day)
                 if not roles:
                     used.add(tpl["id"])
                     continue
-                home = weekend or (bool(tpl.get("evening")) and rng.random() < 0.35)
-                t0 = _start_time(rng, roles[tpl["turns"][0][0]], day, home)
-                if t0 is None or not _can_write(roles[tpl["turns"][0][0]], t0, home):
+                home = weekend or (bool(tpl.get("home")) and rng.random() < 0.35)
+                first = roles[tpl["turns"][0][0]]
+                t0 = _start_time(rng, first, day, home)
+                if t0 is None or not _can_write(first, t0, home):
                     continue
                 if "hours" in tpl and not tpl["hours"][0] <= t0.hour + t0.minute / 60 <= tpl["hours"][1]:
+                    continue
+                if tpl.get("needs219") and not _had_219(roles[tpl["needs219"]].pid, t0):
                     continue
                 params = _params(rng, day, t0, future="{day" in repr(tpl["turns"]))
                 if tpl.get("needs") and tpl["needs"] not in params:
                     continue
-                thread = _sim_thread(rng, ch, tpl["turns"], roles, params, t0, home, tk(ch, day),
-                                     evening_late=bool(tpl.get("evening")))
+                if not _slot_ok(tpl, roles, params, day, t0):
+                    continue
+                thread = _sim_thread(sl, rng, ch, tpl, roles, params, t0, home)
                 live = [m.t for m in thread if not m.late]
                 span = (min(live) - timedelta(minutes=3), max(live) + timedelta(minutes=3)) if live else None
                 if len(thread) < 2 or any(span[0] <= b and a <= span[1] for a, b in busy):
-                    for m in thread:
-                        tk(ch, day).discard(m.text)
                     continue
                 busy.append(span)
                 thread = [m for m in thread if SLACK_START <= m.t.date() <= SLACK_END]
                 used.add(tpl["id"])
-                msgs.extend(thread)
+                for m in thread:
+                    sl.add(m)
+                    if tpl.get("once"):
+                        sl.once_bases.add(m.base)
                 have += sum(1 for m in thread if m.t.date() == day)
+    msgs = sl.msgs
     # 5. ts strings: story keeps its own; others f"{epoch}.{n:06d}", n = 100, 200, ... within one second of a file
     msgs.sort(key=lambda m: (m.channel, m.t, m.event is None, m.handle, m.text))
     used_ts: dict[tuple[str, date], set[str]] = {}
@@ -608,15 +1012,20 @@ class _Mail:
     body: list[str]
     message_id: str
     in_reply_to: str | None = None
-    quote: str | None = None
-    event: EventSpec | None = None
+    event: EventSpec | None = None      # the story event of a story email
     sender: Who | None = None
+
+
+def lines_unique(body: list[str]) -> bool:
+    """Every non-empty body line is on exactly one body line (the mbox writer matches quotes by substring)."""
+    return all(sum(1 for b in body if line in b) == 1 for line in body if line.strip())
 
 
 class _Mailer:
     def __init__(self):
         self.mails: list[_Mail] = []
         self.ids: set[str] = set()
+        self.bodies: set[tuple[str, ...]] = set()
         self.id_rng = _rng("mail", "ids")
 
     def mid(self, t: datetime, addr: str) -> str:
@@ -628,7 +1037,10 @@ class _Mailer:
                 return m
 
     def add(self, m: _Mail) -> _Mail:
+        if tuple(m.body) in self.bodies:
+            raise ValueError(f"duplicate email body: {m.subject!r}")
         self.mails.append(m)
+        self.bodies.add(tuple(m.body))
         if m.message_id:
             self.ids.add(m.message_id)
         return m
@@ -649,24 +1061,24 @@ def _greet_names(to: list[str]) -> str | None:
 
 
 def _body(per: P.Persona, sender_first: str, sender_full: str, org: str, to: list[str], content: list[str],
-          rng: random.Random, late: bool = False) -> list[str]:
+          rng: random.Random, late: bool = False, greet: str | None = None) -> list[str]:
+    """Greeting, content and sign-off in the sender's voice. Tries the other greeting / sign-off variants when one
+    would make a body line a substring of another."""
     names = _greet_names(to)
-    greet = rng.choice(per.greet).format(to=names) if names else "Hello,"
-    greet = greet[:1].upper() + greet[1:]
-    sign = [s.format(first=sender_first, full=sender_full, org=org) for s in rng.choice(per.sign)]
+    greets = [g.format(to=names) for g in per.greet] if names else ["Hello,"]
+    greets = [g[:1].upper() + g[1:] for g in greets]
+    if greet is not None:
+        greets = [greet]
+    signs = [[s.format(first=sender_first, full=sender_full, org=org) for s in blk] for blk in per.sign]
+    gi, si = rng.randrange(len(greets)), rng.randrange(len(signs))
     lead = ["Sorry for the slow reply."] if late else []
-    return [greet, ""] + lead + content + [""] + sign
-
-
-def _pick_quote(body: list[str], content: list[str]) -> str | None:
-    """The most distinctive content line: on exactly one body line, long enough to be specific."""
-    best = None
-    for c in content:
-        if len(c) < 12 or not c.strip():
-            continue
-        if sum(1 for b in body if c in b) == 1 and (best is None or len(c) > len(best)):
-            best = c
-    return best
+    body = []
+    for dg in range(len(greets)):
+        for ds in range(len(signs)):
+            body = [greets[(gi + dg) % len(greets)], ""] + lead + content + [""] + signs[(si + ds) % len(signs)]
+            if lines_unique(body):
+                return body
+    return body
 
 
 def _subject_re(s: str) -> str:
@@ -675,7 +1087,8 @@ def _subject_re(s: str) -> str:
 
 def _mail_ok(m: _Mail) -> bool:
     lines = [m.subject] + m.body
-    return all(_clean(x) and "\r" not in x and "\n" not in x and not x.startswith("From ") for x in lines)
+    return all(_clean(x) and "\r" not in x and "\n" not in x and not x.startswith("From ") for x in lines) \
+        and lines_unique(m.body) and any(x.strip() for x in m.body)
 
 
 def _sender_time(rng: random.Random, w: Who, after: datetime, max_day: date) -> tuple[datetime, bool] | None:
@@ -715,6 +1128,7 @@ def _thread_mails(mailer: _Mailer, rng: random.Random, tpl: dict, day: date, rol
     subj = subjects[idx] if len(subjects) == prev_len else rng.choice(subjects)   # subject fits the first message
     subj = _fill(subj, params, {r: v for r, v in roles.items() if isinstance(v, Who)})
     out: list[_Mail] = []
+    bodies: set[tuple[str, ...]] = set()
     prev: _Mail | None = None
     t = start
     for i, turn in enumerate(tpl["turns"]):
@@ -760,9 +1174,10 @@ def _thread_mails(mailer: _Mailer, rng: random.Random, tpl: dict, day: date, rol
         m = _Mail(t=t, from_addr=addr, from_name=name, to=to, cc=cc, subject=subj if not i else _subject_re(subj),
                   body=body, message_id="", in_reply_to=prev.message_id if prev else None,
                   sender=sender if isinstance(sender, Who) else None)
-        m.quote = _pick_quote(body, content)
-        if m.quote is None or not _mail_ok(m) or not (MAIL_START <= t.date() <= MAIL_END):
+        if not _mail_ok(m) or not (MAIL_START <= t.date() <= MAIL_END) or not _floor_ok(m.sender, t, content) \
+                or tuple(body) in mailer.bodies or tuple(body) in bodies:
             break
+        bodies.add(tuple(body))
         m.message_id = mailer.mid(t, addr)
         out.append(m)
         prev = m
@@ -798,7 +1213,7 @@ def _mail_roles(rng: random.Random, spec: dict[str, str], day: date) -> dict | N
 
 
 def _mk(mailer: _Mailer, t: datetime, sender: Who | tuple, to: list[str], subject: str, content: list[str],
-        rng: random.Random, cc: list[str] | None = None, reply_to: _Mail | None = None, quote: str | None = None,
+        rng: random.Random, cc: list[str] | None = None, reply_to: _Mail | None = None,
         event: EventSpec | None = None, greet: str | None = None, sign: list[str] | None = None) -> _Mail:
     """One scripted email in the sender's voice."""
     if isinstance(sender, tuple):
@@ -807,15 +1222,16 @@ def _mk(mailer: _Mailer, t: datetime, sender: Who | tuple, to: list[str], subjec
         who = None
     else:
         addr, name, who = sender.email, sender.name, sender
-        body = _body(sender.persona, sender.first, sender.name, sender.org, to, content, rng)
-        if greet is not None:
-            body[0] = greet
+        body = _body(sender.persona, sender.first, sender.name, sender.org, to, content, rng, greet=greet)
     m = _Mail(t=t, from_addr=addr, from_name=name, to=list(to), cc=list(cc or []), subject=subject, body=body,
               message_id=event.attrs["message_id"] if event else mailer.mid(t, addr),
               in_reply_to=reply_to.message_id if reply_to else None, event=event, sender=who)
-    m.quote = quote if quote is not None else _pick_quote(body, content)
-    if event is None and (m.quote is None or not _mail_ok(m)):
-        raise ValueError(f"scripted email {subject!r} has no distinctive line or a forbidden word")
+    if event is None and not _mail_ok(m):
+        raise ValueError(f"scripted email {subject!r}: forbidden word, bad line or a line that is not unique")
+    if event is not None and not (lines_unique(body) and sum(1 for b in body if event.quote_text in b) == 1):
+        raise ValueError(f"story email {subject!r}: quote or lines not unique")
+    if not _floor_ok(who, t, content):
+        raise ValueError(f"scripted email {subject!r} says the sender is on the floor at {t}, but they are not")
     return mailer.add(m)
 
 
@@ -827,12 +1243,36 @@ def _story_mail(kind: str):
     raise KeyError(kind)
 
 
+def _weekly_content(w: Who, day: date, tt: datetime, r: random.Random) -> list[str]:
+    """One weekly update, in line with the person's role (Rina reports her real lab sessions of the week)."""
+    t1, t2, t3 = r.sample(P.TOPICS, 3)
+    if w.pid == "p_hank":
+        return ["Done: handover doc final, test stand scripts and valve timing sweep handed over."
+                if day == LAST_DAY else f"Done: {t1}, {r.choice(P.STATUS).format(day='Tuesday')}.",
+                "Next: nothing." if day == LAST_DAY else f"Next: {t2}."]
+    week = [s for s in _lab_sessions() if s[0] == w.pid and day - timedelta(days=4) <= s[1].date() <= day and s[2] < tt]
+    tasks = list(dict.fromkeys(s[3] for s in week))
+    blockers = "Blockers: none" if r.random() < 0.7 else "Blockers: waiting on machine shop parts"
+    if w.pid == "p_bg_17":
+        done = [f"- {task}: done, results in the binder" for task in tasks] or ["- calibration binder: up to date"]
+        n1, n2 = r.sample(P.LAB_TOPICS, 2)
+        return ["Done:"] + done + [f"- {n1}: {r.choice(['on track', 'started', 'ordered'])}", "Next:", f"- {n2}",
+                                   "Blockers: none"]
+    if w.pid == "p_bg_04":
+        p1, p2, p3 = r.sample(P.PM_TOPICS, 3)
+        return ["Done:", f"- {p1}: {r.choice(P.STATUS).format(day='Tuesday')}",
+                f"- {p2}: {r.choice(P.STATUS).format(day='Wednesday')}", "Next:", f"- {p3}", blockers]
+    lab = [f"- test stand: {task} done" for task in tasks[:2]]
+    return ["Done:", f"- {t1}: {r.choice(P.STATUS).format(day='Tuesday')}",
+            f"- {t2}: {r.choice(P.STATUS).format(day='Wednesday')}"] + lab + ["Next:", f"- {t3}", blockers]
+
+
 def _scripted_mail(mailer: _Mailer) -> None:
     rng = _rng("mail", "scripted")
     fred, alma, hank, maggie, sofia, rina = (_w(p) for p in
                                              ("p_frederik", "p_alma", "p_hank", "p_maggie", "p_bg_06", "p_bg_17"))
     leila, theo, amara, jonah, marcus = (_w(p) for p in ("p_bg_04", "p_bg_01", "p_bg_02", "p_bg_03", "p_bg_05"))
-    hannah, grace, mateo, owen = (_w(p) for p in ("p_bg_08", "p_bg_10", "p_bg_11", "p_bg_09"))
+    hannah, grace, mateo, owen, noah = (_w(p) for p in ("p_bg_08", "p_bg_10", "p_bg_11", "p_bg_09", "p_bg_22"))
     d = date
     summit_sign = ["The JRR AI Summit team"]
 
@@ -861,14 +1301,15 @@ def _scripted_mail(mailer: _Mailer) -> None:
     }
     for day, line in daily.items():
         S(day, 7, 30, f"AI Summit day {(day - SUMMIT_START).days + 1}: today's programme", [
-            line, "Coffee and lunch are served in the lounge on the second floor."], greet="Good morning,")
+            line, f"Coffee and lunch are served in the lounge on the second floor ({WEEKDAYS[day.weekday()]} menu on the summit site)."],
+            greet="Good morning,")
     S(d(2026, 3, 3), 15, 0, "Reminder: welcome reception on Wednesday", [
         "A reminder that the summit welcome reception takes place on Wednesday evening in the ground-floor atrium.",
         "Please bring your summit name tag."])
     rec = _story_mail("Tonight: AI Summit welcome reception")
     _mk(mailer, rec.t, P.SUMMIT, rec.attrs["to"], rec.attrs["subject"], [
         rec.quote_text, "Drinks and light food will be served until 20:30.",
-        "Members of all second-floor organisations are welcome."], rng, event=rec, quote=rec.quote_text,
+        "Members of all second-floor organisations are welcome."], rng, event=rec,
         greet="Hello JRR second floor members,", sign=summit_sign)
     S(d(2026, 3, 6), 16, 10, "Thank you for joining the AI Summit", [
         "Thank you for a wonderful summit week.",
@@ -877,7 +1318,6 @@ def _scripted_mail(mailer: _Mailer) -> None:
         "The feedback survey closes on Monday evening. It takes about five minutes."], greet="Hello,")
 
     # ---------------- IT notices (Frederik) and replies; work orders match it/maintenance_calendar.csv
-    it_sign_rng = rng
     n1 = _mk(mailer, at(d(2026, 2, 23), 8, 40), fred, [P.L_TENANTS], "Planned IT work on the 2nd floor this week", [
         "Planned IT work this week:",
         "- Mon 13:15-14:30, WO-3082: antivirus definition update on the Halvorsen lab laptop lt-219 (offline media)",
@@ -887,7 +1327,7 @@ def _scripted_mail(mailer: _Mailer) -> None:
         "- Thu 07:00-08:00, WO-3098: lens cleaning and PoE switch swap for camera cam-05 (lounge)",
         "- Thu 22:00-22:40, WO-3102: firmware upgrade on access point ap-2-03",
         "- Fri 15:00-15:45, WO-3106: printer service and drum replacement (copier vendor)",
-        "Wi-Fi may drop for a few minutes during the access point upgrades."], it_sign_rng, greet="Hello,")
+        "Wi-Fi may drop for a few minutes during the access point upgrades."], rng, greet="Hello,")
     _mk(mailer, at(d(2026, 2, 23), 11, 2), hannah, [fred.email], _subject_re(n1.subject), [
         "Will the printer be out of use for the whole afternoon on Friday?"], rng, cc=[P.L_TENANTS], reply_to=n1)
     _mk(mailer, at(d(2026, 2, 23), 11, 40), fred, [hannah.email], _subject_re(n1.subject), [
@@ -910,21 +1350,21 @@ def _scripted_mail(mailer: _Mailer) -> None:
         cc=[P.L_TENANTS], reply_to=mailer.mails[-1])
     w1 = _mk(mailer, _place("p_bg_03", d(2026, 2, 25), (14, 5)), jonah, [fred.email], "wifi in 217", [
         "wifi in 217 keeps dropping every few minutes since lunch, video calls are unusable"], rng)
-    w2 = _mk(mailer, at(d(2026, 2, 25), 14, 40), fred, [jonah.email], "Re: wifi in 217", [
+    w2 = _mk(mailer, w1.t + timedelta(minutes=35), fred, [jonah.email], "Re: wifi in 217", [
         "Thanks Jonah. I can't see a fault on the access point from here.",
         "Logged as INC-2207. If it happens again, note the time and I will check the controller logs."], rng,
         reply_to=w1)
     _mk(mailer, _place("p_bg_03", d(2026, 2, 25), (15, 30)), jonah, [fred.email], "Re: wifi in 217", [
         "seems ok again now, will note the time if it comes back"], rng, reply_to=w2)
-    p1 = _mk(mailer, at(d(2026, 2, 26), 9, 20), hannah, [fred.email], "Printer by the kitchen", [
+    p1 = _mk(mailer, _place("p_bg_08", d(2026, 2, 26), (9, 20)), hannah, [fred.email], "Printer by the kitchen", [
         "The printer by the kitchen jams on almost every second page this morning."], rng, cc=[P.L_TENANTS])
-    _mk(mailer, at(d(2026, 2, 26), 10, 5), fred, [hannah.email], "Re: Printer by the kitchen", [
+    _mk(mailer, p1.t + timedelta(minutes=45), fred, [hannah.email], "Re: Printer by the kitchen", [
         "Thanks. The copier vendor is booked for Friday 15:00 under WO-3106 (service and drum replacement).",
         "Until then please use the printer in the lounge."], rng, cc=[P.L_TENANTS], reply_to=p1)
     p2 = _mk(mailer, _place("p_maggie", d(2026, 3, 3), (10, 20)), maggie, [fred.email], "Printer jamming again", [
         "The kitchen printer is jamming again! Tray 2 this time, it ate half my handout for the summit poster :("],
         rng)
-    _mk(mailer, at(d(2026, 3, 3), 11, 0), fred, [maggie.email], "Re: Printer jamming again", [
+    _mk(mailer, p2.t + timedelta(minutes=40), fred, [maggie.email], "Re: Printer jamming again", [
         "Thanks Maggie. The paper feed repair is booked for tomorrow 07:00 under WO-3115.",
         "The lounge printer works in the meantime."], rng, reply_to=p2)
 
@@ -948,23 +1388,27 @@ def _scripted_mail(mailer: _Mailer) -> None:
             sign=fac_sign)
 
     # ---------------- Hank's resignation (story) and the week around it
+    # The story quote line is used as given. The other lines (and Alma's and Sofia's replies) all say that his last
+    # working day is Friday 6 March; his accounts stay active until the end of March.
     res = _story_mail("Resignation")
     r0 = _mk(mailer, res.t, hank, res.attrs["to"], res.attrs["subject"], [
-        res.quote_text, "My last working day will be Friday 6 March so that I can hand over my work.",
-        "I will put the handover notes in the engineering folder."], rng, event=res, quote=res.quote_text,
+        res.quote_text, "My last working day will be Friday 6 March, so that I can hand over my work.",
+        "I will put the handover notes in the engineering folder."], rng, event=res,
         greet="Sofia, Alma,")
     r1 = _mk(mailer, _place("p_bg_06", RESIGN_DAY, (9, 48)), sofia, [hank.email], "Re: Resignation", [
         "Thank you for telling me in person this morning, and for the note.",
-        "I am sorry to see you go, but I understand. Let's use the week for a proper handover, with the test stand scripts first.",
+        "I am sorry to see you go, but I understand. Your last day with us will be Friday 6 March.",
+        "Let's use the week for a proper handover, with the test stand scripts first.",
         "I will tell the team later this morning."], rng, cc=[alma.email], reply_to=r0)
     r2 = _mk(mailer, _place("p_alma", RESIGN_DAY, (10, 20)), alma, [hank.email], "Re: Resignation", [
-        "Thank you for your notice.",
+        "Thank you for your notice. I have noted Friday 6 March as your last working day.",
         "As part of standard offboarding, your access to room 219 will be removed at 17:00 today.",
-        "Your access to the 217 suite and your accounts remain active until the end of Friday 6 March for the handover.",
+        "Your access to the 217 suite remains in place until the end of Friday 6 March for the handover.",
+        "Your email and other Halvorsen accounts stay active until the end of March for handover and benefits questions.",
         "Please return your laptop and any other Halvorsen equipment to me on Friday afternoon."], rng,
         cc=[sofia.email], reply_to=r1)
     _mk(mailer, _place("p_hank", RESIGN_DAY, (10, 41)), hank, [alma.email], "Re: Resignation", ["Understood."],
-        rng, cc=[sofia.email], reply_to=r2, quote="Understood.")
+        rng, cc=[sofia.email], reply_to=r2)
     tn = _mk(mailer, _place("p_bg_06", RESIGN_DAY, (11, 30)), sofia, [P.L_ALL], "Team news", [
         "I wanted to let you know that Hank has resigned. His last day with us will be this Friday, 6 March.",
         "Hank has been part of Halvorsen for over four years and much of our test infrastructure was built by him.",
@@ -972,24 +1416,29 @@ def _scripted_mail(mailer: _Mailer) -> None:
     _mk(mailer, _place("p_bg_17", RESIGN_DAY, (12, 5)), rina, [sofia.email], "Re: Team news", [
         "Thanks Sofia. Hank, good luck with the next step, and thanks for all the help with the test bench."], rng,
         cc=[P.L_ALL], reply_to=tn)
+    hs = _handover_slots()
     _mk(mailer, _place("p_bg_04", RESIGN_DAY, (13, 40)), leila, [P.L_ENG], "Handover plan for Hank's work", [
-        "Handover sessions with Hank this week: Tuesday 14:00 and Thursday 14:00 in the meeting room.",
+        f"Handover sessions with Hank this week: Tuesday {_slot_txt(hs[d(2026, 3, 3)])} and Thursday "
+        f"{_slot_txt(hs[d(2026, 3, 5)])} in the meeting room.",
         "Theo takes the test stand scripts, Amara the valve timing sweep.",
         "Please add questions to the handover doc before the sessions."], rng)
-    fl = _mk(mailer, _place("p_maggie", d(2026, 3, 3), (11, 20)), maggie, [P.L_ALL], "Farewell lunch for Hank, Friday 12:30", [
-        "Let's give Hank a proper send-off! Farewell lunch on Friday 6 March at 12:30 at the dumpling spot near the station.",
-        "Reply to me so I can book the right table size!",
-        "Sofia is collecting for a card, it's on her desk."], rng)
-    prev = fl
+    # Farewell lunch: catered, in the 217 meeting room, organised by Maggie. Nobody leaves the floor for it.
+    fl = _mk(mailer, _place("p_maggie", d(2026, 3, 3), (11, 20)), maggie, [P.L_ALL],
+             "Farewell lunch for Hank, Friday 12:30", [
+                 "Let's give Hank a proper send-off! Farewell lunch on Friday 6 March at 12:30 in the 217 meeting room.",
+                 "I am ordering catering, so reply to me and I will get enough food for everyone!",
+                 "Sofia is collecting for a card, it's on her desk."], rng)
+    rina_in = (rina.pid, LAST_DAY) in _floor()
     for i, (w, line) in enumerate([(theo, "Count me in."), (amara, "Yes please! I will bring the card over."),
-                                   (jonah, "in, thanks for organizing"), (rina, "I will be there."),
+                                   (jonah, "in, thanks for organizing"),
+                                   (rina, "I will be there." if rina_in else "Sorry, off on Friday, have a great send-off!"),
                                    (marcus, "In. Do we need a speech? Asking for a friend.")]):
         tt = _place(w.pid, d(2026, 3, 3), divmod(11 * 60 + 45 + 9 * i, 60))
-        _mk(mailer, tt, w, [maggie.email], "Re: Farewell lunch for Hank, Friday 12:30", [line], rng, reply_to=fl,
-            quote=line)
+        _mk(mailer, tt, w, [maggie.email], "Re: Farewell lunch for Hank, Friday 12:30", [line], rng, reply_to=fl)
     _mk(mailer, _place("p_maggie", d(2026, 3, 3), (14, 30)), maggie, [P.L_ALL],
         "Re: Farewell lunch for Hank, Friday 12:30", [
-            "Table booked for nine on Friday at 12:30!! Meet at the elevators at 12:20."], rng, reply_to=prev)
+            "Catering is ordered for Friday at 12:30 in the 217 meeting room!! Thanks for all the replies."], rng,
+        reply_to=fl)
 
     # ---------------- Sofia's Monday priorities and Friday weekly updates
     for day in (d(2026, 2, 23), d(2026, 3, 2), CASE_DAY):
@@ -1006,23 +1455,16 @@ def _scripted_mail(mailer: _Mailer) -> None:
             rng)
     for day in (d(2026, 2, 27), LAST_DAY):
         ask = _mk(mailer, _place("p_bg_06", day, (9, 30)), sofia, [P.L_ENG], f"Weekly updates, {WEEKDAYS[day.weekday()]} {day.day} {'February' if day.month == 2 else 'March'}", [
-            "Please reply with your weekly update by 16:00: done, next, blockers.",
-            "Two or three bullets each is plenty."], rng)
+            "Please reply with your weekly update by 16:00 today: done, next, blockers.",
+            "Two or three bullets each is plenty." if day < LAST_DAY else
+            "Short is fine. Hank, yours can just be the handover status."], rng)
         r = _rng("mail", "weekly", day.isoformat())
         for i, w in enumerate([theo, amara, jonah, marcus, maggie, hank, rina, leila]):
-            t1, t2, t3 = r.sample(P.TOPICS, 3)
             if not _window(w.pid, day):
                 continue
-            if w.pid == "p_hank":
-                content = ["Done: handover doc final, test stand scripts and valve timing sweep handed over."
-                           if day == LAST_DAY else f"Done: {t1}, {r.choice(P.STATUS).format(day='Tuesday')}.",
-                           "Next: nothing." if day == LAST_DAY else f"Next: {t2}."]
-            else:
-                content = ["Done:", f"- {t1}: {r.choice(P.STATUS).format(day='Tuesday')}",
-                           f"- {t2}: {r.choice(P.STATUS).format(day='Wednesday')}", "Next:", f"- {t3}",
-                           "Blockers: none" if r.random() < 0.7 else "Blockers: waiting on machine shop parts"]
             tt = _place(w.pid, day, (10 + i // 2, 10 + 13 * (i % 2) + r.randint(0, 9)))
-            _mk(mailer, tt, w, [sofia.email], _subject_re(ask.subject), content, rng, reply_to=ask)
+            _mk(mailer, tt, w, [sofia.email], _subject_re(ask.subject), _weekly_content(w, day, tt, r), rng,
+                reply_to=ask)
 
     # ---------------- security notices
     v = _mk(mailer, _place("p_alma", d(2026, 2, 27), (9, 40)), alma, [P.L_ALL], "Visitors during summit week", [
@@ -1051,6 +1493,13 @@ def _scripted_mail(mailer: _Mailer) -> None:
     _mk(mailer, at(d(2026, 3, 3), 13, 15), grace, [theo.email], "Summit demo feedback", [
         "Thanks for stopping by our booth this morning. The tip about the cable strain relief was spot on.",
         "If you have time on Thursday, we would like to show you the revised setup."], rng)
+    # Noah (Lumen Policy Group, room 230) asks Rina to look at a borrowed fixture before the reception.
+    nf = _mk(mailer, _place("p_bg_22", INCIDENT_DAY, (15, 42)), noah, [rina.email], "Borrowed calibration fixture", [
+        "Could you drop by 230 around six-fifteen, before the reception, and look at the load-cell calibration fixture we borrowed from you?",
+        "The second channel has been reading a little high since Monday. It is on the side table by the window.",
+        "Ten minutes should be plenty. Thank you, it would help us a lot before Friday's demo."], rng)
+    _mk(mailer, _place("p_bg_17", INCIDENT_DAY, (16, 8)), rina, [noah.email], "Re: Borrowed calibration fixture", [
+        "Sure, I will come by 230 around six-fifteen and take a look."], rng, reply_to=nf)
 
     # ---------------- 2026-03-09: Alma opens the case
     sr = _mk(mailer, at(CASE_DAY, 8, 45), alma, [sofia.email], "Security review: room 219", [
@@ -1066,7 +1515,7 @@ def _scripted_mail(mailer: _Mailer) -> None:
         "I would also like to speak with you in person this afternoon at 14:00 in the 217 meeting room."], rng)
     hq_mail = _mk(mailer, hq.t, hank, hq.attrs["to"], hq.attrs["subject"], [
         "My access to 219 was removed on the Monday. You know that.", hq.quote_text, "14:00 is fine."], rng,
-        reply_to=a1, event=hq, quote=hq.quote_text, greet="Alma,")
+        reply_to=a1, event=hq, greet="Alma,")
     _mk(mailer, at(CASE_DAY, 10, 32), alma, [hank.email], "Re: Room 219 access on March 4", [
         "Thank you for your reply. I will see you at 14:00 in the 217 meeting room."], rng, reply_to=hq_mail)
     m1 = _mk(mailer, at(CASE_DAY, 11, 10), alma, [maggie.email], "Short interview this afternoon", [
@@ -1113,7 +1562,8 @@ def _mails() -> tuple[_Mail, ...]:
                     continue
                 t0 = _rand_time(rng, at(day, 8, 50), at(day, 16, 30))
             else:
-                t0 = _start_time(rng, first, day, weekend or rng.random() < first.persona.evening)
+                t0 = _start_time(rng, first, day, False) if not weekend and rng.random() >= first.persona.evening \
+                    else (_start_time(rng, first, day, False) or _start_time(rng, first, day, True))
             if t0 is None or (isinstance(first, Who) and not _can_write(first, t0, True)) or _blocked(t0):
                 continue
             thread = _thread_mails(mailer, rng, tpl, day, roles, t0)
@@ -1129,23 +1579,36 @@ def _mails() -> tuple[_Mail, ...]:
 
 
 def email_records() -> list[Record]:
+    """One Record per email; one 'email' EventSpec per non-empty body line (the story event on its own line)."""
     out = []
     for m in _mails():
-        if m.event is not None:
-            ev, is_story = m.event, True
-        else:
-            ev = EventSpec(type="email", t=m.t, actor={"kind": "email", "value": m.from_addr}, device=None, room=None,
-                           attrs={"from": m.from_addr, "to": list(m.to), "subject": m.subject,
-                                  "message_id": m.message_id}, quote_text=m.quote)
-            is_story = False
+        attrs = {"from": m.from_addr, "to": list(m.to), "subject": m.subject, "message_id": m.message_id}
+        evs = []
+        for line in m.body:
+            if not line.strip():
+                continue
+            if m.event is not None and m.event.quote_text in line:
+                evs.append(m.event)
+            else:
+                evs.append(EventSpec(type="email", t=m.t, actor={"kind": "email", "value": m.from_addr}, device=None,
+                                     room=None, attrs=dict(attrs, to=list(m.to)), quote_text=line))
         fields = {"message_id": m.message_id, "from_name": m.from_name, "from_addr": m.from_addr, "to": list(m.to),
                   "cc": list(m.cc), "subject": m.subject, "date": m.t, "in_reply_to": m.in_reply_to,
                   "body": list(m.body)}
-        out.append(Record(source=F_MBOX, t=m.t, fields=fields, events=[ev], story=is_story))
+        out.append(Record(source=F_MBOX, t=m.t, fields=fields, events=evs, story=m.event is not None))
     return out
 
 
 # ============================================================================================ statements, brief
+
+def fits_pdf_line(text: str) -> bool:
+    """True if the text fits one body line of the PDF writer (Helvetica 11 pt)."""
+    from reportlab.pdfbase.pdfmetrics import stringWidth
+
+    from . import doc_writers
+
+    return stringWidth(" ".join(text.split()), "Helvetica", 11) <= doc_writers.max_line_width()
+
 
 def _statement_events() -> dict[str, list[EventSpec]]:
     out: dict[str, list[EventSpec]] = {}
@@ -1161,79 +1624,155 @@ def _intro(name: str, title: str) -> str:
             f"stopped at any time. The questions and answers below are recorded in the order they were given.")
 
 
+def _pages(paragraphs: list[str], quotes: list[str], src: str) -> list[int]:
+    """Page of each paragraph's first line, following the layout of doc_writers._render_pdf."""
+    from . import doc_writers as dw
+
+    top, floor = dw.PAGE_H - dw.MARGIN, dw.FOOT_Y + 30
+    st = {"y": top, "page": 1}
+
+    def line(h):
+        if st["y"] - h < floor:
+            st["page"] += 1
+            st["y"] = top
+        st["y"] -= h
+
+    line(18)
+    line(18)
+    st["y"] -= 4
+    for _ in range(5):
+        line(14)
+    if st["y"] - 10 < floor:
+        st["page"] += 1
+        st["y"] = top
+    st["y"] -= 10
+    st["y"] -= 4
+    out = []
+    for n, para in enumerate(paragraphs):
+        if n:
+            st["y"] -= dw.PARA_GAP
+        plines = dw._para_lines(para, [q for q in quotes if q in para], src)
+        first = None
+        for _ in plines:
+            line(dw.LEADING)
+            first = first or st["page"]
+        out.append(first or st["page"])
+    return out
+
+
+def _device_note() -> str:
+    """The interviewer's note naming the device shown to Hank (the device first seen on lt-219 that evening)."""
+    dev = next(r for r in story.usb_records() if r.fields["first_install"].date() == INCIDENT_DAY)
+    f = dev.fields
+    return (f"[Mr. Gibson was shown the examiner's entry for a {f['vendor']} {f['product'].replace('_', ' ')} USB "
+            f"device, S/N {f['serial'].split('&')[0]}.]")
+
+
+def _statement(pid: str, src: str, story_evs: list[EventSpec], items: list[tuple[str, str]]) -> Record:
+    """items: ('intro' | 'q' | 'note' | 'a', text). Every 'a' is one PDF line and one statement event."""
+    p = person(pid)
+    t = story_evs[0].t
+    speaker = story_evs[0].attrs["speaker"]
+    assert speaker == p["name"]
+    paras = [("Q: " + x) if k == "q" else x for k, x in items]
+    answers = [x for k, x in items if k == "a"]
+    by_quote = {e.quote_text: e for e in story_evs}
+    missing = set(by_quote) - set(answers)
+    if missing:
+        raise ValueError(f"{src}: story quote not used as an answer: {sorted(missing)}")
+    for a in answers:
+        if not fits_pdf_line(a):
+            raise ValueError(f"{src}: answer does not fit one PDF line: {a!r}")
+        if sum(1 for x in paras if a in x) != 1 or "  " in a or a != a.strip():
+            raise ValueError(f"{src}: answer is not unique among the paragraphs: {a!r}")
+    pages = _pages(paras, answers, src)
+    evs = []
+    for (k, x), page in zip(items, pages):
+        if k != "a":
+            continue
+        if x in by_quote:
+            ev = by_quote[x]
+            if ev.attrs.get("page") != page:
+                raise ValueError(f"{src}: story quote {x!r} lands on page {page}, story says {ev.attrs.get('page')}")
+            evs.append(ev)
+        else:
+            evs.append(EventSpec(type="statement", t=t, actor={"kind": "name", "value": speaker}, device=None,
+                                 room=None, attrs={"speaker": speaker, "page": page}, quote_text=x))
+    return Record(source=src, t=t, story=True, events=evs, fields={
+        "title": "Witness statement", "case_id": CASE_ID, "speaker": speaker, "role": p["role"],
+        "interviewer": INTERVIEWER, "date": t, "location": INTERVIEW_ROOM, "paragraphs": paras})
+
+
 def statement_records() -> list[Record]:
     evs = _statement_events()
 
     def q(text, evlist):
         return next(e for e in evlist if e.quote_text == text).quote_text
 
-    out = []
     hank_f = f"{F_STATEMENTS_DIR}/hank_gibson.pdf"
     he = evs[hank_f]
-    out.append(("p_hank", hank_f, he, [
-        _intro("Gibson", "Mr."),
-        "Q: Please describe your role and your last weeks at Halvorsen.",
-        "I was a senior engineer at Halvorsen for a little over four years. I handed in my notice on Monday 2 March "
-        "and spent the rest of the week on handover. Friday 6 March was my last day.",
-        "Q: Where were you on the evening of Wednesday 4 March?",
-        "I was at my desk in 217 in the afternoon, finishing handover notes.",
-        q("I went straight home at six.", he),
-        "Q: Did you attend the summit welcome reception?",
-        "No. I was tired and not in the mood for a crowd.",
-        "Q: Did you go into room 219 that day?",
-        "My access to 219 was removed on the Monday. I answered the question about the files in my email this morning.",
-        "Q: The examiner's report on lt-219 lists an external storage device. Mr. Gibson was shown its make and "
-        "serial number. Do you know this device?",
-        q("IT gave me that drive last year.", he),
-        "Q: Is there anything else you would like to add?",
-        "No.",
-    ]))
+    hank = [
+        ("intro", _intro("Gibson", "Mr.")),
+        ("q", "Please describe your role and your last weeks at Halvorsen."),
+        ("a", "I was a senior engineer at Halvorsen for a little over four years."),
+        ("a", "I handed in my notice on Monday 2 March."),
+        ("a", "I spent the rest of the week on handover."),
+        ("a", "Friday 6 March was my last day."),
+        ("q", "Where were you on the evening of Wednesday 4 March?"),
+        ("a", "I was at my desk in 217 in the afternoon, finishing handover notes."),
+        ("a", q("I went straight home at six.", he)),
+        ("q", "Did you attend the summit welcome reception?"),
+        ("a", "No. I skipped it. I was tired and not in the mood for a crowd."),
+        ("q", "Did you go into room 219 that day?"),
+        ("a", "My access to 219 was removed on the Monday."),
+        ("a", "I answered the question about the files in my email this morning."),
+        ("note", _device_note()),
+        ("q", "The examiner's report on lt-219 lists this external storage device. Do you know this device?"),
+        ("a", q("IT gave me that drive last year.", he)),
+        ("q", "Is there anything else you would like to add?"),
+        ("a", "Nothing else."),
+    ]
     mag_f = f"{F_STATEMENTS_DIR}/maggie_price.pdf"
     me = evs[mag_f]
-    out.append(("p_maggie", mag_f, me, [
-        _intro("Price", "Ms."),
-        "Q: How do you know Hank Gibson?",
-        "Hank and I have worked together at Halvorsen for about four years, and we are friends. I was really sad "
-        "when he told us he was leaving.",
-        "Q: Where were you on the evening of Wednesday 4 March?",
-        "I worked in 217 that day.",
-        q("Hank and I left together around 6:30.", me),
-        "Q: Did you see Hank go into any other room that evening?",
-        "No.",
-        "Q: Is there anything else you would like to add?",
-        "Hank is a good person. I hope this gets sorted out quickly.",
-    ]))
+    maggie = [
+        ("intro", _intro("Price", "Ms.")),
+        ("q", "How do you know Hank Gibson?"),
+        ("a", "Hank and I have worked together at Halvorsen for about four years."),
+        ("a", "We are friends. I was really sad when he told us he was leaving."),
+        ("q", "Where were you on the evening of Wednesday 4 March?"),
+        ("a", "I worked in 217 that day."),
+        ("a", q("Hank and I left together around 6:30.", me)),
+        ("q", "Did you see Hank go into any other room that evening?"),
+        ("a", "No, I did not see him go into any other room."),
+        ("q", "Is there anything else you would like to add?"),
+        ("a", "Hank is a good person. I hope this gets sorted out quickly."),
+    ]
     fr_f = f"{F_STATEMENTS_DIR}/frederik_mendelssohn.pdf"
     fe = evs[fr_f]
-    out.append(("p_frederik", fr_f, fe, [
-        _intro("Mendelssohn", "Mr."),
-        "Q: Please describe your role on the floor.",
-        "I am an IT contractor with Ostrander IT. I look after the shared IT on the JRR second floor, including the "
-        "access points, the printers and Halvorsen's isolated lab laptop lt-219.",
-        "Q: What did you do on the evening of Wednesday 4 March?",
-        fe[0].quote_text,
-        "I badged into room 219 with my own badge just before 19:00 and logged on with my own admin account. I "
-        "installed the updates from the offline patch media and restarted the laptop. I logged off shortly before "
-        "21:30 and left the room.",
-        "The work was announced in the weekly IT notice on Monday 2 March and is on the maintenance calendar.",
-        "Q: Did you see anyone else in room 219?",
-        "No, I did not see anyone else in room 219.",
-        "Q: Did you notice anything unusual on lt-219?",
-        "Nothing stood out to me. The patching went normally.",
-    ]))
-    recs = []
-    for pid, src, evlist, paras in out:
-        p = person(pid)
-        for ev in evlist:
-            assert ev.attrs["speaker"] == p["name"] and paras.count(ev.quote_text) == 1
-        recs.append(Record(source=src, t=evlist[0].t, fields={
-            "title": "Witness statement", "case_id": CASE_ID, "speaker": evlist[0].attrs["speaker"], "role": p["role"],
-            "interviewer": INTERVIEWER, "date": evlist[0].t, "location": INTERVIEW_ROOM, "paragraphs": paras},
-            events=list(evlist), story=True))
-    return recs
+    fred = [
+        ("intro", _intro("Mendelssohn", "Mr.")),
+        ("q", "Please describe your role on the floor."),
+        ("a", "I am an IT contractor with Ostrander IT."),
+        ("a", "I look after the shared IT on the JRR second floor."),
+        ("a", "That includes the access points, the printers and the lab laptop lt-219."),
+        ("q", "What did you do on the evening of Wednesday 4 March?"),
+        ("a", fe[0].quote_text),
+        ("a", "I went into room 219 with my own badge just before 19:00."),
+        ("a", "I logged on with my own admin account."),
+        ("a", "I installed the updates from the offline patch media and restarted the laptop."),
+        ("a", "I logged off shortly before 21:30 and left the room."),
+        ("a", "The work was in the weekly IT notice on Monday 2 March and on the maintenance calendar."),
+        ("q", "Did you see anyone else in room 219?"),
+        ("a", "No, I did not see anyone else in room 219."),
+        ("q", "Did you notice anything unusual on lt-219?"),
+        ("a", "Nothing stood out to me. The patching went normally."),
+    ]
+    return [_statement("p_hank", hank_f, he, hank), _statement("p_maggie", mag_f, me, maggie),
+            _statement("p_frederik", fr_f, fe, fred)]
 
 
 def brief_record() -> Record:
+    acct = person("p_hank")["bank_account"]
     paras = [
         "Purpose. This brief records why Halvorsen Dynamics opened case 1010F and what was collected. It describes a "
         "suspicion only. It contains no findings and names no one as responsible.",
@@ -1248,6 +1787,10 @@ def brief_record() -> Record:
         "log, local file audit log, device history); the CCTV index for the floor cameras; the IT maintenance "
         "calendar; the Halvorsen mailbox and Slack export; an account transactions extract obtained for the review; "
         "and three interview statements taken that afternoon.",
+        "CCTV. CCTV video older than 72 hours had already been overwritten under the building's retention policy when "
+        "the review began; only the camera status index could be recovered.",
+        f"Account records. financial/transactions.csv is an extract of checking account {acct}, provided with the "
+        f"account holder H. Gibson's consent.",
         "Period covered. Background records run from Monday 23 February to Sunday 8 March 2026. The forensic image, "
         "the interviews and this brief date from 9 March 2026.",
         "Not collected. Campus parking records are held by the campus parking office and can be requested if needed.",
@@ -1263,4 +1806,6 @@ def all_records() -> list[Record]:
     return email_records() + slack_records() + statement_records() + [brief_record()]
 
 
-__all__ = ["email_records", "slack_records", "statement_records", "brief_record", "all_records", "DM", "CHANNELS"]
+__all__ = ["email_records", "slack_records", "statement_records", "brief_record", "all_records", "dm_channel",
+           "CHANNELS", "FLOOR_RE", "auth219", "lines_unique", "fits_pdf_line"]
+

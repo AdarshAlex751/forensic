@@ -1,24 +1,6 @@
 [
   {
     "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Theo, do you have 20 minutes to pair on the test report template this afternoon?",
-    "ts": "1772633177.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Tomorrow morning works :)",
-    "ts": "1772633410.000100"
-  },
-  {
-    "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Great, tomorrow then.",
-    "ts": "1772633562.000100"
-  },
-  {
-    "type": "message",
     "user": "U0B67E4FFB9",
     "text": "Small PR for the telemetry parser, should take ten minutes.",
     "ts": "1772637701.000100"
@@ -61,9 +43,21 @@
   },
   {
     "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "fine by me :laughing:",
-    "ts": "1772640012.000100"
+    "user": "UE906F703F7",
+    "text": "Do we have a template for the test report template?",
+    "ts": "1772643055.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Yes, it is in the templates folder",
+    "ts": "1772643160.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Perfect!!",
+    "ts": "1772643289.000100"
   },
   {
     "type": "message",

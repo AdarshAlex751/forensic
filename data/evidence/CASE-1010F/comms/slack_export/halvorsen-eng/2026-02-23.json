@@ -61,6 +61,12 @@
   },
   {
     "type": "message",
+    "user": "UE906F703F7",
+    "text": "Thanks, Marcus!! :tada:",
+    "ts": "1771867502.000100"
+  },
+  {
+    "type": "message",
     "user": "UC3A7AE0277",
     "text": "Design review for the test report template moved to Wednesday at 11:30, same room.",
     "ts": "1771867894.000100"
@@ -82,23 +88,5 @@
     "user": "UE906F703F7",
     "text": "Works!",
     "ts": "1771868831.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "Do we have a template for the valve timing sweep?",
-    "ts": "1771876072.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Yes, it is in the templates folder",
-    "ts": "1771876428.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "Perfect. haha",
-    "ts": "1771876859.000100"
   }
 ]

@@ -1,62 +1,62 @@
 [
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Ordering lab consumables this afternoon, anything to add?",
-    "ts": "1772725769.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Small hex keys, we keep losing them.",
-    "ts": "1772725940.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Added, should be here Friday. :test_tube:",
-    "ts": "1772726149.000100"
+    "user": "U0B67E4FFB9",
+    "text": "started the vibration table run in 219, done around 9:30",
+    "ts": "1772717237.000100"
   },
   {
     "type": "message",
     "user": "U0B67E4FFB9",
-    "text": "Test stand run finished, saw a small offset on channel 9. haha",
-    "ts": "1772728860.000100"
+    "text": "vibration table run complete, numbers are on the lab share. 219 is free :laughing:",
+    "ts": "1772720404.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "please do not leave coffee cups on the bench, thanks",
+    "ts": "1772733327.000100"
   },
   {
     "type": "message",
     "user": "U22AC661C8A",
-    "text": "Channel 9 was drifting last week too.",
-    "ts": "1772728991.000100"
+    "text": "Can someone check the torque on the CFD mesh refinement fixture bolts next time they are in the lab?",
+    "ts": "1772733690.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "Might be the cable, I will swap it before the next run",
-    "ts": "1772729164.000100"
+    "text": "Will do when I am next on the bench, Amara.",
+    "ts": "1772733817.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Great, thanks, Rina.",
+    "ts": "1772733949.000100"
   },
   {
     "type": "message",
     "user": "U0B67E4FFB9",
-    "text": "That would help, thanks",
-    "ts": "1772729650.000100"
+    "text": "I will be in 219 16:00-17:45 for the valve actuation test",
+    "ts": "1772736563.000100"
   },
   {
     "type": "message",
     "user": "UDDD0C059BA",
-    "text": "Can I book 219 on Tuesday 9:45 to 11:45 for a calibration run?",
-    "ts": "1772732315.000100"
+    "text": "sorry, just seeing this. Noted, thanks",
+    "ts": "1772737623.000100"
   },
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Booked. Please leave the bench as you found it.",
-    "ts": "1772732508.000100"
+    "user": "U0B67E4FFB9",
+    "text": "valve actuation test is running, bench busy until about 17:45.",
+    "ts": "1772745152.000100"
   },
   {
     "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Will do, thanks",
-    "ts": "1772732725.000100"
+    "user": "U0B67E4FFB9",
+    "text": "Wrapping up in 219, valve actuation test all within spec",
+    "ts": "1772750709.000100"
   }
 ]

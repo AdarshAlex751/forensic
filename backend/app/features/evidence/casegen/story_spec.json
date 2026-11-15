@@ -52,93 +52,20 @@
   },
   {
     "part": "story",
-    "type": "badge_in",
-    "t": "2026-02-25T09:58:12-05:00",
-    "actor": {
-      "kind": "badge",
-      "value": "40417"
-    },
-    "device": "rdr-219",
-    "room": "219",
-    "attrs": {
-      "reader": "rdr-219",
-      "result": "GRANTED"
-    },
-    "source_file": "access/badge_access.csv",
-    "quote": "2026-02-25T09:58:12-05:00,40417,rdr-219,IN,GRANTED",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "logon",
-    "t": "2026-02-25T10:01:03-05:00",
-    "actor": {
-      "kind": "account",
-      "value": "rokafor"
-    },
-    "device": "lt-219",
-    "room": "219",
-    "attrs": {
-      "event_id": 4624,
-      "logon_type": 2,
-      "host": "lt-219"
-    },
-    "source_file": "endpoint/security_log.csv",
-    "quote": "2026-02-25T10:01:03-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
-    "tags": []
-  },
-  {
-    "part": "story",
     "type": "usb_mount",
-    "t": "2026-02-25T10:03:41-05:00",
+    "t": "2026-02-26T16:47:36-05:00",
     "actor": null,
     "device": "lt-219",
     "room": "219",
     "attrs": {
-      "serial": "07A1B2C3D4E5F601&0",
+      "serial": "3EC065B0B76AEB30&0",
       "vendor": "Kingston",
       "product": "DataTraveler_3.0",
       "first_seen": "2025-06-12T14:22:09-05:00",
       "host": "lt-219"
     },
     "source_file": "endpoint/usbstor.txt",
-    "quote": "  S/N: 07A1B2C3D4E5F601&0 [2026-02-25T10:03:41-05:00]",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "logoff",
-    "t": "2026-02-25T10:40:27-05:00",
-    "actor": {
-      "kind": "account",
-      "value": "rokafor"
-    },
-    "device": "lt-219",
-    "room": "219",
-    "attrs": {
-      "event_id": 4634,
-      "host": "lt-219"
-    },
-    "source_file": "endpoint/security_log.csv",
-    "quote": "2026-02-25T10:40:27-05:00,4634,LT-219,rokafor,2,,,",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "badge_out",
-    "t": "2026-02-25T10:42:05-05:00",
-    "actor": {
-      "kind": "badge",
-      "value": "40417"
-    },
-    "device": "rdr-219",
-    "room": "219",
-    "attrs": {
-      "reader": "rdr-219",
-      "result": "GRANTED"
-    },
-    "source_file": "access/badge_access.csv",
-    "quote": "2026-02-25T10:42:05-05:00,40417,rdr-219,OUT,GRANTED",
+    "quote": "  S/N: 3EC065B0B76AEB30&0 [2026-02-26T16:47:36-05:00]",
     "tags": []
   },
   {
@@ -194,97 +121,6 @@
   },
   {
     "part": "story",
-    "type": "badge_in",
-    "t": "2026-02-27T14:08:33-05:00",
-    "actor": {
-      "kind": "badge",
-      "value": "40405"
-    },
-    "device": "rdr-219",
-    "room": "219",
-    "attrs": {
-      "reader": "rdr-219",
-      "result": "GRANTED"
-    },
-    "source_file": "access/badge_access.csv",
-    "quote": "2026-02-27T14:08:33-05:00,40405,rdr-219,IN,GRANTED",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "logon",
-    "t": "2026-02-27T14:10:52-05:00",
-    "actor": {
-      "kind": "account",
-      "value": "mbell"
-    },
-    "device": "lt-219",
-    "room": "219",
-    "attrs": {
-      "event_id": 4624,
-      "logon_type": 2,
-      "host": "lt-219"
-    },
-    "source_file": "endpoint/security_log.csv",
-    "quote": "2026-02-27T14:10:52-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "usb_mount",
-    "t": "2026-02-27T14:12:19-05:00",
-    "actor": null,
-    "device": "lt-219",
-    "room": "219",
-    "attrs": {
-      "serial": "07A1B2C3D4E5F602&0",
-      "vendor": "Kingston",
-      "product": "DataTraveler_3.0",
-      "first_seen": "2025-09-03T11:05:44-05:00",
-      "host": "lt-219"
-    },
-    "source_file": "endpoint/usbstor.txt",
-    "quote": "  S/N: 07A1B2C3D4E5F602&0 [2026-02-27T14:12:19-05:00]",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "logoff",
-    "t": "2026-02-27T15:02:16-05:00",
-    "actor": {
-      "kind": "account",
-      "value": "mbell"
-    },
-    "device": "lt-219",
-    "room": "219",
-    "attrs": {
-      "event_id": 4634,
-      "host": "lt-219"
-    },
-    "source_file": "endpoint/security_log.csv",
-    "quote": "2026-02-27T15:02:16-05:00,4634,LT-219,mbell,2,,,",
-    "tags": []
-  },
-  {
-    "part": "story",
-    "type": "badge_out",
-    "t": "2026-02-27T15:04:01-05:00",
-    "actor": {
-      "kind": "badge",
-      "value": "40405"
-    },
-    "device": "rdr-219",
-    "room": "219",
-    "attrs": {
-      "reader": "rdr-219",
-      "result": "GRANTED"
-    },
-    "source_file": "access/badge_access.csv",
-    "quote": "2026-02-27T15:04:01-05:00,40405,rdr-219,OUT,GRANTED",
-    "tags": []
-  },
-  {
-    "part": "story",
     "type": "email",
     "t": "2026-03-02T09:12:00-05:00",
     "actor": {
@@ -303,7 +139,7 @@
       "message_id": "<20260302091200.4f1a@halvorsen.example>"
     },
     "source_file": "comms/mailbox.mbox",
-    "quote": "Please accept this as formal notice of my resignation from Halvorsen Dynamics, effective today.",
+    "quote": "Please accept this as formal notice of my resignation from Halvorsen Dynamics, effective Friday 6 March.",
     "tags": []
   },
   {
@@ -317,10 +153,10 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772504040.000100"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-02.json",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-02.json",
     "quote": "Congrats on making it official. The propulsion team can't wait to have you.",
     "tags": []
   },
@@ -335,10 +171,10 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772584800.000100"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-03.json",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-03.json",
     "quote": "Thanks. Still wrapping up a few things here before I'm out.",
     "tags": []
   },
@@ -353,10 +189,10 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772584950.000200"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-03.json",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-03.json",
     "quote": "No rush. Anything on the thruster side would get you up to speed fast. Bring what you can.",
     "tags": []
   },
@@ -393,11 +229,11 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772661300.000100"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-04.json",
-    "quote": "Reception is tonight, right? I'll be on the floor a while first.",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-04.json",
+    "quote": "Reception is tonight, right? Might swing by later.",
     "tags": []
   },
   {
@@ -411,11 +247,11 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772661430.000200"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-04.json",
-    "quote": "Perfect. See you when you're done.",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-04.json",
+    "quote": "Hope to see you there.",
     "tags": []
   },
   {
@@ -1134,6 +970,27 @@
   },
   {
     "part": "story",
+    "type": "wifi_assoc",
+    "t": "2026-03-04T18:59:30-05:00",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:04"
+    },
+    "device": "ap-2-04",
+    "room": "220",
+    "attrs": {
+      "ap": "ap-2-04",
+      "rssi": -57,
+      "ssid": "JRR2-SECURE"
+    },
+    "source_file": "network/wifi_ap_logs.csv",
+    "quote": "2026-03-04T18:59:30-05:00,ap-2-04,02:1F:9A:10:00:04,ASSOC,-57,JRR2-SECURE",
+    "tags": [
+      "RH_frederik"
+    ]
+  },
+  {
+    "part": "story",
     "type": "maintenance_window",
     "t": "2026-03-04T19:00:00-05:00",
     "actor": {
@@ -1172,6 +1029,26 @@
     },
     "source_file": "endpoint/security_log.csv",
     "quote": "2026-03-04T19:01:15-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+    "tags": [
+      "RH_frederik"
+    ]
+  },
+  {
+    "part": "story",
+    "type": "usb_mount",
+    "t": "2026-03-04T19:03:10-05:00",
+    "actor": null,
+    "device": "lt-219",
+    "room": "219",
+    "attrs": {
+      "serial": "AC554F1D48CBCF59&0",
+      "vendor": "Kingston",
+      "product": "DataTraveler_3.0",
+      "first_seen": "2025-09-03T11:05:44-05:00",
+      "host": "lt-219"
+    },
+    "source_file": "endpoint/usbstor.txt",
+    "quote": "  S/N: AC554F1D48CBCF59&0 [2026-03-04T19:03:10-05:00]",
     "tags": [
       "RH_frederik"
     ]
@@ -1222,6 +1099,47 @@
   },
   {
     "part": "story",
+    "type": "logoff",
+    "t": "2026-03-04T20:12:05-05:00",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "device": "lt-219",
+    "room": "219",
+    "attrs": {
+      "event_id": 4634,
+      "host": "lt-219"
+    },
+    "source_file": "endpoint/security_log.csv",
+    "quote": "2026-03-04T20:12:05-05:00,4634,LT-219,fmendelssohn,2,,,",
+    "tags": [
+      "RH_frederik"
+    ]
+  },
+  {
+    "part": "story",
+    "type": "logon",
+    "t": "2026-03-04T20:14:40-05:00",
+    "actor": {
+      "kind": "account",
+      "value": "fmendelssohn"
+    },
+    "device": "lt-219",
+    "room": "219",
+    "attrs": {
+      "event_id": 4624,
+      "logon_type": 2,
+      "host": "lt-219"
+    },
+    "source_file": "endpoint/security_log.csv",
+    "quote": "2026-03-04T20:14:40-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+    "tags": [
+      "RH_frederik"
+    ]
+  },
+  {
+    "part": "story",
     "type": "file_read",
     "t": "2026-03-04T20:47:09-05:00",
     "actor": {
@@ -1264,6 +1182,27 @@
   },
   {
     "part": "story",
+    "type": "wifi_disassoc",
+    "t": "2026-03-04T21:29:40-05:00",
+    "actor": {
+      "kind": "mac",
+      "value": "02:1F:9A:10:00:04"
+    },
+    "device": "ap-2-04",
+    "room": "220",
+    "attrs": {
+      "ap": "ap-2-04",
+      "rssi": -60,
+      "ssid": "JRR2-SECURE"
+    },
+    "source_file": "network/wifi_ap_logs.csv",
+    "quote": "2026-03-04T21:29:40-05:00,ap-2-04,02:1F:9A:10:00:04,DISASSOC,-60,JRR2-SECURE",
+    "tags": [
+      "RH_frederik"
+    ]
+  },
+  {
+    "part": "story",
     "type": "badge_out",
     "t": "2026-03-04T21:30:12-05:00",
     "actor": {
@@ -1293,10 +1232,10 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772717460.000100"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-05.json",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-05.json",
     "quote": "Missed you at the reception. Finance is processing your signing bonus this week.",
     "tags": []
   },
@@ -1311,10 +1250,10 @@
     "device": null,
     "room": null,
     "attrs": {
-      "channel": "D0HANKKIM",
+      "channel": "D07Q3K9L2MZ",
       "ts": "1772718015.000200"
     },
-    "source_file": "comms/slack_export/D0HANKKIM/2026-03-05.json",
+    "source_file": "comms/slack_export/D07Q3K9L2MZ/2026-03-05.json",
     "quote": "Something came up. Thanks, talk Friday.",
     "tags": []
   },
@@ -1323,8 +1262,8 @@
     "type": "transaction",
     "t": "2026-03-06T10:42:00-05:00",
     "actor": {
-      "kind": "name",
-      "value": "Hank Gibson"
+      "kind": "account",
+      "value": "CHK-7731"
     },
     "device": null,
     "room": null,
@@ -1343,8 +1282,8 @@
     "type": "transaction",
     "t": "2026-03-07T09:15:00-05:00",
     "actor": {
-      "kind": "name",
-      "value": "Hank Gibson"
+      "kind": "account",
+      "value": "CHK-7731"
     },
     "device": null,
     "room": null,
@@ -1548,6 +1487,42 @@
     },
     "source_file": "access/parking_exit.csv",
     "quote": "2026-03-04T09:06:33-05:00,ENTRY-2,P-2205,Y35-KBX,IN",
+    "tags": []
+  },
+  {
+    "part": "extra",
+    "type": "parking_entry",
+    "t": "2026-03-04T09:10:47-05:00",
+    "actor": {
+      "kind": "permit",
+      "value": "P-2204"
+    },
+    "device": null,
+    "room": null,
+    "attrs": {
+      "plate": "X88-CPH",
+      "lane": "ENTRY-2"
+    },
+    "source_file": "access/parking_exit.csv",
+    "quote": "2026-03-04T09:10:47-05:00,ENTRY-2,P-2204,X88-CPH,IN",
+    "tags": []
+  },
+  {
+    "part": "extra",
+    "type": "parking_entry",
+    "t": "2026-03-04T09:22:16-05:00",
+    "actor": {
+      "kind": "permit",
+      "value": "P-2222"
+    },
+    "device": null,
+    "room": null,
+    "attrs": {
+      "plate": "S34-PEM",
+      "lane": "ENTRY-1"
+    },
+    "source_file": "access/parking_exit.csv",
+    "quote": "2026-03-04T09:22:16-05:00,ENTRY-1,P-2222,S34-PEM,IN",
     "tags": []
   },
   {

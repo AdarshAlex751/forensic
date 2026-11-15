@@ -1,56 +1,44 @@
 [
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Ordering lab consumables this afternoon, anything to add?",
-    "ts": "1772035927.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Lint free wipes please.",
-    "ts": "1772035968.000100"
+    "user": "U0B67E4FFB9",
+    "text": "Taking the 219 bench 10:45 to 12:30 toady for the test stand run",
+    "ts": "1772027491.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "On the order.",
-    "ts": "1772036332.000100"
+    "text": "We are low on nitrile gloves and isopropyl, oredring today.",
+    "ts": "1772038404.000100"
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Can I book 219 on Thursday 14:00 to 15:00 for a claibration run? :D",
-    "ts": "1772039139.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Booked. Please leave the bench as you found it :test_tube:",
-    "ts": "1772039265.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Will do, thanks.",
-    "ts": "1772039675.000100"
+    "user": "UDDD0C059BA",
+    "text": "Can you add zip ties and kapton tape?",
+    "ts": "1772038464.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "Calibration on the thermocouple reader is done, offsets are in the binder.",
-    "ts": "1772044643.000100"
+    "text": "Added. :+1:",
+    "ts": "1772038526.000100"
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Thanks for keeping on top of this.",
-    "ts": "1772045297.000100"
+    "user": "U0B67E4FFB9",
+    "text": "wrapping up in 219, test stand run all within spec.",
+    "ts": "1772040129.000100"
   },
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "All within spec this time.",
-    "ts": "1772045468.000100"
+    "user": "U0B67E4FFB9",
+    "text": "booked 219 14:30-16:30 for the accelerometer mounting check. haha",
+    "ts": "1772045573.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "all done, bench is free. data is on the lab share",
+    "ts": "1772054348.000100"
   }
 ]

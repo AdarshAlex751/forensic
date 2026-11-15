@@ -43,21 +43,27 @@
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Anyone free to sanity check my feed line sizing numbers?",
-    "ts": "1772211296.000100"
+    "user": "U8AB490C4DB",
+    "text": "ci is failing on main since this morning, anyone touching the telemetry parser?",
+    "ts": "1772217125.000100"
   },
   {
     "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Tomorrow morning works.",
-    "ts": "1772211418.000100"
+    "user": "UDDD0C059BA",
+    "text": "My bad, reverting :)",
+    "ts": "1772217195.000100"
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Great, tomorrow then",
-    "ts": "1772211874.000100"
+    "user": "UDDD0C059BA",
+    "text": "Green again",
+    "ts": "1772217291.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "thanks, theo",
+    "ts": "1772217749.000100"
   },
   {
     "type": "message",
@@ -74,37 +80,37 @@
   {
     "type": "message",
     "user": "UE906F703F7",
-    "text": "Mostly. One case diverged, rerunning it with a smaller step.",
+    "text": "Mostly. One case diverged, rerunning it with a samller step, Jonah.",
     "ts": "1772226337.000100"
   },
   {
     "type": "message",
     "user": "U0B67E4FFB9",
-    "text": "i saw the same thing last month, try halving the time step.",
-    "ts": "1772226418.000100"
+    "text": "I saw the same thing last month, try halving the time step",
+    "ts": "1772226730.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Design review for the CFD mesh refinement moved to Wednesday at 9:30, same room.",
+    "ts": "1772228554.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "Ok, will have slides ready!!",
+    "ts": "1772228613.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC3A7AE0277",
+    "text": "Thanks, Maggie. :calendar:",
+    "ts": "1772228924.000100"
   },
   {
     "type": "message",
     "user": "U22AC661C8A",
-    "text": "Second batch of fixtures came in from Mercer this morning. :sparkles:",
-    "ts": "1772231393.000100"
-  },
-  {
-    "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Did they fix the chamfer this time?",
-    "ts": "1772231504.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Yes, chamfer is right. One part has a scratch, sending it back.",
-    "ts": "1772231744.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Nice, that ubnlocks the fit check.",
-    "ts": "1772231953.000100"
+    "text": "Works.",
+    "ts": "1772228990.000100"
   }
 ]

@@ -1,68 +1,50 @@
 [
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Ordering lab consumables this afternoon, anything to add?",
-    "ts": "1772116082.000100"
+    "user": "UFF8AD0B3F5",
+    "text": "Bench in 219 is booked 10:30-12:00 today, valve tmiing sweep.",
+    "ts": "1772115404.000100"
   },
   {
     "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Small hex keys, we keep losing them.",
-    "ts": "1772116333.000100"
+    "user": "UFF8AD0B3F5",
+    "text": "Hey all, valve timing sweep done, bench is free.",
+    "ts": "1772124457.000100"
   },
   {
     "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Added, should be here Tuesday.",
-    "ts": "1772116402.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Calibration on the thermocouple reader is done, offsets are in the binder.",
-    "ts": "1772122669.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Thanks for keeping on top of this",
-    "ts": "1772122789.000100"
+    "user": "UFF8AD0B3F5",
+    "text": "219 booked 16:00 to 16:30: test stand script check.",
+    "ts": "1772133172.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "All within spec this time. :test_tube:",
-    "ts": "1772122900.000100"
+    "text": "Bench in 219 is booked 16:30-17:15 today, torque wrench verification",
+    "ts": "1772137760.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Test stand script check is running, bench busy until about 16:30.",
+    "ts": "1772140086.000100"
+  },
+  {
+    "type": "message",
+    "user": "UFF8AD0B3F5",
+    "text": "Test stand script check complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772141376.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "Humidity in 219 was a bit high this morning, keep the door closed during runs.",
-    "ts": "1772127571.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "sorry, only seeing this now! Thanks, good to know.",
-    "ts": "1772133522.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Could I get the test bench in 219 Tuesday from 14:00?",
-    "ts": "1772142929.000100"
+    "text": "Torque wrench verification started, first readings look normal.",
+    "ts": "1772142437.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "Done, it is on the schedule.",
-    "ts": "1772143085.000100"
-  },
-  {
-    "type": "message",
-    "user": "U22AC661C8A",
-    "text": "Perfect, thank you.",
-    "ts": "1772143184.000100"
+    "text": "Torque wrench verification complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772143721.000100"
   }
 ]

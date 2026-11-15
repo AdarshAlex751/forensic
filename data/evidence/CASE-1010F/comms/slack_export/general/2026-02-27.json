@@ -1,18 +1,6 @@
 [
   {
     "type": "message",
-    "user": "UC1204C46CC",
-    "text": "Shout out to Marcus for turning the valve timing sweep around so quickly this week.",
-    "ts": "1772202821.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "thanks, it was a team effort",
-    "ts": "1772202941.000100"
-  },
-  {
-    "type": "message",
     "user": "U620A465E8F",
     "text": "Summit week starts on Monday. Visitors must sign in at the front desk and be accompanied in the Halvorsen suite at all times.",
     "ts": "1772205600.000100"
@@ -25,39 +13,45 @@
   },
   {
     "type": "message",
-    "user": "U8AB490C4DB",
-    "text": "sorry just saw this - :clap:",
-    "ts": "1772205692.000100"
-  },
-  {
-    "type": "message",
     "user": "U22AC661C8A",
     "text": "Noted, thanks!",
     "ts": "1772205827.000100"
   },
   {
     "type": "message",
+    "user": "UE906F703F7",
+    "text": "Anyone up for the cafe in the atrium at 12:15?",
+    "ts": "1772208891.000100"
+  },
+  {
+    "type": "message",
     "user": "U8AB490C4DB",
-    "text": "wifi is really slow right now, just me?",
-    "ts": "1772206844.000100"
+    "text": "sounds good, i am in",
+    "ts": "1772209147.000100"
   },
   {
     "type": "message",
     "user": "UE906F703F7",
-    "text": "Not just you. Video call keeps freezing. :)",
-    "ts": "1772206927.000100"
+    "text": "Great, elevators at 12:15 then! <3",
+    "ts": "1772209288.000100"
   },
   {
     "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Seems better now.",
-    "ts": "1772207094.000100"
+    "user": "UC1204C46CC",
+    "text": "The salad bar downstairs at 12:55, who is in? :tada:",
+    "ts": "1772212708.000100"
   },
   {
     "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Is it freezing in 217 or is it just me? :calendar:",
-    "ts": "1772221389.000100"
+    "user": "UDDD0C059BA",
+    "text": "In",
+    "ts": "1772212899.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC1204C46CC",
+    "text": "Great, elevators at 12:55 then",
+    "ts": "1772212968.000100"
   },
   {
     "type": "message",
@@ -82,11 +76,5 @@
     "user": "UC3A7AE0277",
     "text": "Ok, thanks. :calendar:",
     "ts": "1772229249.000100"
-  },
-  {
-    "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Just saw this. It is not just you.",
-    "ts": "1772230788.000100"
   }
 ]

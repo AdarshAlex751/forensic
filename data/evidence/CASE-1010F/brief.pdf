@@ -32,7 +32,7 @@ endobj
 endobj
 6 0 obj
 <<
-/Author (Alma Imhoff, Head of Security, Halvorsen Dynamics) /CreationDate (D:20000101000000+00'00') /Creator (Halvorsen Dynamics Security Office) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library) 
+/Author (Alma Imhoff, Head of Security, Halvorsen Dynamics) /CreationDate (D:20260309184000-05'00') /Creator (Microsoft Word for Microsoft 365) /Keywords () /ModDate (D:20260309184000-05'00') /Producer (Microsoft Word for Microsoft 365) 
   /Subject (Case 1010F) /Title (Incident brief) /Trapped /False
 >>
 endobj
@@ -43,7 +43,7 @@ endobj
 endobj
 8 0 obj
 <<
-/Length 3736
+/Length 4294
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -88,21 +88,29 @@ BT 1 0 0 1 57.6 411.4 Tm (the IT maintenance calendar; the Halvorsen mailbox and
 BT /F1 11 Tf 13.2 TL ET
 BT 1 0 0 1 57.6 396.4 Tm (extract obtained for the review; and three interview statements taken that afternoon.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 373.4 Tm (Period covered. Background records run from Monday 23 February to Sunday 8 March 2026. The) Tj T* ET
+BT 1 0 0 1 57.6 373.4 Tm (CCTV. CCTV video older than 72 hours had already been overwritten under the building's retention) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 358.4 Tm (forensic image, the interviews and this brief date from 9 March 2026.) Tj T* ET
+BT 1 0 0 1 57.6 358.4 Tm (policy when the review began; only the camera status index could be recovered.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 335.4 Tm (Not collected. Campus parking records are held by the campus parking office and can be requested if) Tj T* ET
+BT 1 0 0 1 57.6 335.4 Tm (Account records. financial/transactions.csv is an extract of checking account CHK-7731, provided with) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 320.4 Tm (needed.) Tj T* ET
+BT 1 0 0 1 57.6 320.4 Tm (the account holder H. Gibson's consent.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 297.4 Tm (Integrity. Every file was hashed at collection; the hashes are listed in manifest.csv. All times in the) Tj T* ET
+BT 1 0 0 1 57.6 297.4 Tm (Period covered. Background records run from Monday 23 February to Sunday 8 March 2026. The) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 282.4 Tm (case files are EST with a fixed -05:00 offset.) Tj T* ET
+BT 1 0 0 1 57.6 282.4 Tm (forensic image, the interviews and this brief date from 9 March 2026.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 259.4 Tm (Not collected. Campus parking records are held by the campus parking office and can be requested if) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 244.4 Tm (needed.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 221.4 Tm (Integrity. Every file was hashed at collection; the hashes are listed in manifest.csv. All times in the) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 206.4 Tm (case files are EST with a fixed -05:00 offset.) Tj T* ET
 BT /F2 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 238.4 Tm (Alma Imhoff, Head of Security, Halvorsen Dynamics) Tj T* ET
+BT 1 0 0 1 57.6 162.4 Tm (Alma Imhoff, Head of Security, Halvorsen Dynamics) Tj T* ET
 BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 224.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
+BT 1 0 0 1 57.6 148.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
 BT /F1 8 Tf 9.6 TL ET
 BT 1 0 0 1 57.6 40 Tm (Halvorsen Dynamics - Security Office - Case 1010F - CONFIDENTIAL - Page 1) Tj T* ET
  
@@ -117,8 +125,8 @@ xref
 0000000321 00000 n 
 0000000514 00000 n 
 0000000582 00000 n 
-0000000896 00000 n 
-0000000955 00000 n 
+0000000905 00000 n 
+0000000964 00000 n 
 trailer
 <<
 /ID 
@@ -130,5 +138,5 @@ trailer
 /Size 9
 >>
 startxref
-4742
+5309
 %%EOF

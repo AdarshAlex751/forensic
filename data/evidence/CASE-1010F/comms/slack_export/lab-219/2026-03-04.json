@@ -1,62 +1,50 @@
 [
   {
     "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Putting myself down for 219 8:45-10:15, DAQ channel check",
+    "ts": "1772631513.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Done with the bench, logbook updated.",
+    "ts": "1772637054.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "219 booked 10:30 to 12:15: accelerometer mounting check",
+    "ts": "1772637323.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "accelerometer mounting check under way, so far so good",
+    "ts": "1772639146.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "accelerometer monuting check complete, numbers are on the lab share. 219 is free.",
+    "ts": "1772643831.000100"
+  },
+  {
+    "type": "message",
     "user": "U22AC661C8A",
-    "text": "Test stand run finished, saw a small offset on chnanel 3.",
-    "ts": "1772642042.000100"
+    "text": "Can someone check the torque on the test report template fixture bolts next time they are in the lab? :D",
+    "ts": "1772654001.000100"
   },
   {
     "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Channel 3 was drifting last week too.",
-    "ts": "1772642102.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Might be the cable, I will swap it before the next run.",
-    "ts": "1772642599.000100"
+    "user": "U0B67E4FFB9",
+    "text": "will do when i am next on the bench, amara. haha",
+    "ts": "1772654144.000100"
   },
   {
     "type": "message",
     "user": "U22AC661C8A",
-    "text": "That would help, thanks.",
-    "ts": "1772642819.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Whoever used the scope last, please put the probes back in the drawer.",
-    "ts": "1772649009.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Sorry, that was me. :+1:",
-    "ts": "1772649193.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "No worries.",
-    "ts": "1772649557.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "Calibration on the thermocouple reader is done, offsets are in the binder.",
-    "ts": "1772654773.000100"
-  },
-  {
-    "type": "message",
-    "user": "UDDD0C059BA",
-    "text": "Thanks for keeping on top of this :+1:",
-    "ts": "1772655077.000100"
-  },
-  {
-    "type": "message",
-    "user": "UF5CB250EC6",
-    "text": "All within spec this time. :test_tube:",
-    "ts": "1772655208.000100"
+    "text": "Great, thanks!! :sparkles:",
+    "ts": "1772654288.000100"
   }
 ]

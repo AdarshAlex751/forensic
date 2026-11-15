@@ -212,7 +212,7 @@ def transaction_records() -> list[Record]:
         assert bal > 0, f"overdrawn at {t}"
         fields = _check(F_TXN, {"timestamp": ts(t), "account": TXN_ACCOUNT, "description": desc,
                                 "counterparty": cp, "amount": _money(cents), "balance": _money(bal)})
-        ev = EventSpec(type="transaction", t=t, actor={"kind": "name", "value": person(TXN_OWNER)["name"]},
+        ev = EventSpec(type="transaction", t=t, actor={"kind": "account", "value": "CHK-7731"},
                        device=None, room=None, attrs={"account": TXN_ACCOUNT, "amount": round(cents / 100, 2),
                                                       "counterparty": cp, "description": desc})
         out.append(Record(source=F_TXN, t=t, fields=fields, events=[ev]))

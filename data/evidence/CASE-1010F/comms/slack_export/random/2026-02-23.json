@@ -1,62 +1,38 @@
 [
   {
     "type": "message",
-    "user": "U8AB490C4DB",
-    "text": "seven letters, a small rcoket stage. go",
-    "ts": "1771860637.000100"
-  },
-  {
-    "type": "message",
-    "user": "UE906F703F7",
-    "text": "Booster? Seven letters, fits!",
-    "ts": "1771860739.000100"
-  },
-  {
-    "type": "message",
-    "user": "U8AB490C4DB",
-    "text": "got it, thanks :eyes:",
-    "ts": "1771860946.000100"
-  },
-  {
-    "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Who brought the stroopwafels? :pray:",
-    "ts": "1771864711.000100"
-  },
-  {
-    "type": "message",
-    "user": "UE906F703F7",
-    "text": "Guilty.",
-    "ts": "1771864966.000100"
-  },
-  {
-    "type": "message",
-    "user": "UC3A7AE0277",
-    "text": "Bless you.",
-    "ts": "1771865291.000100"
-  },
-  {
-    "type": "message",
     "user": "UF5CB250EC6",
-    "text": "Whose phone is playing jazz in the kitchen? It is nice.",
-    "ts": "1771865886.000100"
+    "text": "Need a focus playlist, recommendations?",
+    "ts": "1771863940.000100"
   },
   {
     "type": "message",
     "user": "UC1204C46CC",
-    "text": "Mine, sorry, turning it off.",
-    "ts": "1771866423.000100"
+    "text": "Film scores. No lyrics, no distractions.",
+    "ts": "1771864178.000100"
   },
   {
     "type": "message",
     "user": "UF5CB250EC6",
-    "text": "No, leave it on, it is nice.",
-    "ts": "1771866496.000100"
+    "text": "Trying it now",
+    "ts": "1771864256.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "seven letters, a small rocket stage. go.",
+    "ts": "1771870777.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "oh sorry, just saw this! Booster? Seven letters, fits!",
+    "ts": "1771874513.000100"
   },
   {
     "type": "message",
     "user": "UDDD0C059BA",
-    "text": "Has anyone watched the new season of that space documentary series?",
+    "text": "Watched the first episode of the new space documentary series last night, it is great.",
     "ts": "1771875519.000100"
   },
   {
@@ -70,5 +46,29 @@
     "user": "U22AC661C8A",
     "text": "No spoilers please.",
     "ts": "1771876716.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "sorry just saw this - got it, thanks",
+    "ts": "1771881760.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "the parrot at home has learned the microwave beep. send help :eyes:",
+    "ts": "1771898399.000100"
+  },
+  {
+    "type": "message",
+    "user": "UE906F703F7",
+    "text": "That is going to be a long spring!! <3",
+    "ts": "1771898541.000100"
+  },
+  {
+    "type": "message",
+    "user": "U8AB490C4DB",
+    "text": "he does it at six in the morning too",
+    "ts": "1771898698.000100"
   }
 ]

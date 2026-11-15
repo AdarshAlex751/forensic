@@ -32,7 +32,7 @@ endobj
 endobj
 6 0 obj
 <<
-/Author (Alma Imhoff) /CreationDate (D:20000101000000+00'00') /Creator (Halvorsen Dynamics Security Office) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library) 
+/Author (Alma Imhoff) /CreationDate (D:20260309171000-05'00') /Creator (Microsoft Word for Microsoft 365) /Keywords () /ModDate (D:20260309171000-05'00') /Producer (Microsoft Word for Microsoft 365) 
   /Subject (Case 1010F - statement of Frederik Mendelssohn) /Title (Witness statement) /Trapped /False
 >>
 endobj
@@ -43,7 +43,7 @@ endobj
 endobj
 8 0 obj
 <<
-/Length 3477
+/Length 3508
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -72,37 +72,39 @@ BT 1 0 0 1 57.6 565.4 Tm (be stopped at any time. The questions and answers belo
 BT /F1 11 Tf 13.2 TL ET
 BT 1 0 0 1 57.6 542.4 Tm (Q: Please describe your role on the floor.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 519.4 Tm (I am an IT contractor with Ostrander IT. I look after the shared IT on the JRR second floor, including) Tj T* ET
+BT 1 0 0 1 57.6 519.4 Tm (I am an IT contractor with Ostrander IT.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 504.4 Tm (the access points, the printers and Halvorsen's isolated lab laptop lt-219.) Tj T* ET
+BT 1 0 0 1 57.6 496.4 Tm (I look after the shared IT on the JRR second floor.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 481.4 Tm (Q: What did you do on the evening of Wednesday 4 March?) Tj T* ET
+BT 1 0 0 1 57.6 473.4 Tm (That includes the access points, the printers and the lab laptop lt-219.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 458.4 Tm (I ran the scheduled monthly patch window on lt-219 from 19:00 to 21:30 under work order WO-3117.) Tj T* ET
+BT 1 0 0 1 57.6 450.4 Tm (Q: What did you do on the evening of Wednesday 4 March?) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 435.4 Tm (I badged into room 219 with my own badge just before 19:00 and logged on with my own admin) Tj T* ET
+BT 1 0 0 1 57.6 427.4 Tm (I ran the scheduled monthly patch window on lt-219 from 19:00 to 21:30 under work order WO-3117.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 420.4 Tm (account. I installed the updates from the offline patch media and restarted the laptop. I logged off) Tj T* ET
+BT 1 0 0 1 57.6 404.4 Tm (I went into room 219 with my own badge just before 19:00.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 405.4 Tm (shortly before 21:30 and left the room.) Tj T* ET
+BT 1 0 0 1 57.6 381.4 Tm (I logged on with my own admin account.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 382.4 Tm (The work was announced in the weekly IT notice on Monday 2 March and is on the maintenance) Tj T* ET
+BT 1 0 0 1 57.6 358.4 Tm (I installed the updates from the offline patch media and restarted the laptop.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 367.4 Tm (calendar.) Tj T* ET
+BT 1 0 0 1 57.6 335.4 Tm (I logged off shortly before 21:30 and left the room.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 344.4 Tm (Q: Did you see anyone else in room 219?) Tj T* ET
+BT 1 0 0 1 57.6 312.4 Tm (The work was in the weekly IT notice on Monday 2 March and on the maintenance calendar.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 321.4 Tm (No, I did not see anyone else in room 219.) Tj T* ET
+BT 1 0 0 1 57.6 289.4 Tm (Q: Did you see anyone else in room 219?) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 298.4 Tm (Q: Did you notice anything unusual on lt-219?) Tj T* ET
+BT 1 0 0 1 57.6 266.4 Tm (No, I did not see anyone else in room 219.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 275.4 Tm (Nothing stood out to me. The patching went normally.) Tj T* ET
+BT 1 0 0 1 57.6 243.4 Tm (Q: Did you notice anything unusual on lt-219?) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 220.4 Tm (Nothing stood out to me. The patching went normally.) Tj T* ET
 BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 231.4 Tm (I confirm that this statement is true to the best of my knowledge and belief.) Tj T* ET
+BT 1 0 0 1 57.6 176.4 Tm (I confirm that this statement is true to the best of my knowledge and belief.) Tj T* ET
 BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 193.4 Tm (Signature: ______________________________          Date: ________________) Tj T* ET
+BT 1 0 0 1 57.6 138.4 Tm (Signature: ______________________________          Date: ________________) Tj T* ET
 BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 179.4 Tm (Statement taken by: Alma Imhoff) Tj T* ET
+BT 1 0 0 1 57.6 124.4 Tm (Statement taken by: Alma Imhoff) Tj T* ET
 BT /F1 8 Tf 9.6 TL ET
 BT 1 0 0 1 57.6 40 Tm (Halvorsen Dynamics - Security Office - Case 1010F - CONFIDENTIAL - Page 1) Tj T* ET
  
@@ -117,8 +119,8 @@ xref
 0000000321 00000 n 
 0000000514 00000 n 
 0000000582 00000 n 
-0000000897 00000 n 
-0000000956 00000 n 
+0000000906 00000 n 
+0000000965 00000 n 
 trailer
 <<
 /ID 
@@ -130,5 +132,5 @@ trailer
 /Size 9
 >>
 startxref
-4484
+4524
 %%EOF

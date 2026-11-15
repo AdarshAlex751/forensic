@@ -12,7 +12,9 @@ Templates are threads: a list of turns, each turn a role ("A", "B", "C") and tex
   {org} {Borg}     tenant organisation names
 Hard rules (CASE.md, comms.py guards): Slack text has no double quote, backslash or newline; nothing in a noise
 template refers to the incident, the stolen files, removable storage, badges being copied, the corridor camera,
-the Northline money, or who left the floor when on the incident evening.
+the Northline money, or who left the floor when on the incident evening. A line with a FLOOR_HINTS phrase is only
+sent while the writer is in a badge room; only people authorised for room 219 talk about working in it; personal
+anecdotes (once=True) are told once; weekend and evening threads (home=True) are clearly written from home.
 """
 from __future__ import annotations
 
@@ -177,13 +179,8 @@ SLACK_THREADS: list[dict] = [
                "New coffee beans in the kitchen, the dark roast is back."]),
         ("B", ["Thank you for the public service announcement.", "Noted. Tea it is.", "Best news of the day."]),
     ], weight=1.5),
-    dict(ch="general", id="lunch", hours=(10.5, 12.2), roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
-        ("A", ["Lunch at {slot}? Thinking {food}.", "Anyone up for {food} at {slot}?", "Going to {food} around {slot} if anyone wants to come."]),
-        ("B", ["In.", "Count me in.", "Yes please, I have a call until {slot} though, will catch up."]),
-        ("C", ["I brought food but I will come sit with you.", "Can't today, enjoy.", "In, meet at the elevators?"]),
-        ("A", ["Great, see you then.", "Elevators at {slot} then.", "Perfect."]),
-    ], weight=3),
-    dict(ch="general", id="meeting_room", roles={"A": "hal", "B": "hal"}, turns=[
+    # (lunch threads are derived from real lunch absences in comms.py, see LUNCH_* below)
+    dict(ch="general", id="meeting_room", slot_check="A", roles={"A": "hal", "B": "hal"}, turns=[
         ("A", ["Is anyone using the small meeting room in 217 at {slot}?", "Need the 217 meeting room for half an hour at {slot}, anyone have it?"]),
         ("B", ["All yours.", "I have it until {slot}, then it is free.", "I booked it but can move to the lounge, take it."]),
         ("A", ["Thanks!", "Thank you, I owe you one.", "Appreciated."]),
@@ -291,89 +288,97 @@ SLACK_THREADS: list[dict] = [
     ], weight=2),
 
     # ---------------- lab-219
-    dict(ch="lab-219", id="book", roles={"A": "lab_user", "B": "rina"}, turns=[
-        ("A", ["Can I book 219 on {day} {slot} to {slot2} for a calibration run?", "Is 219 free {day} morning? Need the bench for about two hours.",
-               "Could I get the test bench in 219 {day} from {slot}?"]),
-        ("B", ["Booked. Please leave the bench as you found it.", "You have it {slot} to {slot2}. Logbook is on the shelf.",
-               "Done, it is on the schedule."]),
-        ("A", ["Will do, thanks.", "Thanks Rina.", "Perfect, thank you."]),
-    ], weight=3, days="weekday"),
-    dict(ch="lab-219", id="calibration", roles={"A": "rina", "B": "lab_user"}, turns=[
-        ("A", ["Load cell calibration is due this week, I will run it {day} morning.", "Running the pressure gauge calibration at {slot}, bench is busy for an hour.",
-               "Calibration on the thermocouple reader is done, offsets are in the binder."]),
-        ("B", ["Thanks Rina.", "Great, I will plan around it.", "Thanks for keeping on top of this."]),
-        ("A", ["Np, will post here when it is done.", "Will post when it is done.", "All within spec this time."]),
-    ], weight=2.5, days="weekday"),
+    # Booked / running / done messages are derived in comms.py from the real lt-219 sessions (LAB_* below). Only
+    # people authorised for room 219 ('auth219') talk about being in it; everyone else can only ask ('lab_ask').
     dict(ch="lab-219", id="consumables", roles={"A": "rina", "B": "lab_user"}, turns=[
-        ("A", ["We are low on nitrile gloves and isopropyl, ordering today.", "Ordering lab consumables this afternoon, anything to add?"]),
+        ("A", ["We are low on nitrile gloves and isopropyl, ordering today.", "Ordering lab consumables this afternoon, anything to add?",
+               "Consumables order goes out at 3, last call for requests."]),
         ("B", ["Can you add zip ties and kapton tape?", "Lint free wipes please.", "Small hex keys, we keep losing them."]),
         ("A", ["Added.", "On the order.", "Added, should be here {day}."]),
     ], weight=1.5, days="weekday"),
-    dict(ch="lab-219", id="tidy", roles={"A": "rina", "B": "lab_user"}, turns=[
+    dict(ch="lab-219", id="tidy", needs219="A", roles={"A": "auth219", "B": "lab_user"}, turns=[
         ("A", ["Whoever used the scope last, please put the probes back in the drawer.", "Please do not leave coffee cups on the bench, thanks.",
                "Torque wrench goes back in its case after use please."]),
-        ("B", ["Sorry, that was me.", "Will remind the team.", "My fault, fixed."]),
-        ("A", ["No worries.", "Thanks.", "Np, thanks."]),
+        ("B", ["Will remind the team.", "Noted, thanks.", "Will mention it at standup."]),
     ], weight=1.5, days="weekday"),
-    dict(ch="lab-219", id="humidity", roles={"A": "rina", "B": "lab_user"}, turns=[
-        ("A", ["Humidity in 219 was a bit high this morning, keep the door closed during runs.", "Fume hood filter was changed today, airflow is back to normal."]),
-        ("B", ["Noted.", "Thanks, good to know.", "Ok."]),
+    dict(ch="lab-219", id="humidity", needs219="A", roles={"A": "auth219", "B": "lab_user"}, turns=[
+        ("A", ["Humidity in 219 was a bit high earlier, keep the door closed during runs.", "Fume hood filter in 219 was changed today, airflow is back to normal.",
+               "The bench power strip in 219 was tripping earlier, swapped it for the spare."]),
+        ("B", ["Noted.", "Thanks, good to know.", "Thanks for sorting it."]),
     ], weight=1, days="weekday"),
-    dict(ch="lab-219", id="results", roles={"A": "lab_user", "B": "lab_user", "C": "rina"}, turns=[
-        ("A", ["Vibration table run {n} done, data is on the lab share.", "Test stand run finished, saw a small offset on channel {n}."]),
-        ("B", ["Nice, can you send me the raw files?", "Channel {n} was drifting last week too."]),
-        ("C", ["Raw files are on the lab share, same folder as last week.", "Might be the cable, I will swap it before the next run."]),
-        ("A", ["Thanks Rina.", "That would help, thanks."]),
+    dict(ch="lab-219", id="ask", roles={"A": "lab_ask", "B": "auth219"}, turns=[
+        ("A", ["Can someone run a quick leak check on the {topic} fitting on the test stand this week?",
+               "Could whoever is on the bench next look at channel {n} of the DAQ? It read high in my last data set.",
+               "Can someone check the torque on the {topic} fixture bolts next time they are in the lab?",
+               "If anyone is on the test stand {day}, could you grab a baseline reading for the {topic}?"]),
+        ("B", ["Sure, I can fold it into my next session.", "Yes, leave a note on the logbook page and I will do it.",
+               "Will do when I am next on the bench.", "Can do, I will post the numbers here."]),
+        ("A", ["Thanks!", "Appreciated, thank you.", "Great, thanks.", "Thank you, no rush."]),
     ], weight=2, days="weekday"),
-    dict(ch="lab-219", id="week_plan", roles={"A": "rina", "B": "lab_user", "C": "lab_user"}, turns=[
-        ("A", ["219 this week: Tue morning calibration, Thu vibration table all day, rest is open.", "Lab plan for the week is on the door. Thursday is busy, book early."]),
-        ("B", ["Could I grab Friday 10 to 12?", "Can I have Monday afternoon next week?"]),
-        ("A", ["Yours.", "Booked."]),
-        ("C", ["Thanks for posting this.", ":+1:"]),
+    dict(ch="lab-219", id="week_plan", roles={"A": "rina", "B": "lab_user"}, turns=[
+        ("A", ["Lab plan for the week is on the door. Thursday is busy, so ask early if you need something run.",
+               "Calibration schedule for the week is pinned. Send requests by Tuesday."]),
+        ("B", ["Thanks for posting this.", "Thanks, will send mine today."]),
     ], weight=3, days="mon"),
 
     # ---------------- random
-    dict(ch="random", id="weekend", roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
+    # home=True: clearly written from home (the only threads used on weekends and from home in the evening).
+    # once=True: a personal anecdote; each opening line is used at most once in the whole export.
+    dict(ch="random", id="weekend", once=True, roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
         ("A", ["Any plans for the weekend?", "What is everyone up to this weekend?"]),
-        ("B", ["Hiking if the weather holds.", "Painting the hallway, send help.", "Absolutely nothing and I cannot wait."]),
-        ("C", ["Visiting my sister in Philly.", "Long run on Saturday and a lot of sleep.", "Finally assembling the bookshelf."]),
-        ("A", ["Sounds great.", "Good luck with that.", "Living the dream."]),
+        ("B", ["Hiking if the weather holds.", "Painting the hallway, send help.", "Absolutely nothing and I cannot wait.",
+               "My nephew has a hockey game on Saturday."]),
+        ("C", ["Visiting my sister in Philly.", "Long run on Saturday and a lot of sleep.", "Finally assembling the bookshelf.",
+               "Trying the new bakery downtown."]),
+        ("A", ["Sounds great.", "Good luck with that.", "Living the dream.", "Enjoy!"]),
     ], weight=3, days="fri"),
-    dict(ch="random", id="pets", roles={"A": "hal", "B": "hal"}, turns=[
-        ("A", ["My cat discovered the radiator and has not moved since :cat:", "The dog ate a whole sock this morning. He is fine. I am not."]),
-        ("B", ["She looks very pleased with herself. Need a photo of this immediately.", "Classic. Is he ok?"]),
-        ("A", ["Photo incoming. She is the boss now.", "He is very proud of himself."]),
-    ], weight=1.5, evening=True),
-    dict(ch="random", id="show", roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
-        ("A", ["Has anyone watched the new season of that space documentary series?", "Finished the book about the lunar program, highly recommend."]),
-        ("B", ["Two episodes in, it is great.", "Can I borrow it when you are done?"]),
-        ("C", ["No spoilers please.", "Adding it to my list."]),
-    ], weight=1.5, evening=True),
+    dict(ch="random", id="pets", home=True, once=True, roles={"A": "hal", "B": "hal"}, turns=[
+        ("A", ["My cat has claimed the radiator at home and will not move :cat:",
+               "The dog ate a whole sock this morning before I even had coffee. He is fine. I am not.",
+               "Our new kitten worked out how to open the treat cupboard at home.",
+               "The parrot at home has learned the microwave beep. Send help."]),
+        ("B", ["Need a photo of this immediately.", "Classic. Is he ok?", "Child locks on everything, it is the only way.",
+               "That is going to be a long spring."]),
+        ("A", ["Photo incoming. She is the boss now.", "He is very proud of himself.", "Ordering some tonight.",
+               "He does it at six in the morning too."]),
+    ], weight=1.5),
+    dict(ch="random", id="show", home=True, once=True, roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
+        ("A", ["Watched the first episode of the new space documentary series last night, it is great.",
+               "Finished the book about the lunar program on the sofa this afternoon, highly recommend.",
+               "Rewatching the old shuttle documentaries at home tonight.",
+               "Just finished the biography of the first rocket engine designers, could not put it down."]),
+        ("B", ["Two episodes in, it is great.", "Can I borrow it when you are done?", "Those hold up so well.",
+               "Adding it to my list."]),
+        ("C", ["No spoilers please.", "Me next after that.", "The narration is the best part.", "Same, thanks for the tip."]),
+    ], weight=1.5),
     dict(ch="random", id="snack", roles={"A": "hal", "B": "hal"}, turns=[
         ("A", ["Who brought the stroopwafels?", "Whoever left the clementines by the sink, thank you."]),
         ("B", ["Guilty.", "That was me. Take more."]),
         ("A", ["Bless you.", "Legend."]),
     ], weight=1.5),
-    dict(ch="random", id="run", roles={"A": "hal", "B": "hal"}, turns=[
-        ("A", ["Anyone up for a run at lunch {day}?", "Lunchtime walk around the lake {day}?"]),
-        ("B", ["I am in if it is not raining.", "Yes, slow pace please."]),
-        ("A", ["Deal.", "Slow pace guaranteed.", "Feel better."]),
-    ], weight=1.2),
     dict(ch="random", id="crossword", roles={"A": "hal", "B": "hal"}, turns=[
         ("A", ["Today's crossword is brutal.", "Seven letters, a small rocket stage. Go."]),
-        ("B", ["Stuck on 14 across. Gave up at lunch.", "Booster? Seven letters, fits."]),
+        ("B", ["Stuck on 14 across.", "Booster? Seven letters, fits."]),
         ("A", ["Same.", "Got it, thanks."]),
-    ], weight=1.2, evening=True),
+    ], weight=1.2),
     dict(ch="random", id="music", roles={"A": "hal", "B": "hal"}, turns=[
         ("A", ["Need a focus playlist, recommendations?", "Whose phone is playing jazz in the kitchen? It is nice."]),
         ("B", ["Film scores. No lyrics, no distractions.", "Mine, sorry, turning it off."]),
         ("A", ["Trying it now.", "No, leave it on, it is nice."]),
-    ], weight=1, evening=True),
-    dict(ch="random", id="weekend_home", roles={"A": "hal", "B": "hal"}, turns=[
-        ("A", ["Made way too much soup, it is a soup week now.", "Saw a heron by the canal this morning.",
-               "Farmers market had the first rhubarb, it is a sign."]),
-        ("B", ["Soup week is the best week.", "Nice, they are huge up close.", "Spring is coming."]),
-    ], weight=3, days="weekend", evening=True),
+    ], weight=1),
+    dict(ch="random", id="weekend_home", home=True, once=True, roles={"A": "hal", "B": "hal"}, turns=[
+        ("A", ["Made way too much soup at home, it is a soup week now.", "Saw a heron by the canal on my walk this morning.",
+               "Farmers market had the first rhubarb today, it is a sign.", "Spent the whole afternoon fixing the bike in my garage.",
+               "Baked bread at home for the first time. It is mostly a brick.",
+               "Took the kids sledding this morning, last snow of the year probably.",
+               "Repotted every plant in my apartment today. The floor is soil now.",
+               "Cooking dumplings from scratch at home tonight, wish me luck.",
+               "Long walk along the towpath today, the ice is finally gone.",
+               "Finally hung the shelves at home. Only two extra holes in the wall."]),
+        ("B", ["Soup week is the best week.", "Nice, they are huge up close.", "Spring is coming.", "Respect, I would have given up.",
+               "Bricks are a valid first loaf.", "Sounds like a perfect morning.", "Worth it though.", "Bring the leftovers?",
+               "Jealous, it was grey here all day.", "Two is a very good score."]),
+    ], weight=3, days="weekend"),
 
     # ---------------- summit-2026
     dict(ch="summit-2026", id="register", roles={"A": "hal", "B": "hal", "C": "hal"}, turns=[
@@ -424,6 +429,64 @@ FORBIDDEN = [
     r"\busb\b", r"thumb ?drive", r"flash ?drive", r"\bclon", r"coinvault", r"signing bonus", r"camera 3",
     r"cam-03", r"\btitan\b", r"northline", r"\bbadge", r"left together", r"went home", r"bonus",
 ]
+
+# Phrases that say the writer is on the floor right now. comms.py only lets a message with one of these through when
+# the sender is inside a badge room at that moment (presence.records()).
+FLOOR_HINTS = [
+    r"in the kitchen", r"by the kitchen", r"at my desk", r"on my desk", r"under my desk", r"in 217", r"by the printer",
+    r"on my way", r"\bomw\b", r"grabbing it now", r"be there in", r"coat indoors", r"gloves on", r"by the windows?",
+    r"by the sink", r"on the counter", r"right now", r"who brought", r"coffee machine",
+]
+
+# ------------------------------------------------------------------------------------------------ lab-219 sessions
+# comms.py turns every real lt-219 session (security log 4624 -> 4634 by rokafor / mbell / hgibson) into a booking
+# posted earlier that day, sometimes a 'running' note, and a 'done' posted after logoff while still in 219.
+LAB_TASKS = {
+    "p_bg_17": ["load cell calibration", "pressure gauge calibration", "thermocouple reader check", "DAQ channel check",
+                "torque wrench verification", "scope probe compensation", "flow meter zero check",
+                "strain gauge bridge check"],
+    "p_bg_05": ["vibration table run", "test stand run", "bracket fit check", "harness continuity check",
+                "valve actuation test", "accelerometer mounting check"],
+    "p_hank": ["valve timing sweep", "test stand script check", "feed line pressure test"],
+}
+LAB_BOOK = [
+    "Booked 219 {a}-{b} for the {task}.", "Taking the 219 bench {a} to {b} today for the {task}.",
+    "219 is mine from {a} to {b}, {task}.", "Heads up, I have 219 {a}-{b} for the {task}.",
+    "Bench in 219 is booked {a}-{b} today, {task}.", "Putting myself down for 219 {a}-{b}, {task}.",
+    "I will be in 219 {a}-{b} for the {task}.", "219 booked {a} to {b}: {task}.",
+]
+LAB_START = [
+    "In 219 now for the {task}, bench is busy until about {b}.", "Started the {task} in 219, done around {b}.",
+    "Grabbed 219 for the {task}, should be out by {b}.",
+]
+LAB_RUNNING = [
+    "{Task} is running, bench busy until about {b}.", "Started the {task}, should be done by {b}.",
+    "{Task} under way, so far so good.", "{Task} started, first readings look normal.",
+]
+LAB_DONE = [
+    "Done in 219, bench is free.", "{Task} done, bench is free.", "Finished the {task}, 219 is free again.",
+    "All done, bench is free. Data is on the lab share.", "Done with the bench, logbook updated.",
+    "{Task} finished, results in the binder. Bench is free.", "Wrapping up in 219, {task} all within spec.",
+    "{Task} complete, numbers are on the lab share. 219 is free.", "Wrapped up the {task}, bench is clear.",
+]
+LAB_REPLY = [
+    "Thanks for the heads up.", "Noted, I will plan around it.", "Could you check channel {n} while you are in there?",
+    "Thanks, I will send my request for later in the week.", "Ok, thanks.",
+]
+
+# ------------------------------------------------------------------------------------------------ lunch
+# Lunch threads come from real lunch absences in the badge data (two or more people out of their rooms together).
+LUNCH_ASK = ["Lunch at {slot}? Thinking {food}.", "Anyone up for {food} at {slot}?", "Going to {food} around {slot} if anyone wants to come.",
+             "{Food} at {slot}, who is in?", "Thinking {food} for lunch, {slot}?"]
+LUNCH_YES = ["In.", "Count me in.", "Yes please.", "In, see you at the elevators.", "Sounds good, I am in.", "Yes!"]
+LUNCH_NO = ["Can't today, enjoy.", "Brought my own today, enjoy.", "Stuck in a review, have fun."]
+LUNCH_OK = ["Great, elevators at {slot} then.", "Perfect, see you at {slot}.", "Elevators at {slot}."]
+
+# Weekly update topics by role (comms.py): Rina reports her lab sessions, Leila product-management work.
+LAB_TOPICS = ["calibration schedule for March", "lab consumables order", "bench maintenance log", "fixture inventory",
+              "binder of calibration certificates"]
+PM_TOPICS = ["review schedule for March", "summit panel prep", "handover tracker for Hank's items", "vendor quote comparison",
+             "Q2 milestone plan", "risk register update"]
 
 # ------------------------------------------------------------------------------------------------ email threads
 # Each: id, roles {role: spec}, subject [variants], turns [{by, to, body: [branch variants of line lists], p}].
@@ -510,16 +573,17 @@ EMAIL_THREADS: list[dict] = [
              dict(by="C", p=0.4, body=[["Thanks, that works for me too."], ["See you there."]]),
          ]),
     dict(id="lab_request", weight=2.5, max=4, roles={"A": "lab", "B": "pid:p_bg_17"},
-         subject=["Room 219 on {day}?", "Calibration before the {topic} test"], no_hank_after=True,
+         subject=["Lab request: {topic}", "Calibration check before the {topic} test"], no_hank_after=True,
          turns=[
              dict(by="A", to=["B"], body=[
-                 ["Could you put me down for the 219 bench on {day} from {slot} to {slot2}?",
-                  "It is for the {topic}, nothing hazardous."],
-                 ["Is there a slot this week for a calibration check on the pressure transducers?",
-                  "I would like to run the {topic} test on {day2}."]]),
+                 ["Could you run a quick check for the {topic} next time you are on the bench?",
+                  "Nothing hazardous, it is the parts in the grey box with my name on it."],
+                 ["Is there room in your schedule this week for a calibration check on the pressure transducers?",
+                  "I would like to use them for the {topic} test on {day2}."]]),
              dict(by="B", body=[
-                 ["Booked {day} {slot} to {slot2}.", "Bench is clean, logbook is on the shelf by the door."],
-                 ["I can do the transducer check on {day} morning.",
+                 ["Yes, I will fold it into my next session and send you the numbers.",
+                  "Leave the box on the shelf by the 217 door with a tag."],
+                 ["I can add the transducer check to my next calibration run.",
                   "Leave them on the shelf with a tag and I will pick them up."]]),
              dict(by="A", p=0.7, body=[["Thanks Rina!"], ["Great, tagged and on the shelf."]]),
          ]),
@@ -527,7 +591,7 @@ EMAIL_THREADS: list[dict] = [
          subject=["Shared whiteboard in the lounge", "Lounge whiteboard"],
          turns=[
              dict(by="A", to=["B"], body=[
-                 ["Hi from {org} next door.",
+                 ["This is {Afull} from {org}, on the same floor.",
                   "Is the diagram on the lounge whiteboard yours? We would like to use the board on {day}.",
                   "Happy to take a photo of it for you first."]]),
              dict(by="B", body=[

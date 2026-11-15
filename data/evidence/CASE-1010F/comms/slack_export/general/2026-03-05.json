@@ -2,25 +2,7 @@
   {
     "type": "message",
     "user": "UE906F703F7",
-    "text": "Leftover cake in the kitchen, help yourselves :cake: :tada:",
-    "ts": "1772722790.000100"
-  },
-  {
-    "type": "message",
-    "user": "UC1204C46CC",
-    "text": "You are a hero.",
-    "ts": "1772722973.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "Already had two. No regrets.",
-    "ts": "1772723132.000100"
-  },
-  {
-    "type": "message",
-    "user": "UE906F703F7",
-    "text": "Reminder: Hank's farewell lunch is tomorrow, meet at the elevators at 12:20!",
+    "text": "Reminder: Hank's farewell lunch is tomorrow at 12:30 in the 217 meeting room, the food is ordered!",
     "ts": "1772723700.000100"
   },
   {
@@ -37,38 +19,50 @@
   },
   {
     "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Going to the ramen place around 11:30 if anyone wants to come.",
-    "ts": "1772725336.000100"
-  },
-  {
-    "type": "message",
     "user": "U22AC661C8A",
-    "text": "Yes please, I have a call until 11:30 though, will catch up.",
-    "ts": "1772726065.000100"
-  },
-  {
-    "type": "message",
-    "user": "U0B67E4FFB9",
-    "text": "In, meet at the elevators?",
-    "ts": "1772726226.000100"
-  },
-  {
-    "type": "message",
-    "user": "UFF8AD0B3F5",
-    "text": "Perfect.",
-    "ts": "1772726432.000100"
+    "text": "Lunch at 11:50? Thinking the burrito place",
+    "ts": "1772728165.000100"
   },
   {
     "type": "message",
     "user": "UDDD0C059BA",
-    "text": "Package for Hank at the front desk.",
-    "ts": "1772728884.000100"
+    "text": "Yes please",
+    "ts": "1772728294.000100"
+  },
+  {
+    "type": "message",
+    "user": "U0B67E4FFB9",
+    "text": "In, see you at the elevators.",
+    "ts": "1772728540.000100"
+  },
+  {
+    "type": "message",
+    "user": "U22AC661C8A",
+    "text": "Perfect, see you at 11:50",
+    "ts": "1772728571.000100"
+  },
+  {
+    "type": "message",
+    "user": "UF5CB250EC6",
+    "text": "Coffee machine is descaling, back in about 20 minutes.",
+    "ts": "1772731328.000100"
+  },
+  {
+    "type": "message",
+    "user": "UC1204C46CC",
+    "text": "Thank you for the public service announcement.",
+    "ts": "1772731488.000100"
+  },
+  {
+    "type": "message",
+    "user": "UDDD0C059BA",
+    "text": "Hey all, leftover cake in the kitchen, help yourselves :cake:",
+    "ts": "1772747558.000100"
   },
   {
     "type": "message",
     "user": "UFF8AD0B3F5",
-    "text": "Thanks! Grabbing it now.",
-    "ts": "1772729242.000100"
+    "text": "You are a hero, Theo.",
+    "ts": "1772747916.000100"
   }
 ]

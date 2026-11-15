@@ -8,12 +8,12 @@
       "sources": [
         {
           "file": "access/badge_access.csv",
-          "line": 2295,
+          "line": 2289,
           "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED"
         },
         {
           "file": "network/wifi_ap_logs.csv",
-          "line": 5447,
+          "line": 5451,
           "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
         }
       ],
@@ -28,12 +28,12 @@
       "sources": [
         {
           "file": "access/badge_access.csv",
-          "line": 2304,
+          "line": 2298,
           "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED"
         },
         {
           "file": "access/badge_access.csv",
-          "line": 2305,
+          "line": 2299,
           "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED"
         }
       ],
@@ -47,14 +47,14 @@
       "detector": "nli+rule",
       "sources": [
         {
-          "file": "statements/hank_gibson.pdf",
-          "line": 6,
-          "quote": "I went straight home at six."
+          "file": "access/parking_exit.csv",
+          "line": 462,
+          "quote": "2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT"
         },
         {
-          "file": "access/parking_exit.csv",
-          "line": 11,
-          "quote": "2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT"
+          "file": "statements/hank_gibson.pdf",
+          "line": 18,
+          "quote": "I went straight home at six."
         }
       ],
       "persons": [
@@ -67,14 +67,14 @@
       "detector": "nli+rule",
       "sources": [
         {
-          "file": "statements/maggie_price.pdf",
-          "line": 7,
-          "quote": "Hank and I left together around 6:30."
+          "file": "access/badge_access.csv",
+          "line": 2281,
+          "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED"
         },
         {
-          "file": "access/badge_access.csv",
-          "line": 2287,
-          "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED"
+          "file": "statements/maggie_price.pdf",
+          "line": 16,
+          "quote": "Hank and I left together around 6:30."
         }
       ],
       "persons": [
@@ -88,18 +88,23 @@
       "sources": [
         {
           "file": "comms/mailbox.mbox",
-          "line": 18904,
+          "line": 5943,
           "quote": "I never touched the Titan folder."
         },
         {
           "file": "endpoint/file_audit.csv",
-          "line": 64,
+          "line": 35,
+          "quote": "2026-02-26T11:37:52-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v3.step,35957516,"
+        },
+        {
+          "file": "endpoint/file_audit.csv",
+          "line": 68,
           "quote": "2026-03-04T18:18:02-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4.step,48211968,E:"
         },
         {
           "file": "endpoint/security_log.csv",
-          "line": 39,
-          "quote": "2026-03-04T18:18:02-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe"
+          "line": 37,
+          "quote": "2026-03-04T19:37:11-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe"
         }
       ],
       "persons": [
@@ -113,7 +118,7 @@
       "sources": [
         {
           "file": "cctv/index.csv",
-          "line": 4,
+          "line": 66,
           "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,"
         }
       ],
@@ -125,14 +130,14 @@
       "detector": "nli+rule",
       "sources": [
         {
-          "file": "statements/hank_gibson.pdf",
-          "line": 11,
-          "quote": "IT gave me that drive last year."
+          "file": "endpoint/usbstor.txt",
+          "line": 13,
+          "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]"
         },
         {
-          "file": "endpoint/usbstor.txt",
-          "line": 19,
-          "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]"
+          "file": "statements/hank_gibson.pdf",
+          "line": 27,
+          "quote": "IT gave me that drive last year."
         }
       ],
       "persons": [
@@ -162,9 +167,31 @@
     "seed": 1010,
     "altered_lines": [
       17,
-      36,
+      37,
       41,
       45
+    ],
+    "changes": [
+      {
+        "line": 17,
+        "original": "2026-02-26T11:47:09-05:00,4634,LT-219,hgibson,2,,,",
+        "altered": "2026-02-26T09:25:36-05:00,4634,LT-219,hgibson,2,,,"
+      },
+      {
+        "line": 37,
+        "original": "2026-03-04T18:18:02-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe",
+        "altered": "2026-03-04T19:37:11-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe"
+      },
+      {
+        "line": 41,
+        "original": "2026-03-04T18:29:33-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,0x1,C:\\Windows\\explorer.exe",
+        "altered": "2026-03-04T19:58:39-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,0x1,C:\\Windows\\explorer.exe"
+      },
+      {
+        "line": 45,
+        "original": "2026-03-04T20:14:40-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "altered": "2026-03-04T22:00:16-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe"
+      }
     ]
   }
 }

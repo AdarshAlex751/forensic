@@ -556,6 +556,21 @@ def check_truth_quotes(ctx: Ctx) -> list[str]:
 
 
 @check
+def check_published_key(ctx: Ctx) -> list[str]:
+    """The evaluator reads data/evidence/answer_key.json (CONTRACTS.md); it must be the truth key, byte for byte.
+    Only checked for the real evidence folder (test fixtures have no published copy)."""
+    n = "check_published_key"
+    published, truth = ctx.evidence_dir / "answer_key.json", ctx.truth_dir / "answer_key.json"
+    if Path(ctx.truth_dir).resolve() != Path(world.TRUTH_DIR).resolve():
+        return []
+    if not published.is_file():
+        return [f"{n}: {published} missing (the evaluator reads this path)"]
+    if not truth.is_file() or published.read_bytes() != truth.read_bytes():
+        return [f"{n}: {published} differs from {truth}"]
+    return []
+
+
+@check
 def check_answer_key(ctx: Ctx) -> list[str]:
     n = "check_answer_key"
     p = ctx.truth_dir / "answer_key.json"
@@ -856,6 +871,9 @@ def check_badge_wifi_consistency(ctx: Ctx) -> list[str]:
     out = []
     by_badge = {p["badge"]: p["person_id"] for p in ctx.inventory if p["badge"]}
     by_mac = {p["laptop_mac"]: p["person_id"] for p in ctx.inventory if p["laptop_mac"]}
+    # The floor has no entrance reader: only people who work in a badge room (a home_room) badge to be present.
+    # Visitors without a home room (Frederik, the IT contractor) can be on the floor with Wi-Fi and no badge read.
+    no_home = {p["person_id"] for p in ctx.inventory if not p.get("home_room")}
     span: dict[tuple[str, str], list] = {}
     for _, r in ctx.rows(F_BADGE):
         pid = by_badge.get(r["badge_id"])
@@ -875,6 +893,8 @@ def check_badge_wifi_consistency(ctx: Ctx) -> list[str]:
             continue
         if pid == "p_hank" and hank_lo < t <= hank_hi:
             continue  # planted C1
+        if pid in no_home:
+            continue
         first_in, last_out = span.get((pid, t[:10]), [None, None])
         if first_in is None or last_out is None:
             out.append(f"{n}: {F_WIFI}:{ln}: {pid} on Wi-Fi at {t} but has no badge IN/OUT that day")
