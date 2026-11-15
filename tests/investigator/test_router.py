@@ -122,3 +122,12 @@ def test_stream_replays_a_finished_trace_as_sse_and_ends(client):
     events = [json.loads(line[6:]) for line in r.text.splitlines() if line.startswith("data: ")]
     assert [e["stage"] for e in events] == ["plan", "done"]
     assert {"seq", "agent", "stage", "msg", "todos"} <= set(events[0])
+
+
+def test_the_rerun_starts_from_ingest_so_released_events_land_in_events_json(monkeypatch):
+    from app import pipeline
+
+    seen = []
+    monkeypatch.setattr(pipeline, "start", lambda stage: seen.append(stage) or True)
+    assert router_mod._start_rerun() is True
+    assert seen == ["ingest"]

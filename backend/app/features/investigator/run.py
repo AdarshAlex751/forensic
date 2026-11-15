@@ -42,6 +42,10 @@ def _case_files() -> inputs.CaseFiles:
     return inputs.CaseFiles()
 
 
+def _withheld_sources() -> list[str]:
+    return inputs.withheld_sources()
+
+
 def _investigate(ctx: ToolContext, tr: Trace) -> LeadResult:
     return investigate(ctx, trace=tr)
 
@@ -82,6 +86,7 @@ def run(case_id: str) -> None:
         contradictions=verified_contradictions,
         edges=snap.edges,
         approvals=approvals,
+        requestable=_withheld_sources(),
     )
 
     if _state["baseline_events"] is None and not approvals.any_approved():

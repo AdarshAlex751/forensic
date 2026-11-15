@@ -146,3 +146,12 @@ def test_fake_evidence_mode_still_merges_baseline_and_released_extra(monkeypatch
     monkeypatch.setattr(inputs, "_real_evidence", lambda: False)
     inputs.load_inputs(include_extra=True)
     assert "events_baseline.json" in asked and "events_extra.json" in asked
+
+
+def test_withheld_sources_lists_names_only_and_tolerates_a_missing_folder(tmp_path, monkeypatch):
+    monkeypatch.setattr(inputs, "DATA_DIR", tmp_path)
+    assert inputs.withheld_sources() == []  # no extra/ folder at all
+    (tmp_path / "evidence" / "extra" / "access").mkdir(parents=True)
+    (tmp_path / "evidence" / "extra" / "access" / "parking_exit.csv").write_text("secret contents")
+    (tmp_path / "evidence" / "extra" / "notes.txt").write_text("x")
+    assert inputs.withheld_sources() == ["access/parking_exit.csv", "notes.txt"]

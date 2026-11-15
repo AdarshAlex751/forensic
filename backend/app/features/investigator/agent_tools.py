@@ -6,6 +6,7 @@ wrappers: a stub today, the real sweep-graph math later, with no change needed o
 from __future__ import annotations
 
 import logging
+import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Callable
@@ -18,6 +19,20 @@ log = logging.getLogger(__name__)
 _COMMS_TYPES = {"email", "chat", "statement"}
 _KINDS = {"badge", "mac", "email", "account", "permit", "slack", "name"}
 MAX_RESULTS = 25
+
+
+_GENERIC_WORDS = {"exit", "entry", "log", "logs", "record", "records", "csv", "txt", "json", "access", "the", "pull"}
+
+
+def _source_keywords(name: str) -> set[str]:
+    """Distinctive words of a source file name ('access/parking_exit.csv' -> {'parking'})."""
+    stem = name.rsplit("/", 1)[-1].rsplit(".", 1)[0].lower()
+    return {w for w in re.split(r"[^a-z0-9]+", stem) if len(w) >= 4 and w not in _GENERIC_WORDS}
+
+
+def _matches_a_source(ask: str, names: list[str]) -> bool:
+    text = ask.lower()
+    return any(k in text for n in names for k in _source_keywords(n))
 
 
 def _alias_forms(p: Person) -> set[str]:
@@ -63,6 +78,9 @@ class ToolContext:
     edges: list[Edge] = field(default_factory=list)
     approvals: Approvals = field(default_factory=Approvals)
     scene: Any = None  # the scene.tools module (or a stand-in); None -> imported lazily
+    # Names of withheld sources a human can release on request (from the case's extra/ folder). None = unknown, so
+    # requests are not restricted; [] = nothing more can be requested.
+    requestable: list[str] | None = None
 
 
 class AgentTools:
@@ -108,8 +126,20 @@ class AgentTools:
                 out.append({"node": ed.src, "type": ed.type, "events": ed.events})
         return {"neighbors": out}
 
+    def _still_obtainable(self) -> list[str] | None:
+        """Withheld sources not yet part of the case (a source whose events are already here cannot be requested again)."""
+        if self.ctx.requestable is None:
+            return None
+        have = {e.source.file for e in self.ctx.events}
+        return [n for n in self.ctx.requestable if n not in have]
+
     def request_evidence(self, ask: str, why: str) -> dict[str, Any]:
-        """Ask the human investigator to release more evidence. State what to pull and which hypothesis it would disprove."""
+        """Ask the human investigator to release more evidence. State what to pull and which hypothesis it would disprove.
+        Only sources that can really be released are accepted; the reply lists them if yours is not one."""
+        obtainable = self._still_obtainable()
+        if obtainable is not None and not _matches_a_source(ask, obtainable):
+            listing = ", ".join(obtainable) if obtainable else "none; the case has no further evidence to release"
+            return {"error": f"That record type cannot be obtained in this case. Obtainable sources: {listing}."}
         r = self.ctx.approvals.add_request(ask, why)
         return {"id": r["id"], "status": r["status"], "note": "Waiting for human approval; do not assume the answer."}
 

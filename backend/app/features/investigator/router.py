@@ -42,7 +42,7 @@ def release_extra(request_id: str) -> dict[str, Any]:
 def _start_rerun() -> bool:
     from app import pipeline  # lazy: pipeline imports the registry, which imports this router
 
-    return pipeline.start("extract")
+    return pipeline.start("ingest")
 
 
 @router.get("/health")

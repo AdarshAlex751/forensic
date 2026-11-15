@@ -109,3 +109,17 @@ def test_investigator_code_never_opens_the_answer_key_or_eval_file():
     pat = re.compile(r"(load|read_bytes|read_text|open)\([^)\n]*(answer_key|eval\.json)")
     offenders = [p.name for p in pkg.glob("*.py") if pat.search(p.read_text(encoding="utf-8"))]
     assert offenders == []
+
+
+def test_the_agents_are_told_which_withheld_sources_can_be_requested(env, monkeypatch):
+    seen = {}
+
+    def spy(ctx, trace):
+        seen["requestable"] = ctx.requestable
+        from app.features.investigator.lead_agent import rules_result
+        return rules_result(ctx)
+
+    monkeypatch.setattr(run_mod, "_investigate", spy)
+    monkeypatch.setattr(run_mod, "_withheld_sources", lambda: ["access/parking_exit.csv"])
+    run_mod.run("1010F")
+    assert seen["requestable"] == ["access/parking_exit.csv"]

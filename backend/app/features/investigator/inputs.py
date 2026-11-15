@@ -312,3 +312,18 @@ class CaseFiles:
         if data is not None:
             return data
         return self._read_under(self.extra_root, rel[len("extra/"):] if rel.startswith("extra/") else rel)
+
+
+def withheld_sources() -> list[str]:
+    """Names (relative paths, never contents) of the evidence the case keeps back until a human approves a request.
+
+    Lives in data/evidence/extra/. The investigator may know that such a source exists, as an investigator knows what
+    can be subpoenaed, but it cannot read it: that happens only after release, through the evidence slice."""
+    extra = DATA_DIR / "evidence" / "extra"
+    if not extra.is_dir():
+        return []
+    try:
+        return sorted(p.relative_to(extra).as_posix() for p in extra.rglob("*") if p.is_file())
+    except OSError as exc:
+        log.warning("cannot list %s (%s)", extra, exc)
+        return []
