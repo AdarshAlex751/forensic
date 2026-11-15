@@ -65,3 +65,20 @@ def test_case_files_reads_bytes_and_blocks_path_escape(case):
     assert files.read_bytes("../outside.txt") is None
     assert files.read_bytes("access/../../outside.txt") is None
     assert files.read_bytes("/etc/passwd") is None
+
+
+def test_released_extra_evidence_is_read_from_the_sibling_extra_folder(case):
+    extra = case.root.parent / "extra" / "access"
+    extra.mkdir(parents=True)
+    (extra / "parking_exit.csv").write_bytes(b"timestamp,plate\n2026-03-04T18:20:00-05:00,TX1\n")
+    files = inputs.CaseFiles(case.root)
+    assert files.read_bytes("access/parking_exit.csv").startswith(b"timestamp,plate")
+    assert files.read_bytes("extra/access/parking_exit.csv").startswith(b"timestamp,plate")
+    assert files.read_bytes("../extra/../outside.txt") is None
+
+
+def test_case_folder_file_wins_over_the_extra_folder(case):
+    extra = case.root.parent / "extra" / "access"
+    extra.mkdir(parents=True)
+    (extra / "badge_access.csv").write_bytes(b"decoy")
+    assert inputs.CaseFiles(case.root).read_bytes("access/badge_access.csv").startswith(b"timestamp")

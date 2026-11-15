@@ -267,15 +267,19 @@ def load_inputs(include_extra: bool = False) -> Inputs:
 
 
 class CaseFiles:
-    """Read-only access to the raw case folder. Paths that escape the folder are refused."""
+    """Read-only access to the raw case folder. Paths that escape the folder are refused.
 
-    def __init__(self, root: Path | None = None) -> None:
+    Released extra evidence lives in the sibling `extra/` folder (the hashed case folder is never edited), so a
+    file missing from the case folder is looked up there too; a leading `extra/` in the path is accepted.
+    """
+
+    def __init__(self, root: Path | None = None, extra_root: Path | None = None) -> None:
         self.root = Path(root) if root else DATA_DIR / "evidence" / CASE_FOLDER_NAME
+        self.extra_root = Path(extra_root) if extra_root else self.root.parent / "extra"
 
-    def read_bytes(self, rel: str) -> bytes | None:
-        if not rel or rel.startswith(("/", "\\")) or ":" in rel:
-            return None
-        root = self.root.resolve()
+    @staticmethod
+    def _read_under(base: Path, rel: str) -> bytes | None:
+        root = base.resolve()
         path = (root / rel).resolve()
         if root != path and root not in path.parents:
             return None
@@ -284,3 +288,11 @@ class CaseFiles:
         except OSError as exc:
             log.warning("cannot read %s (%s)", path, exc)
             return None
+
+    def read_bytes(self, rel: str) -> bytes | None:
+        if not rel or rel.startswith(("/", "\\")) or ":" in rel:
+            return None
+        data = self._read_under(self.root, rel)
+        if data is not None:
+            return data
+        return self._read_under(self.extra_root, rel[len("extra/"):] if rel.startswith("extra/") else rel)
