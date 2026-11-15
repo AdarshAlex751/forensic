@@ -8,7 +8,7 @@ export function DeskProps({ caption }: { caption: string }) {
     <>
       <div className="op-prop op-coffee" aria-hidden />
 
-      <svg className="op-prop" style={{ left: "6%", bottom: "13%", width: 230, transform: "rotate(-24deg)" }} viewBox="0 0 230 26" aria-hidden>
+      <svg className="op-prop" style={{ left: "calc(48px + max(40px, 4vw))", bottom: "calc(48px + max(64px, 10vh))", width: "clamp(150px, 18vw, 230px)", transform: "rotate(-24deg)" }} viewBox="0 0 230 26" aria-hidden>
         <rect x="6" y="6" width="196" height="14" rx="7" fill="#14213d" />
         <rect x="6" y="6" width="196" height="5" rx="2.5" fill="#2f4272" opacity=".7" />
         <rect x="150" y="3" width="34" height="3" rx="1.5" fill="#d9ae4f" />
@@ -17,7 +17,7 @@ export function DeskProps({ caption }: { caption: string }) {
         <path d="M220 11.4 L226 13 L220 14.6 Z" fill="#1a1a1a" />
       </svg>
 
-      <Clip style={{ left: "27%", bottom: "8%", transform: "rotate(32deg)" }} />
+      <Clip style={{ left: "27%", bottom: "calc(48px + max(36px, 4vh))", transform: "rotate(32deg)" }} />
       <Clip style={{ right: "26%", top: "9%", transform: "rotate(-58deg) scale(.9)" }} />
       <Clip style={{ right: "12%", bottom: "34%", transform: "rotate(12deg) scale(.8)" }} />
 
