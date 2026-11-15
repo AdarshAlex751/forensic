@@ -51,6 +51,9 @@ const REGENERATE_WAIT_MS = 90_000;
 const typedBefore = new Set<string>();
 const prefersReducedMotion = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// A classic double-loop paperclip, drawn as one wire (viewBox 8 8 50 64).
+const CLIP_PATH = "M50 14 V50 a18 18 0 0 1 -36 0 V26 a9 9 0 0 1 18 0 V46 a5 5 0 0 0 10 0 V30";
+
 // ---------- the letter ----------
 const MAX_EVENT_TAGS = 8;
 
@@ -219,19 +222,28 @@ export function FeedbackPage() {
     <PaperShell label="Feedback">
       <div className="fb-page">
         <div className="fb-scroll" ref={scrollRef}>
-          {fb && (
-            <header className="fb-strip">
-              <span>source: {fb.source || "unknown"}</span>
-              {fb.model && <span>model: {fb.model}</span>}
-              {fb.generated_at && <span>generated: {fb.generated_at}</span>}
-              <span>asked {fb.counts.asked}, kept {fb.counts.kept}, rejected {fb.counts.rejected}</span>
+          {fb && fb.warnings.length > 0 && (
+            <div className="fb-warnings">
               {fb.warnings.map((w, i) => (
                 <small key={i} className="fb-warn">{typeof w === "string" ? w : JSON.stringify(w)}</small>
               ))}
-            </header>
+            </div>
           )}
 
           <article className="fb-sheet paper-gold" onClick={() => ready && !done && skip()} aria-label="Questions for the investigator">
+            {/* a paperclip over the top-left edge of the sheet: decoration only, out of the layout */}
+            <svg className="fb-clip" viewBox="8 8 50 64" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="fb-clip-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#ffffff" />
+                  <stop offset="0.5" stopColor="#cfd5d9" />
+                  <stop offset="1" stopColor="#f6f8f9" />
+                </linearGradient>
+              </defs>
+              {/* a darker underlay gives the silver wire an edge against the paper, then the bright wire on top */}
+              <path d={CLIP_PATH} fill="none" stroke="#98a0a6" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d={CLIP_PATH} fill="none" stroke="url(#fb-clip-grad)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             {ready && !done && (
               <button type="button" className="fb-skip" onClick={(e) => { e.stopPropagation(); skip(); }}>
                 [skip]
