@@ -56,7 +56,7 @@ Array of event objects.
 | `id` | string | existing | `e1`, `e2`, … in sorted order. Append-only: events added later (extra evidence) get the next numbers; existing IDs never change |
 | `t` | string | existing | When it happened (rule above). For statements and emails: when the statement was given or the email sent |
 | `type` | string | existing | One value from the list in section 3.1. Nothing else ever appears |
-| `person` | string or null | existing | **Always `null` in evidence output.** *Proposed:* the merge step fills it from Person 3's `persons.json` aliases matched against `actor` (same pattern as `verified`) |
+| `person` | string or null | existing | **Always `null` in evidence output.** The merge step fills it from the `persons.json` aliases matched against `actor` (same pattern as `verified`) |
 | `device` | string or null | existing | A `device_id` from `devices.csv`: the badge reader, the Wi-Fi AP, the camera, or `lt-219` for laptop events. `null` for email, chat, statements, transactions and parking |
 | `room` | string or null | existing | A room ID from `devices.csv` (`"219"`, a string), or `null` |
 | `source` | object | existing | See section 3.2 |
@@ -222,11 +222,10 @@ real output later; when both pass, they are interchangeable.
 
 ## 11. Open items for the team
 
-1. **`person` filled by the merge step** from `persons.json` aliases (section 3). Needs a small `merge.py` change
-   (Integrator) and a yes from Person 3.
-2. **New fields** `actor`, `attrs` on events and `manifest_sha256` on evidence: Integrator adds them to
-   `schema.py` and `types.ts`.
-3. **`.gitattributes`** keeping case files byte-exact (section 2), Integrator.
+1. **`person` filled by the merge step** from `persons.json` aliases (section 3): *done*, `fill_persons` in
+   `backend/app/shared/merge.py` (an event that already has a person keeps it; an alias shared by two people stays null).
+2. **New fields** `actor`, `attrs` on events and `manifest_sha256` on evidence: *done* in `schema.py` and `types.ts`.
+3. **`.gitattributes`** keeping case files byte-exact (section 2): *done*.
 4. **`answer_key.json` shape** (section 8) replaces the current `k1`/event-ID version: Person 2 to confirm.
 
 ## 12. Parser conventions (learned while matching the generated case exactly)
