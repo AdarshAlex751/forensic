@@ -1,11 +1,12 @@
 // Mirrors backend/app/shared/schema.py (from the findings.json schema in docs/PLAN.md).
 export interface Source { file: string; line: number; quote: string; sha256: string }
 export interface CaseInfo { id: string; title: string; address: string; summary: string; costar_property_id: string; matterport_model_id: string }
-export interface Evidence { file: string; sha256: string; manifest_match: boolean; parser: string; records: number }
+export interface Evidence { file: string; sha256: string; manifest_sha256?: string | null; manifest_match: boolean; parser: string; records: number }
 export interface Person { id: string; name: string; role: string; suite: string; aliases: string[]; anomaly: number; features: Record<string, number>; community: number }
 export interface Device { id: string; type: string; room: string; sweep: string; tag_xyz: [number, number, number] }
 export interface Room { id: string; label: string; floor: number }
-export interface EventRec { id: string; t: string; type: string; person: string | null; device: string | null; room: string | null; source: Source; verified: boolean }
+export interface Actor { kind: string; value: string }
+export interface EventRec { id: string; t: string; type: string; person: string | null; device: string | null; room: string | null; actor?: Actor | null; attrs?: Record<string, unknown>; source: Source; verified: boolean }
 export interface Edge { from: string; to: string; type: string; events: string[] }
 export type ContradictionKind = "physical" | "temporal" | "statement" | "custody";
 export interface Contradiction { id: string; kind: ContradictionKind; events: string[]; score: number; explanation: string; path?: string[]; walk_s?: number; gap_s?: number }

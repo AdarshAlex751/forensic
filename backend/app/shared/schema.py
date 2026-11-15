@@ -1,7 +1,8 @@
 """Data shapes, from the findings.json schema in docs/PLAN.md.
 
 Adding a field is fine. Renaming or removing one needs the owner and the team to agree.
-Timestamps are Houston local time with offset, e.g. 2026-03-04T18:18:00-06:00 (CONTRACTS rule 7).
+Timestamps are local time of the case (Princeton, EST) with offset, e.g. 2026-03-04T18:18:00-05:00 (CONTRACTS rule 7;
+data/evidence/FORMAT.md is the reference).
 """
 from typing import Any
 
@@ -31,6 +32,7 @@ class CaseInfo(_M):
 class Evidence(_M):
     file: str
     sha256: str
+    manifest_sha256: str | None = None  # hash listed in manifest.csv; null if the manifest does not list the file
     manifest_match: bool
     parser: str
     records: int
@@ -55,6 +57,11 @@ class Device(_M):
     tag_xyz: list[float]
 
 
+class Actor(_M):
+    kind: str  # badge | mac | account | permit | ...
+    value: str
+
+
 class Event(_M):
     id: str
     t: str
@@ -62,6 +69,8 @@ class Event(_M):
     person: str | None = None
     device: str | None = None
     room: str | None = None
+    actor: Actor | None = None  # the raw identifier the source line names; resolve to a person via inventory/aliases
+    attrs: dict[str, Any] = {}  # type-specific details (see data/evidence/FORMAT.md)
     source: Source
     verified: bool = False  # set by the merge code from verification.json, never by evidence
 
