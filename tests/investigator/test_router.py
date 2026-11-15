@@ -94,8 +94,23 @@ def test_a_failed_release_can_be_retried_and_then_succeeds(client, monkeypatch):
     assert _status(client) == "approved"
 
 
-def test_release_stub_is_used_until_person_1_provides_the_function():
-    out = router_mod.release_extra.__wrapped__("r1") if hasattr(router_mod.release_extra, "__wrapped__") else router_mod.release_extra("r1")
+def test_release_calls_the_evidence_slice_function_when_it_exists(monkeypatch):
+    import sys
+    import types
+
+    seen = []
+    fake = types.ModuleType("app.features.evidence.release")
+    fake.release_extra_evidence = lambda rid: seen.append(rid) or {"released": ["access/parking_exit.csv"]}
+    monkeypatch.setitem(sys.modules, "app.features.evidence.release", fake)
+    assert router_mod.release_extra("r1") == {"released": ["access/parking_exit.csv"]}
+    assert seen == ["r1"]
+
+
+def test_release_falls_back_to_the_stub_when_the_evidence_function_is_missing(monkeypatch):
+    import sys
+
+    monkeypatch.setitem(sys.modules, "app.features.evidence.release", None)  # makes the import raise ImportError
+    out = router_mod.release_extra("r1")
     assert out["released"] == [] and out["stub"] is True
 
 

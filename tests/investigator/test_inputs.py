@@ -1,3 +1,4 @@
+import pytest
 from app.features.investigator import inputs
 
 
@@ -53,6 +54,7 @@ def test_extra_events_only_when_released(monkeypatch):
         raise FileNotFoundError(filename)
 
     monkeypatch.setattr(inputs, "_merge_load", fake_load)
+    monkeypatch.setattr(inputs, "_real_evidence", lambda: False)
     assert [e.id for e in inputs.load_inputs().events] == ["e1"]
     assert [e.id for e in inputs.load_inputs(include_extra=True).events] == ["e1", "e9"]
 
@@ -82,3 +84,65 @@ def test_case_folder_file_wins_over_the_extra_folder(case):
     extra.mkdir(parents=True)
     (extra / "badge_access.csv").write_bytes(b"decoy")
     assert inputs.CaseFiles(case.root).read_bytes("access/badge_access.csv").startswith(b"timestamp")
+
+
+@pytest.fixture()
+def tmp_path():
+    import tempfile
+    from pathlib import Path
+
+    with tempfile.TemporaryDirectory(prefix="inv-ev-") as d:
+        yield Path(d)
+
+
+def _fake_evidence_dir(tmp_path, monkeypatch, uploaded: bool):
+    ev = tmp_path / "evidence"
+    (ev / "CASE-1010F").mkdir(parents=True)
+    (ev / "CASE-1010F" / "marker.txt").write_text("builtin")
+    (ev / "extra" / "access").mkdir(parents=True)
+    (ev / "extra" / "access" / "parking_exit.csv").write_text("parking")
+    if uploaded:
+        (ev / "work" / "CASE-1010F").mkdir(parents=True)
+        (ev / "work" / "CASE-1010F" / "manifest.csv").write_text("filename,sha256\n")
+        (ev / "work" / "CASE-1010F" / "marker.txt").write_text("uploaded")
+    monkeypatch.setattr(inputs, "DATA_DIR", tmp_path)
+    return ev
+
+
+def test_default_case_folder_is_the_builtin_one(tmp_path, monkeypatch):
+    _fake_evidence_dir(tmp_path, monkeypatch, uploaded=False)
+    assert inputs.CaseFiles().read_bytes("marker.txt") == b"builtin"
+
+
+def test_an_uploaded_case_replaces_the_builtin_one_like_in_the_evidence_slice(tmp_path, monkeypatch):
+    _fake_evidence_dir(tmp_path, monkeypatch, uploaded=True)
+    assert inputs.CaseFiles().read_bytes("marker.txt") == b"uploaded"
+
+
+def test_released_extra_files_are_found_even_when_an_uploaded_case_is_active(tmp_path, monkeypatch):
+    _fake_evidence_dir(tmp_path, monkeypatch, uploaded=True)
+    assert inputs.CaseFiles().read_bytes("access/parking_exit.csv") == b"parking"
+
+
+def test_real_evidence_mode_never_loads_the_separate_baseline_or_extra_files(monkeypatch):
+    """Real events.json already holds the baseline and any released events; the separate files are fake-mode only."""
+    asked = []
+
+    def fake_load(slice_name, filename):
+        asked.append(filename)
+        if filename == "events.json":
+            return []
+        raise FileNotFoundError(filename)
+
+    monkeypatch.setattr(inputs, "_merge_load", fake_load)
+    monkeypatch.setattr(inputs, "_real_evidence", lambda: True)
+    inputs.load_inputs(include_extra=True)
+    assert "events_baseline.json" not in asked and "events_extra.json" not in asked
+
+
+def test_fake_evidence_mode_still_merges_baseline_and_released_extra(monkeypatch):
+    asked = []
+    monkeypatch.setattr(inputs, "_merge_load", lambda s, f: asked.append(f) or [])
+    monkeypatch.setattr(inputs, "_real_evidence", lambda: False)
+    inputs.load_inputs(include_extra=True)
+    assert "events_baseline.json" in asked and "events_extra.json" in asked

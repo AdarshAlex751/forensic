@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, TypeVar
 
-from app.shared.config import DATA_DIR
+from app.shared.config import DATA_DIR, use_real
 from app.shared.merge import load as _merge_load
 
 log = logging.getLogger(__name__)
@@ -239,13 +239,19 @@ class Inputs:
     extra_event_ids: list[str] = field(default_factory=list)  # events that came from released extra evidence
 
 
+def _real_evidence() -> bool:
+    return use_real("evidence")
+
+
 def load_inputs(include_extra: bool = False) -> Inputs:
     """Snapshot of everything the investigator may read. `include_extra` adds the released extra evidence
     (events_extra.json) and is true only after a human approved a request."""
     events = parse_list(_load("evidence", "events.json", []), Event, "events")
     seen = {e.id for e in events}
     extra_ids: list[str] = []
-    extra_files = ["events_baseline.json"] + (["events_extra.json"] if include_extra else [])
+    # Real evidence already merged the baseline and any released events into events.json; the separate files are
+    # fake-mode only (and merge.load would fall back to stale fakes if asked for them).
+    extra_files = [] if _real_evidence() else ["events_baseline.json"] + (["events_extra.json"] if include_extra else [])
     for name in extra_files:
         for e in parse_list(_load("evidence", name, []), Event, name):
             if e.id not in seen:  # real mode merges these into events.json already
@@ -274,8 +280,16 @@ class CaseFiles:
     """
 
     def __init__(self, root: Path | None = None, extra_root: Path | None = None) -> None:
-        self.root = Path(root) if root else DATA_DIR / "evidence" / CASE_FOLDER_NAME
-        self.extra_root = Path(extra_root) if extra_root else self.root.parent / "extra"
+        evidence = DATA_DIR / "evidence"
+        if root:
+            self.root = Path(root)
+            default_extra = self.root.parent / "extra"
+        else:
+            # Same rule as the evidence slice: an uploaded case (work/CASE-1010F) replaces the built-in one.
+            uploaded = evidence / "work" / CASE_FOLDER_NAME
+            self.root = uploaded if (uploaded / "manifest.csv").is_file() else evidence / CASE_FOLDER_NAME
+            default_extra = evidence / "extra"
+        self.extra_root = Path(extra_root) if extra_root else default_extra
 
     @staticmethod
     def _read_under(base: Path, rel: str) -> bytes | None:
