@@ -21,7 +21,7 @@ FALLBACK_FILE = Path(__file__).with_name("fallback_reply.json")   # recorded goo
 # strongest model it has. Override with FEEDBACK_MODEL in .env (e.g. qwen/qwen3.8-27b) without changing code.
 MODEL = __import__("os").environ.get("FEEDBACK_MODEL") or "openai/gpt-oss-120b"
 TEMPERATURE = 0.2
-MAX_QUESTIONS = 12
+MAX_QUESTIONS = 8                      # fewer, sharper questions (review: the weak tail came after ~8)
 # Free tier for gpt-oss-120b: 8,000 tokens per minute, counting prompt + reply cap. The chars/4 estimate undercounts
 # real tokens (~1.3x for this JSON), and the system prompt adds ~900, so the bundle budget stays well below 8,000.
 MAX_BUNDLE_TOKENS = 4000               # rough budget (chars / 4); the real case bundle floors at ~3,670 and that request fits

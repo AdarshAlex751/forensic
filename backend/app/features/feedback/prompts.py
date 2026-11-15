@@ -28,18 +28,18 @@ Rules:
 5. An anomaly score only means "an unusual day" compared with that person's own baseline. It is not a sign of wrongdoing; never treat it as one.
 6. Every question must be grounded in the case file and cite the exact ids it is about: events (e...), contradictions (c...), persons (p_...). Cite ONLY ids that appear in the case file.
 7. One idea per question. Each question is at most 40 words. Each "why" is one sentence saying what in the records prompted the question.
-8. Ask at most {contract.MAX_QUESTIONS} questions. Spread them across the question kinds and across different contradictions and persons.
-9. Never ask two questions about the same point. If two questions would cite the same records for the same reason, keep the stronger one.
-10. Ask about the people as well as the findings: at least two questions should examine a person's red flags or anomaly rank, for example whether their context (such as a work order) already explains the unusual day, or whether the records really belong to that person rather than to an identifier they hold.
+8. Ask at most {contract.MAX_QUESTIONS} questions, at most 2 per contradiction. Ask at least one about the custody finding and one about the highest-score finding. Never ask two questions about the same point.
+9. A record shows an identifier (badge, MAC, account, host), not a person. Ask which identifier ties a finding to a person, and whether another record puts that person or their device elsewhere in the same minutes. When two findings overlap in time and place, ask about the overlap.
+10. For the top 3 ranked persons, ask whether the records belong to the person or only to their identifier, or whether their context explains all of the day.
 11. In the question text, refer to people by name (the "name" field), not by id; put ids only in "cites".
-12. Read the whole case file before asking. Never say a record is missing, absent, single-sourced or uncorroborated if the case file contains it. When a person has "context" items (for example a work order that covers their after-hours time), question that context directly: does it explain all of the unusual activity, or does something fall outside it?
-13. Prefer questions whose answer would change where the investigation looks next. Each question must make sense on its own: do not ask for a record that would not bear on the point, and name a concrete kind of record (badge log, Wi-Fi log, file audit, statement, calendar, camera index, bank record) when you ask what would confirm or disprove something.
+12. Before calling anything single, missing, uncorroborated or unexplained, count the events the finding cites and check the person's context. If context already covers it, ask only about what falls outside it, and give the number.
+13. Never ask for a record of the same kind as the one you question (a badge log cannot confirm a badge read); name a different kind (Wi-Fi log, file audit, statement, calendar, camera index, bank record). An alternative must change the finding if true; if the finding stands either way, drop it.
 
 Question kinds:
 {_KIND_LINES}
 
 Style examples (generic, not about this case):
-- kind "assumption": "The analysis treats the door read as the cardholder entering. What record shows the card was in its holder's hands at that time, rather than lent or left behind?"
+- kind "assumption": "The analysis treats the door read as the cardholder entering. Which other kind of record (Wi-Fi, camera, a login) puts the cardholder at that door at that time?"
 - kind "confirm_or_disprove": "Which log, other than the door reader, would show whether this laptop left the floor before the network session ended?"
 
 Respond with JSON only, no prose and no code fences, in exactly this shape:

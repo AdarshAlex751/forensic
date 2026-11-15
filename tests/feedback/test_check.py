@@ -116,6 +116,7 @@ def test_near_duplicates_rejected():
 
 def test_cap_preserves_order(monkeypatch):
     monkeypatch.setattr(check, "MAX_PER_POINT", 10**6)   # this test is about the cap, not the same-point rule
+    monkeypatch.setattr(check, "MAX_PER_CONTRADICTION", 10**6)
     # distinct (citations, kind) per question, so only the cap applies
     qs = [q(question=f"Does record number {i} {'x' * i} match the camera feed?", kind=check.KINDS[i % len(check.KINDS)],
             cites={"contradictions": [f"c{1 + (i // 4) % 2}"], "events": [f"e{1 + i % 4}"]})
@@ -229,3 +230,60 @@ def test_regenerate_starts_without_blocking(client, monkeypatch):
     assert r.status_code == 200 and r.json() == {"started": True}
     assert elapsed < 2
     assert called.wait(2) and seen == ["1010F"]
+
+
+# ------------------------------------------------------------ review-driven content checks
+def _rich_bundle():
+    return {
+        "case": {"id": "1010F"},
+        "contradictions": [
+            {"id": "c1", "rule": "custody_mismatch", "score": 1.0, "sides": [], "events": ["e9"]},
+            {"id": "c2", "rule": "impossible_travel", "score": 1.0, "sides": [{"events": ["e1"]}, {"events": ["e2"]}],
+             "events": ["e1", "e2"]},
+            {"id": "c3", "rule": "nli", "score": 1.0, "sides": [{"events": ["e3"]}, {"events": ["e4", "e5"]}],
+             "events": ["e3", "e4", "e5"]},
+        ],
+        "persons": [{"id": "p_a"}],
+        "events": {e: {"quote": e} for e in ("e1", "e2", "e3", "e4", "e5", "e9")},
+        "sources": {"e1": {"file": "access/badge_access.csv", "line": 2}, "e2": {"file": "access/badge_access.csv", "line": 3},
+                    "e3": {"file": "comms/mailbox.mbox", "line": 9}, "e4": {"file": "endpoint/file_audit.csv", "line": 4},
+                    "e5": {"file": "endpoint/file_audit.csv", "line": 5}, "e9": {"file": "endpoint/security_log.csv", "line": 7}},
+        "untrusted_files": ["endpoint/security_log.csv"],
+    }
+
+
+def _q(question, kind="assumption", cs=("c2",), ev=("e1",), why="Prompted by the records."):
+    return {"kind": kind, "question": question, "why": why,
+            "cites": {"contradictions": list(cs), "events": list(ev), "persons": []}, "focus": None}
+
+
+def test_circular_confirmation_rejected():
+    fb = check.validate({"questions": [_q("Which badge log confirms the badge read was the holder?")]}, _rich_bundle(), now=NOW)
+    assert fb["counts"]["kept"] == 0 and "circular" in fb["rejected"][0]["reason"]
+    ok = check.validate({"questions": [_q("Which Wi-Fi record puts the holder near that badge reader then?")]},
+                        _rich_bundle(), now=NOW)
+    assert ok["counts"]["kept"] == 1
+
+
+def test_thin_claim_rejected_when_finding_has_trusted_records():
+    bad = _q("Is c3 resting on a single uncorroborated email?", kind="weak_evidence", cs=("c3",), ev=("e3",))
+    fair = _q("Does c3 compare a statement with a single kind of record?", kind="weak_evidence", cs=("c3",), ev=("e4",),
+              why="It sets one statement against file audit rows.")
+    fb = check.validate({"questions": [bad, fair]}, _rich_bundle(), now=NOW)
+    assert [r["reason"] for r in fb["rejected"]][0].startswith("calls c3 thin")
+    assert fb["counts"]["kept"] == 1
+
+
+def test_at_most_two_questions_per_contradiction():
+    texts = ["Which login places the cardholder somewhere else at the first read?",
+             "Could two different people have carried that card between the rooms?",
+             "Has anyone compared the second read with the camera index for that corridor?"]
+    qs = [_q(t, kind=k, ev=(e,)) for t, k, e in zip(texts, ("assumption", "alternative", "gap"), ("e1", "e2", "e1"))]
+    fb = check.validate({"questions": qs}, _rich_bundle(), now=NOW)
+    assert fb["counts"]["kept"] == 2 and "more than 2 questions on c2" in fb["rejected"][0]["reason"]
+
+
+def test_custody_coverage_warning():
+    fb = check.validate({"questions": [_q("What other record places the cardholder at room 219 then?", ev=("e2",))]},
+                        _rich_bundle(), now=NOW)
+    assert fb["warnings"] == ["no question about the custody finding c1"]

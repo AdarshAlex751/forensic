@@ -103,7 +103,40 @@ def _check_one(q, allowed: dict[str, set[str]], kept_tokens: list[set[str]]) -> 
     return None, norm
 
 
-MAX_PER_POINT = 2   # at most two questions (of different kinds) on an identical set of citations
+MAX_PER_POINT = 2           # at most two questions (of different kinds) on an identical set of citations
+MAX_PER_CONTRADICTION = 2   # at most two questions citing the same contradiction
+
+# Record words in a question -> the evidence file that kind of record lives in (for the circular-question check).
+_RECORD_WORDS = [
+    (re.compile(r"\bbadge\b", re.I), "access/badge_access.csv"),
+    (re.compile(r"\b(wi-?fi|network|access point)\b", re.I), "network/wifi_ap_logs.csv"),
+    (re.compile(r"\bfile[- ]audit\b", re.I), "endpoint/file_audit.csv"),
+    (re.compile(r"\bcamera\b|\bcctv\b", re.I), "cctv/index.csv"),
+    (re.compile(r"\bparking\b", re.I), "access/parking_exit.csv"),
+]
+_THIN_WORDS = re.compile(r"\b(single(?!\s+(?:kind|type)\b)|lone|only one|uncorroborated|without corroborat\w*|missing|"
+                         r"not linked)\b", re.I)   # "a single kind of record" is a fair observation, not a thin claim
+
+
+def _content_reason(q: dict, cites: dict, bundle: dict) -> str | None:
+    """Cheap checks against the case file (fresh-eyes review findings): circular confirmations, and calling a
+    finding thin or missing when it cites several trusted records."""
+    sources = bundle.get("sources") or {}
+    untrusted = set(bundle.get("untrusted_files") or [])
+    files = {(sources.get(e) or {}).get("file") for e in cites["events"]} - {None}
+    if q["kind"] in ("confirm_or_disprove", "assumption") and files:
+        named = {f for rx, f in _RECORD_WORDS if rx.search(q["question"])}
+        if len(named) == 1 and files == named:
+            return "circular: asks for the same kind of record it questions"
+    if _THIN_WORDS.search(q["question"]) or _THIN_WORDS.search(q["why"]):
+        by_id = {c.get("id"): c for c in bundle.get("contradictions") or []}
+        for cid in cites["contradictions"]:
+            c = by_id.get(cid) or {}
+            evs = [e for s in c.get("sides") or [] for e in s.get("events") or []] or c.get("events") or []
+            trusted = [e for e in evs if (sources.get(e) or {}).get("file") not in untrusted]
+            if len(trusted) >= 2 and c.get("rule") != "custody_mismatch":
+                return f"calls {cid} thin or missing, but it cites {len(trusted)} trusted records"
+    return None
 
 # Typographic punctuation models like to use -> plain ASCII, so the UI and any console show it cleanly.
 _ASCII = str.maketrans({"‐": "-", "‑": "-", "‒": "-", "–": "-", "—": "-", "−": "-",
@@ -130,6 +163,7 @@ def validate(raw: dict, bundle: dict, *, fingerprint: str | None = None, now: da
     kept: list[dict] = []
     kept_tokens: list[set[str]] = []
     per_point: dict[tuple, list[str]] = {}   # identical citations -> kinds already kept
+    per_contradiction: dict[str, int] = {}
     rejected: list[dict] = []
     for q in asked:
         text = q.get("question") if isinstance(q, dict) else None
@@ -139,16 +173,24 @@ def validate(raw: dict, bundle: dict, *, fingerprint: str | None = None, now: da
             continue
         reason, cites = _check_one(q, allowed, kept_tokens)
         if not reason:
+            reason = _content_reason(q, cites, bundle)
+        if not reason:
             point = (tuple(sorted(cites["contradictions"])), tuple(sorted(cites["events"])))
             kinds = per_point.get(point, [])
             if q["kind"] in kinds:
                 reason = "repeats the same point (same kind and citations as a kept question)"
             elif len(kinds) >= MAX_PER_POINT:
                 reason = f"more than {MAX_PER_POINT} questions on the same citations"
+            else:
+                full = [c for c in cites["contradictions"] if per_contradiction.get(c, 0) >= MAX_PER_CONTRADICTION]
+                if full:
+                    reason = f"more than {MAX_PER_CONTRADICTION} questions on {full[0]}"
         if reason:
             rejected.append({"question": text, "reason": reason})
             continue
         per_point.setdefault(point, []).append(q["kind"])
+        for c in cites["contradictions"]:
+            per_contradiction[c] = per_contradiction.get(c, 0) + 1
         question = q["question"].strip()
         quotes = []
         for eid in cites["events"][:MAX_QUOTES]:
@@ -178,7 +220,20 @@ def validate(raw: dict, bundle: dict, *, fingerprint: str | None = None, now: da
         "questions": kept,
         "rejected": rejected,
         "counts": {"asked": len(asked), "kept": len(kept), "rejected": len(rejected)},
+        "warnings": _coverage_warnings(kept, bundle),
     }
+
+
+def _coverage_warnings(kept: list[dict], bundle: dict) -> list[str]:
+    """Not a rejection: tells the reader which important findings no question touches."""
+    asked = {c for q in kept for c in q["cites"]["contradictions"]}
+    out = []
+    for c in bundle.get("contradictions") or []:
+        if c.get("id") in asked:
+            continue
+        if c.get("rule") == "custody_mismatch":
+            out.append(f"no question about the custody finding {c['id']}")
+    return out
 
 
 def write(feedback: dict, out_file: Path | None = None) -> None:
