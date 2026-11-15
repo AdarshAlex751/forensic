@@ -7,7 +7,7 @@ import { OpeningScreen } from "./features/opening/OpeningScreen";
 import { SummaryPage } from "./features/evidence/SummaryPage";
 import { InvestigatorMemo } from "./features/investigator/InvestigatorMemo";
 import { JudgeMode } from "./features/scene/JudgeMode";
-import { ScenePage } from "./features/scene/ScenePage";
+import { ScenePaperShell } from "./features/opening/ScenePaperShell";
 
 export interface PageDef {
   path: string;
@@ -19,7 +19,7 @@ export const pages: PageDef[] = [
   { path: "/", label: "Desk", component: OpeningScreen },
   // The Summary tab is intentionally hidden from the top bar (see shared/layout.tsx); the page stays reachable by URL.
   { path: "/summary", label: "Summary", component: SummaryPage },
-  { path: "/scene", label: "Scene", component: ScenePage },
+  { path: "/scene", label: "Scene", component: ScenePaperShell }, // wraps ScenePage (Person 2) in the paper skin
   { path: "/yarn", label: "Yarn board", component: YarnPage },
 ];
 

@@ -1,0 +1,531 @@
+/*
+ * Paper skin for the /scene page. Every rule is under .scene-paper so nothing leaks to other pages, and the scene
+ * components (features/scene) are untouched: this only targets the class names they already render.
+ * Selectors here are one class deeper than timeline.css, so they win without !important.
+ * Palette: walnut and amber lamp (from the opening) for chrome, ink on golden paper (paper.css) for content,
+ * stamp red for the timeline.
+ */
+
+.scene-paper {
+  --wood-0: #120a06;
+  --wood-1: #2a170e;
+  --wood-2: #3a1e10;
+  --lamp: #ffb347;
+  --lamp-deep: #a8661a;
+  --lamp-ink: #e9dcc0;
+  --paper-card: #f7f2e2;
+  --track: #cdbd96;
+  --hand: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive; /* same stack as opening.css */
+  --hand-ink: #1b1712;
+  --focus: #1b3f8f;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--paper-serif);
+}
+
+/* ---------- top bar ---------- */
+.scene-paper .sp-bar {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 46px;
+  padding: 0 clamp(14px, 2vw, 32px);
+  color: var(--lamp-ink);
+  background: linear-gradient(180deg, var(--wood-1), #1a0e08);
+  border-bottom: 3px solid var(--wood-0);
+  box-shadow: 0 2px 0 rgba(255, 179, 71, 0.28), 0 8px 18px rgba(40, 20, 5, 0.35);
+  animation: sp-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.scene-paper .sp-case {
+  font: 700 13px/1 var(--paper-type);
+  letter-spacing: 0.14em;
+  color: var(--lamp);
+}
+.scene-paper .sp-nav {
+  display: flex;
+  gap: 18px;
+}
+.scene-paper .sp-link {
+  padding: 4px 1px;
+  font: 15px/1.2 var(--paper-serif);
+  color: var(--lamp-ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.scene-paper .sp-link:hover { color: #fff1d0; }
+.scene-paper .sp-link--on {
+  color: #fff1d0;
+  border-bottom-color: var(--lamp);
+}
+.scene-paper .sp-link:focus-visible,
+.scene-paper .sp-judge button:focus-visible {
+  outline: 3px solid #fff4d6;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.scene-paper .sp-judge { margin-left: auto; }
+.scene-paper .sp-judge button {
+  font: 700 14px/1 var(--paper-serif);
+  color: var(--lamp);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Judge mode's dropdown (Person 2's component, Tailwind classes) takes the walnut look */
+.scene-paper aside[aria-label="Case evaluation"] {
+  background: var(--wood-1);
+  color: var(--lamp-ink);
+  border: 3px solid var(--wood-0);
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px var(--lamp-deep), 0 14px 30px rgba(0, 0, 0, 0.5);
+  font-family: var(--paper-serif);
+}
+.scene-paper aside[aria-label="Case evaluation"] button { color: var(--lamp); }
+
+/* ---------- page grid: header / helper / stage / timeline, no page scroll ---------- */
+.scene-paper .sp-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  padding: clamp(10px, 1.6vh, 20px) clamp(14px, 2vw, 32px) clamp(12px, 1.8vh, 22px);
+}
+.scene-paper .incident-scene {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: clamp(8px, 1.3vh, 16px);
+  color: var(--paper-ink);
+}
+.scene-paper .incident-header {
+  margin: 0;
+  animation: sp-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s backwards;
+}
+.scene-paper .incident-header h1 {
+  margin: 0;
+  font: 700 clamp(24px, 3.4vh, 34px)/1.1 var(--paper-serif);
+  color: var(--paper-ink);
+}
+.scene-paper .incident-header p {
+  margin: 4px 0 0;
+  font: 13px/1.3 var(--paper-type);
+  color: var(--paper-ink-soft);
+}
+.scene-paper .incident-mode {
+  margin: 0;
+  animation: sp-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
+}
+.scene-paper .incident-mode p {
+  margin: 0;
+  max-width: none;
+  font: 14px/1.4 var(--paper-type);
+  color: var(--paper-ink);
+}
+.scene-paper .incident-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 26vw, 400px);
+  gap: clamp(14px, 1.8vw, 28px);
+  min-height: 0;
+  min-width: 0;
+}
+
+/* ---------- buttons: thick dark border, hard offset shadow ---------- */
+.scene-paper .incident-scene button,
+.scene-paper .incident-scene select {
+  font: 700 13px/1.2 var(--paper-type);
+  color: var(--paper-ink);
+  background: var(--paper-card);
+  border: 3px solid var(--paper-ink);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--paper-ink);
+  padding: 6px 12px;
+  transition: transform 0.08s, box-shadow 0.08s, background 0.12s;
+}
+.scene-paper .incident-scene button:hover:not(:disabled) { background: #fffaea; }
+.scene-paper .incident-scene button:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--paper-ink);
+}
+.scene-paper .incident-scene button[aria-pressed="true"],
+.scene-paper .incident-scene .viewer-switch button[aria-pressed="true"] {
+  background: var(--lamp);
+  color: var(--paper-ink);
+}
+.scene-paper .incident-scene button:disabled { opacity: 0.5; box-shadow: 2px 2px 0 var(--paper-ink); }
+.scene-paper .incident-scene button:focus-visible,
+.scene-paper .incident-scene select:focus-visible,
+.scene-paper .incident-scene summary:focus-visible,
+.scene-paper .incident-scene .interactive-aerial:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ---------- left: the Matterport / aerial view in a walnut frame ---------- */
+.scene-paper .combined-viewer {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #151819;
+  border: 7px solid var(--wood-1);
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px var(--wood-0), 0 12px 28px rgba(60, 35, 8, 0.45);
+  animation: sp-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.16s backwards;
+}
+.scene-paper .viewer-switch {
+  position: static;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  background: linear-gradient(180deg, var(--wood-2), var(--wood-1));
+  border-bottom: 2px solid var(--wood-0);
+}
+.scene-paper .viewer-switch button { font-size: 12px; padding: 4px 12px; }
+/* the two wrapper <div hidden> elements around the viewers have no class, so they are reached structurally */
+.scene-paper .combined-viewer > div:not([hidden]):not(.viewer-switch) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.scene-paper .guided-tour {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.scene-paper .tour-status {
+  padding: 6px 12px;
+  background: var(--wood-1);
+  color: var(--lamp-ink);
+  font: 12px/1.3 var(--paper-type);
+}
+.scene-paper .tour-frame {
+  position: relative;
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  border: 0;
+  background: #151819;
+}
+.scene-paper .tour-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* soft inner vignette over the tour; clicks pass straight through to Matterport */
+.scene-paper .tour-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.45);
+}
+.scene-paper .tour-hint,
+.scene-paper .view-setup {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--paper-card);
+  color: var(--paper-ink);
+  font: 13px/1.4 var(--paper-type);
+  border-top: 2px solid var(--wood-0);
+}
+.scene-paper .view-setup p { margin: 6px 0; }
+.scene-paper .tour-error {
+  margin: 0;
+  padding: 8px 12px;
+  background: #f1e6cb;
+  color: #7a2a1c;
+  border-left: 5px solid var(--paper-red);
+  font: 13px/1.4 var(--paper-type);
+}
+/* aerial: same fill-the-frame treatment so the Inside / Aerial switch keeps a tidy frame */
+.scene-paper .aerial-view {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.scene-paper .aerial-view > div {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.scene-paper .aerial-controls { padding: 8px 10px; margin: 0; background: var(--wood-1); color: var(--lamp-ink); }
+.scene-paper .aerial-controls output { color: var(--lamp-ink); }
+.scene-paper .combined-viewer .interactive-aerial,
+.scene-paper .combined-viewer .satellite-map {
+  position: relative;
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+}
+.scene-paper .combined-viewer .interactive-aerial img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.scene-paper .satellite-aerial { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.scene-paper .combined-viewer .aerial-view figcaption,
+.scene-paper .satellite-caption { background: var(--wood-1); color: var(--lamp-ink); padding: 6px 10px; margin: 0; }
+
+/* ---------- right: the incident as handwriting on white lined paper ---------- */
+.scene-paper .event-slip {
+  position: relative;
+  align-self: stretch;
+  min-height: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 44px 22px 24px 58px;
+  color: var(--hand-ink);
+  font-family: var(--hand);
+  font-weight: 600;
+  background-color: #fcfbf5;
+  background-image:
+    linear-gradient(90deg, transparent 0 44px, rgba(155, 28, 20, 0.55) 44px 46px, transparent 46px),
+    repeating-linear-gradient(180deg, transparent 0 31px, rgba(100, 135, 190, 0.5) 31px 32px);
+  background-attachment: local, local;
+  background-position: 0 0, 0 12px;
+  border: 1px solid #cfc6aa;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 #fff inset, 4px 6px 0 rgba(35, 26, 17, 0.4), 0 16px 30px rgba(60, 35, 8, 0.3);
+  scrollbar-color: var(--paper-manila-edge) transparent;
+  scrollbar-width: thin;
+  animation: sp-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.24s backwards;
+}
+/* a strip of tape and a steel paperclip; both sit inside the padding so they never cover the writing */
+.scene-paper .event-slip::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 96px;
+  height: 24px;
+  margin-left: -48px;
+  background: rgba(238, 214, 140, 0.8);
+  box-shadow: 0 1px 2px rgba(60, 40, 10, 0.3);
+  transform: rotate(-2.5deg);
+  pointer-events: none;
+}
+.scene-paper .event-slip::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  width: 15px;
+  height: 36px;
+  border: 3px solid #8d959b;
+  border-radius: 9px 9px 11px 11px;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+.scene-paper .event-step {
+  margin: 0 0 6px;
+  font: 700 11px/1.4 var(--paper-type);
+  letter-spacing: 0.08em;
+  color: var(--paper-ink-soft);
+}
+.scene-paper .event-time {
+  display: inline-block;
+  margin: 0 0 4px;
+  padding: 1px 8px;
+  font: 700 14px/1.5 var(--paper-type);
+  color: var(--paper-red);
+  border: 2px solid var(--paper-red);
+  border-radius: 3px;
+  transform: rotate(-2deg);
+}
+.scene-paper .event-slip h2 {
+  margin: 10px 0 12px;
+  font: 700 28px/32px var(--hand);
+  color: var(--hand-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--paper-red); /* red-ink underline on the selected incident */
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+.scene-paper .room-badge,
+.scene-paper .note-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  font: 700 12px/1.4 var(--paper-type);
+  color: var(--paper-ink);
+  background: transparent;
+  border: 2px solid var(--paper-ink);
+  border-radius: 3px;
+}
+.scene-paper .room-badge { color: var(--paper-red); border-color: var(--paper-red); }
+.scene-paper .event-slip p,
+.scene-paper .event-slip .event-summary {
+  margin: 0 0 12px;
+  font: 600 19px/32px var(--hand);
+  color: var(--hand-ink);
+}
+.scene-paper .event-facts { margin: 8px 0 12px; gap: 0; }
+.scene-paper .event-facts dt {
+  font: 700 11px/1.4 var(--paper-type);
+  letter-spacing: 0.06em;
+  color: var(--paper-ink-soft);
+  margin: 0;
+}
+.scene-paper .event-facts dd { margin: 0 0 6px; font: 600 19px/26px var(--hand); color: var(--hand-ink); }
+.scene-paper .event-slip .event-context {
+  font: 600 17px/28px var(--hand);
+  color: var(--hand-ink);
+  border-left: 3px solid var(--paper-red);
+  padding-left: 12px;
+}
+.scene-paper .preview-source,
+.scene-paper .walk-note {
+  font: 600 15px/24px var(--hand) !important;
+  color: var(--hand-ink);
+  border-top: 2px dashed var(--paper-ink-soft);
+}
+.scene-paper .event-source { border-top: 2px dashed var(--paper-ink-soft); }
+.scene-paper .event-source summary { font: 700 14px/1.4 var(--paper-type); color: var(--paper-ink); cursor: pointer; }
+.scene-paper .event-source h3 { font: 700 11px/1.4 var(--paper-type); color: var(--paper-ink-soft); }
+.scene-paper .event-source .source-state,
+.scene-paper .event-source code { font: 12px/1.5 var(--paper-type); color: var(--paper-ink); }
+.scene-paper .event-source pre {
+  font: 12px/1.5 var(--paper-type);
+  color: var(--paper-ink);
+  background: #f1e6cb;
+  border: 1px solid #c7ad66;
+}
+
+/* ---------- timeline: a red slider along the bottom ---------- */
+.scene-paper .incident-timeline {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  overflow: visible;
+  padding: 10px 16px 6px;
+  color: var(--paper-ink);
+  background: var(--paper-card);
+  border: 3px solid var(--paper-ink);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--paper-ink);
+  animation: sp-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.32s backwards;
+}
+.scene-paper .timeline-heading { margin: 0 0 2px; font: 700 13px/1.3 var(--paper-type); color: var(--paper-ink); }
+.scene-paper .timeline-heading small { font-weight: 400; color: var(--paper-ink-soft); }
+.scene-paper .event-markers {
+  gap: 0;
+  padding: 2px 2px 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: var(--paper-red) transparent;
+  scrollbar-width: thin;
+}
+.scene-paper .event-markers button {
+  position: relative;
+  flex: 1 0 100px;
+  min-height: 92px;
+  padding: 6px 4px 2px;
+  gap: 6px;
+  font: 12px/1.25 var(--paper-type);
+  color: var(--paper-ink);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.scene-paper .event-markers button:hover:not(:disabled) { background: rgba(155, 28, 20, 0.07); }
+.scene-paper .event-markers button:active:not(:disabled) { transform: none; box-shadow: none; }
+.scene-paper .event-markers button[aria-pressed="true"] { background: rgba(155, 28, 20, 0.1); color: var(--paper-red-deep); }
+.scene-paper .event-markers button:focus-visible { outline-offset: -3px; }
+/* the track: each button draws its own segment; thick, with the red fill up to the selected stop */
+.scene-paper .event-markers button::before {
+  top: 33px;
+  height: 8px;
+  background: var(--track);
+  box-shadow: inset 0 0 0 1px rgba(35, 26, 17, 0.55);
+}
+.scene-paper .event-markers button:has(~ button[aria-pressed="true"])::before { background: var(--paper-red); }
+.scene-paper .event-markers button[aria-pressed="true"]::before {
+  background: linear-gradient(90deg, var(--paper-red) 50%, var(--track) 50%);
+}
+.scene-paper .event-markers button:first-child[aria-pressed="true"]::before { background: var(--track); }
+.scene-paper .event-markers button:last-child[aria-pressed="true"]::before { background: var(--paper-red); }
+/* the round thumb */
+.scene-paper .event-markers .timeline-node {
+  width: 20px;
+  height: 20px;
+  border: 4px solid var(--paper-ink);
+  background: var(--paper-card);
+}
+.scene-paper .event-markers button:hover .timeline-node { background: #e6b0a8; }
+.scene-paper .event-markers button[aria-pressed="true"] .timeline-node {
+  background: var(--paper-red);
+  border-color: var(--paper-ink);
+  box-shadow: 0 0 0 4px rgba(155, 28, 20, 0.28);
+}
+.scene-paper .event-markers time { font: 700 13px/16px var(--paper-type); color: var(--paper-ink); }
+.scene-paper .event-markers span:not(.timeline-node) { max-width: 120px; font: 12px/1.25 var(--paper-type); color: inherit; }
+.scene-paper .event-markers small { font: 11px/1.2 var(--paper-type); opacity: 1; color: var(--paper-ink-soft); }
+
+/* ---------- arrival: the pieces slide in on top of the paper ---------- */
+@keyframes sp-in {
+  from { opacity: 0; transform: translateY(14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-paper .sp-bar,
+  .scene-paper .incident-header,
+  .scene-paper .incident-mode,
+  .scene-paper .combined-viewer,
+  .scene-paper .event-slip,
+  .scene-paper .incident-timeline { animation: none; }
+  .scene-paper .incident-scene button { transition: none; }
+}
+
+/* ---------- laptop heights: tighten without hiding anything ---------- */
+@media (max-height: 820px) {
+  .scene-paper .incident-header p { margin-top: 2px; font-size: 12px; }
+  .scene-paper .incident-mode p { font-size: 13px; }
+  .scene-paper .event-markers button { min-height: 80px; }
+  .scene-paper .event-markers button::before { top: 29px; }
+  .scene-paper .event-markers .timeline-node { width: 18px; height: 18px; }
+  .scene-paper .event-slip { padding-top: 40px; }
+  .scene-paper .event-slip h2 { font-size: 25px; }
+  .scene-paper .event-slip p, .scene-paper .event-slip .event-summary { font-size: 18px; }
+}
+
+/* ---------- narrow screens: stack and scroll inside the shell ---------- */
+@media (max-width: 900px) {
+  .scene-paper .sp-body { display: block; overflow-y: auto; }
+  .scene-paper .incident-scene { height: auto; min-height: 0; grid-template-rows: none; }
+  .scene-paper .combined-viewer { height: 62vh; }
+  .scene-paper .event-slip { min-height: 340px; }
+  .scene-paper .incident-stage { grid-template-columns: 1fr; }
+  .scene-paper .event-slip { max-height: none; }
+}
