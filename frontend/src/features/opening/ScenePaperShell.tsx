@@ -10,6 +10,7 @@ const NAV = [
   { to: "/", label: "Desk" },
   { to: "/scene", label: "Scene" },
   { to: "/yarn", label: "Yarn board" },
+  { to: "/memo", label: "Investigator memo" },
 ];
 
 // Route "/scene". A full-screen layer on the same golden paper the opening zoom lands on, so the handover from the

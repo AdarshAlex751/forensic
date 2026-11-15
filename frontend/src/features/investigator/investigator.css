@@ -777,14 +777,3 @@
 .inv-report ol.inv-footnotes {
   padding-left: 2rem;
 }
-
-/* ---------- The memo as a page of its own ---------- */
-.inv-page {
-  display: flex;
-  justify-content: center;
-}
-.inv-page .inv-memo {
-  margin-top: 0;
-  max-width: 46rem;
-  max-height: calc(100vh - 7.5rem); /* shared header + the page's own padding, so the page itself does not scroll */
-}

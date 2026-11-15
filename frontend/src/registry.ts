@@ -21,6 +21,7 @@ export const pages: PageDef[] = [
   { path: "/summary", label: "Summary", component: SummaryPage },
   { path: "/scene", label: "Scene", component: ScenePaperShell }, // wraps ScenePage (Person 2) in the paper skin
   { path: "/yarn", label: "Yarn board", component: YarnPage },
+  { path: "/memo", label: "Investigator memo", component: InvestigatorMemo },
 ];
 
 // Slots: screens that combine two people's work. Pages render <Slot name="..." />.
