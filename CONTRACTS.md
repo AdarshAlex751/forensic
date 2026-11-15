@@ -104,6 +104,16 @@ The skeleton registers these placeholders on day one. People replace the compone
 ## Rules that prevent conflicts
 1. Nobody edits files in another person's folders. Need a change? Message that person.
 2. Imports: only from your own folder and from shared/. Never from another person's folder.
+   Exceptions approved by the Integrator (nothing else crosses folders):
+   - Backend, investigator -> evidence: `features/investigator/router.py` calls Person 1's
+     `release_extra_evidence(request_id)` from `app.features.evidence.release`, a lazy import with a stub fallback when the
+     module is missing (the HTTP equivalent is `POST /api/evidence/release/{id}`). Approving a request releases the
+     withheld evidence, then reruns the pipeline from `ingest`.
+   - Backend, investigator -> scene: `features/investigator/agent_tools.py` calls `walk_time`, `ap_covers` and
+     `camera_sees` from `app.features.scene.tools`, only through its guarded wrappers.
+   - Frontend: `features/opening/ScenePaperShell.tsx` renders Person 2's `ScenePage` inside the shared `PaperShell`;
+     `features/casepages/*` (Red flags, Contradictions, Memo) use `PaperShell` from `features/opening` and
+     `InvestigatorMemo` from `features/investigator`.
 3. Each slice has run.py with run(case_id). That is the only thing pipeline.py calls.
 4. One output file per section (listed above). Nobody writes into someone else's JSON.
 5. Fake data lives inside each owner's own data folder (data/<slice>/fake/). Build against other people's fakes until
@@ -128,6 +138,11 @@ The skeleton registers these placeholders on day one. People replace the compone
 13. Secrets go in .env (never committed). New variable names go to the Integrator for .env.example.
 14. Need a shared-file change? Message the Integrator. If there is no reply in 15 minutes, make a tiny separate commit
     on main for that change only, then tell the team.
+
+## Pipeline order
+`registry.py` runs the slices in this order: evidence, scene, analysis, investigator. Each slice reads the files the
+earlier ones wrote, so the approve route reruns from `ingest` and released evidence flows through every stage. A
+feedback stage will be added last, after the investigator; it does not exist yet.
 
 ## Git rules
 - One branch per person: feat/evidence, feat/scene, feat/analysis, feat/investigator.
