@@ -148,7 +148,7 @@ export function InvestigatorMemo() {
             <dt>Re:</dt>
             <dd>{findings.case.title}</dd>
             <dt>File:</dt>
-            <dd>{findings.case.id}</dd>
+            <dd>Princeton Files</dd>
           </dl>
         </div>
         <button type="button" className="inv-btn" onClick={() => setShowReport(true)} aria-haspopup="dialog">

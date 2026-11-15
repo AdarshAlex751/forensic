@@ -101,7 +101,7 @@ export function CaseReport({ findings, onClose, closeRef }: CaseReportProps) {
 
       <article className="inv-report" aria-labelledby="inv-report-title">
         <header>
-          <p className="inv-report-meta">Case {findings.case.id}</p>
+          <p className="inv-report-meta">Princeton Files</p>
           <h1 id="inv-report-title">{findings.case.title}</h1>
           <p className="inv-report-meta">{findings.case.address}</p>
           <p>{findings.case.summary}</p>

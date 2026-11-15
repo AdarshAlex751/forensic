@@ -85,7 +85,7 @@ function buildLetter(fb: FeedbackData, nameOf: (personId: string) => string): Bl
   });
 
   blocks.push({ id: "bye", cls: "fb-sign", parts: [{ text: "Most sincerely," }] });
-  blocks.push({ id: "desk", cls: "fb-sign", parts: [{ text: `Case ${fb.case_id} Feedback Desk` }] });
+  blocks.push({ id: "desk", cls: "fb-sign", parts: [{ text: "Princeton Files Feedback Desk" }] });
   return blocks;
 }
 

@@ -1,14 +1,18 @@
 import { motion } from "framer-motion";
 
 interface Props {
-  caseId: string | null;
   title: string | null;
   open: boolean;
   reduce: boolean;
 }
 
 // Closed manila folder. The front cover swings open on its left edge to show the papers inside.
-export function CaseFolder({ caseId, title, open, reduce }: Props) {
+// The app's name, not the case code, is what the folder shows. A file name that carries the case code
+// ("CASE-1010F.zip") is shown with the code replaced by the app's name.
+const APP_NAME = "Princeton Files";
+const displayTitle = (t: string) => t.replace(/\bcase[\s_#-]+[0-9a-z]+/gi, APP_NAME);
+
+export function CaseFolder({ title, open, reduce }: Props) {
   return (
     <div className="op-folder">
       <div className="op-folder__back" />
@@ -38,8 +42,8 @@ export function CaseFolder({ caseId, title, open, reduce }: Props) {
       >
         <div className="op-face op-face--front">
           <div className="op-label">
-            {caseId ? <p className="op-label__case">CASE {caseId}</p> : <p className="op-label__case">CASE</p>}
-            {title ? <p className="op-label__title">{title}</p> : <span className="op-label__skeleton" aria-hidden />}
+            <p className="op-label__case">{APP_NAME}</p>
+            {title ? <p className="op-label__title">{displayTitle(title)}</p> : <span className="op-label__skeleton" aria-hidden />}
           </div>
         </div>
         <div className="op-face op-face--inside" />

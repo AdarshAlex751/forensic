@@ -200,7 +200,7 @@ export function OpeningScreen() {
 
         <Layer depth={18} mx={mx} my={my}>
           <motion.div style={{ position: "absolute", inset: 0 }} {...intro(0.5, 0)}>
-            <DeskProps caption={source.kind === "ready" ? `Case ${source.caseId}` : ""} />
+            <DeskProps caption={source.kind === "ready" ? "Princeton Files" : ""} />
           </motion.div>
         </Layer>
 
@@ -259,7 +259,7 @@ export function OpeningScreen() {
                         transition={reduce ? { duration: 0.2 } : DROP_TIMING}
                         exit={{ opacity: 0, y: 24, transition: { duration: reduce ? 0 : 0.3 } }}
                       >
-                        <CaseFolder caseId={source.caseId} title={source.filename} open={isOpen} reduce={reduce} />
+                        <CaseFolder title={source.filename} open={isOpen} reduce={reduce} />
                       </motion.div>
                     )}
                   </AnimatePresence>
