@@ -30,7 +30,7 @@ export function ScenePage() {
       <div><h1>The Titan Files</h1><p>Rabinowitz Hall / March 4, 2026 / EST (-05:00)</p></div>
       <button aria-pressed={setup} onClick={()=>{setInside(true);setSetup(!setup);}}>{setup ? "Return to timeline" : "Set up views"}</button>
     </header>
-    <div className="incident-mode"><strong>{entries.length} of 15 key incidents</strong><p>Every stop links to a source record from the case data. Select a timestamp to explore.</p></div>
+    <div className="incident-mode"><p>Select a timestamp to explore where an incident occurred.</p></div>
     <div className="incident-stage">
       <section className="combined-viewer" aria-label="Building viewer">
         <div className="viewer-switch" aria-label="Viewer mode">
