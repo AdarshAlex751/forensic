@@ -1,7 +1,7 @@
-"""Every story event's quote must appear verbatim on the cited line of the real raw case file.
+"""Every real event's quote must appear verbatim on the cited line of the real raw case file.
 
-Reads data/evidence/fake/events.json (the 75 story events) and data/evidence/CASE-1010F/ (read-only). It does not read
-events_baseline.json. If a quote does not match, this test reports file, line, expected quote and found text; it never
+Reads data/evidence/events.json (Person 1's real ingest) and data/evidence/CASE-1010F/ (read-only), plus extra/ for
+released evidence. If a quote does not match, this test reports file, line, expected quote and found text; it never
 edits another person's file. PDFs use pdfplumber extract_text() lines, all pages joined by a newline (FORMAT.md).
 """
 import io
@@ -12,13 +12,16 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 CASE = ROOT / "data" / "evidence" / "CASE-1010F"
-EVENTS = ROOT / "data" / "evidence" / "fake" / "events.json"
+EVENTS = ROOT / "data" / "evidence" / "events.json"
+EXTRA = ROOT / "data" / "evidence" / "extra"
 
-pytestmark = pytest.mark.skipif(not CASE.is_dir(), reason="raw case files (data/evidence/CASE-1010F) not present")
+pytestmark = pytest.mark.skipif(not (CASE.is_dir() and EVENTS.is_file()), reason="raw case files or real events.json not present")
 
 
 def _lines(rel: str) -> list[str] | None:
     path = CASE / rel
+    if not path.is_file():
+        path = EXTRA / rel  # released extra evidence is never copied into the case folder
     if not path.is_file():
         return None
     data = path.read_bytes()
@@ -30,15 +33,9 @@ def _lines(rel: str) -> list[str] | None:
     return data.decode("utf-8").split("\n")  # not splitlines(): that also splits on odd unicode separators
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="data/evidence/fake/events.json was written against the earlier mini files: most quotes are in the real "
-    "files on other lines, some are not there at all. Run with -rx to list them. Remove this mark once Person 1 "
-    "regenerates the fakes (strict: it fails the suite the moment the quotes all match, as a reminder).",
-)
-def test_every_story_event_quote_is_on_its_cited_line_of_the_raw_file():
+def test_every_event_quote_is_on_its_cited_line_of_the_raw_file():
     events = json.loads(EVENTS.read_text(encoding="utf-8"))
-    assert events, "no story events found"
+    assert events, "no events found"
     cache: dict[str, list[str] | None] = {}
     problems: list[str] = []
     for e in events:
