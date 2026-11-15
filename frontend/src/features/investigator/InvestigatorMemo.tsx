@@ -8,6 +8,7 @@ import { EvidenceRequestCard } from "./EvidenceRequestCard";
 import { HypothesisBar } from "./HypothesisBar";
 import { VerifiedCounter } from "./VerifiedCounter";
 import { useAgentTrace } from "./useAgentTrace";
+import { genericTodos, genericTrace, withGenericNames } from "./generic";
 import "./investigator.css";
 
 const NOTE_GROUPS: { kind: Note["kind"]; title: string; className: string }[] = [
@@ -74,8 +75,10 @@ export function InvestigatorMemo() {
   const trace = useAgentTrace();
 
   const [showReport, setShowReport] = useState(false);
+  const genericEvents = useMemo(() => genericTrace(trace.events), [trace.events]);
+  const genericPlan = useMemo(() => genericTodos(trace.todos), [trace.todos]);
 
-  const findings: Findings | null = initial.data;
+  const findings: Findings | null = useMemo(() => (initial.data ? withGenericNames(initial.data) : null), [initial.data]);
   const requests = useMemo(() => (findings ? distinctRequests(findings.requests) : []), [findings]);
 
   const hypotheses = useMemo(
@@ -195,7 +198,7 @@ export function InvestigatorMemo() {
         <h3 id="inv-h-trace" className="inv-section-title">
           Agent activity
         </h3>
-        <AgentTrace events={trace.events} todos={trace.todos} status={trace.status} />
+        <AgentTrace events={genericEvents} todos={genericPlan} status={trace.status} />
       </section>
 
       {showReport && <ReportDialog findings={findings} onClose={closeReport} />}
