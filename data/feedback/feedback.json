@@ -1,0 +1,349 @@
+{
+  "case_id": "1010F",
+  "generated_at": "2026-11-15T03:29:30-05:00",
+  "source": "groq",
+  "model": "openai/gpt-oss-120b",
+  "input_fingerprint": "5a2003c3ae88b85440926065a6544221ca4c291d8c792ad33b0f26be852d1d71",
+  "questions": [
+    {
+      "id": "q1",
+      "kind": "assumption",
+      "kind_label": "Question the assumption",
+      "question": "What badge system log confirms that the badge read at 6:16:10 pm in room 230 was physically presented by Rina Okafor, rather than a shared or misplaced badge?",
+      "why": "The analysis treats the badge read as Rina being present, but badge use may not guarantee holder presence.",
+      "cites": {
+        "events": [
+          "e9507"
+        ],
+        "contradictions": [
+          "c2"
+        ],
+        "persons": [
+          "p_bg_17"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9507",
+          "file": "access/badge_access.csv",
+          "line": 2298,
+          "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED"
+        }
+      ],
+      "focus": "p_bg_17"
+    },
+    {
+      "id": "q2",
+      "kind": "alternative",
+      "kind_label": "Consider an alternative",
+      "question": "Could the Wi-Fi disassociation at 6:41 pm (e9544) be explained by the laptop automatically disconnecting after idle, rather than indicating continued presence of Hank Gibson?",
+      "why": "The contradiction c3 assumes the Wi-Fi event shows Hank stayed after badge out.",
+      "cites": {
+        "events": [
+          "e9544",
+          "e9485"
+        ],
+        "contradictions": [
+          "c3"
+        ],
+        "persons": [
+          "p_hank"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9544",
+          "file": "network/wifi_ap_logs.csv",
+          "line": 5451,
+          "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
+        },
+        {
+          "event": "e9485",
+          "file": "access/badge_access.csv",
+          "line": 2289,
+          "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED"
+        }
+      ],
+      "focus": "p_hank"
+    },
+    {
+      "id": "q3",
+      "kind": "confirm_or_disprove",
+      "kind_label": "What would confirm or disprove it",
+      "question": "Which network authentication log would verify whether the device associated with Hank Gibson's MAC address was still on the network after 6:41 pm?",
+      "why": "To confirm or disprove the implication of c3 that the laptop remained active.",
+      "cites": {
+        "events": [
+          "e9544"
+        ],
+        "contradictions": [
+          "c3"
+        ],
+        "persons": [
+          "p_hank"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9544",
+          "file": "network/wifi_ap_logs.csv",
+          "line": 5451,
+          "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
+        }
+      ],
+      "focus": "p_hank"
+    },
+    {
+      "id": "q4",
+      "kind": "weak_evidence",
+      "kind_label": "Weak or tainted evidence",
+      "question": "How reliable is the statement event e12051 that Hank never touched the Titan folder, given it is a single email entry without corroborating logs?",
+      "why": "The NLI contradiction c8 relies on a single statement versus multiple file accesses.",
+      "cites": {
+        "events": [
+          "e12051",
+          "e9533",
+          "e9532"
+        ],
+        "contradictions": [
+          "c8"
+        ],
+        "persons": [
+          "p_hank"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e12051",
+          "file": "comms/mailbox.mbox",
+          "line": 5943,
+          "quote": "I never touched the Titan folder."
+        },
+        {
+          "event": "e9533",
+          "file": "endpoint/file_audit.csv",
+          "line": 76,
+          "quote": "2026-03-04T18:29:33-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,E:"
+        },
+        {
+          "event": "e9532",
+          "file": "endpoint/file_audit.csv",
+          "line": 75,
+          "quote": "2026-03-04T18:29:30-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,"
+        }
+      ],
+      "focus": "p_hank"
+    },
+    {
+      "id": "q5",
+      "kind": "gap",
+      "kind_label": "Gap",
+      "question": "Is there a maintenance work order covering the camera offline period (e9490-e9535) that was not linked in the case file?",
+      "why": "c4 notes a camera gap without a work order, but a missing work order could explain it.",
+      "cites": {
+        "events": [
+          "e9490",
+          "e9535"
+        ],
+        "contradictions": [
+          "c4"
+        ],
+        "persons": []
+      },
+      "quotes": [
+        {
+          "event": "e9490",
+          "file": "cctv/index.csv",
+          "line": 66,
+          "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,"
+        },
+        {
+          "event": "e9535",
+          "file": "cctv/index.csv",
+          "line": 66,
+          "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,"
+        }
+      ],
+      "focus": null
+    },
+    {
+      "id": "q6",
+      "kind": "assumption",
+      "kind_label": "Question the assumption",
+      "question": "What physical access control record would show that Maggie Price's badge out at 5:45 pm (e9464) was the final entry for her that day?",
+      "why": "c6 assumes no later badge reads, but other access points might exist.",
+      "cites": {
+        "events": [
+          "e9464"
+        ],
+        "contradictions": [
+          "c6"
+        ],
+        "persons": [
+          "p_maggie"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9464",
+          "file": "access/badge_access.csv",
+          "line": 2281,
+          "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED"
+        }
+      ],
+      "focus": "p_maggie"
+    },
+    {
+      "id": "q7",
+      "kind": "alternative",
+      "kind_label": "Consider an alternative",
+      "question": "Could the USB mount event e9510 be a system-initiated enumeration rather than a user-initiated action by Hank Gibson?",
+      "why": "c7 treats the USB mount as evidence of the drive's presence, but system processes might mount devices automatically.",
+      "cites": {
+        "events": [
+          "e9510",
+          "e12087"
+        ],
+        "contradictions": [
+          "c7"
+        ],
+        "persons": [
+          "p_hank"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9510",
+          "file": "endpoint/usbstor.txt",
+          "line": 13,
+          "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]"
+        },
+        {
+          "event": "e12087",
+          "file": "statements/hank_gibson.pdf",
+          "line": 27,
+          "quote": "IT gave me that drive last year."
+        }
+      ],
+      "focus": "p_hank"
+    },
+    {
+      "id": "q8",
+      "kind": "confirm_or_disprove",
+      "kind_label": "What would confirm or disprove it",
+      "question": "Which badge-in log for room 219 around 6:16 pm would confirm whether Rina Okafor entered that room after the rapid badge-in at 6:16:40 pm?",
+      "why": "To test the impossibility claim in c2 by checking subsequent presence.",
+      "cites": {
+        "events": [
+          "e9508"
+        ],
+        "contradictions": [
+          "c2"
+        ],
+        "persons": [
+          "p_bg_17"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9508",
+          "file": "access/badge_access.csv",
+          "line": 2299,
+          "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED"
+        }
+      ],
+      "focus": "p_bg_17"
+    },
+    {
+      "id": "q9",
+      "kind": "gap",
+      "kind_label": "Gap",
+      "question": "Are there any shift schedule records for Hank Gibson that could contextualize his after-hours badge out at 6:02 pm?",
+      "why": "His anomaly rank is high; schedule context might explain activity.",
+      "cites": {
+        "events": [
+          "e9485"
+        ],
+        "contradictions": [
+          "c3",
+          "c5"
+        ],
+        "persons": [
+          "p_hank"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9485",
+          "file": "access/badge_access.csv",
+          "line": 2289,
+          "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED"
+        }
+      ],
+      "focus": "p_hank"
+    },
+    {
+      "id": "q10",
+      "kind": "weak_evidence",
+      "kind_label": "Weak or tainted evidence",
+      "question": "Does the single badge-in event e8258 for Rina Okafor on the morning of 2026-03-04 provide enough baseline to assess her after-hours anomaly?",
+      "why": "Her red flag cites after-hours activity, but baseline may be limited.",
+      "cites": {
+        "events": [
+          "e8258"
+        ],
+        "contradictions": [],
+        "persons": [
+          "p_bg_17"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e8258",
+          "file": "access/badge_access.csv",
+          "line": 1981,
+          "quote": "2026-03-04T08:32:50-05:00,40417,rdr-217,IN,GRANTED"
+        }
+      ],
+      "focus": "p_bg_17"
+    },
+    {
+      "id": "q11",
+      "kind": "alternative",
+      "kind_label": "Consider an alternative",
+      "question": "Might the 152 minutes after-hours badge activity for Frederik Mendelssohn (e9551) be part of the documented maintenance window (e9553) rather than unauthorized presence?",
+      "why": "His red flags could be explained by scheduled work.",
+      "cites": {
+        "events": [
+          "e9551",
+          "e9553"
+        ],
+        "contradictions": [],
+        "persons": [
+          "p_frederik"
+        ]
+      },
+      "quotes": [
+        {
+          "event": "e9551",
+          "file": "access/badge_access.csv",
+          "line": 2312,
+          "quote": "2026-03-04T18:58:40-05:00,40455,rdr-219,IN,GRANTED"
+        },
+        {
+          "event": "e9553",
+          "file": "it/maintenance_calendar.csv",
+          "line": 19,
+          "quote": "WO-3117,lt-219,2026-03-04T19:00:00-05:00,2026-03-04T21:30:00-05:00,Frederik Mendelssohn,Monthly security patching (offline media)"
+        }
+      ],
+      "focus": "p_frederik"
+    }
+  ],
+  "rejected": [],
+  "counts": {
+    "asked": 11,
+    "kept": 11,
+    "rejected": 0
+  }
+}

@@ -1,0 +1,2 @@
+# Feedback slice (Person 1): Groq critic
+langchain-groq
