@@ -277,8 +277,8 @@ def load_inputs(include_extra: bool = False) -> Inputs:
 class CaseFiles:
     """Read-only access to the raw case folder. Paths that escape the folder are refused.
 
-    Released extra evidence lives in the sibling `extra/` folder (the hashed case folder is never edited), so a
-    file missing from the case folder is looked up there too; a leading `extra/` in the path is accepted.
+    Extra evidence uploaded after a request lives in data/evidence/work/extra/ (the hashed case folder is never edited),
+    so a file missing from the case folder is looked up there too; a leading `extra/` in the path is accepted.
     """
 
     def __init__(self, root: Path | None = None, extra_root: Path | None = None) -> None:
@@ -290,7 +290,7 @@ class CaseFiles:
             # Same rule as the evidence slice: an uploaded case (work/CASE-1010F) replaces the built-in one.
             uploaded = evidence / "work" / CASE_FOLDER_NAME
             self.root = uploaded if (uploaded / "manifest.csv").is_file() else evidence / CASE_FOLDER_NAME
-            default_extra = evidence / "extra"
+            default_extra = evidence / "work" / "extra"  # where the evidence slice saves uploaded extra evidence
         self.extra_root = Path(extra_root) if extra_root else default_extra
 
     @staticmethod

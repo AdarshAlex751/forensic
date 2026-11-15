@@ -4,6 +4,7 @@ from __future__ import annotations
 import shutil
 import stat
 import tempfile
+import time
 import uuid
 import zipfile
 from pathlib import Path, PurePosixPath
@@ -96,17 +97,35 @@ def _extract(zf: zipfile.ZipFile, files: list[zipfile.ZipInfo], dest: Path) -> N
             shutil.copyfileobj(src, out, CHUNK)
 
 
+def _rename_retry(src: Path, dst: Path, tries: int = 20, wait: float = 0.25) -> None:
+    """Rename, retrying while Windows briefly locks freshly written files (antivirus scan, Explorer, indexer)."""
+    for i in range(tries):
+        try:
+            src.rename(dst)
+            return
+        except PermissionError:
+            if i == tries - 1:
+                raise
+            time.sleep(wait)
+
+
 def _swap_in(new_dir: Path, final: Path) -> None:
     """Replace final with new_dir (rename old aside first; Windows cannot replace a directory)."""
     old = None
     if final.exists():
         old = final.with_name(f".old-{uuid.uuid4().hex}")
-        final.rename(old)
+        _rename_retry(final, old)
     try:
-        new_dir.rename(final)
+        try:
+            _rename_retry(new_dir, final)
+        except PermissionError:
+            # Still locked after retries: copy instead of moving (the staging copy is removed by the caller).
+            shutil.copytree(new_dir, final)
     except OSError:
         if old is not None:
-            old.rename(final)
+            if final.exists():
+                shutil.rmtree(final, ignore_errors=True)
+            _rename_retry(old, final)
         raise
     if old is not None:
         shutil.rmtree(old, ignore_errors=True)
@@ -145,6 +164,7 @@ def upload(file: UploadFile) -> dict:
         shutil.rmtree(staging, ignore_errors=True)
 
     release.reset_released()  # a new case starts with nothing released
+    release.clear_uploaded_evidence()
     started = _start_pipeline()
     case_id = top[5:] if top.upper().startswith("CASE-") else top
     return {
@@ -153,7 +173,7 @@ def upload(file: UploadFile) -> dict:
         "files": len(files),
         "case_dir": paths.UPLOADED_CASE_DIR.relative_to(paths.EVIDENCE).as_posix(),
         "pipeline_started": started,
-        **({} if started else {"message": "a pipeline run is already in progress; rerun when it finishes"}),
+        **({} if started else {"message": "a pipeline run is in progress; a rerun on this case is queued right after it"}),
     }
 
 
@@ -163,6 +183,7 @@ def delete_upload() -> dict:
     if existed:
         shutil.rmtree(paths.UPLOADED_CASE_DIR)
     release.reset_released()
+    release.clear_uploaded_evidence()
     return {"removed": existed, "case_dir": _rel(paths.active_case_dir())}
 
 

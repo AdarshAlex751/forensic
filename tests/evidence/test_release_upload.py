@@ -158,7 +158,8 @@ def test_upload_happy_path_then_status_then_delete(ev, client):
 
     s = client.get("/api/evidence/status").json()
     assert s == {"case_dir": "work/CASE-1010F", "uploaded": True, "released": []}
-    client.post("/api/evidence/release/r1")
+    assert not ev["extra"].exists()  # a new case also drops any extra evidence uploaded for the old one
+    release.add_uploaded_evidence("r1", "parking_exit.csv", PARKING_CSV)
     assert client.get("/api/evidence/status").json()["released"] == ["access/parking_exit.csv"]
 
     d = client.delete("/api/evidence/upload")
@@ -249,3 +250,49 @@ def test_upload_too_large(ev, client, monkeypatch):
     monkeypatch.setattr(ev_router, "MAX_UPLOAD_BYTES", 10)
     r = post_zip(client, make_zip(GOOD))
     assert r.status_code == 400 and "larger" in r.json()["detail"]
+
+
+# ---------------------------------------------------------------- extra evidence uploaded for a request
+
+PARKING_CSV = b"timestamp,lane,permit_id,plate,direction\n2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT\n"
+
+
+def test_uploaded_parking_log_is_saved_where_the_parser_expects_and_released(ev):
+    got = release.add_uploaded_evidence("r1", "my_parking_export.csv", b"\xef\xbb\xbf" + PARKING_CSV)  # BOM is fine
+    assert got == {"released": ["access/parking_exit.csv"], "file": "access/parking_exit.csv"}
+    assert (ev["extra"] / "access" / "parking_exit.csv").read_bytes().endswith(PARKING_CSV)
+    assert release.released_files() == ["access/parking_exit.csv"]
+
+
+@pytest.mark.parametrize("name,data", [
+    ("parking.csv", b""),
+    ("parking.txt", PARKING_CSV),
+    ("other.csv", b"when,who\n1,2\n"),
+])
+def test_wrong_uploads_are_rejected_and_nothing_is_released(ev, name, data):
+    import shutil
+    shutil.rmtree(ev["extra"])
+    with pytest.raises(release.UploadRejected):
+        release.add_uploaded_evidence("r1", name, data)
+    assert release.released_files() == [] and not (ev["extra"] / "access" / "parking_exit.csv").exists()
+
+
+def test_swap_in_retries_while_windows_briefly_locks_the_new_folder(tmp_path, monkeypatch):
+    """A just-unpacked folder can be locked for a moment (antivirus scan): the rename is retried, not failed."""
+    from app.features.evidence import router as ev_router
+
+    new, final = tmp_path / "new", tmp_path / "final"
+    new.mkdir()
+    (new / "a.txt").write_text("x")
+    real_rename, fails = Path.rename, {"n": 2}
+
+    def flaky(self, target):
+        if self == new and fails["n"]:
+            fails["n"] -= 1
+            raise PermissionError(5, "Access is denied")
+        return real_rename(self, target)
+
+    monkeypatch.setattr(Path, "rename", flaky)
+    monkeypatch.setattr(ev_router.time, "sleep", lambda s: None)
+    ev_router._swap_in(new, final)
+    assert (final / "a.txt").read_text() == "x" and fails["n"] == 0

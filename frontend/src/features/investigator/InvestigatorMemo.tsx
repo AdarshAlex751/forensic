@@ -8,7 +8,7 @@ import { EvidenceRequestCard } from "./EvidenceRequestCard";
 import { HypothesisBar } from "./HypothesisBar";
 import { VerifiedCounter } from "./VerifiedCounter";
 import { useAgentTrace } from "./useAgentTrace";
-import { approveRequest, useLiveFindings, useRequestStatus } from "./useLiveFindings";
+import { uploadRequestFile, useLiveFindings, useRequestStatus } from "./useLiveFindings";
 import { usePipelineProgress } from "./usePipelineProgress";
 import "./investigator.css";
 
@@ -76,12 +76,15 @@ export function InvestigatorMemo() {
 
   const pipeline = usePipelineProgress(onRunFinished);
 
-  const onApprove = useCallback(
-    async (id: string) => {
+  const [rerunId, setRerunId] = useState<string | null>(null);
+
+  const onUpload = useCallback(
+    async (id: string, file: File) => {
       setBusyId(id);
       setApproveErrors(({ [id]: _drop, ...rest }) => rest);
       try {
-        await approveRequest(id);
+        await uploadRequestFile(id, file);
+        setRerunId(id);
         setLocalStatus((s) => ({ ...s, [id]: "approved" }));
         trace.reconnect();
         pipeline.watch();
@@ -227,8 +230,9 @@ export function InvestigatorMemo() {
               <EvidenceRequestCard
                 key={r.id}
                 request={r}
-                onApprove={(id) => void onApprove(id)}
+                onUpload={(id, file) => void onUpload(id, file)}
                 busy={busyId === r.id}
+                rerunning={running && rerunId === r.id}
                 error={approveErrors[r.id] ?? null}
               />
             ))}

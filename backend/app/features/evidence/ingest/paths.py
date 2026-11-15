@@ -7,8 +7,10 @@ ROOT = Path(__file__).resolve().parents[5]
 EVIDENCE = ROOT / "data" / "evidence"
 
 BUILTIN_CASE_DIR = EVIDENCE / "CASE-1010F"       # the generated case shipped in the repo
-EXTRA_DIR = EVIDENCE / "extra"                   # withheld evidence (released on approval)
 WORK_DIR = EVIDENCE / "work"                     # runtime: uploaded zips are unpacked here (gitignored)
+# Extra evidence the investigator uploads after a request (e.g. the parking exit log). Runtime only (gitignored):
+# the app never picks extra evidence up from the repo, only what a person uploads.
+EXTRA_DIR = WORK_DIR / "extra"
 UPLOADED_CASE_DIR = WORK_DIR / "CASE-1010F"
 RELEASED_FILE = EVIDENCE / "released.json"       # runtime: which extra files are released (gitignored)
 

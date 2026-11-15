@@ -3,7 +3,7 @@ import json
 import logging
 from typing import Any, AsyncIterator
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
 
 from app.features.investigator.approvals import approvals
@@ -80,6 +80,35 @@ def approve(request_id: str) -> dict[str, Any]:
     started = _start_rerun()
     return {"request_id": request_id, "status": "approved", "released": released,
             "rerun": "started" if started else "already running"}
+
+
+@router.post("/requests/{request_id}/upload")
+async def upload(request_id: str, file: UploadFile) -> dict[str, Any]:
+    """The investigator uploads the requested evidence (e.g. the parking exit log CSV) for a request.
+
+    The evidence slice checks the file and adds it to the case; the request is then approved and the whole pipeline
+    reruns on the new data. A rejected file leaves the request pending and returns 400 with the reason."""
+    approvals.sync(_load_requests())
+    if approvals.approve(request_id) is None:
+        raise HTTPException(404, f"unknown request {request_id}")
+    data = await file.read()
+    try:
+        from app.features.evidence.release import UploadRejected, add_uploaded_evidence
+    except ImportError as exc:
+        approvals.revoke(request_id)
+        raise HTTPException(501, "The evidence slice cannot accept uploads yet.") from exc
+    try:
+        result = add_uploaded_evidence(request_id, file.filename or "", data)
+    except UploadRejected as exc:
+        approvals.revoke(request_id)
+        raise HTTPException(400, str(exc)) from exc
+    except Exception as exc:  # noqa: BLE001 - reported to the caller
+        approvals.revoke(request_id)
+        log.error("adding uploaded evidence for %s failed: %s", request_id, exc)
+        raise HTTPException(502, f"Adding the uploaded file failed: {exc}") from exc
+    started = _start_rerun()
+    return {"request_id": request_id, "status": "approved", "released": list(result.get("released") or []),
+            "file": result.get("file"), "rerun": "started" if started else "queued"}
 
 
 async def _trace_stream() -> AsyncIterator[str]:
