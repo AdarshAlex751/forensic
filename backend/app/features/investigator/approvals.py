@@ -62,6 +62,14 @@ class Approvals:
                 if r["id"] == request_id and r["status"] == "approved":
                     r["status"] = "pending"
 
+    def reset_pending(self) -> None:
+        """Start a real run from the human's decisions only: keep approved and ingested requests, drop pending ones.
+
+        Pending requests can be leftovers (learned from the fake file before a real run existed, or an earlier run's
+        wording); the agents raise whatever is still justified again, and add_request never duplicates."""
+        with self._lock:
+            self.requests = [r for r in self.requests if r["status"] != "pending"]
+
     def mark_ingested(self) -> None:
         """The released evidence is now part of the case: approved requests become ingested."""
         with self._lock:

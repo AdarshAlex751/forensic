@@ -123,3 +123,18 @@ def test_the_agents_are_told_which_withheld_sources_can_be_requested(env, monkey
     monkeypatch.setattr(run_mod, "_withheld_sources", lambda: ["access/parking_exit.csv"])
     run_mod.run("1010F")
     assert seen["requestable"] == ["access/parking_exit.csv"]
+
+
+def test_a_real_run_does_not_carry_over_pending_requests_learned_from_the_fake_file(env):
+    out, _ = env
+    run_mod.approvals.sync([{"id": "r1", "ask": "Pull the campus parking exit log (fake demo request)", "why": "y", "status": "pending"}])
+    run_mod.run("1010F")
+    assert read(out, "requests.json") == []
+
+
+def test_a_real_run_keeps_requests_the_human_already_approved(env):
+    out, _ = env
+    run_mod.approvals.add_request("Pull the parking log", "why")
+    run_mod.approvals.approve("r1")
+    run_mod.run("1010F")
+    assert [(r["id"], r["status"]) for r in read(out, "requests.json")] == [("r1", "approved")]

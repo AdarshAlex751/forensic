@@ -137,3 +137,51 @@ def test_the_brief_names_the_withheld_sources_a_human_can_release():
     c = ctx_with([STATEMENT])
     c.requestable = ["access/parking_exit.csv"]
     assert "parking_exit.csv" in build_brief(c)
+
+
+# ---- the parking request does not depend on the language model choosing to ask ----
+import json as _json  # noqa: E402
+
+from app.features.investigator.lead_agent import investigate  # noqa: E402
+
+NO_REQUEST_JSON = _json.dumps({
+    "hypotheses": [{"text": "The statement is not supported by the badge record.", "confidence": 0.8, "supports": ["c5"],
+                    "disproved_by": "A later badge read."}],
+    "notes": [],
+})
+
+
+def test_with_the_llm_the_parking_request_is_still_raised_when_the_model_did_not_ask():
+    c = ctx_with([STATEMENT])
+    c.requestable = ["access/parking_exit.csv"]
+    res = investigate(c, runner=lambda prompt: NO_REQUEST_JSON, trace=__import__("app.features.investigator.trace", fromlist=["x"]).Trace())
+    assert res.engine == "llm" and [r["status"] for r in res.requests] == ["pending"]
+    assert "parking" in res.requests[0]["ask"].lower()
+
+
+def test_no_request_is_raised_when_nothing_can_be_released():
+    c = ctx_with([STATEMENT])
+    c.requestable = []
+    assert rules_result(c).requests == []
+
+
+def test_the_rules_request_respects_the_obtainable_list():
+    c = ctx_with([STATEMENT])
+    c.requestable = ["access/parking_exit.csv"]
+    assert len(rules_result(c).requests) == 1
+
+
+def test_the_safety_net_does_not_add_a_second_request_for_a_source_the_model_already_asked_for():
+    c = ctx_with([STATEMENT])
+    c.requestable = ["access/parking_exit.csv"]
+    c.approvals.add_request("Please provide access/parking_exit.csv", "tests c5")  # the model's own wording
+    res = rules_result(c)
+    assert [r["ask"] for r in res.requests] == ["Please provide access/parking_exit.csv"]
+
+
+def test_a_source_that_was_already_requested_and_approved_is_not_requested_again():
+    c = ctx_with([STATEMENT])
+    c.requestable = ["access/parking_exit.csv"]
+    c.approvals.add_request("Pull the parking exit log", "tests c5")
+    c.approvals.approve("r1")
+    assert len(rules_result(c).requests) == 1

@@ -20,7 +20,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
-from app.features.investigator.agent_tools import AgentTools, ToolContext
+from app.features.investigator.agent_tools import AgentTools, ToolContext, _matches_a_source
 from app.features.investigator.subagents import build_subagents
 from app.features.investigator.trace import Trace, trace as global_trace
 from app.shared.llm_client import EXTRACTOR_MODEL, LEAD_MODEL, get_llm, with_backoff
@@ -166,7 +166,12 @@ def _request_parking_log_if_it_would_settle_a_departure_claim(ctx: ToolContext) 
     if not hinges:
         return
     c = max(hinges, key=lambda c: c.score)
-    ctx.approvals.add_request(
+    names = AgentTools(ctx)._still_obtainable()
+    # one request per source, whatever the wording: the model may already have asked for it in its own words
+    if any(_matches_a_source(r["ask"], names) if names else "parking" in r["ask"].lower() for r in ctx.approvals.requests):
+        return
+    # through the tool, so the "only what can really be released" rule applies here too
+    AgentTools(ctx).request_evidence(
         _PARKING_ASK,
         f"Contradiction {c.id} rests on when someone left the building. A parking record can place a vehicle's "
         f"exit in time and either support or weaken the badge-based timing; no other source here can.",
@@ -292,7 +297,13 @@ def investigate(ctx: ToolContext, runner: Runner | None = None, trace: Trace | N
             hyps, warns = sanitize_hypotheses(data.get("hypotheses"), known, neutral)
             if not hyps:
                 raise ValueError("the model returned no usable hypotheses")
-            res = LeadResult(hyps, _sanitize_notes(data.get("notes")), [dict(r) for r in ctx.approvals.requests], "llm", warns)
+            notes = _sanitize_notes(data.get("notes"))
+            # The model may not think to ask; the same justified request is raised for it (never a duplicate).
+            _request_parking_log_if_it_would_settle_a_departure_claim(ctx)
+            for r in ctx.approvals.requests:
+                if r["status"] == "pending" and not any(r["ask"] in n["text"] for n in notes):
+                    notes.append({"text": f"Waiting for approval: {r['ask']}", "kind": "check_next"})
+            res = LeadResult(hyps, notes, [dict(r) for r in ctx.approvals.requests], "llm", warns)
         except Exception as exc:  # noqa: BLE001 - never let a flaky model take down the pipeline
             log.warning("lead investigator failed (%s); using the rules engine", exc)
             res = rules_result(ctx, [f"language model unusable ({type(exc).__name__}: {exc}); used rules"])

@@ -71,6 +71,7 @@ def run(case_id: str) -> None:
         trace.emit("lead", "done", "Nothing to investigate until the case files exist")
         return
 
+    approvals.reset_pending()  # only the human's decisions carry over; the agents re-raise what is still justified
     trace.emit("verifier", "verify", "Re-checking every claim against the case files")
     snap = _load_inputs(include_extra=approvals.any_approved())
     result = verify_events(snap.events, snap.evidence, files)

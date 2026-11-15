@@ -26,3 +26,14 @@ def test_revoke_never_downgrades_an_ingested_request():
     a.mark_ingested()
     a.revoke("r1")
     assert a.requests[0]["status"] == "ingested"
+
+
+def test_reset_pending_keeps_the_humans_decisions_and_drops_leftover_pending_requests():
+    a = Approvals()
+    a.add_request("Leftover from a fake file", "y")  # r1, never approved
+    a.add_request("Pull the parking log", "y")  # r2
+    a.approve("r2")
+    a.add_request("Another pending one", "y")  # r3
+    a.reset_pending()
+    assert [(r["id"], r["status"]) for r in a.requests] == [("r2", "approved")]
+    assert a.add_request("Brand new ask", "y")["id"] == "r3"  # ids keep counting from what is left
