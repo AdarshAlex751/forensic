@@ -21,6 +21,25 @@ _KINDS = {"badge", "mac", "email", "account", "permit", "slack", "name"}
 MAX_RESULTS = 25
 
 
+_H_LIST = r"h\d+(?:\s*(?:,|and|&)\s*h\d+)*"
+
+
+def without_hypothesis_ids(text: str) -> str:
+    """Request text must not cite hypothesis ids ("H2"): the final ranking renumbers them, so the id would point at the
+    wrong card. Contradiction ids (c5) are stable and stay."""
+
+    def is_plural(ids: str) -> bool:
+        return bool(re.search(r"[,&]|\band\b", ids, re.I))
+
+    def named(m: re.Match[str]) -> str:
+        return "the hypotheses" if m.group(1).lower().endswith("es") or is_plural(m.group(2)) else "the hypothesis"
+
+    text = re.sub(rf"\b(hypothes(?:is|es))\s+({_H_LIST})\b", named, text, flags=re.I)
+    text = re.sub(rf"\s*\(\s*{_H_LIST}\s*\)", "", text, flags=re.I)
+    text = re.sub(rf"\b{_H_LIST}\b", lambda m: "the hypotheses" if is_plural(m.group(0)) else "the hypothesis", text, flags=re.I)
+    return re.sub(r"\s{2,}", " ", text).replace(" ,", ",").strip()
+
+
 _GENERIC_WORDS = {"exit", "entry", "log", "logs", "record", "records", "csv", "txt", "json", "access", "the", "pull"}
 
 
@@ -140,7 +159,7 @@ class AgentTools:
         if obtainable is not None and not _matches_a_source(ask, obtainable):
             listing = ", ".join(obtainable) if obtainable else "none; the case has no further evidence to release"
             return {"error": f"That record type cannot be obtained in this case. Obtainable sources: {listing}."}
-        r = self.ctx.approvals.add_request(ask, why)
+        r = self.ctx.approvals.add_request(without_hypothesis_ids(ask), without_hypothesis_ids(why))
         return {"id": r["id"], "status": r["status"], "note": "Waiting for human approval; do not assume the answer."}
 
     # ---- scene tools (Person 2), always through guarded wrappers ------------------------------------------

@@ -185,3 +185,38 @@ def test_a_source_that_was_already_requested_and_approved_is_not_requested_again
     c.approvals.add_request("Pull the parking exit log", "tests c5")
     c.approvals.approve("r1")
     assert len(rules_result(c).requests) == 1
+
+
+# ---- request text never cites hypothesis ids: the ranking renumbers them, so "H2" would point at the wrong card ----
+import re as _re  # noqa: E402
+
+import pytest  # noqa: E402
+
+HYP_ID = _re.compile(r"\bh\d+\b", _re.I)
+
+
+@pytest.mark.parametrize("why", [
+    "To verify whether Hank exited before 6:00 pm, which would disprove hypotheses H2 and H3 about them remaining on premises.",
+    "These logs could confirm the 74 s distance, thereby disproving hypothesis H1 about impossible movement.",
+    "Tests h2: an exit after 18:16 conflicts with the statement.",
+    "A parking record would weaken the timing (h3) of the badge reads.",
+    "Would disprove H1, H2 & H4.",
+])
+def test_request_text_never_cites_hypothesis_ids(why):
+    c = ctx_with([STATEMENT])
+    AgentTools(c).request_evidence("Pull the parking log. It tests H2.", why)
+    r = c.approvals.requests[0]
+    assert not HYP_ID.search(r["why"]) and not HYP_ID.search(r["ask"])
+    assert r["why"].strip() and "  " not in r["why"]
+
+
+def test_contradiction_ids_are_kept_because_they_are_stable():
+    c = ctx_with([STATEMENT])
+    AgentTools(c).request_evidence("Pull the parking log.", "Tests whether c5 holds, which would disprove hypothesis H2.")
+    assert "c5" in c.approvals.requests[0]["why"]
+
+
+def test_ordinary_words_that_look_like_ids_are_left_alone():
+    c = ctx_with([STATEMENT])
+    AgentTools(c).request_evidence("Pull the parking log.", "Records from 2H and the H-wing lobby, room H12a, are not involved.")
+    assert c.approvals.requests[0]["why"] == "Records from 2H and the H-wing lobby, room H12a, are not involved."
