@@ -1,0 +1,8 @@
+[
+  {
+    "id": "r1",
+    "ask": "Please provide access/parking_exit.csv",
+    "why": "To verify whether Hank Gibson and Maggie Price exited the building before 6:00 pm, which would disprove hypotheses H2 and H3 about them remaining on premises after their stated departure times.",
+    "status": "pending"
+  }
+]

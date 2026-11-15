@@ -1,0 +1,48 @@
+[
+  {
+    "id": "h1",
+    "text": "The statement “I never touched the Titan folder” is contradicted by a record of opening C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx on lt‑219 at 6:29:33 pm.",
+    "confidence": 0.95,
+    "supports": [
+      "c8"
+    ],
+    "disproved_by": "Logs showing the file was opened by a different user/device, or verification that the file‑access log entry is corrupted or misattributed."
+  },
+  {
+    "id": "h2",
+    "text": "Badge records for Rina Okafor (p_bg_17) show impossible movement between rooms 230 and 219 at 6:16 pm (30 s apart) despite a minimum walk time of 74 s, indicating a badge data error or misassignment.",
+    "confidence": 0.9,
+    "supports": [
+      "c2"
+    ],
+    "disproved_by": "Evidence of a shorter path (e.g., a connecting corridor) that allows travel in ≤30 s, or corrected badge timestamps that reconcile the timestamps."
+  },
+  {
+    "id": "h3",
+    "text": "Hank Gibson remained on the premises after 6:00 pm, contrary to his statement, as indicated by Wi‑Fi activity on his laptop until 6:41 pm.",
+    "confidence": 0.85,
+    "supports": [
+      "c5",
+      "c3"
+    ],
+    "disproved_by": "Device logs showing the laptop was powered off or disconnected from Wi‑Fi at or before 6:00 pm, or evidence that the Wi‑Fi logs belong to a different device."
+  },
+  {
+    "id": "h4",
+    "text": "Maggie Price’s claim of leaving with Hank around 6:30 pm conflicts with badge records showing her last badge out at 5:45 pm and no later activity, suggesting she was not present at 6:30 pm.",
+    "confidence": 0.8,
+    "supports": [
+      "c6"
+    ],
+    "disproved_by": "Badge‑in or other device logs (e.g., Wi‑Fi, card swipe) indicating Maggie’s presence after 5:45 pm, or a corrected badge record."
+  },
+  {
+    "id": "h5",
+    "text": "The USB drive claimed to have been given to Hank last year was first recorded on his laptop at 6:17:30 pm on 2026‑03‑04, contradicting his statement.",
+    "confidence": 0.75,
+    "supports": [
+      "c7"
+    ],
+    "disproved_by": "Earlier USB connection logs on any device showing the drive existed before the stated date, or evidence that the drive identifier was misrecorded."
+  }
+]

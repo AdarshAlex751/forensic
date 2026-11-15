@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Awaiting human approval for access/parking_exit.csv to verify whether Hank Gibson and Maggie Price exited the building before their stated departure times (relevant to hypotheses H2 and H3).",
+    "kind": "check_next"
+  },
+  {
+    "text": "Verify the manifest hash for endpoint/security_log.csv to confirm the untrusted status claimed in contradiction c1.",
+    "kind": "todo"
+  },
+  {
+    "text": "Obtain maintenance or work‑order logs for camera cam‑03 to explain its offline period (contradiction c4).",
+    "kind": "todo"
+  },
+  {
+    "text": "Waiting for approval: Please provide access/parking_exit.csv",
+    "kind": "check_next"
+  }
+]
