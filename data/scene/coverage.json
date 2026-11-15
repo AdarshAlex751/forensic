@@ -1,0 +1,110 @@
+{
+  "case_id": "1010F",
+  "status": "pending_coverage_definition",
+  "devices": {
+    "cam-03": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "corr-c",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-01": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "211",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-02": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "214",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-03": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "217",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-04": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "220",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-05": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "223",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-06": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "226",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "ap-2-07": {
+      "type": "wifi_ap",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "229",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "cam-01": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "lobby-2",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "cam-02": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "corr-w",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "cam-04": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "corr-e",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "cam-05": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "lounge-2",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    },
+    "cam-06": {
+      "type": "camera",
+      "covered_rooms": [],
+      "excluded_rooms": [],
+      "source": null,
+      "location_room": "stair-e",
+      "note": "Device location comes from data/evidence/devices.csv; coverage is not defined by that inventory."
+    }
+  }
+}

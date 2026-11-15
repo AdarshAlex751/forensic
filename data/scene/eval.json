@@ -1,0 +1,9 @@
+{
+  "planted": 8,
+  "found": 0,
+  "false_alarms": 0,
+  "runtime_s": 0,
+  "missed": [],
+  "status": "pending",
+  "reason": "Waiting for the CASE.md answer key with file-and-line citations."
+}

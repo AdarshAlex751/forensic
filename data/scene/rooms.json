@@ -1,0 +1,372 @@
+[
+  {
+    "id": "210",
+    "label": "Room 210",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "211",
+    "label": "Room 211",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "212",
+    "label": "Room 212",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "213",
+    "label": "Room 213",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "214",
+    "label": "Room 214",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "215",
+    "label": "Room 215",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "216",
+    "label": "Room 216",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "217",
+    "label": "Halvorsen suite",
+    "floor": 2,
+    "sweep": "p8q154uncpnbn9zz3pf0utc1d",
+    "view_rotation": {
+      "x": 8.101931531875058,
+      "y": -170.05543558427377
+    },
+    "tag_xyz": [
+      6.67465877532959,
+      5.33469820022583,
+      -2.5730373859405518
+    ],
+    "mapping_status": "operator_mapped"
+  },
+  {
+    "id": "218",
+    "label": "Room 218",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "219",
+    "label": "Secure room - isolated laptop",
+    "floor": 2,
+    "sweep": "8c32s7nkt2849ty7f2xzdunda",
+    "view_rotation": {
+      "x": -18.358402084922723,
+      "y": -71.83057485153736
+    },
+    "tag_xyz": [
+      13.773399353027344,
+      5.477300643920898,
+      -0.10038644075393677
+    ],
+    "mapping_status": "operator_mapped"
+  },
+  {
+    "id": "220",
+    "label": "Room 220",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "221",
+    "label": "Room 221",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "222",
+    "label": "Room 222",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "223",
+    "label": "Room 223",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "224",
+    "label": "Room 224",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "225",
+    "label": "Room 225",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "226",
+    "label": "Room 226",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "227",
+    "label": "Room 227",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "228",
+    "label": "Room 228",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "229",
+    "label": "Room 229",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "230",
+    "label": "Far-end badge room",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "corridor-219",
+    "label": "Corridor outside 219",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "lobby-2",
+    "label": "Room lobby-2",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "corr-w",
+    "label": "Room corr-w",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "corr-c",
+    "label": "Room corr-c",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "corr-e",
+    "label": "Room corr-e",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "lounge-2",
+    "label": "Room lounge-2",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "stair-e",
+    "label": "Room stair-e",
+    "floor": 2,
+    "sweep": "",
+    "view_rotation": null,
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  }
+]

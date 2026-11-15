@@ -1,0 +1,423 @@
+[
+  {
+    "id": "rdr-210",
+    "type": "badge_reader",
+    "room": "210",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-211",
+    "type": "badge_reader",
+    "room": "211",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-212",
+    "type": "badge_reader",
+    "room": "212",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-213",
+    "type": "badge_reader",
+    "room": "213",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-214",
+    "type": "badge_reader",
+    "room": "214",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-215",
+    "type": "badge_reader",
+    "room": "215",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-216",
+    "type": "badge_reader",
+    "room": "216",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-217",
+    "type": "badge_reader",
+    "room": "217",
+    "sweep": "p8q154uncpnbn9zz3pf0utc1d",
+    "tag_xyz": [
+      6.67465877532959,
+      5.33469820022583,
+      -2.5730373859405518
+    ],
+    "mapping_status": "operator_mapped"
+  },
+  {
+    "id": "rdr-218",
+    "type": "badge_reader",
+    "room": "218",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-219",
+    "type": "badge_reader",
+    "room": "219",
+    "sweep": "8c32s7nkt2849ty7f2xzdunda",
+    "tag_xyz": [
+      13.773399353027344,
+      5.477300643920898,
+      -0.10038644075393677
+    ],
+    "mapping_status": "operator_mapped"
+  },
+  {
+    "id": "rdr-220",
+    "type": "badge_reader",
+    "room": "220",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-221",
+    "type": "badge_reader",
+    "room": "221",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-222",
+    "type": "badge_reader",
+    "room": "222",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-223",
+    "type": "badge_reader",
+    "room": "223",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-224",
+    "type": "badge_reader",
+    "room": "224",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-225",
+    "type": "badge_reader",
+    "room": "225",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-226",
+    "type": "badge_reader",
+    "room": "226",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-227",
+    "type": "badge_reader",
+    "room": "227",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-228",
+    "type": "badge_reader",
+    "room": "228",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-229",
+    "type": "badge_reader",
+    "room": "229",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "rdr-230",
+    "type": "badge_reader",
+    "room": "230",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-01",
+    "type": "wifi_ap",
+    "room": "211",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-02",
+    "type": "wifi_ap",
+    "room": "214",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-03",
+    "type": "wifi_ap",
+    "room": "217",
+    "sweep": "p8q154uncpnbn9zz3pf0utc1d",
+    "tag_xyz": [
+      6.67465877532959,
+      5.33469820022583,
+      -2.5730373859405518
+    ],
+    "mapping_status": "operator_mapped"
+  },
+  {
+    "id": "ap-2-04",
+    "type": "wifi_ap",
+    "room": "220",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-05",
+    "type": "wifi_ap",
+    "room": "223",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-06",
+    "type": "wifi_ap",
+    "room": "226",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "ap-2-07",
+    "type": "wifi_ap",
+    "room": "229",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-01",
+    "type": "camera",
+    "room": "lobby-2",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-02",
+    "type": "camera",
+    "room": "corr-w",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-03",
+    "type": "camera",
+    "room": "corr-c",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-04",
+    "type": "camera",
+    "room": "corr-e",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-05",
+    "type": "camera",
+    "room": "lounge-2",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "cam-06",
+    "type": "camera",
+    "room": "stair-e",
+    "sweep": "",
+    "tag_xyz": [
+      0,
+      0,
+      0
+    ],
+    "mapping_status": "unmapped"
+  },
+  {
+    "id": "lt-219",
+    "type": "laptop",
+    "room": "219",
+    "sweep": "8c32s7nkt2849ty7f2xzdunda",
+    "tag_xyz": [
+      13.773399353027344,
+      5.477300643920898,
+      -0.10038644075393677
+    ],
+    "mapping_status": "operator_mapped",
+    "network": "air_gapped"
+  }
+]
