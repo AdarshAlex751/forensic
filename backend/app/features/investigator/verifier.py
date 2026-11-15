@@ -4,7 +4,8 @@ Re-checks every claim against the real case file it cites:
   1. the cited file exists and its bytes hash to the cited sha256;
   2. the cited line exists and contains the cited quote (whitespace-normalized);
   3. for CSV rows, the event time and actor identifier appear in that row;
-  4. custody: a file whose hash does not match manifest.csv is not trusted. Its events are left out of
+  4. custody: a file whose hash does not match manifest.csv is not trusted (checked first, for every event citing
+     it, even if the quote no longer matches). Its events are left out of
      verified_event_ids with the reason "custody: hash mismatch" (the quote may be perfectly accurate; we just
      cannot trust the file). The same fact is reported from a trusted source when one exists (file_audit.csv).
 A contradiction is verified only if every event it cites is verified (custody contradictions are about the
@@ -167,11 +168,13 @@ def verify_events(events: Iterable[Event], evidence: Iterable[EvidenceFile], fil
     held_back: list[Event] = []
 
     for e in events:
-        reason = _check_source(e, reader)
-        if reason is None and e.source.file in untrusted:
+        # A file that failed custody is untrusted whatever its rows say: an altered row no longer matches the quote
+        # taken as collected, and an event may cite the hash of the file as collected. Both are custody problems.
+        if e.source.file in untrusted and reader.bytes(e.source.file) is not None:
             held_back.append(e)
             result.custody_failed_event_ids.append(e.id)
             continue
+        reason = _check_source(e, reader)
         if reason is None:
             result.verified_event_ids.append(e.id)
         else:

@@ -89,6 +89,30 @@ def test_events_from_a_custody_failed_file_are_excluded_with_custody_reason(case
     assert "false" not in r.rejected[0].reason
 
 
+def test_an_altered_row_in_a_custody_failed_file_is_still_a_custody_rejection(case):
+    """The tampered rows are exactly the ones whose quote no longer matches; the reason must stay "custody"."""
+    logon = ev(case, "e4", "logon", "2026-03-04T18:17:05-05:00", "endpoint/security_log.csv", 2,
+               quote="2026-03-04T18:17:05-05:00,4624,LT-219,hgibson,2,,,as collected (not what the file says)",
+               actor={"kind": "account", "value": "hgibson"})
+    r = run(case, [logon])
+    assert [x.reason for x in r.rejected] == ["custody: hash mismatch"]
+    assert r.custody_failed_event_ids == ["e4"]
+
+
+def test_an_event_citing_the_hash_of_the_file_as_collected_is_still_a_custody_rejection(case):
+    logon = ev(case, "e4", "logon", "2026-03-04T18:17:05-05:00", "endpoint/security_log.csv", 2,
+               actor={"kind": "account", "value": "hgibson"})
+    logon.source.sha256 = "0" * 64
+    assert [x.reason for x in run(case, [logon]).rejected] == ["custody: hash mismatch"]
+
+
+def test_a_custody_failed_file_that_is_missing_is_reported_as_missing(case):
+    logon = ev(case, "e4", "logon", "2026-03-04T18:17:05-05:00", "endpoint/security_log.csv", 2,
+               actor={"kind": "account", "value": "hgibson"})
+    logon.source.file = "endpoint/no_such_file.csv"
+    assert [x.reason for x in run(case, [logon]).rejected] == ["cited file not found"]
+
+
 def test_custody_failed_fact_is_reported_with_its_file_audit_corroboration(case):
     access = ev(case, "e5", "file_access", "2026-03-04T18:18:02-05:00", "endpoint/security_log.csv", 3,
                 actor={"kind": "account", "value": "hgibson"}, device="lt-219",
