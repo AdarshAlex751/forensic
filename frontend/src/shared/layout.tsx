@@ -7,7 +7,8 @@ import { Slot } from "./Slot";
 const NAV = [
   { to: "/", label: "Desk" },
   { to: "/scene", label: "Scene" },
-  { to: "/yarn", label: "Yarn board" },
+  { to: "/red-flags", label: "Red flags" },
+  { to: "/contradictions", label: "Contradictions" },
   { to: "/memo", label: "Investigator memo" },
 ];
 

@@ -2,14 +2,18 @@
 export interface Source { file: string; line: number; quote: string; sha256: string }
 export interface CaseInfo { id: string; title: string; address: string; summary: string; costar_property_id: string; matterport_model_id: string }
 export interface Evidence { file: string; sha256: string; manifest_sha256?: string | null; manifest_match: boolean; parser: string; records: number }
-export interface Person { id: string; name: string; role: string; suite: string; aliases: string[]; anomaly: number; features: Record<string, number>; community: number }
+export interface RedFlag { feature: string; label: string; value: number; baseline: number; text: string; events: string[] }
+export interface PersonContext { kind: string; text: string; events: string[] }
+export interface Person { id: string; name: string; role: string; suite: string; aliases: string[]; anomaly: number; features: Record<string, number | string>; community: number; anomaly_rank?: number | null; centrality?: number; red_flags?: RedFlag[]; context?: PersonContext[] }
 export interface Device { id: string; type: string; room: string; sweep: string; tag_xyz: [number, number, number] }
 export interface Room { id: string; label: string; floor: number }
 export interface Actor { kind: string; value: string }
 export interface EventRec { id: string; t: string; type: string; person: string | null; device: string | null; room: string | null; actor?: Actor | null; attrs?: Record<string, unknown>; source: Source; verified: boolean }
 export interface Edge { from: string; to: string; type: string; events: string[] }
 export type ContradictionKind = "physical" | "temporal" | "statement" | "custody";
-export interface Contradiction { id: string; kind: ContradictionKind; events: string[]; score: number; explanation: string; path?: string[]; walk_s?: number; gap_s?: number }
+export interface ContradictionSide { label: string; events: string[]; quotes: string[]; more: number }
+export interface ChainStep { event: string; t: string; type: string; person: string | null; room: string | null; device: string | null; source: Source }
+export interface Contradiction { id: string; kind: ContradictionKind; events: string[]; score: number; explanation: string; path?: string[]; walk_s?: number; gap_s?: number; title?: string; rule?: string; t?: string | null; room?: string | null; persons?: string[]; sides?: ContradictionSide[]; chain?: ChainStep[]; sources?: Source[]; change?: string | null }
 export interface Hypothesis { id: string; text: string; confidence: number; supports: string[]; disproved_by: string }
 export interface EvidenceRequest { id: string; ask: string; why: string; status: "pending" | "approved" | "ingested" }
 export interface Note { text: string; kind: "check_next" | "todo" | "cleared" }
