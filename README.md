@@ -48,6 +48,10 @@ Open http://localhost:5173. The dev server proxies `/api` to port 8000.
 5. **Investigator memo**: the verified-claims counter, the ranked hypotheses and one pending evidence request (the parking
    log). Press **Approve**: the file is released, the pipeline reruns, and the contradiction about "I went straight home at
    six" now cites the parking exit.
+6. **Feedback**: a typewritten letter of questions for the investigator, written by a second model that reads the analysis
+   (it does not read the investigator's output). The text types in one character at a time; click the paper or `[skip]`
+   to finish it at once. `[ Regenerate questions ]` asks the model again and retypes the letter. It is only a set of
+   questions to sharpen the investigation, never a conclusion.
 
 ## Tests
 
