@@ -17,6 +17,7 @@ export interface PageDef {
 
 export const pages: PageDef[] = [
   { path: "/", label: "Desk", component: OpeningScreen },
+  // The Summary tab is intentionally hidden from the top bar (see shared/layout.tsx); the page stays reachable by URL.
   { path: "/summary", label: "Summary", component: SummaryPage },
   { path: "/scene", label: "Scene", component: ScenePage },
   { path: "/yarn", label: "Yarn board", component: YarnPage },

@@ -151,8 +151,8 @@ export function OpeningScreen() {
     setPhase("leaving"); // fade to black, then go
     await sleep(450 * k);
     // A full page load, not navigate(): useFindings caches the old case, and the new upload must be read fresh.
-    // We do not wait for the backend pipeline to finish.
-    if (alive.current) window.location.assign("/summary");
+    // We do not wait for the backend pipeline to finish. The Summary tab is hidden, so we land on the Scene page.
+    if (alive.current) window.location.assign("/scene");
   }
 
   const ready = source.kind === "ready";

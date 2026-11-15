@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import { Slot } from "./Slot";
 
 // Page list is fixed in the skeleton; keep in step with registry.ts pages.
+// The Summary page (/summary) is registered but intentionally not listed here: the app goes Desk -> Scene.
 const NAV = [
   { to: "/", label: "Desk" },
-  { to: "/summary", label: "Summary" },
   { to: "/scene", label: "Scene" },
   { to: "/yarn", label: "Yarn board" },
 ];
