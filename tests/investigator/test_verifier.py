@@ -160,3 +160,39 @@ def test_custody_contradiction_is_about_the_file_so_it_may_cite_the_unverified_e
                actor={"kind": "account", "value": "hgibson"})
     r = verify_contradictions([inputs.Contradiction("c8", "custody", ["e4"])], run(case, [logon]))
     assert [x.claim for x in r.rejected if x.claim.startswith("c8")] == []
+
+
+def _evidence_with(case, **overrides):
+    rows = [dict(r) for r in case.evidence]
+    for r in rows:
+        if r["file"] == BADGE:
+            r.update(overrides)
+    return inputs.parse_list(rows, inputs.EvidenceFile, "evidence")
+
+
+def test_a_file_not_listed_in_the_manifest_is_not_called_a_hash_mismatch(case):
+    """Released extra evidence (the parking log) is not in manifest.csv: manifest_sha256 null, manifest_match false."""
+    ef = _evidence_with(case, manifest_sha256=None, manifest_match=False)
+    r = verify_events([badge_in(case)], ef, inputs.CaseFiles(case.root))
+    assert r.verified_event_ids == ["e1"] and r.rejected == [] and r.custody_failed_event_ids == []
+
+
+def test_a_file_not_in_the_manifest_is_still_checked_against_its_own_bytes(case):
+    ef = _evidence_with(case, manifest_sha256=None, manifest_match=False)
+    e = badge_in(case)
+    e.source.quote = "2026-03-04T18:20:00-05:00,40420,rdr-219,OUT,GRANTED"
+    assert [x.reason for x in verify_events([e], ef, inputs.CaseFiles(case.root)).rejected] == ["quote not found"]
+
+
+def test_a_listed_file_with_a_different_hash_is_still_a_custody_failure(case):
+    ef = _evidence_with(case, manifest_sha256="f" * 64, manifest_match=False)
+    r = verify_events([badge_in(case)], ef, inputs.CaseFiles(case.root))
+    assert [x.reason for x in r.rejected] == ["custody: hash mismatch"]
+
+
+def test_old_evidence_rows_without_manifest_sha256_still_rely_on_manifest_match(case):
+    rows = [{k: v for k, v in r.items() if k != "manifest_sha256"} | ({"manifest_match": False} if r["file"] == BADGE else {})
+            for r in case.evidence]
+    ef = inputs.parse_list(rows, inputs.EvidenceFile, "evidence")
+    r = verify_events([badge_in(case)], ef, inputs.CaseFiles(case.root))
+    assert [x.reason for x in r.rejected] == ["custody: hash mismatch"]

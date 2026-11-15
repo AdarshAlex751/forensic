@@ -99,13 +99,15 @@ class EvidenceFile:
     manifest_sha256: str | None = None
     parser: str = ""
     records: int = 0
+    not_in_manifest: bool = False  # manifest_sha256 explicitly null: the file was never listed (e.g. released extra evidence)
 
     @classmethod
     def from_dict(cls, d: Any) -> "EvidenceFile":
         if not isinstance(d, dict) or not d.get("file"):
             raise ValueError("evidence missing file")
         return cls(_s(d["file"]), _s(d.get("sha256")), bool(d.get("manifest_match", True)),
-                   _opt(d.get("manifest_sha256")), _s(d.get("parser")), int(d.get("records") or 0))
+                   _opt(d.get("manifest_sha256")), _s(d.get("parser")), int(d.get("records") or 0),
+                   not_in_manifest="manifest_sha256" in d and d["manifest_sha256"] is None)
 
 
 @dataclass

@@ -160,9 +160,12 @@ def _same_fact(a: Event, b: Event) -> bool:
 def verify_events(events: Iterable[Event], evidence: Iterable[EvidenceFile], files: _Files) -> VerificationResult:
     events = list(events)
     reader = _Reader(files)
+    # Custody fails only when the manifest lists the file and its hash differs. A file the manifest never listed
+    # (released extra evidence) is "not listed", not "tampered": it is checked against its own bytes like any other.
     untrusted = {
         f.file for f in evidence
-        if not f.manifest_match or (f.manifest_sha256 is not None and f.manifest_sha256.lower() != f.sha256.lower())
+        if not f.not_in_manifest
+        and (not f.manifest_match or (f.manifest_sha256 is not None and f.manifest_sha256.lower() != f.sha256.lower()))
     }
     result = VerificationResult(claims=len(events))
     held_back: list[Event] = []
