@@ -1,0 +1,2799 @@
+[
+  {
+    "id": "p_alma",
+    "name": "Alma Imhoff",
+    "role": "Halvorsen head of security",
+    "suite": "217",
+    "aliases": [
+      "badge:40381",
+      "mac:02:1F:9A:10:00:01",
+      "email:alma.imhoff@halvorsen.example",
+      "slack:alma.imhoff",
+      "permit:P-2081",
+      "plate:N37-SUV",
+      "name:Alma Imhoff"
+    ],
+    "anomaly": 0.744,
+    "features": {
+      "day": "2026-03-07",
+      "after_hours_minutes": 239.88,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 239.88,
+      "after_hours_badge_reads_dev": 4.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0055,
+    "anomaly_rank": 5,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 239.88,
+        "baseline": 0.0,
+        "text": "240 min after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11923",
+          "e11963"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 0.0,
+        "text": "4 badge read(s) after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11923",
+          "e11931",
+          "e11933",
+          "e11963"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_hank",
+    "name": "Hank Gibson",
+    "role": "Halvorsen senior engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40388",
+      "mac:02:1F:9A:10:00:02",
+      "account:hgibson",
+      "account:CHK-7731",
+      "email:hank.gibson@halvorsen.example",
+      "slack:hank.gibson",
+      "permit:P-2088",
+      "plate:W26-VCU",
+      "name:Hank Gibson"
+    ],
+    "anomaly": 1.0,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 39.0,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 5.0,
+      "bytes_copied": 113724416.0,
+      "usb_mounts": 1.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 39.0,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 5.0,
+      "bytes_copied_dev": 113724416.0,
+      "usb_mounts_dev": 1.0,
+      "centrality": 0.34
+    },
+    "community": 9,
+    "centrality": 0.3433,
+    "anomaly_rank": 1,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 39.0,
+        "baseline": 0.0,
+        "text": "39 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9485",
+          "e9544"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9485"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 4.0,
+        "baseline": 3.0,
+        "text": "in 4 different rooms on 2026-03-04 (usually 3)",
+        "events": [
+          "e8287",
+          "e8549",
+          "e8975",
+          "e9510"
+        ]
+      },
+      {
+        "feature": "files_touched",
+        "label": "files touched",
+        "value": 5.0,
+        "baseline": 0.0,
+        "text": "touched 5 file(s) on 2026-03-04 (usually 0)",
+        "events": [
+          "e9512",
+          "e9513",
+          "e9519",
+          "e9520",
+          "e9522",
+          "e9523",
+          "e9527",
+          "e9528",
+          "e9532",
+          "e9533"
+        ]
+      },
+      {
+        "feature": "bytes_copied",
+        "label": "bytes copied",
+        "value": 113724416.0,
+        "baseline": 0.0,
+        "text": "copied 113.7 MB on 2026-03-04 (usually 0.0 MB)",
+        "events": [
+          "e9513",
+          "e9520",
+          "e9523",
+          "e9528",
+          "e9533"
+        ]
+      },
+      {
+        "feature": "usb_mounts",
+        "label": "USB mounts",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 USB mount(s) on 2026-03-04 (usually 0)",
+        "events": [
+          "e9510"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_maggie",
+    "name": "Maggie Price",
+    "role": "Halvorsen engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40392",
+      "mac:02:1F:9A:10:00:03",
+      "email:maggie.price@halvorsen.example",
+      "slack:maggie.price",
+      "permit:P-2092",
+      "plate:A84-AAA",
+      "name:Maggie Price"
+    ],
+    "anomaly": 0.736,
+    "features": {
+      "day": "2026-03-08",
+      "after_hours_minutes": 154.35,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 2.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 153.96,
+      "after_hours_badge_reads_dev": 3.0,
+      "distinct_rooms_dev": -2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.07
+    },
+    "community": 0,
+    "centrality": 0.0684,
+    "anomaly_rank": 7,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 154.35,
+        "baseline": 0.39,
+        "text": "154 min after hours on 2026-03-08 (usually 0.39)",
+        "events": [
+          "e11977",
+          "e12007"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 1.0,
+        "text": "4 badge read(s) after hours on 2026-03-08 (usually 1)",
+        "events": [
+          "e11977",
+          "e11999",
+          "e12002",
+          "e12007"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_frederik",
+    "name": "Frederik Mendelssohn",
+    "role": "IT admin for the floor (contractor)",
+    "suite": "",
+    "aliases": [
+      "badge:40455",
+      "mac:02:1F:9A:10:00:04",
+      "account:fmendelssohn",
+      "email:frederik.mendelssohn@ostrander-it.example",
+      "permit:P-2155",
+      "plate:U75-EDR",
+      "name:Frederik Mendelssohn"
+    ],
+    "anomaly": 0.92,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 151.53,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 2.0,
+      "files_touched": 3.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 1.0,
+      "after_hours_in_work_order_minutes": 146.5,
+      "after_hours_minutes_dev": 151.53,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 3.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 1.0,
+      "centrality": 0.21
+    },
+    "community": 1,
+    "centrality": 0.2069,
+    "anomaly_rank": 2,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 151.53,
+        "baseline": 0.0,
+        "text": "152 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9551",
+          "e9564"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9551",
+          "e9564"
+        ]
+      },
+      {
+        "feature": "files_touched",
+        "label": "files touched",
+        "value": 3.0,
+        "baseline": 0.0,
+        "text": "touched 3 file(s) on 2026-03-04 (usually 0)",
+        "events": [
+          "e9556",
+          "e9558",
+          "e9561"
+        ]
+      },
+      {
+        "feature": "usb_mounts",
+        "label": "USB mounts",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 USB mount(s) on 2026-03-04 (usually 0)",
+        "events": [
+          "e9555"
+        ]
+      }
+    ],
+    "context": [
+      {
+        "kind": "work_order",
+        "text": "146 of 152 after-hours minutes fall inside a maintenance window assigned to them.",
+        "events": [
+          "e9553"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p_kim",
+    "name": "Kim Sayers",
+    "role": "Northline Systems executive",
+    "suite": "",
+    "aliases": [
+      "email:kim.sayers@northline.example",
+      "slack:kim.sayers",
+      "name:Kim Sayers"
+    ],
+    "anomaly": 0.0,
+    "features": {},
+    "community": 9,
+    "centrality": 0.0,
+    "anomaly_rank": null,
+    "red_flags": [],
+    "context": []
+  },
+  {
+    "id": "p_bg_01",
+    "name": "Theo Lindqvist",
+    "role": "Halvorsen engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40401",
+      "mac:02:1F:9A:00:00:01",
+      "email:theo.lindqvist@halvorsen.example",
+      "slack:theo.lindqvist",
+      "permit:P-2201",
+      "plate:U67-EDR",
+      "name:Theo Lindqvist"
+    ],
+    "anomaly": 0.676,
+    "features": {
+      "day": "2026-02-28",
+      "after_hours_minutes": 198.27,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 198.27,
+      "after_hours_badge_reads_dev": 4.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0115,
+    "anomaly_rank": 10,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 198.27,
+        "baseline": 0.0,
+        "text": "198 min after hours on 2026-02-28 (usually 0)",
+        "events": [
+          "e5679",
+          "e5704"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 0.0,
+        "text": "4 badge read(s) after hours on 2026-02-28 (usually 0)",
+        "events": [
+          "e5679",
+          "e5682",
+          "e5684",
+          "e5704"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_02",
+    "name": "Amara Okonkwo",
+    "role": "Halvorsen engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40402",
+      "mac:02:1F:9A:00:00:02",
+      "email:amara.okonkwo@halvorsen.example",
+      "slack:amara.okonkwo",
+      "permit:P-2202",
+      "plate:V14-MRE",
+      "name:Amara Okonkwo"
+    ],
+    "anomaly": 0.16,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 1.27,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.27,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0077,
+    "anomaly_rank": 31,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.27,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9486",
+          "e9488"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9488"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-04 (usually 4)",
+        "events": [
+          "e8316",
+          "e8422",
+          "e8501",
+          "e8629",
+          "e9416"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_03",
+    "name": "Jonah Feld",
+    "role": "Halvorsen engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40403",
+      "mac:02:1F:9A:00:00:03",
+      "email:jonah.feld@halvorsen.example",
+      "slack:jonah.feld",
+      "name:Jonah Feld"
+    ],
+    "anomaly": 0.579,
+    "features": {
+      "day": "2026-03-08",
+      "after_hours_minutes": 228.22,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 228.22,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.03
+    },
+    "community": 0,
+    "centrality": 0.0287,
+    "anomaly_rank": 13,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 228.22,
+        "baseline": 0.0,
+        "text": "228 min after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11970",
+          "e12013"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11970",
+          "e12013"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_04",
+    "name": "Leila Haddad",
+    "role": "Halvorsen product manager",
+    "suite": "217",
+    "aliases": [
+      "badge:40404",
+      "mac:02:1F:9A:00:00:04",
+      "email:leila.haddad@halvorsen.example",
+      "slack:leila.haddad",
+      "permit:P-2204",
+      "plate:X88-CPH",
+      "name:Leila Haddad"
+    ],
+    "anomaly": 0.261,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 0.5,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.5,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0114,
+    "anomaly_rank": 27,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.5,
+        "baseline": 0.0,
+        "text": "0 min after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8198",
+          "e8202"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8202"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 3.0,
+        "text": "in 5 different rooms on 2026-03-03 (usually 3)",
+        "events": [
+          "e7105",
+          "e7223",
+          "e7412",
+          "e7729",
+          "e8165"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_05",
+    "name": "Marcus Bell",
+    "role": "Halvorsen engineer",
+    "suite": "217",
+    "aliases": [
+      "badge:40405",
+      "mac:02:1F:9A:00:00:05",
+      "account:mbell",
+      "email:marcus.bell@halvorsen.example",
+      "slack:marcus.bell",
+      "permit:P-2205",
+      "plate:Y35-KBX",
+      "name:Marcus Bell"
+    ],
+    "anomaly": 0.747,
+    "features": {
+      "day": "2026-02-28",
+      "after_hours_minutes": 284.2,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 284.2,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": -3.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.08
+    },
+    "community": 2,
+    "centrality": 0.0799,
+    "anomaly_rank": 4,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 284.2,
+        "baseline": 0.0,
+        "text": "284 min after hours on 2026-02-28 (usually 0)",
+        "events": [
+          "e5688",
+          "e5711"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-02-28 (usually 0)",
+        "events": [
+          "e5688",
+          "e5711"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_06",
+    "name": "Sofia Marchetti",
+    "role": "Halvorsen operations lead",
+    "suite": "217",
+    "aliases": [
+      "badge:40406",
+      "mac:02:1F:9A:00:00:06",
+      "email:sofia.marchetti@halvorsen.example",
+      "slack:sofia.marchetti",
+      "name:Sofia Marchetti"
+    ],
+    "anomaly": 0.091,
+    "features": {
+      "day": "2026-03-06",
+      "after_hours_minutes": 1.15,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.15,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0131,
+    "anomaly_rank": 42,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.15,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-06 (usually 0)",
+        "events": [
+          "e11889",
+          "e11890"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-06 (usually 0)",
+        "events": [
+          "e11890"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_07",
+    "name": "Ravi Sundaram",
+    "role": "Corvane Labs member",
+    "suite": "210",
+    "aliases": [
+      "badge:40407",
+      "mac:02:1F:9A:00:00:07",
+      "email:ravi.sundaram@corvane.example",
+      "permit:P-2207",
+      "plate:A19-AAA",
+      "name:Ravi Sundaram"
+    ],
+    "anomaly": 0.379,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 15.22,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 15.22,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0048,
+    "anomaly_rank": 21,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 15.22,
+        "baseline": 0.0,
+        "text": "15 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9483",
+          "e9506"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9483",
+          "e9506"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_08",
+    "name": "Hannah Kowalczyk",
+    "role": "Brightwater Analytics member",
+    "suite": "213",
+    "aliases": [
+      "badge:40408",
+      "mac:02:1F:9A:00:00:08",
+      "email:hannah.kowalczyk@brightwater.example",
+      "permit:P-2208",
+      "plate:B56-HMP",
+      "name:Hannah Kowalczyk"
+    ],
+    "anomaly": 0.547,
+    "features": {
+      "day": "2026-03-08",
+      "after_hours_minutes": 165.68,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 165.68,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0121,
+    "anomaly_rank": 15,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 165.68,
+        "baseline": 0.0,
+        "text": "166 min after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11976",
+          "e12011"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11976",
+          "e12011"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_09",
+    "name": "Owen Achterberg",
+    "role": "Quillfeather Bio member",
+    "suite": "218",
+    "aliases": [
+      "badge:40409",
+      "mac:02:1F:9A:00:00:09",
+      "email:owen.achterberg@quillfeather.example",
+      "name:Owen Achterberg"
+    ],
+    "anomaly": 0.299,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 25.2,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 25.2,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.02
+    },
+    "community": 3,
+    "centrality": 0.0166,
+    "anomaly_rank": 23,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 25.2,
+        "baseline": 0.0,
+        "text": "25 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9491",
+          "e9536"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9536"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_10",
+    "name": "Grace Tanaka",
+    "role": "Tessaract Robotics member",
+    "suite": "224",
+    "aliases": [
+      "badge:40410",
+      "mac:02:1F:9A:00:00:0A",
+      "email:grace.tanaka@tessaract.example",
+      "permit:P-2210",
+      "plate:D40-YLT",
+      "name:Grace Tanaka"
+    ],
+    "anomaly": 0.435,
+    "features": {
+      "day": "2026-02-25",
+      "after_hours_minutes": 13.83,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 13.83,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0113,
+    "anomaly_rank": 18,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 13.83,
+        "baseline": 0.0,
+        "text": "14 min after hours on 2026-02-25 (usually 0)",
+        "events": [
+          "e3313",
+          "e3316"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-02-25 (usually 0)",
+        "events": [
+          "e3313",
+          "e3316"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-02-25 (usually 4)",
+        "events": [
+          "e2274",
+          "e2278",
+          "e2653",
+          "e2922",
+          "e3296"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_11",
+    "name": "Mateo Silva",
+    "role": "Lumen Policy Group member",
+    "suite": "228",
+    "aliases": [
+      "badge:40411",
+      "mac:02:1F:9A:00:00:0B",
+      "email:mateo.silva@lumenpolicy.example",
+      "permit:P-2211",
+      "plate:E77-FYG",
+      "name:Mateo Silva"
+    ],
+    "anomaly": 0.301,
+    "features": {
+      "day": "2026-03-05",
+      "after_hours_minutes": 30.15,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 30.15,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 0,
+    "centrality": 0.0136,
+    "anomaly_rank": 22,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 30.15,
+        "baseline": 0.0,
+        "text": "30 min after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10668",
+          "e10691"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10691"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_12",
+    "name": "Nadia Petrova",
+    "role": "Corvane Labs member",
+    "suite": "211",
+    "aliases": [
+      "badge:40412",
+      "mac:02:1F:9A:00:00:0C",
+      "email:nadia.petrova@corvane.example",
+      "name:Nadia Petrova"
+    ],
+    "anomaly": 0.591,
+    "features": {
+      "day": "2026-03-07",
+      "after_hours_minutes": 206.18,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 2.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 206.18,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0049,
+    "anomaly_rank": 12,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 206.18,
+        "baseline": 0.0,
+        "text": "206 min after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11913",
+          "e11942"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11913",
+          "e11942"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_13",
+    "name": "Ethan Brooks",
+    "role": "Brightwater Analytics member",
+    "suite": "214",
+    "aliases": [
+      "badge:40413",
+      "mac:02:1F:9A:00:00:0D",
+      "email:ethan.brooks@brightwater.example",
+      "permit:P-2213",
+      "plate:G61-WXK",
+      "name:Ethan Brooks"
+    ],
+    "anomaly": 0.067,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 0.0,
+      "after_hours_badge_reads": 0.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.0,
+      "after_hours_badge_reads_dev": 0.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0045,
+    "anomaly_rank": 44,
+    "red_flags": [
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-04 (usually 4)",
+        "events": [
+          "e8260",
+          "e8376",
+          "e8417",
+          "e8496",
+          "e9336"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_14",
+    "name": "Yara Mansour",
+    "role": "Quillfeather Bio member",
+    "suite": "220",
+    "aliases": [
+      "badge:40414",
+      "mac:02:1F:9A:00:00:0E",
+      "email:yara.mansour@quillfeather.example",
+      "permit:P-2214",
+      "plate:H98-DJZ",
+      "name:Yara Mansour"
+    ],
+    "anomaly": 0.417,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 14.33,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 14.33,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 3,
+    "centrality": 0.0046,
+    "anomaly_rank": 20,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 14.33,
+        "baseline": 0.0,
+        "text": "14 min after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8191",
+          "e8209"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8191",
+          "e8209"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_15",
+    "name": "Lucas Moreau",
+    "role": "Tessaract Robotics member",
+    "suite": "225",
+    "aliases": [
+      "badge:40415",
+      "mac:02:1F:9A:00:00:0F",
+      "email:lucas.moreau@tessaract.example",
+      "name:Lucas Moreau"
+    ],
+    "anomaly": 0.433,
+    "features": {
+      "day": "2026-03-06",
+      "after_hours_minutes": 12.55,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 12.55,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0097,
+    "anomaly_rank": 19,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 12.55,
+        "baseline": 0.0,
+        "text": "13 min after hours on 2026-03-06 (usually 0)",
+        "events": [
+          "e11892",
+          "e11902"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-06 (usually 0)",
+        "events": [
+          "e11892",
+          "e11902"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-06 (usually 4)",
+        "events": [
+          "e10737",
+          "e10740",
+          "e10851",
+          "e11463",
+          "e11876"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_16",
+    "name": "Chloe Adeyemi",
+    "role": "Lumen Policy Group member",
+    "suite": "229",
+    "aliases": [
+      "badge:40416",
+      "mac:02:1F:9A:00:00:10",
+      "email:chloe.adeyemi@lumenpolicy.example",
+      "permit:P-2216",
+      "plate:K82-UHC",
+      "name:Chloe Adeyemi"
+    ],
+    "anomaly": 0.17,
+    "features": {
+      "day": "2026-02-24",
+      "after_hours_minutes": 0.0,
+      "after_hours_badge_reads": 0.0,
+      "distinct_rooms": 2.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.0,
+      "after_hours_badge_reads_dev": 0.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0055,
+    "anomaly_rank": 30,
+    "red_flags": [],
+    "context": []
+  },
+  {
+    "id": "p_bg_17",
+    "name": "Rina Okafor",
+    "role": "Halvorsen lab technician",
+    "suite": "217",
+    "aliases": [
+      "badge:40417",
+      "mac:02:1F:9A:00:00:11",
+      "account:rokafor",
+      "email:rina.okafor@halvorsen.example",
+      "slack:rina.okafor",
+      "permit:P-2217",
+      "plate:L29-BVS",
+      "name:Rina Okafor"
+    ],
+    "anomaly": 0.881,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 37.73,
+      "after_hours_badge_reads": 5.0,
+      "distinct_rooms": 7.0,
+      "files_touched": 2.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 37.73,
+      "after_hours_badge_reads_dev": 5.0,
+      "distinct_rooms_dev": 3.0,
+      "files_touched_dev": -2.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.07
+    },
+    "community": 2,
+    "centrality": 0.0702,
+    "anomaly_rank": 3,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 37.73,
+        "baseline": 0.0,
+        "text": "38 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9503",
+          "e9550"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 5.0,
+        "baseline": 0.0,
+        "text": "5 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9503",
+          "e9507",
+          "e9508",
+          "e9538",
+          "e9550"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 7.0,
+        "baseline": 4.0,
+        "text": "in 7 different rooms on 2026-03-04 (usually 4)",
+        "events": [
+          "e8258",
+          "e8295",
+          "e8297",
+          "e9083",
+          "e9324",
+          "e9505",
+          "e9507"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_18",
+    "name": "Samuel Ng",
+    "role": "Corvane Labs member",
+    "suite": "212",
+    "aliases": [
+      "badge:40418",
+      "mac:02:1F:9A:00:00:12",
+      "email:samuel.ng@corvane.example",
+      "name:Samuel Ng"
+    ],
+    "anomaly": 0.085,
+    "features": {
+      "day": "2026-02-27",
+      "after_hours_minutes": 1.23,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.23,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0096,
+    "anomaly_rank": 43,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.23,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5671",
+          "e5672"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5672"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_19",
+    "name": "Isabel Duarte",
+    "role": "Brightwater Analytics member",
+    "suite": "215",
+    "aliases": [
+      "badge:40419",
+      "mac:02:1F:9A:00:00:13",
+      "email:isabel.duarte@brightwater.example",
+      "permit:P-2219",
+      "plate:N13-SUV",
+      "name:Isabel Duarte"
+    ],
+    "anomaly": 0.262,
+    "features": {
+      "day": "2026-02-27",
+      "after_hours_minutes": 17.1,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 17.1,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0084,
+    "anomaly_rank": 26,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 17.1,
+        "baseline": 0.0,
+        "text": "17 min after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5645",
+          "e5658"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5658"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_20",
+    "name": "Kenji Watanabe",
+    "role": "Quillfeather Bio member",
+    "suite": "221",
+    "aliases": [
+      "badge:40420",
+      "mac:02:1F:9A:00:00:14",
+      "email:kenji.watanabe@quillfeather.example",
+      "permit:P-2220",
+      "plate:P50-ZFJ",
+      "name:Kenji Watanabe"
+    ],
+    "anomaly": 0.299,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 19.3,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 18.78,
+      "after_hours_badge_reads_dev": 0.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.02
+    },
+    "community": 3,
+    "centrality": 0.019,
+    "anomaly_rank": 24,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 19.3,
+        "baseline": 0.52,
+        "text": "19 min after hours on 2026-03-03 (usually 0.52)",
+        "events": [
+          "e8192",
+          "e8217"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_21",
+    "name": "Fatima Zahir",
+    "role": "Tessaract Robotics member",
+    "suite": "226",
+    "aliases": [
+      "badge:40421",
+      "mac:02:1F:9A:00:00:15",
+      "email:fatima.zahir@tessaract.example",
+      "name:Fatima Zahir"
+    ],
+    "anomaly": 0.122,
+    "features": {
+      "day": "2026-02-27",
+      "after_hours_minutes": 0.23,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.23,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0092,
+    "anomaly_rank": 38,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.23,
+        "baseline": 0.0,
+        "text": "0 min after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5647",
+          "e5648"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-02-27 (usually 0)",
+        "events": [
+          "e5648"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 4.0,
+        "baseline": 3.0,
+        "text": "in 4 different rooms on 2026-02-27 (usually 3)",
+        "events": [
+          "e4519",
+          "e4617",
+          "e5072",
+          "e5552"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_22",
+    "name": "Noah Lindberg",
+    "role": "Lumen Policy Group member",
+    "suite": "230",
+    "aliases": [
+      "badge:40422",
+      "mac:02:1F:9A:00:00:16",
+      "email:noah.lindberg@lumenpolicy.example",
+      "permit:P-2222",
+      "plate:S34-PEM",
+      "name:Noah Lindberg"
+    ],
+    "anomaly": 0.18,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 0.78,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.78,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": -1.5,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0054,
+    "anomaly_rank": 29,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.78,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8225",
+          "e8226"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8226"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_23",
+    "name": "Priya Raman",
+    "role": "Corvane Labs member",
+    "suite": "210",
+    "aliases": [
+      "badge:40423",
+      "mac:02:1F:9A:00:00:17",
+      "email:priya.raman@corvane.example",
+      "permit:P-2223",
+      "plate:T71-XSB",
+      "name:Priya Raman"
+    ],
+    "anomaly": 0.278,
+    "features": {
+      "day": "2026-02-24",
+      "after_hours_minutes": 0.0,
+      "after_hours_badge_reads": 0.0,
+      "distinct_rooms": 6.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.0,
+      "after_hours_badge_reads_dev": 0.0,
+      "distinct_rooms_dev": 2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0048,
+    "anomaly_rank": 25,
+    "red_flags": [
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 6.0,
+        "baseline": 4.0,
+        "text": "in 6 different rooms on 2026-02-24 (usually 4)",
+        "events": [
+          "e1114",
+          "e1118",
+          "e1225",
+          "e1293",
+          "e1351",
+          "e1916"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_24",
+    "name": "Diego Castillo",
+    "role": "Brightwater Analytics member",
+    "suite": "216",
+    "aliases": [
+      "badge:40424",
+      "mac:02:1F:9A:00:00:18",
+      "email:diego.castillo@brightwater.example",
+      "name:Diego Castillo"
+    ],
+    "anomaly": 0.693,
+    "features": {
+      "day": "2026-03-07",
+      "after_hours_minutes": 194.38,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 194.08,
+      "after_hours_badge_reads_dev": 3.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.02
+    },
+    "community": 3,
+    "centrality": 0.019,
+    "anomaly_rank": 9,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 194.38,
+        "baseline": 0.3,
+        "text": "194 min after hours on 2026-03-07 (usually 0.3)",
+        "events": [
+          "e11928",
+          "e11961"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 1.0,
+        "text": "4 badge read(s) after hours on 2026-03-07 (usually 1)",
+        "events": [
+          "e11928",
+          "e11943",
+          "e11950",
+          "e11961"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_25",
+    "name": "Mei Lin Chou",
+    "role": "Quillfeather Bio member",
+    "suite": "222",
+    "aliases": [
+      "badge:40425",
+      "mac:02:1F:9A:00:00:19",
+      "email:mei.chou@quillfeather.example",
+      "permit:P-2225",
+      "plate:V55-MRE",
+      "name:Mei Lin Chou"
+    ],
+    "anomaly": 0.539,
+    "features": {
+      "day": "2026-03-01",
+      "after_hours_minutes": 208.5,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 208.5,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.02
+    },
+    "community": 3,
+    "centrality": 0.0192,
+    "anomaly_rank": 16,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 208.5,
+        "baseline": 0.0,
+        "text": "208 min after hours on 2026-03-01 (usually 0)",
+        "events": [
+          "e5720",
+          "e5763"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-01 (usually 0)",
+        "events": [
+          "e5720",
+          "e5763"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_26",
+    "name": "Aaron Weiss",
+    "role": "Tessaract Robotics member",
+    "suite": "227",
+    "aliases": [
+      "badge:40426",
+      "mac:02:1F:9A:00:00:1A",
+      "email:aaron.weiss@tessaract.example",
+      "permit:P-2226",
+      "plate:W92-VCU",
+      "name:Aaron Weiss"
+    ],
+    "anomaly": 0.5,
+    "features": {
+      "day": "2026-03-02",
+      "after_hours_minutes": 35.52,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 35.52,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.02
+    },
+    "community": 4,
+    "centrality": 0.0191,
+    "anomaly_rank": 17,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 35.52,
+        "baseline": 0.0,
+        "text": "36 min after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7029",
+          "e7050"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7029",
+          "e7050"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-02 (usually 4)",
+        "events": [
+          "e5849",
+          "e5852",
+          "e5944",
+          "e6095",
+          "e6993"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_27",
+    "name": "Zoe Papadakis",
+    "role": "Lumen Policy Group member",
+    "suite": "228",
+    "aliases": [
+      "badge:40427",
+      "mac:02:1F:9A:00:00:1B",
+      "email:zoe.papadakis@lumenpolicy.example",
+      "name:Zoe Papadakis"
+    ],
+    "anomaly": 0.093,
+    "features": {
+      "day": "2026-02-24",
+      "after_hours_minutes": 1.28,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.28,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0066,
+    "anomaly_rank": 41,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.28,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-02-24 (usually 0)",
+        "events": [
+          "e2194",
+          "e2195"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-02-24 (usually 0)",
+        "events": [
+          "e2195"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_28",
+    "name": "Tomas Wisniewski",
+    "role": "Corvane Labs member",
+    "suite": "211",
+    "aliases": [
+      "badge:40428",
+      "mac:02:1F:9A:00:00:1C",
+      "email:tomas.wisniewski@corvane.example",
+      "permit:P-2228",
+      "plate:Y76-KBX",
+      "name:Tomas Wisniewski"
+    ],
+    "anomaly": 0.135,
+    "features": {
+      "day": "2026-03-02",
+      "after_hours_minutes": 1.45,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.45,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0049,
+    "anomaly_rank": 35,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.45,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7031",
+          "e7033"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7033"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_29",
+    "name": "Ingrid Solberg",
+    "role": "Brightwater Analytics member",
+    "suite": "213",
+    "aliases": [
+      "badge:40429",
+      "mac:02:1F:9A:00:00:1D",
+      "email:ingrid.solberg@brightwater.example",
+      "permit:P-2229",
+      "plate:Z23-TNL",
+      "name:Ingrid Solberg"
+    ],
+    "anomaly": 0.117,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 0.77,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.77,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0078,
+    "anomaly_rank": 39,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.77,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8221",
+          "e8222"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8222"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_30",
+    "name": "Kwame Asante",
+    "role": "Quillfeather Bio member",
+    "suite": "223",
+    "aliases": [
+      "badge:40430",
+      "mac:02:1F:9A:00:00:1E",
+      "email:kwame.asante@quillfeather.example",
+      "name:Kwame Asante"
+    ],
+    "anomaly": 0.126,
+    "features": {
+      "day": "2026-03-05",
+      "after_hours_minutes": 0.62,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.62,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": -1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.008,
+    "anomaly_rank": 37,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.62,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10686",
+          "e10687"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10687"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_31",
+    "name": "Elena Rossi",
+    "role": "Tessaract Robotics member",
+    "suite": "224",
+    "aliases": [
+      "badge:40431",
+      "mac:02:1F:9A:00:00:1F",
+      "email:elena.rossi@tessaract.example",
+      "permit:P-2231",
+      "plate:B97-HMP",
+      "name:Elena Rossi"
+    ],
+    "anomaly": 0.738,
+    "features": {
+      "day": "2026-03-07",
+      "after_hours_minutes": 227.88,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 227.88,
+      "after_hours_badge_reads_dev": 4.0,
+      "distinct_rooms_dev": -2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0098,
+    "anomaly_rank": 6,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 227.88,
+        "baseline": 0.0,
+        "text": "228 min after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11915",
+          "e11946"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 0.0,
+        "text": "4 badge read(s) after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11915",
+          "e11917",
+          "e11920",
+          "e11946"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_32",
+    "name": "Julian Park",
+    "role": "Lumen Policy Group member",
+    "suite": "229",
+    "aliases": [
+      "badge:40432",
+      "mac:02:1F:9A:00:00:20",
+      "email:julian.park@lumenpolicy.example",
+      "permit:P-2232",
+      "plate:C44-RZD",
+      "name:Julian Park"
+    ],
+    "anomaly": 0.252,
+    "features": {
+      "day": "2026-02-24",
+      "after_hours_minutes": 14.32,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 14.32,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0041,
+    "anomaly_rank": 28,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 14.32,
+        "baseline": 0.0,
+        "text": "14 min after hours on 2026-02-24 (usually 0)",
+        "events": [
+          "e2197",
+          "e2206"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-02-24 (usually 0)",
+        "events": [
+          "e2206"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_33",
+    "name": "Aisha Bello",
+    "role": "Corvane Labs member",
+    "suite": "212",
+    "aliases": [
+      "badge:40433",
+      "mac:02:1F:9A:00:00:21",
+      "email:aisha.bello@corvane.example",
+      "name:Aisha Bello"
+    ],
+    "anomaly": 0.672,
+    "features": {
+      "day": "2026-03-01",
+      "after_hours_minutes": 291.25,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 291.25,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0096,
+    "anomaly_rank": 11,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 291.25,
+        "baseline": 0.0,
+        "text": "291 min after hours on 2026-03-01 (usually 0)",
+        "events": [
+          "e5717",
+          "e5765"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-01 (usually 0)",
+        "events": [
+          "e5717",
+          "e5765"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_34",
+    "name": "Victor Lam",
+    "role": "Brightwater Analytics member",
+    "suite": "214",
+    "aliases": [
+      "badge:40434",
+      "mac:02:1F:9A:00:00:22",
+      "email:victor.lam@brightwater.example",
+      "permit:P-2234",
+      "plate:E28-FYG",
+      "name:Victor Lam"
+    ],
+    "anomaly": 0.725,
+    "features": {
+      "day": "2026-03-08",
+      "after_hours_minutes": 126.32,
+      "after_hours_badge_reads": 4.0,
+      "distinct_rooms": 2.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 126.32,
+      "after_hours_badge_reads_dev": 4.0,
+      "distinct_rooms_dev": -2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0045,
+    "anomaly_rank": 8,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 126.32,
+        "baseline": 0.0,
+        "text": "126 min after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11980",
+          "e12005"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 4.0,
+        "baseline": 0.0,
+        "text": "4 badge read(s) after hours on 2026-03-08 (usually 0)",
+        "events": [
+          "e11980",
+          "e11990",
+          "e11995",
+          "e12005"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_35",
+    "name": "Camila Torres",
+    "role": "Quillfeather Bio member",
+    "suite": "218",
+    "aliases": [
+      "badge:40435",
+      "mac:02:1F:9A:00:00:23",
+      "email:camila.torres@quillfeather.example",
+      "permit:P-2235",
+      "plate:F65-NKW",
+      "name:Camila Torres"
+    ],
+    "anomaly": 0.146,
+    "features": {
+      "day": "2026-02-26",
+      "after_hours_minutes": 0.0,
+      "after_hours_badge_reads": 0.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.0,
+      "after_hours_badge_reads_dev": 0.0,
+      "distinct_rooms_dev": -2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 3,
+    "centrality": 0.008,
+    "anomaly_rank": 33,
+    "red_flags": [],
+    "context": []
+  },
+  {
+    "id": "p_bg_36",
+    "name": "Henrik Dahl",
+    "role": "Tessaract Robotics member",
+    "suite": "225",
+    "aliases": [
+      "badge:40436",
+      "mac:02:1F:9A:00:00:24",
+      "email:henrik.dahl@tessaract.example",
+      "name:Henrik Dahl"
+    ],
+    "anomaly": 0.142,
+    "features": {
+      "day": "2026-03-02",
+      "after_hours_minutes": 1.13,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 1.13,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0097,
+    "anomaly_rank": 34,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 1.13,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7041",
+          "e7042"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-02 (usually 0)",
+        "events": [
+          "e7042"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-02 (usually 4)",
+        "events": [
+          "e5797",
+          "e5800",
+          "e5953",
+          "e6399",
+          "e6523"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_37",
+    "name": "Naomi Feldstein",
+    "role": "Lumen Policy Group member",
+    "suite": "230",
+    "aliases": [
+      "badge:40437",
+      "mac:02:1F:9A:00:00:25",
+      "email:naomi.feldstein@lumenpolicy.example",
+      "permit:P-2237",
+      "plate:H49-DJZ",
+      "name:Naomi Feldstein"
+    ],
+    "anomaly": 0.094,
+    "features": {
+      "day": "2026-03-04",
+      "after_hours_minutes": 0.75,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.75,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 0.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 4,
+    "centrality": 0.0031,
+    "anomaly_rank": 40,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.75,
+        "baseline": 0.0,
+        "text": "1 min after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9500",
+          "e9501"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-04 (usually 0)",
+        "events": [
+          "e9501"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_38",
+    "name": "Omar Qureshi",
+    "role": "Corvane Labs member",
+    "suite": "210",
+    "aliases": [
+      "badge:40438",
+      "mac:02:1F:9A:00:00:26",
+      "email:omar.qureshi@corvane.example",
+      "permit:P-2238",
+      "plate:J86-LWN",
+      "name:Omar Qureshi"
+    ],
+    "anomaly": 0.149,
+    "features": {
+      "day": "2026-03-03",
+      "after_hours_minutes": 0.48,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 5.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.48,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0147,
+    "anomaly_rank": 32,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.48,
+        "baseline": 0.0,
+        "text": "0 min after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8204",
+          "e8206"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-03 (usually 0)",
+        "events": [
+          "e8206"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 5.0,
+        "baseline": 4.0,
+        "text": "in 5 different rooms on 2026-03-03 (usually 4)",
+        "events": [
+          "e7066",
+          "e7068",
+          "e7193",
+          "e7434",
+          "e7732"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_39",
+    "name": "Lena Vogel",
+    "role": "Brightwater Analytics member",
+    "suite": "215",
+    "aliases": [
+      "badge:40439",
+      "mac:02:1F:9A:00:00:27",
+      "email:lena.vogel@brightwater.example",
+      "name:Lena Vogel"
+    ],
+    "anomaly": 0.555,
+    "features": {
+      "day": "2026-03-07",
+      "after_hours_minutes": 173.82,
+      "after_hours_badge_reads": 2.0,
+      "distinct_rooms": 3.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 173.82,
+      "after_hours_badge_reads_dev": 2.0,
+      "distinct_rooms_dev": -2.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.01
+    },
+    "community": 4,
+    "centrality": 0.0116,
+    "anomaly_rank": 14,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 173.82,
+        "baseline": 0.0,
+        "text": "174 min after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11926",
+          "e11957"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 2.0,
+        "baseline": 0.0,
+        "text": "2 badge read(s) after hours on 2026-03-07 (usually 0)",
+        "events": [
+          "e11926",
+          "e11957"
+        ]
+      }
+    ],
+    "context": []
+  },
+  {
+    "id": "p_bg_40",
+    "name": "Benjamin Osei",
+    "role": "Quillfeather Bio member",
+    "suite": "220",
+    "aliases": [
+      "badge:40440",
+      "mac:02:1F:9A:00:00:28",
+      "email:benjamin.osei@quillfeather.example",
+      "permit:P-2240",
+      "plate:L70-BVS",
+      "name:Benjamin Osei"
+    ],
+    "anomaly": 0.13,
+    "features": {
+      "day": "2026-03-05",
+      "after_hours_minutes": 0.37,
+      "after_hours_badge_reads": 1.0,
+      "distinct_rooms": 4.0,
+      "files_touched": 0.0,
+      "bytes_copied": 0.0,
+      "usb_mounts": 0.0,
+      "after_hours_in_work_order_minutes": 0.0,
+      "after_hours_minutes_dev": 0.37,
+      "after_hours_badge_reads_dev": 1.0,
+      "distinct_rooms_dev": 1.0,
+      "files_touched_dev": 0.0,
+      "bytes_copied_dev": 0.0,
+      "usb_mounts_dev": 0.0,
+      "centrality": 0.0
+    },
+    "community": 3,
+    "centrality": 0.0046,
+    "anomaly_rank": 36,
+    "red_flags": [
+      {
+        "feature": "after_hours_minutes",
+        "label": "after-hours minutes on the floor",
+        "value": 0.37,
+        "baseline": 0.0,
+        "text": "0 min after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10670",
+          "e10671"
+        ]
+      },
+      {
+        "feature": "after_hours_badge_reads",
+        "label": "after-hours badge reads",
+        "value": 1.0,
+        "baseline": 0.0,
+        "text": "1 badge read(s) after hours on 2026-03-05 (usually 0)",
+        "events": [
+          "e10671"
+        ]
+      },
+      {
+        "feature": "distinct_rooms",
+        "label": "distinct rooms",
+        "value": 4.0,
+        "baseline": 3.0,
+        "text": "in 4 different rooms on 2026-03-05 (usually 3)",
+        "events": [
+          "e9625",
+          "e9668",
+          "e9795",
+          "e10305"
+        ]
+      }
+    ],
+    "context": []
+  }
+]

@@ -1,0 +1,1989 @@
+[
+  {
+    "id": "c1",
+    "kind": "custody",
+    "events": [
+      "e392",
+      "e444",
+      "e531",
+      "e720",
+      "e1237",
+      "e1307",
+      "e1398",
+      "e1448",
+      "e1802",
+      "e1976",
+      "e2491",
+      "e2670",
+      "e2954",
+      "e3093",
+      "e3454",
+      "e3583",
+      "e4252",
+      "e4294",
+      "e4328",
+      "e4382",
+      "e5150",
+      "e5213",
+      "e5910",
+      "e6126",
+      "e6171",
+      "e6294",
+      "e6732",
+      "e6877",
+      "e7704",
+      "e7765",
+      "e8300",
+      "e8468",
+      "e8537",
+      "e8719",
+      "e9509",
+      "e9521",
+      "e9524",
+      "e9529",
+      "e9537",
+      "e9554",
+      "e9557",
+      "e9559",
+      "e9560",
+      "e9562",
+      "e9565",
+      "e9593",
+      "e9664",
+      "e10457",
+      "e10643",
+      "e11365",
+      "e11431"
+    ],
+    "score": 1.0,
+    "explanation": "endpoint/security_log.csv does not match its manifest hash; 51 event(s) come from this file. They are treated as untrusted and left out of every other check.",
+    "file": "endpoint/security_log.csv",
+    "rule": "custody_mismatch",
+    "sources": [
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 2,
+        "quote": "2026-02-23T12:02:29-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 3,
+        "quote": "2026-02-23T12:27:31-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 4,
+        "quote": "2026-02-23T12:59:36-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 5,
+        "quote": "2026-02-23T14:32:12-05:00,4634,LT-219,fmendelssohn,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 6,
+        "quote": "2026-02-24T09:41:45-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 7,
+        "quote": "2026-02-24T10:19:47-05:00,4634,LT-219,hgibson,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 8,
+        "quote": "2026-02-24T11:10:02-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 9,
+        "quote": "2026-02-24T11:41:58-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 10,
+        "quote": "2026-02-24T14:37:34-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 11,
+        "quote": "2026-02-24T16:07:05-05:00,4634,LT-219,hgibson,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 12,
+        "quote": "2026-02-25T10:56:59-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 13,
+        "quote": "2026-02-25T12:21:53-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 14,
+        "quote": "2026-02-25T14:47:42-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 15,
+        "quote": "2026-02-25T16:18:47-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 17,
+        "quote": "2026-02-26T09:25:36-05:00,4634,LT-219,hgibson,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 16,
+        "quote": "2026-02-26T10:37:56-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 18,
+        "quote": "2026-02-26T16:06:15-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 19,
+        "quote": "2026-02-26T16:29:21-05:00,4634,LT-219,hgibson,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 20,
+        "quote": "2026-02-26T16:44:22-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 21,
+        "quote": "2026-02-26T17:08:24-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 22,
+        "quote": "2026-02-27T13:13:06-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 23,
+        "quote": "2026-02-27T13:43:59-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 24,
+        "quote": "2026-03-02T09:19:15-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 25,
+        "quote": "2026-03-02T11:03:38-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 26,
+        "quote": "2026-03-02T11:22:51-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 27,
+        "quote": "2026-03-02T12:06:53-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 28,
+        "quote": "2026-03-02T15:28:36-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 29,
+        "quote": "2026-03-02T16:46:58-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 30,
+        "quote": "2026-03-03T13:41:20-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 31,
+        "quote": "2026-03-03T14:08:54-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 32,
+        "quote": "2026-03-04T08:56:19-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 33,
+        "quote": "2026-03-04T10:09:56-05:00,4634,LT-219,rokafor,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 34,
+        "quote": "2026-03-04T10:41:51-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 35,
+        "quote": "2026-03-04T12:03:05-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 36,
+        "quote": "2026-03-04T18:17:05-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 38,
+        "quote": "2026-03-04T18:20:45-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,0x1,C:\\Windows\\explorer.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 39,
+        "quote": "2026-03-04T18:23:14-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,0x1,C:\\Windows\\explorer.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 40,
+        "quote": "2026-03-04T18:26:07-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\injector_plate_rev7.step,0x1,C:\\Windows\\explorer.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 42,
+        "quote": "2026-03-04T18:31:20-05:00,4634,LT-219,hgibson,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 43,
+        "quote": "2026-03-04T19:01:15-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 37,
+        "quote": "2026-03-04T19:37:11-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 41,
+        "quote": "2026-03-04T19:58:39-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,0x1,C:\\Windows\\explorer.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 44,
+        "quote": "2026-03-04T20:12:05-05:00,4634,LT-219,fmendelssohn,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 46,
+        "quote": "2026-03-04T21:27:48-05:00,4634,LT-219,fmendelssohn,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 45,
+        "quote": "2026-03-04T22:00:16-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 47,
+        "quote": "2026-03-05T08:28:36-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 48,
+        "quote": "2026-03-05T09:19:41-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 49,
+        "quote": "2026-03-05T16:10:01-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 50,
+        "quote": "2026-03-05T17:44:02-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 51,
+        "quote": "2026-03-06T13:29:10-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      },
+      {
+        "file": "endpoint/security_log.csv",
+        "line": 52,
+        "quote": "2026-03-06T13:51:12-05:00,4634,LT-219,mbell,2,,,",
+        "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+      }
+    ],
+    "title": "Evidence file fails its manifest hash",
+    "sides": [
+      {
+        "label": "Manifest",
+        "events": [],
+        "quotes": [
+          "endpoint/security_log.csv does not match its manifest hash"
+        ],
+        "more": 0
+      },
+      {
+        "label": "Events from endpoint/security_log.csv",
+        "events": [
+          "e392",
+          "e444",
+          "e531",
+          "e720",
+          "e1237",
+          "e1307",
+          "e1398",
+          "e1448",
+          "e1802",
+          "e1976",
+          "e2491",
+          "e2670",
+          "e2954",
+          "e3093",
+          "e3454",
+          "e3583",
+          "e4252",
+          "e4294",
+          "e4328",
+          "e4382",
+          "e5150",
+          "e5213",
+          "e5910",
+          "e6126",
+          "e6171",
+          "e6294",
+          "e6732",
+          "e6877",
+          "e7704",
+          "e7765",
+          "e8300",
+          "e8468",
+          "e8537",
+          "e8719",
+          "e9509",
+          "e9521",
+          "e9524",
+          "e9529",
+          "e9537",
+          "e9554",
+          "e9557",
+          "e9559",
+          "e9560",
+          "e9562",
+          "e9565",
+          "e9593",
+          "e9664",
+          "e10457",
+          "e10643",
+          "e11365",
+          "e11431"
+        ],
+        "quotes": [
+          "2026-02-23T12:02:29-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "2026-02-23T12:27:31-05:00,4634,LT-219,rokafor,2,,,",
+          "2026-02-23T12:59:36-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe"
+        ],
+        "more": 48
+      }
+    ],
+    "chain": [
+      {
+        "event": "e392",
+        "t": "2026-02-23T12:02:29-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 2,
+          "quote": "2026-02-23T12:02:29-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e444",
+        "t": "2026-02-23T12:27:31-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 3,
+          "quote": "2026-02-23T12:27:31-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e531",
+        "t": "2026-02-23T12:59:36-05:00",
+        "type": "logon",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 4,
+          "quote": "2026-02-23T12:59:36-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e720",
+        "t": "2026-02-23T14:32:12-05:00",
+        "type": "logoff",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 5,
+          "quote": "2026-02-23T14:32:12-05:00,4634,LT-219,fmendelssohn,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1237",
+        "t": "2026-02-24T09:41:45-05:00",
+        "type": "logon",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 6,
+          "quote": "2026-02-24T09:41:45-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1307",
+        "t": "2026-02-24T10:19:47-05:00",
+        "type": "logoff",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 7,
+          "quote": "2026-02-24T10:19:47-05:00,4634,LT-219,hgibson,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1398",
+        "t": "2026-02-24T11:10:02-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 8,
+          "quote": "2026-02-24T11:10:02-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1448",
+        "t": "2026-02-24T11:41:58-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 9,
+          "quote": "2026-02-24T11:41:58-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1802",
+        "t": "2026-02-24T14:37:34-05:00",
+        "type": "logon",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 10,
+          "quote": "2026-02-24T14:37:34-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e1976",
+        "t": "2026-02-24T16:07:05-05:00",
+        "type": "logoff",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 11,
+          "quote": "2026-02-24T16:07:05-05:00,4634,LT-219,hgibson,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e2491",
+        "t": "2026-02-25T10:56:59-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 12,
+          "quote": "2026-02-25T10:56:59-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e2670",
+        "t": "2026-02-25T12:21:53-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 13,
+          "quote": "2026-02-25T12:21:53-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e2954",
+        "t": "2026-02-25T14:47:42-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 14,
+          "quote": "2026-02-25T14:47:42-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e3093",
+        "t": "2026-02-25T16:18:47-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 15,
+          "quote": "2026-02-25T16:18:47-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e3454",
+        "t": "2026-02-26T09:25:36-05:00",
+        "type": "logoff",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 17,
+          "quote": "2026-02-26T09:25:36-05:00,4634,LT-219,hgibson,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e3583",
+        "t": "2026-02-26T10:37:56-05:00",
+        "type": "logon",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 16,
+          "quote": "2026-02-26T10:37:56-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e4252",
+        "t": "2026-02-26T16:06:15-05:00",
+        "type": "logon",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 18,
+          "quote": "2026-02-26T16:06:15-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e4294",
+        "t": "2026-02-26T16:29:21-05:00",
+        "type": "logoff",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 19,
+          "quote": "2026-02-26T16:29:21-05:00,4634,LT-219,hgibson,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e4328",
+        "t": "2026-02-26T16:44:22-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 20,
+          "quote": "2026-02-26T16:44:22-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e4382",
+        "t": "2026-02-26T17:08:24-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 21,
+          "quote": "2026-02-26T17:08:24-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e5150",
+        "t": "2026-02-27T13:13:06-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 22,
+          "quote": "2026-02-27T13:13:06-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e5213",
+        "t": "2026-02-27T13:43:59-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 23,
+          "quote": "2026-02-27T13:43:59-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e5910",
+        "t": "2026-03-02T09:19:15-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 24,
+          "quote": "2026-03-02T09:19:15-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e6126",
+        "t": "2026-03-02T11:03:38-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 25,
+          "quote": "2026-03-02T11:03:38-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e6171",
+        "t": "2026-03-02T11:22:51-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 26,
+          "quote": "2026-03-02T11:22:51-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e6294",
+        "t": "2026-03-02T12:06:53-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 27,
+          "quote": "2026-03-02T12:06:53-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e6732",
+        "t": "2026-03-02T15:28:36-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 28,
+          "quote": "2026-03-02T15:28:36-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e6877",
+        "t": "2026-03-02T16:46:58-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 29,
+          "quote": "2026-03-02T16:46:58-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e7704",
+        "t": "2026-03-03T13:41:20-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 30,
+          "quote": "2026-03-03T13:41:20-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e7765",
+        "t": "2026-03-03T14:08:54-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 31,
+          "quote": "2026-03-03T14:08:54-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e8300",
+        "t": "2026-03-04T08:56:19-05:00",
+        "type": "logon",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 32,
+          "quote": "2026-03-04T08:56:19-05:00,4624,LT-219,rokafor,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e8468",
+        "t": "2026-03-04T10:09:56-05:00",
+        "type": "logoff",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 33,
+          "quote": "2026-03-04T10:09:56-05:00,4634,LT-219,rokafor,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e8537",
+        "t": "2026-03-04T10:41:51-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 34,
+          "quote": "2026-03-04T10:41:51-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e8719",
+        "t": "2026-03-04T12:03:05-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 35,
+          "quote": "2026-03-04T12:03:05-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9509",
+        "t": "2026-03-04T18:17:05-05:00",
+        "type": "logon",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 36,
+          "quote": "2026-03-04T18:17:05-05:00,4624,LT-219,hgibson,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9521",
+        "t": "2026-03-04T18:20:45-05:00",
+        "type": "file_access",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 38,
+          "quote": "2026-03-04T18:20:45-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,0x1,C:\\Windows\\explorer.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9524",
+        "t": "2026-03-04T18:23:14-05:00",
+        "type": "file_access",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 39,
+          "quote": "2026-03-04T18:23:14-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,0x1,C:\\Windows\\explorer.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9529",
+        "t": "2026-03-04T18:26:07-05:00",
+        "type": "file_access",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 40,
+          "quote": "2026-03-04T18:26:07-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\injector_plate_rev7.step,0x1,C:\\Windows\\explorer.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9537",
+        "t": "2026-03-04T18:31:20-05:00",
+        "type": "logoff",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 42,
+          "quote": "2026-03-04T18:31:20-05:00,4634,LT-219,hgibson,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9554",
+        "t": "2026-03-04T19:01:15-05:00",
+        "type": "logon",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 43,
+          "quote": "2026-03-04T19:01:15-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9557",
+        "t": "2026-03-04T19:37:11-05:00",
+        "type": "file_access",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 37,
+          "quote": "2026-03-04T19:37:11-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\thruster_v4.step,0x1,C:\\Windows\\explorer.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9559",
+        "t": "2026-03-04T19:58:39-05:00",
+        "type": "file_access",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 41,
+          "quote": "2026-03-04T19:58:39-05:00,4663,LT-219,hgibson,,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,0x1,C:\\Windows\\explorer.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9560",
+        "t": "2026-03-04T20:12:05-05:00",
+        "type": "logoff",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 44,
+          "quote": "2026-03-04T20:12:05-05:00,4634,LT-219,fmendelssohn,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9562",
+        "t": "2026-03-04T21:27:48-05:00",
+        "type": "logoff",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 46,
+          "quote": "2026-03-04T21:27:48-05:00,4634,LT-219,fmendelssohn,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9565",
+        "t": "2026-03-04T22:00:16-05:00",
+        "type": "logon",
+        "person": "p_frederik",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 45,
+          "quote": "2026-03-04T22:00:16-05:00,4624,LT-219,fmendelssohn,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9593",
+        "t": "2026-03-05T08:28:36-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 47,
+          "quote": "2026-03-05T08:28:36-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e9664",
+        "t": "2026-03-05T09:19:41-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 48,
+          "quote": "2026-03-05T09:19:41-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e10457",
+        "t": "2026-03-05T16:10:01-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 49,
+          "quote": "2026-03-05T16:10:01-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e10643",
+        "t": "2026-03-05T17:44:02-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 50,
+          "quote": "2026-03-05T17:44:02-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e11365",
+        "t": "2026-03-06T13:29:10-05:00",
+        "type": "logon",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 51,
+          "quote": "2026-03-06T13:29:10-05:00,4624,LT-219,mbell,2,,,C:\\Windows\\System32\\winlogon.exe",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      },
+      {
+        "event": "e11431",
+        "t": "2026-03-06T13:51:12-05:00",
+        "type": "logoff",
+        "person": "p_bg_05",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/security_log.csv",
+          "line": 52,
+          "quote": "2026-03-06T13:51:12-05:00,4634,LT-219,mbell,2,,,",
+          "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e"
+        }
+      }
+    ],
+    "t": null,
+    "room": null,
+    "change": null,
+    "key": "custody_mismatch|e392||endpoint/security_log.csv"
+  },
+  {
+    "id": "c2",
+    "kind": "physical",
+    "events": [
+      "e9507",
+      "e9508"
+    ],
+    "score": 1.0,
+    "explanation": "The same badge (p_bg_17) is recorded in room 230 at 6:16:10 pm and in room 219 at 6:16:40 pm, 30 s apart. The shortest walk is 74 s.",
+    "path": [
+      "230",
+      "219"
+    ],
+    "walk_s": 74,
+    "gap_s": 30.0,
+    "persons": [
+      "p_bg_17"
+    ],
+    "rule": "impossible_travel",
+    "sources": [
+      {
+        "file": "access/badge_access.csv",
+        "line": 2298,
+        "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED",
+        "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+      },
+      {
+        "file": "access/badge_access.csv",
+        "line": 2299,
+        "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED",
+        "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+      }
+    ],
+    "title": "Same identity in two rooms faster than the walk",
+    "sides": [
+      {
+        "label": "First record",
+        "events": [
+          "e9507"
+        ],
+        "quotes": [
+          "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED"
+        ],
+        "more": 0
+      },
+      {
+        "label": "Second record",
+        "events": [
+          "e9508"
+        ],
+        "quotes": [
+          "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e9507",
+        "t": "2026-03-04T18:16:10-05:00",
+        "type": "badge_in",
+        "person": "p_bg_17",
+        "room": "230",
+        "device": "rdr-230",
+        "source": {
+          "file": "access/badge_access.csv",
+          "line": 2298,
+          "quote": "2026-03-04T18:16:10-05:00,40417,rdr-230,IN,GRANTED",
+          "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+        }
+      },
+      {
+        "event": "e9508",
+        "t": "2026-03-04T18:16:40-05:00",
+        "type": "badge_in",
+        "person": "p_bg_17",
+        "room": "219",
+        "device": "rdr-219",
+        "source": {
+          "file": "access/badge_access.csv",
+          "line": 2299,
+          "quote": "2026-03-04T18:16:40-05:00,40417,rdr-219,IN,GRANTED",
+          "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:16:10-05:00",
+    "room": "219",
+    "change": null,
+    "key": "impossible_travel|e9507|p_bg_17|"
+  },
+  {
+    "id": "c3",
+    "kind": "temporal",
+    "events": [
+      "e9485",
+      "e9544"
+    ],
+    "score": 0.9,
+    "explanation": "p_hank's last badge read was OUT of room 217 at 6:02 pm, with no later badge read, but their laptop was on the floor Wi-Fi until 6:41 pm.",
+    "gap_s": 2340.0,
+    "persons": [
+      "p_hank"
+    ],
+    "rule": "wifi_after_last_badge",
+    "sources": [
+      {
+        "file": "access/badge_access.csv",
+        "line": 2289,
+        "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+        "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+      },
+      {
+        "file": "network/wifi_ap_logs.csv",
+        "line": 5451,
+        "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE",
+        "sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c"
+      }
+    ],
+    "title": "Laptop on Wi-Fi after the last badge-out",
+    "sides": [
+      {
+        "label": "First record",
+        "events": [
+          "e9485"
+        ],
+        "quotes": [
+          "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED"
+        ],
+        "more": 0
+      },
+      {
+        "label": "Second record",
+        "events": [
+          "e9544"
+        ],
+        "quotes": [
+          "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e9485",
+        "t": "2026-03-04T18:02:00-05:00",
+        "type": "badge_out",
+        "person": "p_hank",
+        "room": "217",
+        "device": "rdr-217",
+        "source": {
+          "file": "access/badge_access.csv",
+          "line": 2289,
+          "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+          "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+        }
+      },
+      {
+        "event": "e9544",
+        "t": "2026-03-04T18:41:00-05:00",
+        "type": "wifi_disassoc",
+        "person": "p_hank",
+        "room": "217",
+        "device": "ap-2-03",
+        "source": {
+          "file": "network/wifi_ap_logs.csv",
+          "line": 5451,
+          "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE",
+          "sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:02:00-05:00",
+    "room": "217",
+    "change": null,
+    "key": "wifi_after_last_badge|e9485|p_hank|"
+  },
+  {
+    "id": "c4",
+    "kind": "temporal",
+    "events": [
+      "e9490",
+      "e9535"
+    ],
+    "score": 0.8,
+    "explanation": "Camera cam-03 was offline from 6:05 pm until 6:30 pm with no maintenance window or work order covering it.",
+    "gap_s": 1500.0,
+    "rule": "camera_gap_without_work_order",
+    "sources": [
+      {
+        "file": "cctv/index.csv",
+        "line": 66,
+        "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+        "sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e"
+      },
+      {
+        "file": "cctv/index.csv",
+        "line": 66,
+        "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+        "sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e"
+      }
+    ],
+    "title": "Camera offline with no work order",
+    "sides": [
+      {
+        "label": "Camera log",
+        "events": [
+          "e9490",
+          "e9535"
+        ],
+        "quotes": [
+          "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+          "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,"
+        ],
+        "more": 0
+      },
+      {
+        "label": "Work orders",
+        "events": [],
+        "quotes": [
+          "No maintenance window or work order covers this camera at that time"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e9490",
+        "t": "2026-03-04T18:05:00-05:00",
+        "type": "camera_offline",
+        "person": null,
+        "room": "corr-c",
+        "device": "cam-03",
+        "source": {
+          "file": "cctv/index.csv",
+          "line": 66,
+          "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+          "sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e"
+        }
+      },
+      {
+        "event": "e9535",
+        "t": "2026-03-04T18:30:00-05:00",
+        "type": "camera_online",
+        "person": null,
+        "room": "corr-c",
+        "device": "cam-03",
+        "source": {
+          "file": "cctv/index.csv",
+          "line": 66,
+          "quote": "cam-03,2026-03-04T18:05:00-05:00,2026-03-04T18:30:00-05:00,OFFLINE,",
+          "sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:05:00-05:00",
+    "room": "corr-c",
+    "change": null,
+    "key": "camera_gap_without_work_order|e9490||"
+  },
+  {
+    "id": "c5",
+    "kind": "statement",
+    "events": [
+      "e12083",
+      "e9485",
+      "e9544"
+    ],
+    "score": 0.95,
+    "explanation": "Hank Gibson said \"I went straight home at six.\" (p_hank's stated time 6:00 pm). Their last badge read was OUT of room 217 at 6:02 pm. Their last recorded activity that day was wifi_disassoc at 6:41 pm, 41 min after the stated time.",
+    "gap_s": 2460.0,
+    "persons": [
+      "p_hank"
+    ],
+    "rule": "leave_time_claim",
+    "sources": [
+      {
+        "file": "statements/hank_gibson.pdf",
+        "line": 18,
+        "quote": "I went straight home at six.",
+        "sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f"
+      },
+      {
+        "file": "access/badge_access.csv",
+        "line": 2289,
+        "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+        "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+      },
+      {
+        "file": "network/wifi_ap_logs.csv",
+        "line": 5451,
+        "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE",
+        "sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c"
+      }
+    ],
+    "title": "Stated leaving time vs the records",
+    "sides": [
+      {
+        "label": "Said",
+        "events": [
+          "e12083"
+        ],
+        "quotes": [
+          "I went straight home at six."
+        ],
+        "more": 0
+      },
+      {
+        "label": "Records",
+        "events": [
+          "e9485",
+          "e9544"
+        ],
+        "quotes": [
+          "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+          "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e12083",
+        "t": "2026-03-09T14:00:00-05:00",
+        "type": "statement",
+        "person": "p_hank",
+        "room": null,
+        "device": null,
+        "source": {
+          "file": "statements/hank_gibson.pdf",
+          "line": 18,
+          "quote": "I went straight home at six.",
+          "sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f"
+        }
+      },
+      {
+        "event": "e9485",
+        "t": "2026-03-04T18:02:00-05:00",
+        "type": "badge_out",
+        "person": "p_hank",
+        "room": "217",
+        "device": "rdr-217",
+        "source": {
+          "file": "access/badge_access.csv",
+          "line": 2289,
+          "quote": "2026-03-04T18:02:00-05:00,40388,rdr-217,OUT,GRANTED",
+          "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+        }
+      },
+      {
+        "event": "e9544",
+        "t": "2026-03-04T18:41:00-05:00",
+        "type": "wifi_disassoc",
+        "person": "p_hank",
+        "room": "217",
+        "device": "ap-2-03",
+        "source": {
+          "file": "network/wifi_ap_logs.csv",
+          "line": 5451,
+          "quote": "2026-03-04T18:41:00-05:00,ap-2-03,02:1F:9A:10:00:02,DISASSOC,-61,JRR2-SECURE",
+          "sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:02:00-05:00",
+    "room": "217",
+    "change": null,
+    "key": "leave_time_claim|e12083|p_hank|"
+  },
+  {
+    "id": "c6",
+    "kind": "statement",
+    "events": [
+      "e12092",
+      "e9464"
+    ],
+    "score": 0.95,
+    "explanation": "Maggie Price said \"Hank and I left together around 6:30.\" (p_maggie's stated time 6:30 pm). Their last badge read was OUT of room 217 at 5:45 pm. Their last recorded activity that day was badge_out at 5:45 pm, 45 min before the stated time.",
+    "gap_s": -2700.0,
+    "persons": [
+      "p_maggie"
+    ],
+    "rule": "leave_time_claim",
+    "sources": [
+      {
+        "file": "statements/maggie_price.pdf",
+        "line": 16,
+        "quote": "Hank and I left together around 6:30.",
+        "sha256": "6b4e024c96a2d33130af6d8387cd78c553933a0d3a906f8b98bf684470628254"
+      },
+      {
+        "file": "access/badge_access.csv",
+        "line": 2281,
+        "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED",
+        "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+      }
+    ],
+    "title": "Stated leaving time vs the records",
+    "sides": [
+      {
+        "label": "Said",
+        "events": [
+          "e12092"
+        ],
+        "quotes": [
+          "Hank and I left together around 6:30."
+        ],
+        "more": 0
+      },
+      {
+        "label": "Records",
+        "events": [
+          "e9464"
+        ],
+        "quotes": [
+          "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e12092",
+        "t": "2026-03-09T15:30:00-05:00",
+        "type": "statement",
+        "person": "p_maggie",
+        "room": null,
+        "device": null,
+        "source": {
+          "file": "statements/maggie_price.pdf",
+          "line": 16,
+          "quote": "Hank and I left together around 6:30.",
+          "sha256": "6b4e024c96a2d33130af6d8387cd78c553933a0d3a906f8b98bf684470628254"
+        }
+      },
+      {
+        "event": "e9464",
+        "t": "2026-03-04T17:45:00-05:00",
+        "type": "badge_out",
+        "person": "p_maggie",
+        "room": "217",
+        "device": "rdr-217",
+        "source": {
+          "file": "access/badge_access.csv",
+          "line": 2281,
+          "quote": "2026-03-04T17:45:00-05:00,40392,rdr-217,OUT,GRANTED",
+          "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090"
+        }
+      }
+    ],
+    "t": "2026-03-04T17:45:00-05:00",
+    "room": "217",
+    "change": null,
+    "key": "leave_time_claim|e12092|p_maggie|"
+  },
+  {
+    "id": "c7",
+    "kind": "statement",
+    "events": [
+      "e12087",
+      "e9510"
+    ],
+    "score": 0.95,
+    "explanation": "Hank Gibson said \"IT gave me that drive last year.\", but the USB history on lt-219 records drive 4C530001230918112443&0 as first seen 2026-03-04 at 6:17:30 pm.",
+    "persons": [
+      "p_hank"
+    ],
+    "rule": "drive_history_claim",
+    "sources": [
+      {
+        "file": "statements/hank_gibson.pdf",
+        "line": 27,
+        "quote": "IT gave me that drive last year.",
+        "sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f"
+      },
+      {
+        "file": "endpoint/usbstor.txt",
+        "line": 13,
+        "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]",
+        "sha256": "024b39fb85b1c0d2eb24fd57fe2fccbfb886631ee0e678f2f7bfdfada3c46c2b"
+      }
+    ],
+    "title": "Stated drive history vs USB history",
+    "sides": [
+      {
+        "label": "Said",
+        "events": [
+          "e12087"
+        ],
+        "quotes": [
+          "IT gave me that drive last year."
+        ],
+        "more": 0
+      },
+      {
+        "label": "Records",
+        "events": [
+          "e9510"
+        ],
+        "quotes": [
+          "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]"
+        ],
+        "more": 0
+      }
+    ],
+    "chain": [
+      {
+        "event": "e12087",
+        "t": "2026-03-09T14:00:00-05:00",
+        "type": "statement",
+        "person": "p_hank",
+        "room": null,
+        "device": null,
+        "source": {
+          "file": "statements/hank_gibson.pdf",
+          "line": 27,
+          "quote": "IT gave me that drive last year.",
+          "sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f"
+        }
+      },
+      {
+        "event": "e9510",
+        "t": "2026-03-04T18:17:30-05:00",
+        "type": "usb_mount",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/usbstor.txt",
+          "line": 13,
+          "quote": "  S/N: 4C530001230918112443&0 [2026-03-04T18:17:30-05:00]",
+          "sha256": "024b39fb85b1c0d2eb24fd57fe2fccbfb886631ee0e678f2f7bfdfada3c46c2b"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:17:30-05:00",
+    "room": "219",
+    "change": null,
+    "key": "drive_history_claim|e12087|p_hank|"
+  },
+  {
+    "id": "c8",
+    "kind": "statement",
+    "events": [
+      "e12051",
+      "e9533",
+      "e9532",
+      "e9522",
+      "e9523",
+      "e9527",
+      "e9528",
+      "e9513",
+      "e9512",
+      "e9519",
+      "e9520"
+    ],
+    "score": 1.0,
+    "explanation": "Statement \"I never touched the Titan folder.\" vs the record \"I opened C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx on lt-219 at 6:29:33 pm.\" (NLI contradiction 1.00), plus 9 more record(s) like it.",
+    "persons": [
+      "p_hank"
+    ],
+    "rule": "nli",
+    "sources": [
+      {
+        "file": "comms/mailbox.mbox",
+        "line": 5943,
+        "quote": "I never touched the Titan folder.",
+        "sha256": "2b98251f373c945dc7b33ab5d478e7112040d3e41c59b22e4b32e90bb7eae20a"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 76,
+        "quote": "2026-03-04T18:29:33-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,E:",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 75,
+        "quote": "2026-03-04T18:29:30-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 71,
+        "quote": "2026-03-04T18:23:10-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 72,
+        "quote": "2026-03-04T18:23:14-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,E:",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 73,
+        "quote": "2026-03-04T18:26:02-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 74,
+        "quote": "2026-03-04T18:26:07-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,E:",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 68,
+        "quote": "2026-03-04T18:18:02-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4.step,48211968,E:",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 67,
+        "quote": "2026-03-04T18:17:58-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4.step,48211968,",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 69,
+        "quote": "2026-03-04T18:20:41-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      },
+      {
+        "file": "endpoint/file_audit.csv",
+        "line": 70,
+        "quote": "2026-03-04T18:20:45-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,E:",
+        "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+      }
+    ],
+    "title": "Statement contradicted by the records",
+    "sides": [
+      {
+        "label": "Said",
+        "events": [
+          "e12051"
+        ],
+        "quotes": [
+          "I never touched the Titan folder."
+        ],
+        "more": 0
+      },
+      {
+        "label": "Records",
+        "events": [
+          "e9533",
+          "e9532",
+          "e9522",
+          "e9523",
+          "e9527",
+          "e9528",
+          "e9513",
+          "e9512",
+          "e9519",
+          "e9520"
+        ],
+        "quotes": [
+          "2026-03-04T18:29:33-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,E:",
+          "2026-03-04T18:29:30-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,",
+          "2026-03-04T18:23:10-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,"
+        ],
+        "more": 7
+      }
+    ],
+    "chain": [
+      {
+        "event": "e12051",
+        "t": "2026-03-09T10:14:00-05:00",
+        "type": "email",
+        "person": "p_hank",
+        "room": null,
+        "device": null,
+        "source": {
+          "file": "comms/mailbox.mbox",
+          "line": 5943,
+          "quote": "I never touched the Titan folder.",
+          "sha256": "2b98251f373c945dc7b33ab5d478e7112040d3e41c59b22e4b32e90bb7eae20a"
+        }
+      },
+      {
+        "event": "e9533",
+        "t": "2026-03-04T18:29:33-05:00",
+        "type": "file_copy",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 76,
+          "quote": "2026-03-04T18:29:33-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,E:",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9532",
+        "t": "2026-03-04T18:29:30-05:00",
+        "type": "file_read",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 75,
+          "quote": "2026-03-04T18:29:30-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\titan_hotfire_results_2026Q1.xlsx,2883584,",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9522",
+        "t": "2026-03-04T18:23:10-05:00",
+        "type": "file_read",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 71,
+          "quote": "2026-03-04T18:23:10-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9523",
+        "t": "2026-03-04T18:23:14-05:00",
+        "type": "file_copy",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 72,
+          "quote": "2026-03-04T18:23:14-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\nozzle_throat_detail.sldprt,9437184,E:",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9527",
+        "t": "2026-03-04T18:26:02-05:00",
+        "type": "file_read",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 73,
+          "quote": "2026-03-04T18:26:02-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9528",
+        "t": "2026-03-04T18:26:07-05:00",
+        "type": "file_copy",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 74,
+          "quote": "2026-03-04T18:26:07-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\injector_plate_rev7.step,31457280,E:",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9513",
+        "t": "2026-03-04T18:18:02-05:00",
+        "type": "file_copy",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 68,
+          "quote": "2026-03-04T18:18:02-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4.step,48211968,E:",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9512",
+        "t": "2026-03-04T18:17:58-05:00",
+        "type": "file_read",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 67,
+          "quote": "2026-03-04T18:17:58-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4.step,48211968,",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9519",
+        "t": "2026-03-04T18:20:41-05:00",
+        "type": "file_read",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 69,
+          "quote": "2026-03-04T18:20:41-05:00,LT-219,hgibson,READ,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      },
+      {
+        "event": "e9520",
+        "t": "2026-03-04T18:20:45-05:00",
+        "type": "file_copy",
+        "person": "p_hank",
+        "room": "219",
+        "device": "lt-219",
+        "source": {
+          "file": "endpoint/file_audit.csv",
+          "line": 70,
+          "quote": "2026-03-04T18:20:45-05:00,LT-219,hgibson,COPY,C:\\Projects\\Titan\\thruster_v4_assembly.sldasm,21734400,E:",
+          "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069"
+        }
+      }
+    ],
+    "t": "2026-03-04T18:17:58-05:00",
+    "room": "219",
+    "change": null,
+    "key": "nli|e12051|p_hank|"
+  }
+]

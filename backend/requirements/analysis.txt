@@ -2,3 +2,4 @@ networkx
 scikit-learn
 sentence-transformers
 rapidfuzz
+pandas
