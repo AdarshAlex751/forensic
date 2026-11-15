@@ -1778,6 +1778,7 @@ def brief_record() -> Record:
         "suspicion only. It contains no findings and names no one as responsible.",
         "Background. Room 219 on the second floor of the JRR Building is a secure, badge-only room. It holds lt-219, "
         "an isolated laptop with no network connection that stores Halvorsen's Titan design files.",
+        "Location. Julis Romo Rabinowitz Building, Princeton University, Princeton, NJ",
         "What was noticed. On Monday 9 March 2026, during a routine review of access to room 219, Halvorsen security "
         "noticed activity in room 219 on the evening of Wednesday 4 March, the evening of the AI Summit welcome "
         "reception (from 18:15), when most floor members were downstairs.",
@@ -1798,7 +1799,7 @@ def brief_record() -> Record:
         "files are EST with a fixed -05:00 offset.",
     ]
     return Record(source=F_BRIEF, t=at(CASE_DAY, 18, 0), story=True, fields={
-        "title": "Incident brief", "case_id": CASE_ID, "author": "Alma Imhoff, Head of Security, Halvorsen Dynamics",
+        "title": "Incident brief: The Titan Files", "case_id": CASE_ID, "author": "Alma Imhoff, Head of Security, Halvorsen Dynamics",
         "date": at(CASE_DAY, 18, 0), "paragraphs": paras})
 
 

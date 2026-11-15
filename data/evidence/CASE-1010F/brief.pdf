@@ -33,7 +33,7 @@ endobj
 6 0 obj
 <<
 /Author (Alma Imhoff, Head of Security, Halvorsen Dynamics) /CreationDate (D:20260309184000-05'00') /Creator (Microsoft Word for Microsoft 365) /Keywords () /ModDate (D:20260309184000-05'00') /Producer (Microsoft Word for Microsoft 365) 
-  /Subject (Case 1010F) /Title (Incident brief) /Trapped /False
+  /Subject (Case 1010F) /Title (Incident brief: The Titan Files) /Trapped /False
 >>
 endobj
 7 0 obj
@@ -43,14 +43,14 @@ endobj
 endobj
 8 0 obj
 <<
-/Length 4294
+/Length 4449
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 BT /F2 14 Tf 16.8 TL ET
 BT 1 0 0 1 57.6 716.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
 BT /F2 12 Tf 14.4 TL ET
-BT 1 0 0 1 57.6 698.4 Tm (Incident brief) Tj T* ET
+BT 1 0 0 1 57.6 698.4 Tm (Incident brief: The Titan Files) Tj T* ET
 BT /F1 10 Tf 12 TL ET
 BT 1 0 0 1 57.6 680.4 Tm (Case number: 1010F) Tj T* ET
 BT /F1 10 Tf 12 TL ET
@@ -68,49 +68,51 @@ BT 1 0 0 1 57.6 585.4 Tm (Background. Room 219 on the second floor of the JRR Bu
 BT /F1 11 Tf 13.2 TL ET
 BT 1 0 0 1 57.6 570.4 Tm (lt-219, an isolated laptop with no network connection that stores Halvorsen's Titan design files.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 547.4 Tm (What was noticed. On Monday 9 March 2026, during a routine review of access to room 219,) Tj T* ET
+BT 1 0 0 1 57.6 547.4 Tm (Location. Julis Romo Rabinowitz Building, Princeton University, Princeton, NJ) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 532.4 Tm (Halvorsen security noticed activity in room 219 on the evening of Wednesday 4 March, the evening of) Tj T* ET
+BT 1 0 0 1 57.6 524.4 Tm (What was noticed. On Monday 9 March 2026, during a routine review of access to room 219,) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 517.4 Tm (the AI Summit welcome reception \(from 18:15\), when most floor members were downstairs.) Tj T* ET
+BT 1 0 0 1 57.6 509.4 Tm (Halvorsen security noticed activity in room 219 on the evening of Wednesday 4 March, the evening of) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 494.4 Tm (Question for the review. Were the project files on lt-219 accessed or taken that evening, and if so, by) Tj T* ET
+BT 1 0 0 1 57.6 494.4 Tm (the AI Summit welcome reception \(from 18:15\), when most floor members were downstairs.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 479.4 Tm (whom?) Tj T* ET
+BT 1 0 0 1 57.6 471.4 Tm (Question for the review. Were the project files on lt-219 accessed or taken that evening, and if so, by) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 456.4 Tm (What was collected. On 9 March 2026 Alma Imhoff, with R. Castell \(forensic examiner\), collected:) Tj T* ET
+BT 1 0 0 1 57.6 456.4 Tm (whom?) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 441.4 Tm (badge reader logs for rooms 210 to 230; floor Wi-Fi access point logs; a forensic image of lt-219) Tj T* ET
+BT 1 0 0 1 57.6 433.4 Tm (What was collected. On 9 March 2026 Alma Imhoff, with R. Castell \(forensic examiner\), collected:) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 426.4 Tm (\(Windows security event log, local file audit log, device history\); the CCTV index for the floor cameras;) Tj T* ET
+BT 1 0 0 1 57.6 418.4 Tm (badge reader logs for rooms 210 to 230; floor Wi-Fi access point logs; a forensic image of lt-219) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 411.4 Tm (the IT maintenance calendar; the Halvorsen mailbox and Slack export; an account transactions) Tj T* ET
+BT 1 0 0 1 57.6 403.4 Tm (\(Windows security event log, local file audit log, device history\); the CCTV index for the floor cameras;) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 396.4 Tm (extract obtained for the review; and three interview statements taken that afternoon.) Tj T* ET
+BT 1 0 0 1 57.6 388.4 Tm (the IT maintenance calendar; the Halvorsen mailbox and Slack export; an account transactions) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 373.4 Tm (CCTV. CCTV video older than 72 hours had already been overwritten under the building's retention) Tj T* ET
+BT 1 0 0 1 57.6 373.4 Tm (extract obtained for the review; and three interview statements taken that afternoon.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 358.4 Tm (policy when the review began; only the camera status index could be recovered.) Tj T* ET
+BT 1 0 0 1 57.6 350.4 Tm (CCTV. CCTV video older than 72 hours had already been overwritten under the building's retention) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 335.4 Tm (Account records. financial/transactions.csv is an extract of checking account CHK-7731, provided with) Tj T* ET
+BT 1 0 0 1 57.6 335.4 Tm (policy when the review began; only the camera status index could be recovered.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 320.4 Tm (the account holder H. Gibson's consent.) Tj T* ET
+BT 1 0 0 1 57.6 312.4 Tm (Account records. financial/transactions.csv is an extract of checking account CHK-7731, provided with) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 297.4 Tm (Period covered. Background records run from Monday 23 February to Sunday 8 March 2026. The) Tj T* ET
+BT 1 0 0 1 57.6 297.4 Tm (the account holder H. Gibson's consent.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 282.4 Tm (forensic image, the interviews and this brief date from 9 March 2026.) Tj T* ET
+BT 1 0 0 1 57.6 274.4 Tm (Period covered. Background records run from Monday 23 February to Sunday 8 March 2026. The) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 259.4 Tm (Not collected. Campus parking records are held by the campus parking office and can be requested if) Tj T* ET
+BT 1 0 0 1 57.6 259.4 Tm (forensic image, the interviews and this brief date from 9 March 2026.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 244.4 Tm (needed.) Tj T* ET
+BT 1 0 0 1 57.6 236.4 Tm (Not collected. Campus parking records are held by the campus parking office and can be requested if) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 221.4 Tm (Integrity. Every file was hashed at collection; the hashes are listed in manifest.csv. All times in the) Tj T* ET
+BT 1 0 0 1 57.6 221.4 Tm (needed.) Tj T* ET
 BT /F1 11 Tf 13.2 TL ET
-BT 1 0 0 1 57.6 206.4 Tm (case files are EST with a fixed -05:00 offset.) Tj T* ET
+BT 1 0 0 1 57.6 198.4 Tm (Integrity. Every file was hashed at collection; the hashes are listed in manifest.csv. All times in the) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 183.4 Tm (case files are EST with a fixed -05:00 offset.) Tj T* ET
 BT /F2 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 162.4 Tm (Alma Imhoff, Head of Security, Halvorsen Dynamics) Tj T* ET
+BT 1 0 0 1 57.6 139.4 Tm (Alma Imhoff, Head of Security, Halvorsen Dynamics) Tj T* ET
 BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 57.6 148.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
+BT 1 0 0 1 57.6 125.4 Tm (Halvorsen Dynamics - Security Office) Tj T* ET
 BT /F1 8 Tf 9.6 TL ET
 BT 1 0 0 1 57.6 40 Tm (Halvorsen Dynamics - Security Office - Case 1010F - CONFIDENTIAL - Page 1) Tj T* ET
  
@@ -125,12 +127,12 @@ xref
 0000000321 00000 n 
 0000000514 00000 n 
 0000000582 00000 n 
-0000000905 00000 n 
-0000000964 00000 n 
+0000000922 00000 n 
+0000000981 00000 n 
 trailer
 <<
 /ID 
-[<2f936bf57a046fbd0f449480ce92635b><2f936bf57a046fbd0f449480ce92635b>]
+[<17c6c9e07bb22a85b7a9fcb332aa2be9><17c6c9e07bb22a85b7a9fcb332aa2be9>]
 % ReportLab generated PDF document -- digest (opensource)
 
 /Info 6 0 R
@@ -138,5 +140,5 @@ trailer
 /Size 9
 >>
 startxref
-5309
+5481
 %%EOF

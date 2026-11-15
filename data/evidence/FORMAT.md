@@ -228,3 +228,24 @@ real output later; when both pass, they are interchangeable.
    `schema.py` and `types.ts`.
 3. **`.gitattributes`** keeping case files byte-exact (section 2), Integrator.
 4. **`answer_key.json` shape** (section 8) replaces the current `k1`/event-ID version: Person 2 to confirm.
+
+## 12. Parser conventions (learned while matching the generated case exactly)
+
+- **Values:** actor values stay strings (`"40417"`); `rssi`, `bytes`, `logon_type`, `event_id` are ints; `amount` is
+  always a float (`25000.0`); `access_mask` stays a string (`"0x1"`); empty CSV fields become `null`.
+- **Devices:** `device` is the raw reader / AP / camera id; `host` and laptop `device` are the log's host name mapped
+  through `facilities/devices.csv` (`LT-219` -> `lt-219`); `room` is that device's room. Maintenance `device` is the
+  asset only if it is in `devices.csv` (else `null`), but `attrs.asset` always keeps the raw asset.
+- **Per type:** `logoff` has no `logon_type`; `camera_offline` and `camera_online` carry the same attrs and
+  `clip_ref` is `null` (the OFFLINE row has none); RECORDING rows give no events; `maintenance_window.t` = `start`;
+  the bank `balance` column is not kept.
+- **usbstor:** `serial` keeps the `&0` suffix; `vendor` / `product` come from the `Disk&Ven_..&Prod_..` line with
+  underscores kept; the host is the case's single laptop in `devices.csv`.
+- **Email:** `to` holds the `To:` addresses only (not `Cc:`); quoted reply lines (`> ...`) are body lines too.
+- **Statements:** lines are numbered over all pages joined with `\n` (footers included); bracketed interviewer notes
+  can wrap over several lines and give no events.
+- **case.json:** `title` = the brief's document title after `Incident brief: `; `address` = its `Location.` paragraph.
+
+Pipeline: `run()` ingests the uploaded case (`data/evidence/work/CASE-1010F/`) or, if none, the built-in
+`data/evidence/CASE-1010F/`, plus released extra files (`release.py`); `tests/evidence/ingest/test_end_to_end.py`
+checks the result equals `truth/events_expected.json` exactly.

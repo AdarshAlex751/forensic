@@ -1,0 +1,642 @@
+[
+  {
+    "file": "access/badge_access.csv",
+    "sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090",
+    "manifest_sha256": "cdb181c84b09c07676b13dac4a1d4093a4833b9934372c937d69efe5bc8e2090",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 2890
+  },
+  {
+    "file": "brief.pdf",
+    "sha256": "8b265e6bb7d6c86c997917359af0d0e8376dc4655f1f7073051df55debc1185e",
+    "manifest_sha256": "8b265e6bb7d6c86c997917359af0d0e8376dc4655f1f7073051df55debc1185e",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 0
+  },
+  {
+    "file": "cctv/index.csv",
+    "sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e",
+    "manifest_sha256": "b489643d43363290564d252f397f2d2354114ece0103b903016030b8eb3e777e",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 6
+  },
+  {
+    "file": "comms/mailbox.mbox",
+    "sha256": "2b98251f373c945dc7b33ab5d478e7112040d3e41c59b22e4b32e90bb7eae20a",
+    "manifest_sha256": "2b98251f373c945dc7b33ab5d478e7112040d3e41c59b22e4b32e90bb7eae20a",
+    "manifest_match": true,
+    "parser": "mbox",
+    "records": 1581
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-02-25.json",
+    "sha256": "f436e472115a99876c636439b272001912438c6a52298e30e1943dcb9a6706a3",
+    "manifest_sha256": "f436e472115a99876c636439b272001912438c6a52298e30e1943dcb9a6706a3",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-02-27.json",
+    "sha256": "ba6a25e5393d522b3d46542b3411167b0a63151fb4b597b9ebba9352e5a41b31",
+    "manifest_sha256": "ba6a25e5393d522b3d46542b3411167b0a63151fb4b597b9ebba9352e5a41b31",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-01.json",
+    "sha256": "4a9b79bd98bca3cbd47f556325c04a315c3f5549193b4f0a106df9790084e960",
+    "manifest_sha256": "4a9b79bd98bca3cbd47f556325c04a315c3f5549193b4f0a106df9790084e960",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-02.json",
+    "sha256": "2fdf13ed2c09b8d73c1c442de5ad51bac28482657d7dfc01a3cddacf8bbd420a",
+    "manifest_sha256": "2fdf13ed2c09b8d73c1c442de5ad51bac28482657d7dfc01a3cddacf8bbd420a",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 1
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-03.json",
+    "sha256": "c2b5dbc2ac75498e228e2120577000f073d646faf0e16d5af31e3932b0247d68",
+    "manifest_sha256": "c2b5dbc2ac75498e228e2120577000f073d646faf0e16d5af31e3932b0247d68",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-04.json",
+    "sha256": "a370591034085c63ff031f766cf3b5722f58f9e6b31e11555bdcad2ffdee33d9",
+    "manifest_sha256": "a370591034085c63ff031f766cf3b5722f58f9e6b31e11555bdcad2ffdee33d9",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-05.json",
+    "sha256": "d44c0cb2e38376b97763c90c8e88afdab1f5d9a232cec2b7c143fb0e424d83db",
+    "manifest_sha256": "d44c0cb2e38376b97763c90c8e88afdab1f5d9a232cec2b7c143fb0e424d83db",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/D07Q3K9L2MZ/2026-03-06.json",
+    "sha256": "8b4732183512a7d810609815b805326c09283359acabfc32dd2fa668f30f9a35",
+    "manifest_sha256": "8b4732183512a7d810609815b805326c09283359acabfc32dd2fa668f30f9a35",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/channels.json",
+    "sha256": "92cce8e4d3de8479bf0f90ebcb60dd8582d0b9faab3278351373b5a733d35ba6",
+    "manifest_sha256": "92cce8e4d3de8479bf0f90ebcb60dd8582d0b9faab3278351373b5a733d35ba6",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 0
+  },
+  {
+    "file": "comms/slack_export/dms.json",
+    "sha256": "58cd90c00ad78eba964169912e0df57bcedba11f19e88759fadf264f10db3d5b",
+    "manifest_sha256": "58cd90c00ad78eba964169912e0df57bcedba11f19e88759fadf264f10db3d5b",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 0
+  },
+  {
+    "file": "comms/slack_export/general/2026-02-23.json",
+    "sha256": "91fa0706de14bb413ed67e15c2e802e4ec70fb2d17e73dd86a66ece0bf4f9bb2",
+    "manifest_sha256": "91fa0706de14bb413ed67e15c2e802e4ec70fb2d17e73dd86a66ece0bf4f9bb2",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 12
+  },
+  {
+    "file": "comms/slack_export/general/2026-02-24.json",
+    "sha256": "ab6642acf512cdd09906f40b5b200f96de9bff82ead9a6852e94d60720f893a2",
+    "manifest_sha256": "ab6642acf512cdd09906f40b5b200f96de9bff82ead9a6852e94d60720f893a2",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 10
+  },
+  {
+    "file": "comms/slack_export/general/2026-02-25.json",
+    "sha256": "e16be403a3a0d33608d52f324fa02b71604081706984ecd36598deed961bd794",
+    "manifest_sha256": "e16be403a3a0d33608d52f324fa02b71604081706984ecd36598deed961bd794",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 11
+  },
+  {
+    "file": "comms/slack_export/general/2026-02-26.json",
+    "sha256": "0e7a064884cdbc9a04e9f2ba85e8a82aaf0afc44d78c58ee304a3631c3242f00",
+    "manifest_sha256": "0e7a064884cdbc9a04e9f2ba85e8a82aaf0afc44d78c58ee304a3631c3242f00",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/general/2026-02-27.json",
+    "sha256": "3ab4f9de53d59961afaea4668288e7dfe9d8443aef98ae0b9f7d692a479c7389",
+    "manifest_sha256": "3ab4f9de53d59961afaea4668288e7dfe9d8443aef98ae0b9f7d692a479c7389",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 13
+  },
+  {
+    "file": "comms/slack_export/general/2026-03-02.json",
+    "sha256": "6b4f293d0e80b9701003d3ca5cc79ef7750ea114f75b131ebdb8d38345797630",
+    "manifest_sha256": "6b4f293d0e80b9701003d3ca5cc79ef7750ea114f75b131ebdb8d38345797630",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 13
+  },
+  {
+    "file": "comms/slack_export/general/2026-03-03.json",
+    "sha256": "12cca44bf1edbb443f715c882bd3d1a29cdf3b5299fa754cfb165a61c9170026",
+    "manifest_sha256": "12cca44bf1edbb443f715c882bd3d1a29cdf3b5299fa754cfb165a61c9170026",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/general/2026-03-04.json",
+    "sha256": "f5866829c78f4d8ee613c0448993858ae139f7117dcda8a6722c8565b572ed8d",
+    "manifest_sha256": "f5866829c78f4d8ee613c0448993858ae139f7117dcda8a6722c8565b572ed8d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/general/2026-03-05.json",
+    "sha256": "8d8af5c9973cdaa486fb477d709a3a4884a1680abb786fb81dadfd39a19d4a8b",
+    "manifest_sha256": "8d8af5c9973cdaa486fb477d709a3a4884a1680abb786fb81dadfd39a19d4a8b",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 11
+  },
+  {
+    "file": "comms/slack_export/general/2026-03-06.json",
+    "sha256": "c47d784e47c36a6f80633159c46e26398b3ed2b91bddf98d8c1d2532aaefa425",
+    "manifest_sha256": "c47d784e47c36a6f80633159c46e26398b3ed2b91bddf98d8c1d2532aaefa425",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 15
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-02-23.json",
+    "sha256": "f908c12fec3a3a61f8c60bab0a608d1e6dbf5cf1ef7427569e1d0ac67495eb07",
+    "manifest_sha256": "f908c12fec3a3a61f8c60bab0a608d1e6dbf5cf1ef7427569e1d0ac67495eb07",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 15
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-02-24.json",
+    "sha256": "12d141c1bb40146e8f2cfd2ae0207d7a7d752b61e9651ceff08f11fc30f9f49a",
+    "manifest_sha256": "12d141c1bb40146e8f2cfd2ae0207d7a7d752b61e9651ceff08f11fc30f9f49a",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 18
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-02-25.json",
+    "sha256": "06054ccd68bf2178d48530887cbb7bf7707e2b170ab01aaefaaef838ee0a151d",
+    "manifest_sha256": "06054ccd68bf2178d48530887cbb7bf7707e2b170ab01aaefaaef838ee0a151d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-02-26.json",
+    "sha256": "f99a82c4618fa8db2585ea326d00b1fe9b5ba33a7f4ed41d670ea71e24696433",
+    "manifest_sha256": "f99a82c4618fa8db2585ea326d00b1fe9b5ba33a7f4ed41d670ea71e24696433",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 17
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-02-27.json",
+    "sha256": "a9074acadbc4e9cf1210bd98a3ebac627dd93526b1354b8c9fcf3bcd7e0bac2c",
+    "manifest_sha256": "a9074acadbc4e9cf1210bd98a3ebac627dd93526b1354b8c9fcf3bcd7e0bac2c",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 19
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-03-02.json",
+    "sha256": "dd08bb64f1ecf89ac679f37ee6511b93f357792e4e551c3e345630e8b0ed3b35",
+    "manifest_sha256": "dd08bb64f1ecf89ac679f37ee6511b93f357792e4e551c3e345630e8b0ed3b35",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 19
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-03-03.json",
+    "sha256": "3ab0f91ab9b6c3abd5359d232202d1b741a38f51e77486aca7cb911752c1af2d",
+    "manifest_sha256": "3ab0f91ab9b6c3abd5359d232202d1b741a38f51e77486aca7cb911752c1af2d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 16
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-03-04.json",
+    "sha256": "9b57af8f95c3e6b105406b723c47fd32fd19d349d635693a30ac93553170f92c",
+    "manifest_sha256": "9b57af8f95c3e6b105406b723c47fd32fd19d349d635693a30ac93553170f92c",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-03-05.json",
+    "sha256": "ba2851a016c707e95f05664da098cf09b8b816329511d72734c0580e5d2164a1",
+    "manifest_sha256": "ba2851a016c707e95f05664da098cf09b8b816329511d72734c0580e5d2164a1",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/halvorsen-eng/2026-03-06.json",
+    "sha256": "c38853222a80dc07996e6bcbbfa3d37f3f19ff8a721a666a5ed39d1a27744508",
+    "manifest_sha256": "c38853222a80dc07996e6bcbbfa3d37f3f19ff8a721a666a5ed39d1a27744508",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 14
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-02-23.json",
+    "sha256": "c9f6a40961357999db04399d7f78f0b7d9cf49a2cdf98497188a5ec197d53789",
+    "manifest_sha256": "c9f6a40961357999db04399d7f78f0b7d9cf49a2cdf98497188a5ec197d53789",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 7
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-02-24.json",
+    "sha256": "aaae2eda8bd3030f55d8d1171e2bd5cf08a49bb2151eee7ee1275065e7dfdb5d",
+    "manifest_sha256": "aaae2eda8bd3030f55d8d1171e2bd5cf08a49bb2151eee7ee1275065e7dfdb5d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-02-25.json",
+    "sha256": "b9c5c51303c059837ec187b8fb993a1b0b7d8fe3aaae866b26188736871f34d6",
+    "manifest_sha256": "b9c5c51303c059837ec187b8fb993a1b0b7d8fe3aaae866b26188736871f34d6",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 7
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-02-26.json",
+    "sha256": "d19b97dead95b99fc21d7b3e8f72b18fa147f3afd693478c659658e5083e84fa",
+    "manifest_sha256": "d19b97dead95b99fc21d7b3e8f72b18fa147f3afd693478c659658e5083e84fa",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-02-27.json",
+    "sha256": "832d7d61c87fc7c683c1a8a4eeda33a76dce72a462a95ef9a7bae3c0115df796",
+    "manifest_sha256": "832d7d61c87fc7c683c1a8a4eeda33a76dce72a462a95ef9a7bae3c0115df796",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 10
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-03-02.json",
+    "sha256": "40b6a37e169e33f376789be6b92eba2736f0f0aede33e4dbc6b909d029bb2c96",
+    "manifest_sha256": "40b6a37e169e33f376789be6b92eba2736f0f0aede33e4dbc6b909d029bb2c96",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-03-03.json",
+    "sha256": "4edccdb35ff39dd70584cff71ed842d2cf3d449159e7f4e32ecd063e8fb63e8a",
+    "manifest_sha256": "4edccdb35ff39dd70584cff71ed842d2cf3d449159e7f4e32ecd063e8fb63e8a",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-03-04.json",
+    "sha256": "e0b493bc7220a5c31706ed7cc20c34704c11e1fb6cdaddbb3d7227c3a60c793c",
+    "manifest_sha256": "e0b493bc7220a5c31706ed7cc20c34704c11e1fb6cdaddbb3d7227c3a60c793c",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-03-05.json",
+    "sha256": "72d264c08931d428a1e9c445e85e1026a577430df7533e6c2e054816554b3370",
+    "manifest_sha256": "72d264c08931d428a1e9c445e85e1026a577430df7533e6c2e054816554b3370",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 10
+  },
+  {
+    "file": "comms/slack_export/lab-219/2026-03-06.json",
+    "sha256": "7f0e8e02408c93e4fbf9dd03d60c52406cbee6a118af57409650bf00f226d5b8",
+    "manifest_sha256": "7f0e8e02408c93e4fbf9dd03d60c52406cbee6a118af57409650bf00f226d5b8",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 7
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-23.json",
+    "sha256": "2bf078901a1df4093fd93abd447ef21197bc168df6185f8fb930b697f4b12930",
+    "manifest_sha256": "2bf078901a1df4093fd93abd447ef21197bc168df6185f8fb930b697f4b12930",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 12
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-24.json",
+    "sha256": "236795c23d0e972504ba4afdb5ba47cd934e5b284e7641b913ce23668bf75380",
+    "manifest_sha256": "236795c23d0e972504ba4afdb5ba47cd934e5b284e7641b913ce23668bf75380",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-25.json",
+    "sha256": "fc645bbebebe6e06522c6f00f08749e07111993cf2aa96552ea72ada86e2d461",
+    "manifest_sha256": "fc645bbebebe6e06522c6f00f08749e07111993cf2aa96552ea72ada86e2d461",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-26.json",
+    "sha256": "778eab8345fae88fead9277b58816498b96c4324869d118f7febc30e0b31e40e",
+    "manifest_sha256": "778eab8345fae88fead9277b58816498b96c4324869d118f7febc30e0b31e40e",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-27.json",
+    "sha256": "2a3308aba1ecb74c889ac8a1c7f1fd811a3a2eb848914e82a32ce71f93000125",
+    "manifest_sha256": "2a3308aba1ecb74c889ac8a1c7f1fd811a3a2eb848914e82a32ce71f93000125",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 7
+  },
+  {
+    "file": "comms/slack_export/random/2026-02-28.json",
+    "sha256": "f38d4649ec3a60633ffbce966f7aa0c44c4d852353382d8529188bd7eef5f9b9",
+    "manifest_sha256": "f38d4649ec3a60633ffbce966f7aa0c44c4d852353382d8529188bd7eef5f9b9",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 3
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-01.json",
+    "sha256": "192095aa5cba062b31e9cc4efe138e0c890bc55e151886a8a0ecb74a48d9e2e1",
+    "manifest_sha256": "192095aa5cba062b31e9cc4efe138e0c890bc55e151886a8a0ecb74a48d9e2e1",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 5
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-02.json",
+    "sha256": "29d418da5ec1be95132fbcbc572deaf0239beffa2b80d8568b7be08d89f86b5c",
+    "manifest_sha256": "29d418da5ec1be95132fbcbc572deaf0239beffa2b80d8568b7be08d89f86b5c",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-03.json",
+    "sha256": "43af4106f042564ec10bf20c0f4ccf7ba24bfbc5f634a965808ba4b71e05d6f0",
+    "manifest_sha256": "43af4106f042564ec10bf20c0f4ccf7ba24bfbc5f634a965808ba4b71e05d6f0",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-04.json",
+    "sha256": "4097af9599835347c9f5a58f881539df51250e15e60cde9af9195bec1da8aa96",
+    "manifest_sha256": "4097af9599835347c9f5a58f881539df51250e15e60cde9af9195bec1da8aa96",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-05.json",
+    "sha256": "c477cb029e635ae69afb80b9ea01a678802705e57c2e65fe966e9641f88dd139",
+    "manifest_sha256": "c477cb029e635ae69afb80b9ea01a678802705e57c2e65fe966e9641f88dd139",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 9
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-06.json",
+    "sha256": "cac1584996d4ae2ae60361a543da6f3ea62f2ed962688a4a0827e6d677fc6281",
+    "manifest_sha256": "cac1584996d4ae2ae60361a543da6f3ea62f2ed962688a4a0827e6d677fc6281",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 10
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-07.json",
+    "sha256": "21419ec90c2b96abdb4a7cef17097b269e44a354b300f5f13d1f6a8e6b59ab6e",
+    "manifest_sha256": "21419ec90c2b96abdb4a7cef17097b269e44a354b300f5f13d1f6a8e6b59ab6e",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/random/2026-03-08.json",
+    "sha256": "96f228886fe1d486238b3d52ffbbc343bc58f5bf57997f9bfa02579a8dee3733",
+    "manifest_sha256": "96f228886fe1d486238b3d52ffbbc343bc58f5bf57997f9bfa02579a8dee3733",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-02-23.json",
+    "sha256": "2de62bcf05d2d900e2edd471eec024bbb2d72a37afc5015dabd2b5edd62e9dac",
+    "manifest_sha256": "2de62bcf05d2d900e2edd471eec024bbb2d72a37afc5015dabd2b5edd62e9dac",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-02-24.json",
+    "sha256": "841809cfd7c1f743a8be5149b00d15cabe60d53f549902cc3d1055ae694a888f",
+    "manifest_sha256": "841809cfd7c1f743a8be5149b00d15cabe60d53f549902cc3d1055ae694a888f",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 3
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-02-25.json",
+    "sha256": "3db6a404de6a5eeebdbd56bb45d6a4010b5b2c7fec4b90967e95c9a1e62b4a04",
+    "manifest_sha256": "3db6a404de6a5eeebdbd56bb45d6a4010b5b2c7fec4b90967e95c9a1e62b4a04",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-02-26.json",
+    "sha256": "3e558defaa3c589f6e54cd6494927343e9fbc1dbf9252a65bd25045b50785624",
+    "manifest_sha256": "3e558defaa3c589f6e54cd6494927343e9fbc1dbf9252a65bd25045b50785624",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 2
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-02-27.json",
+    "sha256": "453060127bb9f3b8ff5153aae747cb763751718e56ec8e53eefcf20a6067fe61",
+    "manifest_sha256": "453060127bb9f3b8ff5153aae747cb763751718e56ec8e53eefcf20a6067fe61",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 3
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-03-02.json",
+    "sha256": "40f375f45fcdb4f57ca7de9b7f48fc010a8cb885b16b058bb61da4b0f64a6724",
+    "manifest_sha256": "40f375f45fcdb4f57ca7de9b7f48fc010a8cb885b16b058bb61da4b0f64a6724",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 10
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-03-03.json",
+    "sha256": "c546489da30470df6620b20b048cae05a91f8a25676dcd79acfe58b44be56af6",
+    "manifest_sha256": "c546489da30470df6620b20b048cae05a91f8a25676dcd79acfe58b44be56af6",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-03-04.json",
+    "sha256": "736278f2ef8790de94c450b0acd893f6be7f093eb870a6f7cf87f389fc91f97d",
+    "manifest_sha256": "736278f2ef8790de94c450b0acd893f6be7f093eb870a6f7cf87f389fc91f97d",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 11
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-03-05.json",
+    "sha256": "9da662a1cb19174082ed78ee18be0ad6e2fa5d89a0f493d5cf0a8b28e9a87984",
+    "manifest_sha256": "9da662a1cb19174082ed78ee18be0ad6e2fa5d89a0f493d5cf0a8b28e9a87984",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/summit-2026/2026-03-06.json",
+    "sha256": "c35b659d8c5718c72018925f0723812633dee3762e3b89b53b583e269731a11e",
+    "manifest_sha256": "c35b659d8c5718c72018925f0723812633dee3762e3b89b53b583e269731a11e",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 8
+  },
+  {
+    "file": "comms/slack_export/users.json",
+    "sha256": "333ea74c9c696173250cf814892328b031b7a28968c52687285f51a324e99ac3",
+    "manifest_sha256": "333ea74c9c696173250cf814892328b031b7a28968c52687285f51a324e99ac3",
+    "manifest_match": true,
+    "parser": "slack_json",
+    "records": 0
+  },
+  {
+    "file": "endpoint/file_audit.csv",
+    "sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069",
+    "manifest_sha256": "2a4dc5693c09af1d7a2a4d9f3c4bf9f7f32787669874ee68c2e474cd1246f069",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 91
+  },
+  {
+    "file": "endpoint/security_log.csv",
+    "sha256": "43b39a04a12fbbc3c2b065ffefc14250fc464c77423af11bde9184ff8eeb583e",
+    "manifest_sha256": "9347078a4b44cd25d685a30ee5d74560f88c3ee0929b86d9701d4958eca90088",
+    "manifest_match": false,
+    "parser": "csv",
+    "records": 51
+  },
+  {
+    "file": "endpoint/usbstor.txt",
+    "sha256": "024b39fb85b1c0d2eb24fd57fe2fccbfb886631ee0e678f2f7bfdfada3c46c2b",
+    "manifest_sha256": "024b39fb85b1c0d2eb24fd57fe2fccbfb886631ee0e678f2f7bfdfada3c46c2b",
+    "manifest_match": true,
+    "parser": "text",
+    "records": 3
+  },
+  {
+    "file": "facilities/devices.csv",
+    "sha256": "269ee8f5a8d260d323ac77e60b7347ec805ef9fbb24d71bdeb55654a887aa377",
+    "manifest_sha256": "269ee8f5a8d260d323ac77e60b7347ec805ef9fbb24d71bdeb55654a887aa377",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 0
+  },
+  {
+    "file": "financial/transactions.csv",
+    "sha256": "d09a0818588ccc65f5036c17cb6bc54b44d7f8ed4f9c0adb38405207acb6037a",
+    "manifest_sha256": "d09a0818588ccc65f5036c17cb6bc54b44d7f8ed4f9c0adb38405207acb6037a",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 33
+  },
+  {
+    "file": "it/maintenance_calendar.csv",
+    "sha256": "63508e244bc48bb77ed9461142b761ba99bd752c8b57c91a706b7a1c668242f1",
+    "manifest_sha256": "63508e244bc48bb77ed9461142b761ba99bd752c8b57c91a706b7a1c668242f1",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 23
+  },
+  {
+    "file": "manifest.csv",
+    "sha256": "b8832f3899475798fd615febb1f499d5bf901520ff415b5da1235708a0a60822",
+    "manifest_sha256": null,
+    "manifest_match": false,
+    "parser": "csv",
+    "records": 0
+  },
+  {
+    "file": "network/wifi_ap_logs.csv",
+    "sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c",
+    "manifest_sha256": "e6a3ca72518484f50c7036824ce77565b5a085565e1ebe529e4c2e1ad318df3c",
+    "manifest_match": true,
+    "parser": "csv",
+    "records": 6855
+  },
+  {
+    "file": "statements/frederik_mendelssohn.pdf",
+    "sha256": "8c340f6d0577dd071af5f7cb93bc95576d267e91e32e53a127f51c8184446ecb",
+    "manifest_sha256": "8c340f6d0577dd071af5f7cb93bc95576d267e91e32e53a127f51c8184446ecb",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 11
+  },
+  {
+    "file": "statements/hank_gibson.pdf",
+    "sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f",
+    "manifest_sha256": "04a0a205d73258a1376be2bdf23a9e49a2986a3d669f747f9f285fd47332229f",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 11
+  },
+  {
+    "file": "statements/maggie_price.pdf",
+    "sha256": "6b4e024c96a2d33130af6d8387cd78c553933a0d3a906f8b98bf684470628254",
+    "manifest_sha256": "6b4e024c96a2d33130af6d8387cd78c553933a0d3a906f8b98bf684470628254",
+    "manifest_match": true,
+    "parser": "pdf",
+    "records": 6
+  }
+]
