@@ -1,18 +1,30 @@
 [
   {
-    "text": "Awaiting human approval for access/parking_exit.csv to verify whether Hank Gibson and Maggie Price exited the building before their stated departure times (relevant to hypotheses H2 and H3).",
-    "kind": "check_next"
-  },
-  {
-    "text": "Verify the manifest hash for endpoint/security_log.csv to confirm the untrusted status claimed in contradiction c1.",
+    "text": "Run physics subagent to verify minimum travel time between rooms 230 and 219.",
     "kind": "todo"
   },
   {
-    "text": "Obtain maintenance or work‑order logs for camera cam‑03 to explain its offline period (contradiction c4).",
+    "text": "Re‑hash endpoint/security_log.csv to confirm integrity.",
     "kind": "todo"
   },
   {
-    "text": "Waiting for approval: Please provide access/parking_exit.csv",
+    "text": "Check badge logs for p_hank after 6:02 pm for any later reads.",
+    "kind": "todo"
+  },
+  {
+    "text": "Search for any badge or camera records for Maggie Price after 5:45 pm.",
+    "kind": "todo"
+  },
+  {
+    "text": "Inspect full USB device history for drive 4C530001230918112443&0.",
+    "kind": "todo"
+  },
+  {
+    "text": "Request parking_exit.csv to see exit times for p_hank and p_bg_17, which could clarify their presence after badge events.",
+    "kind": "todo"
+  },
+  {
+    "text": "Waiting for approval: Pull the parking entry and exit log for the evening of the incident.",
     "kind": "check_next"
   }
 ]
