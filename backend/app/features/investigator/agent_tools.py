@@ -13,6 +13,7 @@ from typing import Any, Callable
 
 from app.features.investigator.approvals import Approvals
 from app.features.investigator.inputs import Contradiction, Edge, Event, Person
+from app.features.investigator.wording import BANNED
 
 log = logging.getLogger(__name__)
 
@@ -155,6 +156,8 @@ class AgentTools:
     def request_evidence(self, ask: str, why: str) -> dict[str, Any]:
         """Ask the human investigator to release more evidence. State what to pull and which hypothesis it would disprove.
         Only sources that can really be released are accepted; the reply lists them if yours is not one."""
+        if BANNED.search(ask) or BANNED.search(why):
+            return {"error": "Describe what the record would show about the timeline, not anyone's intent, motive or fault, and request it again."}
         obtainable = self._still_obtainable()
         if obtainable is not None and not _matches_a_source(ask, obtainable):
             listing = ", ".join(obtainable) if obtainable else "none; the case has no further evidence to release"

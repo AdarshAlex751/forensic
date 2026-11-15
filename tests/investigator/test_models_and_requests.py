@@ -220,3 +220,24 @@ def test_ordinary_words_that_look_like_ids_are_left_alone():
     c = ctx_with([STATEMENT])
     AgentTools(c).request_evidence("Pull the parking log.", "Records from 2H and the H-wing lobby, room H12a, are not involved.")
     assert c.approvals.requests[0]["why"] == "Records from 2H and the H-wing lobby, room H12a, are not involved."
+
+
+# ---- the same wording rule applies to "what would disprove it" and to the model's evidence requests ----
+def test_a_disproof_that_speaks_of_intent_is_replaced_by_the_kind_default():
+    raw = [{"text": "The camera was offline with no work order.", "confidence": 0.6, "supports": ["c4"],
+            "disproved_by": "Work-order logs confirming the camera was intentionally taken offline for a known reason."}]
+    out, warns = sanitize_hypotheses(raw, {"c4"}, disproof_for={"c4": "A work order covering the outage."})
+    assert [h["disproved_by"] for h in out] == ["A work order covering the outage."]
+    assert any("disproof" in w for w in warns)
+
+
+def test_a_disproof_with_banned_wording_and_no_default_drops_the_hypothesis():
+    raw = [{"text": "The camera was offline.", "confidence": 0.6, "supports": ["c4"], "disproved_by": "Proof he hid it."}]
+    out, _ = sanitize_hypotheses(raw, {"c4"})
+    assert out == []
+
+
+def test_an_evidence_request_that_speaks_of_intent_is_refused_so_the_model_can_reword_it():
+    c = ctx_with([STATEMENT])
+    r = AgentTools(c).request_evidence("Pull the parking log.", "To show he deliberately left late to conceal the copying.")
+    assert "error" in r and c.approvals.requests == []

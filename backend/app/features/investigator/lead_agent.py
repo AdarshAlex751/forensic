@@ -24,6 +24,7 @@ from typing import Any, Callable
 from app.features.investigator.agent_tools import AgentTools, ToolContext, _matches_a_source
 from app.features.investigator.subagents import build_subagents
 from app.features.investigator.trace import Trace, trace as global_trace
+from app.features.investigator.wording import BANNED
 from app.shared.llm_client import EXTRACTOR_MODEL, LEAD_MODEL, get_llm, with_backoff
 
 log = logging.getLogger(__name__)
@@ -31,15 +32,7 @@ log = logging.getLogger(__name__)
 Runner = Callable[[str], str]
 MAX_HYPOTHESES = 5
 _NOTE_KINDS = {"check_next", "todo", "cleared"}
-# The investigator reports what the records show and where they disagree. It never labels a person's role in the
-# crime and never speaks of intent, motive, deception or fault; a human draws those conclusions.
-_LABELS = re.compile(
-    r"\b(guilty|culprit|perpetrator|thief|criminal|committed the|responsible for the"
-    r"|lie[sd]?|lying|liar|false statement|is false|was false|untrue"
-    r"|deliberate(?:ly)?|intentional(?:ly)?|motive|conceal\w*|cover[- ]?up|hid(?:e|ing|den)? (?:it|the|his|her|their)"
-    r"|spoof\w*|fabricat\w*|tamper\w*|steal|stole|stolen|theft|exfiltrat\w*|sabotag\w*|possibly to|in order to)\b",
-    re.I,
-)
+_LABELS = BANNED  # kept under its old name for callers and tests
 
 _DISPROOF = {
     "physical": "A record showing the second read was made by someone other than the card holder, or a shorter walking route than the model found.",
@@ -98,8 +91,8 @@ def build_brief(ctx: ToolContext) -> str:
     return "\n".join(lines)
 
 
-def sanitize_hypotheses(raw: Any, known_ids: set[str],
-                        neutral: dict[str, str] | None = None) -> tuple[list[dict[str, Any]], list[str]]:
+def sanitize_hypotheses(raw: Any, known_ids: set[str], neutral: dict[str, str] | None = None,
+                        disproof_for: dict[str, str] | None = None) -> tuple[list[dict[str, Any]], list[str]]:
     """Keep only hypotheses that are about the records. `neutral` maps a contradiction id to plain wording: a hypothesis
     that speaks of intent or fault is rewritten to it (same support, same confidence) instead of being lost."""
     warns: list[str] = []
@@ -117,6 +110,13 @@ def sanitize_hypotheses(raw: Any, known_ids: set[str],
             warns.append(f"replaced a hypothesis that speaks of intent or fault with neutral wording for {first}: {text[:60]}")
             text = neutral[first]
         disproof = str(h.get("disproved_by", "")).strip()
+        if disproof and _LABELS.search(disproof):
+            first = next((str(x) for x in (h.get("supports") or []) if disproof_for and str(x) in disproof_for), None)
+            if first is None:
+                warns.append(f"dropped a hypothesis whose disproof speaks of intent or fault: {disproof[:60]}")
+                continue
+            warns.append(f"replaced a disproof that speaks of intent or fault with the default for {first}: {disproof[:60]}")
+            disproof = disproof_for[first]
         if not disproof:
             warns.append(f"dropped a hypothesis with no 'what would disprove it': {text[:60]}")
             continue
@@ -328,7 +328,8 @@ def investigate(ctx: ToolContext, runner: Runner | None = None, trace: Trace | N
             raw = _call_with_deadline(lambda: with_backoff(lambda: runner(brief)), _llm_budget_s())
             data = _extract_json(raw)
             neutral = {c.id: f"The records conflict: {c.explanation}".strip() for c in ctx.contradictions}
-            hyps, warns = sanitize_hypotheses(data.get("hypotheses"), known, neutral)
+            defaults = {c.id: _DISPROOF.get(c.kind, _DEFAULT_DISPROOF) for c in ctx.contradictions}
+            hyps, warns = sanitize_hypotheses(data.get("hypotheses"), known, neutral, defaults)
             if not hyps:
                 raise ValueError("the model returned no usable hypotheses")
             notes = _sanitize_notes(data.get("notes"))
