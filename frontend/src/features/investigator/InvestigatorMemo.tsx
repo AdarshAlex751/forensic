@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { EvidenceRequest, Findings, Note } from "../../shared/types";
 import { useFindings } from "../../shared/useFindings";
@@ -6,10 +6,9 @@ import { AgentTrace } from "./AgentTrace";
 import { CaseReport } from "./CaseReport";
 import { EvidenceRequestCard } from "./EvidenceRequestCard";
 import { HypothesisBar } from "./HypothesisBar";
-import { RejectedClaims } from "./RejectedClaims";
 import { VerifiedCounter } from "./VerifiedCounter";
 import { useAgentTrace } from "./useAgentTrace";
-import { approveRequest, useLiveFindings, useRequestStatus } from "./useLiveFindings";
+import { uploadRequestFile, useLiveFindings, useRequestStatus } from "./useLiveFindings";
 import { usePipelineProgress } from "./usePipelineProgress";
 import "./investigator.css";
 
@@ -58,13 +57,11 @@ export function InvestigatorMemo() {
   const reqs = useRequestStatus();
   const trace = useAgentTrace();
 
-  const [showRejected, setShowRejected] = useState(false);
   const [showReport, setShowReport] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [approveErrors, setApproveErrors] = useState<Record<string, string>>({});
   const [localStatus, setLocalStatus] = useState<Record<string, EvidenceRequest["status"]>>({});
   const [prevConf, setPrevConf] = useState<Record<string, number>>({});
-  const rejectedId = useId();
 
   const findings: Findings | null = live.data ?? initial.data;
   const findingsRef = useRef(findings);
@@ -79,12 +76,15 @@ export function InvestigatorMemo() {
 
   const pipeline = usePipelineProgress(onRunFinished);
 
-  const onApprove = useCallback(
-    async (id: string) => {
+  const [rerunId, setRerunId] = useState<string | null>(null);
+
+  const onUpload = useCallback(
+    async (id: string, file: File) => {
       setBusyId(id);
       setApproveErrors(({ [id]: _drop, ...rest }) => rest);
       try {
-        await approveRequest(id);
+        await uploadRequestFile(id, file);
+        setRerunId(id);
         setLocalStatus((s) => ({ ...s, [id]: "approved" }));
         trace.reconnect();
         pipeline.watch();
@@ -157,28 +157,7 @@ export function InvestigatorMemo() {
       </header>
 
       <section className="inv-section" aria-label="Verification">
-        <VerifiedCounter
-          claims={v.claims}
-          verified={v.verified}
-          rejectedCount={v.rejected.length}
-          onShowRejected={() => setShowRejected((s) => !s)}
-          rejectedOpen={showRejected}
-          rejectedListId={rejectedId}
-        />
-        {v.rejected.length > 0 && (
-          <p className="inv-plain" style={{ marginTop: "0.5rem" }}>
-            <button
-              type="button"
-              className="inv-linkbtn"
-              onClick={() => setShowRejected((s) => !s)}
-              aria-expanded={showRejected}
-              aria-controls={rejectedId}
-            >
-              {showRejected ? "Hide rejected claims" : "Show rejected claims"}
-            </button>
-          </p>
-        )}
-        {showRejected && <RejectedClaims rejected={v.rejected} id={rejectedId} />}
+        <VerifiedCounter claims={v.claims} verified={v.verified} />
         {live.error && (
           <p className="inv-state inv-state-error" role="alert" style={{ marginTop: "0.75rem" }}>
             <strong>Couldn't reload the findings after the re-run.</strong>
@@ -251,8 +230,9 @@ export function InvestigatorMemo() {
               <EvidenceRequestCard
                 key={r.id}
                 request={r}
-                onApprove={(id) => void onApprove(id)}
+                onUpload={(id, file) => void onUpload(id, file)}
                 busy={busyId === r.id}
+                rerunning={running && rerunId === r.id}
                 error={approveErrors[r.id] ?? null}
               />
             ))}

@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useStore } from "../../shared/store";
 import { useFindings } from "../../shared/useFindings";
 import type { ChainStep, Contradiction, ContradictionSide } from "../../shared/types";
@@ -80,10 +79,8 @@ function Side({ side, chain, verified }: { side: ContradictionSide; chain: Map<s
 export function ContradictionsPage() {
   const { data, error } = useFindings();
   const analysis = useAnalysis();
-  const navigate = useNavigate();
   const selectedId = useStore((s) => s.selectedContradictionId);
   const select = useStore((s) => s.setSelectedContradictionId);
-  const selectEvent = useStore((s) => s.setSelectedEventId);
 
   const list = analysis?.contradictions ?? data?.contradictions ?? [];
   const current: Contradiction | undefined =
@@ -180,19 +177,7 @@ export function ContradictionsPage() {
                   ))}
                 </div>
 
-                <div className="cp-actions">
-                  <button
-                    type="button"
-                    className="cp-button"
-                    onClick={() => {
-                      select(current.id);
-                      selectEvent(current.events[0] ?? null);
-                      navigate("/scene");
-                    }}
-                  >
-                    Show in scene
-                  </button>
-                </div>
+
               </article>
             )}
           </div>

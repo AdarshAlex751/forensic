@@ -8,7 +8,6 @@ import { ContradictionsPage } from "./features/casepages/ContradictionsPage";
 import { MemoPage } from "./features/casepages/MemoPage";
 import { FeedbackPage } from "./features/feedback/FeedbackPage";
 import { RedFlagsPage } from "./features/casepages/RedFlagsPage";
-import { JudgeMode } from "./features/scene/JudgeMode";
 import { ScenePaperShell } from "./features/opening/ScenePaperShell";
 
 export interface PageDef {
@@ -31,5 +30,4 @@ export const pages: PageDef[] = [
 // Slots: screens that combine two people's work. Pages render <Slot name="..." />.
 export const slots: Record<string, ComponentType> = {
   "scene.red-flags": RedFlagsPanel, // Scene page (Person 2) shows Red flags (Person 3)
-  "layout.judge-mode": JudgeMode, // mounted by the layout on every page (Person 2)
 };

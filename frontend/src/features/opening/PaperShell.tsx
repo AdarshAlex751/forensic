@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { Slot } from "../../shared/Slot";
 import "./paper.css";
 import "./scene-skin.css";
 
@@ -33,7 +32,7 @@ export function PaperShell({ label, children }: { label: string; children: React
   return (
     <div className="scene-paper paper-gold paper-gold--edge" role="region" aria-label={label}>
       <header className="sp-bar">
-        <span className="sp-case">CASE #1010F</span>
+        <span className="sp-case">Princeton Files</span>
         <nav className="sp-nav" aria-label="Pages">
           {NAV.map((n) => (
             <NavLink key={n.to} to={n.to} end={n.to === "/"} className={({ isActive }) => (isActive ? "sp-link sp-link--on" : "sp-link")}>
@@ -41,9 +40,6 @@ export function PaperShell({ label, children }: { label: string; children: React
             </NavLink>
           ))}
         </nav>
-        <div className="sp-judge">
-          <Slot name="layout.judge-mode" />
-        </div>
       </header>
       <div className="sp-body">{children}</div>
     </div>

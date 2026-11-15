@@ -131,3 +131,42 @@ def test_the_rerun_starts_from_ingest_so_released_events_land_in_events_json(mon
     monkeypatch.setattr(pipeline, "start", lambda stage: seen.append(stage) or True)
     assert router_mod._start_rerun() is True
     assert seen == ["ingest"]
+
+
+# ---------- upload the requested file (replaces Approve in the UI) ----------
+
+PARKING = b"timestamp,lane,permit_id,plate,direction\n2026-03-04T18:44:00-05:00,EXIT-1,P-2088,W26-VCU,OUT\n"
+
+
+def _evidence_upload(monkeypatch, fn):
+    from app.features.evidence import release
+    monkeypatch.setattr(release, "add_uploaded_evidence", fn)
+
+
+def test_upload_adds_the_file_approves_and_starts_the_rerun(client, monkeypatch):
+    seen = []
+    _evidence_upload(monkeypatch, lambda rid, name, data: seen.append((rid, name, data))
+                     or {"released": ["access/parking_exit.csv"], "file": "access/parking_exit.csv"})
+    r = client.post("/api/investigator/requests/r1/upload", files={"file": ("parking.csv", PARKING, "text/csv")})
+    assert r.status_code == 200, r.text
+    assert r.json() == {"request_id": "r1", "status": "approved", "released": ["access/parking_exit.csv"],
+                        "file": "access/parking_exit.csv", "rerun": "started"}
+    assert seen == [("r1", "parking.csv", PARKING)] and client.calls["rerun"] == ["extract"]
+    assert client.get("/api/investigator/requests").json()[0]["status"] == "approved"
+
+
+def test_a_rejected_upload_is_400_and_the_request_stays_pending(client, monkeypatch):
+    from app.features.evidence.release import UploadRejected
+
+    def reject(rid, name, data):
+        raise UploadRejected("This file is not a parking exit log.")
+    _evidence_upload(monkeypatch, reject)
+    r = client.post("/api/investigator/requests/r1/upload", files={"file": ("x.csv", b"a,b\n", "text/csv")})
+    assert r.status_code == 400 and "not a parking exit log" in r.json()["detail"]
+    assert client.get("/api/investigator/requests").json()[0]["status"] == "pending"
+    assert client.calls["rerun"] == []
+
+
+def test_upload_for_an_unknown_request_is_404(client):
+    r = client.post("/api/investigator/requests/nope/upload", files={"file": ("p.csv", PARKING, "text/csv")})
+    assert r.status_code == 404

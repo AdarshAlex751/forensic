@@ -99,8 +99,8 @@ def _fake_evidence_dir(tmp_path, monkeypatch, uploaded: bool):
     ev = tmp_path / "evidence"
     (ev / "CASE-1010F").mkdir(parents=True)
     (ev / "CASE-1010F" / "marker.txt").write_text("builtin")
-    (ev / "extra" / "access").mkdir(parents=True)
-    (ev / "extra" / "access" / "parking_exit.csv").write_text("parking")
+    (ev / "work" / "extra" / "access").mkdir(parents=True)  # where an uploaded extra file is saved
+    (ev / "work" / "extra" / "access" / "parking_exit.csv").write_text("parking")
     if uploaded:
         (ev / "work" / "CASE-1010F").mkdir(parents=True)
         (ev / "work" / "CASE-1010F" / "manifest.csv").write_text("filename,sha256\n")

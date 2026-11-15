@@ -76,6 +76,35 @@ export type ApproveReply = {
   rerun: "started" | "already running";
 };
 
+export type UploadReply = Omit<ApproveReply, "rerun"> & { file?: string; rerun: "started" | "queued" };
+
+/** Upload the requested evidence file for a request; the backend adds it to the case and reruns the pipeline. */
+export async function uploadRequestFile(id: string, file: File): Promise<UploadReply> {
+  const body = new FormData();
+  body.append("file", file);
+  let r: Response;
+  try {
+    r = await fetch(`/api/investigator/requests/${encodeURIComponent(id)}/upload`, { method: "POST", body });
+  } catch {
+    throw new Error("Couldn't reach the backend to upload the file. Start it on :8000 and try again.");
+  }
+  if (!r.ok) {
+    let detail = "";
+    try {
+      const j = (await r.json()) as { detail?: unknown };
+      if (typeof j.detail === "string") detail = j.detail;
+    } catch {
+      /* not JSON */
+    }
+    throw new Error(
+      detail
+        ? `${detail} The request is still open; upload the right file to continue.`
+        : `The backend refused the upload (status ${r.status}). Check the backend log and try again.`,
+    );
+  }
+  return r.json() as Promise<UploadReply>;
+}
+
 /** POST an approval; resolves with the server's reply or throws a plain-language error. */
 export async function approveRequest(
   id: string,

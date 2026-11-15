@@ -1,8 +1,9 @@
-"""Release of withheld evidence (data/evidence/extra/) once an investigator request is approved.
+"""Extra evidence uploaded by the investigator after an evidence request (e.g. the parking exit log).
 
-Person 4's approve route calls release_extra_evidence(request_id) and then reruns the pipeline.
-Any request id releases everything currently in EXTRA_DIR. The released set is recorded in
-RELEASED_FILE so the ingest stage (and GET /api/evidence/status) can see it.
+Person 4's upload route calls add_uploaded_evidence(request_id, filename, data): the file is recognized by its
+header, saved under EXTRA_DIR (data/evidence/work/extra/, runtime and gitignored) at the path its parser expects,
+and recorded in RELEASED_FILE so the ingest stage (and GET /api/evidence/status) sees it; then the pipeline reruns.
+release_extra_evidence(request_id) marks everything already uploaded as released (idempotent).
 
 Paths are read from the paths module at call time, so tests can monkeypatch
 app.features.evidence.ingest.paths.EXTRA_DIR / RELEASED_FILE to tmp_path.
@@ -11,10 +12,20 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import tempfile
 from pathlib import Path
 
 from app.features.evidence.ingest import paths
+from app.features.evidence.ingest.csv_parsers import PARKING_HEADER
+
+# Header row -> path inside the case that the parser registry knows (ingest/registry.py).
+UPLOADABLE = {tuple(PARKING_HEADER): "access/parking_exit.csv"}
+MAX_UPLOAD_BYTES = 20 * 1024 * 1024
+
+
+class UploadRejected(ValueError):
+    """The uploaded file is not a kind of extra evidence this case can take."""
 
 
 def _extra_files(extra_dir: Path) -> list[str]:
@@ -60,6 +71,45 @@ def release_extra_evidence(request_id: str) -> dict:
     if released or released_file.exists():
         _write_atomic(released_file, {"released": released, "requests": requests})
     return {"released": released}
+
+
+def _header(data: bytes) -> tuple[str, ...]:
+    first = data.decode("utf-8-sig", errors="replace").splitlines()[0] if data else ""
+    return tuple(col.strip().lower() for col in first.split(","))
+
+
+def add_uploaded_evidence(request_id: str, filename: str, data: bytes) -> dict:
+    """Save one uploaded extra-evidence file and mark it released. Returns {"released": [...], "file": <path>}.
+
+    Raises UploadRejected for an empty, oversized or unrecognized file (nothing is saved then)."""
+    if not data:
+        raise UploadRejected("The uploaded file is empty.")
+    if len(data) > MAX_UPLOAD_BYTES:
+        raise UploadRejected("The uploaded file is larger than 20 MB.")
+    if not filename.lower().endswith(".csv"):
+        raise UploadRejected("Upload the log as a .csv file.")
+    rel = UPLOADABLE.get(_header(data))
+    if rel is None:
+        raise UploadRejected("This file is not a parking exit log (expected columns: " + ", ".join(PARKING_HEADER) + ").")
+    target = paths.EXTRA_DIR / rel
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=".upload-", suffix=".tmp", dir=target.parent)
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(data)
+        os.replace(tmp, target)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+    return {**release_extra_evidence(request_id), "file": rel}
+
+
+def clear_uploaded_evidence() -> None:
+    """Delete every uploaded extra file (a new case starts with none)."""
+    shutil.rmtree(paths.EXTRA_DIR, ignore_errors=True)
 
 
 def released_files() -> list[str]:

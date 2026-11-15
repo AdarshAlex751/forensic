@@ -1,8 +1,8 @@
 """Evidence slice entry point: run(case_id) ingests the active case and writes data/evidence/{events,evidence,case}.json.
 
 The active case is the uploaded one (data/evidence/work/CASE-1010F/) if a zip was uploaded, otherwise the built-in
-data/evidence/CASE-1010F/. Extra evidence (data/evidence/extra/) is parsed only once it has been released
-(release.py), and its events are numbered after the case events.
+data/evidence/CASE-1010F/. Extra evidence is parsed only once the investigator has uploaded it (release.py, saved
+under data/evidence/work/extra/), and its events are numbered after the case events.
 """
 from __future__ import annotations
 

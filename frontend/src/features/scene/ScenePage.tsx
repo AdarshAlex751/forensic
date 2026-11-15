@@ -27,7 +27,7 @@ export function ScenePage() {
   },[selected?.id,selected?.source,setSelectedEventId,setTimelineTime]);
   return <div className="incident-scene">
     <header className="incident-header">
-      <div><h1>The Titan Files</h1><p>Rabinowitz Hall / March 4, 2026 / EST (-05:00)</p></div>
+      <div><h1>Princeton Files</h1><p>Rabinowitz Hall / March 4, 2026 / EST (-05:00)</p></div>
       <button aria-pressed={setup} onClick={()=>{setInside(true);setSetup(!setup);}}>{setup ? "Return to timeline" : "Set up views"}</button>
     </header>
     <div className="incident-mode"><p>Select a timestamp to explore where an incident occurred.</p></div>

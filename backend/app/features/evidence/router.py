@@ -97,37 +97,35 @@ def _extract(zf: zipfile.ZipFile, files: list[zipfile.ZipInfo], dest: Path) -> N
             shutil.copyfileobj(src, out, CHUNK)
 
 
-def _rename_with_retry(src: Path, dst: Path, attempts: int = 12, delay_s: float = 0.25) -> None:
-    """Path.rename, retried on PermissionError. On Windows a folder of freshly written files is often held for a moment by
-    antivirus or the indexer, and the rename answers WinError 5 until they let go."""
-    for attempt in range(attempts):
+def _rename_retry(src: Path, dst: Path, tries: int = 20, wait: float = 0.25) -> None:
+    """Rename, retrying while Windows briefly locks freshly written files (antivirus scan, Explorer, indexer)."""
+    for i in range(tries):
         try:
             src.rename(dst)
             return
         except PermissionError:
-            if attempt == attempts - 1:
+            if i == tries - 1:
                 raise
-            time.sleep(delay_s)
+            time.sleep(wait)
 
 
 def _swap_in(new_dir: Path, final: Path) -> None:
-    """Replace final with new_dir (rename old aside first; Windows cannot replace a directory).
-
-    A rename that stays locked falls back to copying the folder into place, so a transient lock never turns an upload
-    into a 500. The previous case is restored if nothing works."""
+    """Replace final with new_dir (rename old aside first; Windows cannot replace a directory)."""
     old = None
     if final.exists():
         old = final.with_name(f".old-{uuid.uuid4().hex}")
-        _rename_with_retry(final, old)
+        _rename_retry(final, old)
     try:
         try:
-            _rename_with_retry(new_dir, final)
-        except OSError:
-            shutil.copytree(new_dir, final)  # still locked for renaming: copying only reads, so it gets through
+            _rename_retry(new_dir, final)
+        except PermissionError:
+            # Still locked after retries: copy instead of moving (the staging copy is removed by the caller).
+            shutil.copytree(new_dir, final)
     except OSError:
-        shutil.rmtree(final, ignore_errors=True)  # drop a half-copied folder before putting the old case back
         if old is not None:
-            old.rename(final)
+            if final.exists():
+                shutil.rmtree(final, ignore_errors=True)
+            _rename_retry(old, final)
         raise
     if old is not None:
         shutil.rmtree(old, ignore_errors=True)
@@ -166,6 +164,7 @@ def upload(file: UploadFile) -> dict:
         shutil.rmtree(staging, ignore_errors=True)
 
     release.reset_released()  # a new case starts with nothing released
+    release.clear_uploaded_evidence()
     started = _start_pipeline()
     case_id = top[5:] if top.upper().startswith("CASE-") else top
     return {
@@ -174,7 +173,7 @@ def upload(file: UploadFile) -> dict:
         "files": len(files),
         "case_dir": paths.UPLOADED_CASE_DIR.relative_to(paths.EVIDENCE).as_posix(),
         "pipeline_started": started,
-        **({} if started else {"message": "a pipeline run is already in progress; rerun when it finishes"}),
+        **({} if started else {"message": "a pipeline run is in progress; a rerun on this case is queued right after it"}),
     }
 
 
@@ -184,6 +183,7 @@ def delete_upload() -> dict:
     if existed:
         shutil.rmtree(paths.UPLOADED_CASE_DIR)
     release.reset_released()
+    release.clear_uploaded_evidence()
     return {"removed": existed, "case_dir": _rel(paths.active_case_dir())}
 
 

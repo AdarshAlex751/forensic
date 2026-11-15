@@ -777,3 +777,21 @@
 .inv-report ol.inv-footnotes {
   padding-left: 2rem;
 }
+
+.inv-stamp.inv-stamp-secret{color:#a51f24;border-color:#a51f24;transform:rotate(-9deg)}
+.inv-stamp-secret .inv-stamp-big{font-size:30px;letter-spacing:.12em}
+.inv-stamp-secret .inv-stamp-small{font-size:19px;font-weight:800;letter-spacing:.13em}
+
+/* ---------- Hourglass under a request card while the pipeline reruns on the uploaded file ---------- */
+.inv-hourglass-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--inv-ink-soft);
+}
+.inv-hourglass {
+  flex: none;
+  color: var(--inv-ink);
+}
