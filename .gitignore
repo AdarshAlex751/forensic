@@ -5,3 +5,6 @@ node_modules/
 .venv/
 __pycache__/
 dist/
+# evidence slice runtime state (uploaded cases, released extra evidence)
+data/evidence/work/
+data/evidence/released.json
