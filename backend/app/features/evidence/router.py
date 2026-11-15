@@ -4,6 +4,7 @@ from __future__ import annotations
 import shutil
 import stat
 import tempfile
+import time
 import uuid
 import zipfile
 from pathlib import Path, PurePosixPath
@@ -96,15 +97,35 @@ def _extract(zf: zipfile.ZipFile, files: list[zipfile.ZipInfo], dest: Path) -> N
             shutil.copyfileobj(src, out, CHUNK)
 
 
+def _rename_with_retry(src: Path, dst: Path, attempts: int = 12, delay_s: float = 0.25) -> None:
+    """Path.rename, retried on PermissionError. On Windows a folder of freshly written files is often held for a moment by
+    antivirus or the indexer, and the rename answers WinError 5 until they let go."""
+    for attempt in range(attempts):
+        try:
+            src.rename(dst)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(delay_s)
+
+
 def _swap_in(new_dir: Path, final: Path) -> None:
-    """Replace final with new_dir (rename old aside first; Windows cannot replace a directory)."""
+    """Replace final with new_dir (rename old aside first; Windows cannot replace a directory).
+
+    A rename that stays locked falls back to copying the folder into place, so a transient lock never turns an upload
+    into a 500. The previous case is restored if nothing works."""
     old = None
     if final.exists():
         old = final.with_name(f".old-{uuid.uuid4().hex}")
-        final.rename(old)
+        _rename_with_retry(final, old)
     try:
-        new_dir.rename(final)
+        try:
+            _rename_with_retry(new_dir, final)
+        except OSError:
+            shutil.copytree(new_dir, final)  # still locked for renaming: copying only reads, so it gets through
     except OSError:
+        shutil.rmtree(final, ignore_errors=True)  # drop a half-copied folder before putting the old case back
         if old is not None:
             old.rename(final)
         raise
