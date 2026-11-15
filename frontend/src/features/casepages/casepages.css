@@ -179,16 +179,6 @@
   overflow-wrap: anywhere;
 }
 .scene-paper .cp-quote figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 4px; font: 11px var(--paper-type); color: var(--paper-ink-soft); overflow-wrap: anywhere; }
-.scene-paper .cp-seal {
-  padding: 0 6px;
-  font: 700 11px var(--paper-type);
-  letter-spacing: 0.08em;
-  color: var(--paper-ink);
-  border: 3px double var(--paper-ink);
-  border-radius: 3px;
-  transform: rotate(-3deg);
-}
-.scene-paper .cp-unverified { font: 700 11px var(--paper-type); color: var(--paper-red-deep); }
 .scene-paper .cp-more { margin: 2px 0 0; font: 12px var(--paper-type); color: var(--paper-ink-soft); }
 
 .scene-paper .cp-actions { display: flex; justify-content: flex-end; margin-top: 14px; }

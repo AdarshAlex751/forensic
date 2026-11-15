@@ -31,7 +31,7 @@ function useAnalysis(): Analysis | null {
   return analysis;
 }
 
-function Side({ side, chain, verified }: { side: ContradictionSide; chain: Map<string, ChainStep>; verified: Map<string, boolean> }) {
+function Side({ side, chain }: { side: ContradictionSide; chain: Map<string, ChainStep> }) {
   const shown = side.events.slice(0, SHOWN_PER_SIDE);
   // `events` lists every cited event; `quotes` (and `more`) only cover the first few, so events not shown = the rest.
   const hidden = side.events.length > 0 ? side.events.length - shown.length : side.more || 0;
@@ -41,7 +41,6 @@ function Side({ side, chain, verified }: { side: ContradictionSide; chain: Map<s
       <h4>{side.label}</h4>
       {shown.map((id, i) => {
         const src = chain.get(id)?.source;
-        const ok = verified.get(id);
         return (
           <figure key={id} className="cp-quote">
             <blockquote>{side.quotes[i] ?? src?.quote}</blockquote>
@@ -54,8 +53,6 @@ function Side({ side, chain, verified }: { side: ContradictionSide; chain: Map<s
               ) : (
                 <span>{id}</span>
               )}
-              {ok === true && <span className="cp-seal" aria-label="Verified against the original file">VERIFIED</span>}
-              {ok === false && <span className="cp-unverified">not verified</span>}
             </figcaption>
           </figure>
         );
@@ -86,7 +83,6 @@ export function ContradictionsPage() {
   const current: Contradiction | undefined =
     list.find((c) => c.id === selectedId) ?? list.find((c) => c.id === analysis?.latest) ?? list[0];
 
-  const verified = useMemo(() => new Map((data?.events ?? []).map((e) => [e.id, e.verified])), [data]);
   const chain = useMemo(() => new Map((current?.chain ?? []).map((s) => [s.event, s])), [current]);
   const hypotheses = (data?.hypotheses ?? []).filter((h) => current && h.supports.includes(current.id));
 
@@ -173,7 +169,7 @@ export function ContradictionsPage() {
 
                 <div className="cp-sides">
                   {(current.sides ?? []).map((s) => (
-                    <Side key={s.label} side={s} chain={chain} verified={verified} />
+                    <Side key={s.label} side={s} chain={chain} />
                   ))}
                 </div>
 
