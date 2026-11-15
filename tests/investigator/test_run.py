@@ -138,3 +138,29 @@ def test_a_real_run_keeps_requests_the_human_already_approved(env):
     run_mod.approvals.approve("r1")
     run_mod.run("1010F")
     assert [(r["id"], r["status"]) for r in read(out, "requests.json")] == [("r1", "approved")]
+
+
+def test_an_approved_request_becomes_ingested_when_events_from_its_withheld_file_are_in_the_case(env, monkeypatch):
+    """No baseline needed: the first run in a process may happen after the approval (server restarted, or run late)."""
+    out, snap = env
+    parking = inputs.parse_list([{"id": "e9", "t": "2026-03-04T18:44:00-05:00", "type": "parking_exit", "person": None,
+                                  "device": None, "room": None, "actor": None, "attrs": {},
+                                  "source": {"file": "access/parking_exit.csv", "line": 2, "quote": "q", "sha256": "s"}}],
+                                inputs.Event, "e")
+    snap.events = list(snap.events) + parking
+    monkeypatch.setattr(run_mod, "_withheld_sources", lambda: ["access/parking_exit.csv"])
+    run_mod._state["baseline_events"] = None
+    run_mod.approvals.add_request("Pull the parking log", "why")
+    run_mod.approvals.approve("r1")
+    run_mod.run("1010F")
+    assert read(out, "requests.json")[0]["status"] == "ingested"
+
+
+def test_an_approved_request_stays_approved_while_its_withheld_file_has_no_events_yet(env, monkeypatch):
+    out, _ = env
+    monkeypatch.setattr(run_mod, "_withheld_sources", lambda: ["access/parking_exit.csv"])
+    run_mod._state["baseline_events"] = None
+    run_mod.approvals.add_request("Pull the parking log", "why")
+    run_mod.approvals.approve("r1")
+    run_mod.run("1010F")
+    assert read(out, "requests.json")[0]["status"] == "approved"

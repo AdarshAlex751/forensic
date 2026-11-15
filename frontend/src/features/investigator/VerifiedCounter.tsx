@@ -51,7 +51,8 @@ export function VerifiedCounter({
   const reduce = useReducedMotion() ?? false;
   const shownClaims = useCountUp(claims, reduce);
   const shownVerified = useCountUp(verified, reduce);
-  const percent = claims > 0 ? Math.round((verified / claims) * 100) : null;
+  // Round DOWN, and never show 100% while anything was rejected: 12,651 of 12,702 is 99%, not "100% verified".
+  const percent = claims > 0 ? (verified >= claims ? 100 : Math.min(99, Math.floor((verified / claims) * 100))) : null;
 
   return (
     <div className="inv-counter">

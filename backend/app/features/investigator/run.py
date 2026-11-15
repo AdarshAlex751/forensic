@@ -81,23 +81,29 @@ def run(case_id: str) -> None:
     verified_ids = set(result.verified_event_ids)
     verified_contradictions = [c for c in snap.contradictions
                                if c.id not in {r.claim.split(":")[0] for r in result.rejected}]
+    requestable = _withheld_sources()
     ctx = ToolContext(
         events=[e for e in snap.events if e.id in verified_ids],
         persons=snap.persons,
         contradictions=verified_contradictions,
         edges=snap.edges,
         approvals=approvals,
-        requestable=_withheld_sources(),
+        requestable=requestable,
     )
 
     if _state["baseline_events"] is None and not approvals.any_approved():
         _state["baseline_events"] = len(snap.events)
     grew = _state["baseline_events"] is not None and len(snap.events) > _state["baseline_events"]
-    if approvals.any_approved() and (snap.extra_event_ids or grew):
+    # The most reliable sign that a release landed: events that cite one of the withheld files are now in the case.
+    # (A baseline count is not enough: the first run in a process can happen after the approval.)
+    withheld = set(requestable)
+    released_in = bool(withheld & {e.source.file for e in snap.events})
+    ingested_now = bool(snap.extra_event_ids) or grew or released_in
+    if approvals.any_approved() and ingested_now:
         approvals.mark_ingested()
 
     lead = _investigate(ctx, trace)
-    if approvals.any_approved() and (snap.extra_event_ids or grew):
+    if approvals.any_approved() and ingested_now:
         approvals.mark_ingested()  # a request made during this run cannot be ingested yet; this is a no-op then
 
     schema.Verification.model_validate(result.to_json())
