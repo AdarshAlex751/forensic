@@ -13,7 +13,7 @@ export function CaseFolder({ caseId, title, open, reduce }: Props) {
     <div className="op-folder">
       <div className="op-folder__back" />
       <motion.div
-        className="op-sheet"
+        className="op-sheet paper-gold"
         style={{ rotate: -1.5 }}
         animate={{ y: open ? -10 : 0 }}
         transition={{ duration: reduce ? 0 : 0.7, delay: reduce ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -26,7 +26,7 @@ export function CaseFolder({ caseId, title, open, reduce }: Props) {
         </div>
       </motion.div>
       <motion.div
-        className="op-sheet"
+        className="op-sheet paper-gold"
         style={{ rotate: 1.2, top: "9%" }}
         animate={{ y: open ? -22 : 0 }}
         transition={{ duration: reduce ? 0 : 0.8, delay: reduce ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}

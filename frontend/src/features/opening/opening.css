@@ -252,10 +252,8 @@
   top: 6%;
   bottom: 5%;
   border-radius: 3px;
-  background:
-    repeating-linear-gradient(180deg, transparent 0, transparent 21px, rgba(60, 90, 140, 0.28) 21px, rgba(60, 90, 140, 0.28) 22px),
-    #f2ead7;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  /* the paper itself comes from the shared .paper-gold class (paper.css), so the zoom lands on the scene's paper */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(199, 173, 102, 0.7);
 }
 .op-sheet__bars {
   position: absolute;
@@ -267,7 +265,8 @@
   display: block;
   height: 6px;
   border-radius: 3px;
-  background: rgba(40, 30, 20, 0.55);
+  background: var(--paper-ink-soft);
+  opacity: 0.7;
 }
 .op-cover {
   position: absolute;
@@ -341,10 +340,9 @@
 }
 @keyframes op-pulse { 50% { opacity: 0.4; } }
 
-.op-fade {
+.op-paper {
   position: absolute;
   inset: 0;
-  background: #060302;
   pointer-events: none;
 }
 

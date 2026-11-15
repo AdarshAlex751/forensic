@@ -11,6 +11,11 @@ function load(): Promise<Findings> {
   return cache;
 }
 
+/** Forget the cached findings so the next useFindings() mount fetches again (e.g. after uploading a new case). */
+export function refreshFindings(): void {
+  cache = null;
+}
+
 export function useFindings() {
   const [data, setData] = useState<Findings | null>(null);
   const [error, setError] = useState<string | null>(null);

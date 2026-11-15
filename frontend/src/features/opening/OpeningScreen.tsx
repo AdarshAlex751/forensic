@@ -2,12 +2,15 @@ import { AnimatePresence, animate, motion, useMotionValue, useReducedMotion, use
 import type { MotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 import { play } from "../../shared/sounds";
+import { refreshFindings } from "../../shared/useFindings";
 import { CaseFolder } from "./CaseFolder";
 import { Dust, DeskProps, Lamp } from "./DeskProps";
 import { UploadSlot } from "./UploadSlot";
 import { ZIP_MESSAGE, isZip, uploadCase } from "./uploadCase";
 import type { Upload } from "./uploadCase";
+import "./paper.css";
 import "./opening.css";
 
 type Phase = "idle" | "moving" | "opening" | "pushing" | "leaving";
@@ -24,6 +27,7 @@ const EASE = [0.65, 0, 0.35, 1] as const;
 
 // Full-screen fixed layer: covers the shared header on purpose. Route "/".
 export function OpeningScreen() {
+  const navigate = useNavigate();
   const reduce = useReducedMotion() ?? false;
 
   const [source, setSource] = useState<Source>({ kind: "empty" });
@@ -87,6 +91,7 @@ export function OpeningScreen() {
     u.done
       .then((r) => {
         if (!alive.current) return;
+        refreshFindings(); // the new upload must be read fresh; useFindings caches the previous case
         setSource({ kind: "ready", caseId: r.case_id, filename: r.filename });
         play("paperSlide");
       })
@@ -148,11 +153,13 @@ export function OpeningScreen() {
     await sleep(1000 * k);
     if (!alive.current) return;
 
-    setPhase("leaving"); // fade to black, then go
-    await sleep(450 * k);
-    // A full page load, not navigate(): useFindings caches the old case, and the new upload must be read fresh.
-    // We do not wait for the backend pipeline to finish. The Summary tab is hidden, so we land on the Scene page.
-    if (alive.current) window.location.assign("/scene");
+    // The golden paper layer has been fading in over the end of the push-in; it is fully opaque now. Hold a beat,
+    // then hand over to /scene, whose shell paints the same paper from its first frame (no reload, no flash).
+    setPhase("leaving");
+    await sleep(150 * k);
+    if (!alive.current) return;
+    refreshFindings(); // clear again so the Scene page fetches after the zoom, giving the pipeline longer to finish
+    navigate("/scene"); // client-side: the page never reloads. We do not wait for the backend pipeline.
   }
 
   const ready = source.kind === "ready";
@@ -297,7 +304,14 @@ export function OpeningScreen() {
         <div className="op-vignette" />
       </motion.div>
 
-      <motion.div className="op-fade" initial={false} animate={{ opacity: phase === "leaving" ? 1 : 0 }} transition={{ duration: reduce ? 0 : 0.45, ease: "easeIn" }} />
+      {/* The zoom lands on this paper: outside .op-scene so it cannot be scaled or shifted, and identical to the
+          background ScenePaperShell paints on /scene (see paper.css). */}
+      <motion.div
+        className="op-paper paper-gold paper-gold--edge"
+        initial={false}
+        animate={{ opacity: pushed ? 1 : 0 }}
+        transition={reduce ? { duration: 0 } : { duration: 0.6, delay: 0.35, ease: "easeIn" }}
+      />
     </div>
   );
 }
