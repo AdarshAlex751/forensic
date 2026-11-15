@@ -54,6 +54,14 @@ class Approvals:
                     return "approved"
         return None
 
+    def revoke(self, request_id: str) -> None:
+        """Undo an approval whose evidence could not be released (an ingested request is never downgraded)."""
+        with self._lock:
+            self._approved.discard(request_id)
+            for r in self.requests:
+                if r["id"] == request_id and r["status"] == "approved":
+                    r["status"] = "pending"
+
     def mark_ingested(self) -> None:
         """The released evidence is now part of the case: approved requests become ingested."""
         with self._lock:

@@ -57,16 +57,29 @@ def list_requests() -> list[dict[str, Any]]:
 
 
 @router.post("/requests/{request_id}/approve")
-def approve(request_id: str) -> dict[str, str]:
+def approve(request_id: str) -> dict[str, Any]:
+    """Approve a request: release its withheld evidence, then rerun the pipeline.
+
+    If nothing was released (the release function failed or returned nothing) the approval is undone and a 502 says
+    why, so the card never shows "approved" for evidence that did not arrive.
+    """
     approvals.sync(_load_requests())
     if approvals.approve(request_id) is None:
         raise HTTPException(404, f"unknown request {request_id}")
     try:
-        release_extra(request_id)
-    except Exception as exc:  # noqa: BLE001 - the approval is recorded; report the problem but still rerun
+        result = release_extra(request_id)
+        released = list(result.get("released") or []) if isinstance(result, dict) else []
+        problem = None if released else "Nothing was released: the evidence slice returned no files for this request."
+    except Exception as exc:  # noqa: BLE001 - reported to the caller below
+        released, problem = [], f"Releasing the evidence failed: {exc}"
         log.error("releasing extra evidence for %s failed: %s", request_id, exc)
+    if problem:
+        approvals.revoke(request_id)
+        log.warning("approval of %s undone: %s", request_id, problem)
+        raise HTTPException(502, problem)
     started = _start_rerun()
-    return {"request_id": request_id, "status": "approved", "rerun": "started" if started else "already running"}
+    return {"request_id": request_id, "status": "approved", "released": released,
+            "rerun": "started" if started else "already running"}
 
 
 async def _trace_stream() -> AsyncIterator[str]:

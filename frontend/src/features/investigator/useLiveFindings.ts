@@ -69,10 +69,17 @@ export function useRequestStatus() {
   return { requests, available, refresh, setRequests };
 }
 
+export type ApproveReply = {
+  request_id: string;
+  status: "approved";
+  released: string[];
+  rerun: "started" | "already running";
+};
+
 /** POST an approval; resolves with the server's reply or throws a plain-language error. */
 export async function approveRequest(
   id: string,
-): Promise<{ request_id: string; status: "approved"; rerun: "started" | "already running" }> {
+): Promise<ApproveReply> {
   let r: Response;
   try {
     r = await fetch(`/api/investigator/requests/${encodeURIComponent(id)}/approve`, { method: "POST" });
@@ -80,7 +87,19 @@ export async function approveRequest(
     throw new Error("Couldn't reach the backend to approve. Start it on :8000 and try again.");
   }
   if (!r.ok) {
-    throw new Error(`The backend refused the approval (status ${r.status}). Check the backend log and try again.`);
+    // The backend explains itself in `detail` (e.g. the evidence could not be released); the request stays pending.
+    let detail = "";
+    try {
+      const body = (await r.json()) as { detail?: unknown };
+      if (typeof body.detail === "string") detail = body.detail;
+    } catch {
+      /* not JSON: fall back to the generic text */
+    }
+    throw new Error(
+      detail
+        ? `${detail} The request is still pending. Try again once the evidence is available.`
+        : `The backend refused the approval (status ${r.status}). Check the backend log and try again.`,
+    );
   }
-  return r.json() as Promise<{ request_id: string; status: "approved"; rerun: "started" | "already running" }>;
+  return r.json() as Promise<ApproveReply>;
 }

@@ -39,7 +39,7 @@ def test_get_requests_returns_file_records_with_live_status(client):
 def test_approve_releases_the_evidence_then_starts_the_rerun(client):
     r = client.post("/api/investigator/requests/r1/approve")
     assert r.status_code == 200
-    assert r.json() == {"request_id": "r1", "status": "approved", "rerun": "started"}
+    assert r.json() == {"request_id": "r1", "status": "approved", "released": ["x"], "rerun": "started"}
     assert client.calls == {"release": ["r1"], "rerun": ["extract"]}
 
 
@@ -54,13 +54,44 @@ def test_approve_reports_when_a_run_is_already_in_progress(client, monkeypatch):
     assert client.post("/api/investigator/requests/r1/approve").json()["rerun"] == "already running"
 
 
-def test_a_failing_release_function_does_not_crash_the_approval(client, monkeypatch):
+def _status(client):
+    return client.get("/api/investigator/requests").json()[0]["status"]
+
+
+def test_approve_reports_what_was_released(client):
+    assert client.post("/api/investigator/requests/r1/approve").json()["released"] == ["x"]
+
+
+def test_a_failing_release_is_reported_and_the_request_stays_pending(client, monkeypatch):
     def boom(rid):
         raise RuntimeError("disk full")
 
     monkeypatch.setattr(router_mod, "release_extra", boom)
     r = client.post("/api/investigator/requests/r1/approve")
-    assert r.status_code == 200 and r.json()["rerun"] == "started"
+    assert r.status_code == 502 and "disk full" in r.json()["detail"]
+    assert _status(client) == "pending"
+    assert client.calls["rerun"] == []
+
+
+def test_a_release_of_nothing_is_reported_and_the_request_stays_pending(client, monkeypatch):
+    monkeypatch.setattr(router_mod, "release_extra", lambda rid: {"released": []})
+    r = client.post("/api/investigator/requests/r1/approve")
+    assert r.status_code == 502 and "nothing was released" in r.json()["detail"].lower()
+    assert _status(client) == "pending"
+    assert client.calls["rerun"] == []
+
+
+def test_a_release_result_without_a_released_list_counts_as_nothing_released(client, monkeypatch):
+    monkeypatch.setattr(router_mod, "release_extra", lambda rid: None)
+    assert client.post("/api/investigator/requests/r1/approve").status_code == 502
+
+
+def test_a_failed_release_can_be_retried_and_then_succeeds(client, monkeypatch):
+    monkeypatch.setattr(router_mod, "release_extra", lambda rid: {"released": []})
+    assert client.post("/api/investigator/requests/r1/approve").status_code == 502
+    monkeypatch.setattr(router_mod, "release_extra", lambda rid: {"released": ["access/parking_exit.csv"]})
+    assert client.post("/api/investigator/requests/r1/approve").status_code == 200
+    assert _status(client) == "approved"
 
 
 def test_release_stub_is_used_until_person_1_provides_the_function():
