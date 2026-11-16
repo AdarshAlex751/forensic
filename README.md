@@ -1,4 +1,4 @@
-# Case #1010F: The Titan Files
+# Case #1010F: The Princeton Files
 
 A forensic tool that checks every claim against the original case files, finds where the records contradict each other,
 and lets a human decide. It reports facts and contradictions only; it never names a culprit. The case is fictional.
